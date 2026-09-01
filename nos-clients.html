@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nos Clients Partenaires - C.A.D.C. Agence Digitale Douala">
+  <title>Nos Clients - C.A.D.C. Agence Digitale Douala</title>
+  <link rel="stylesheet" href="assets/css/cadc-fusion.css">
+  <style>
+    body {
+      overflow-y: auto !important;
+      background: var(--bg-primary);
+      color: var(--text-main);
+    }
+    .subpage-container {
+      min-height: 100vh;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 100px 30px 60px;
+    }
+    .back-button-fixed {
+      position: fixed;
+      top: 25px;
+      left: 30px;
+      z-index: 1000;
+      padding: 10px 22px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-neon);
+      border-radius: 30px;
+      color: var(--neon-cyan);
+      font-family: 'Oxanium', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      transition: var(--transition-smooth);
+    }
+    .back-button-fixed:hover {
+      background: var(--neon-blue);
+      color: #ffffff;
+      box-shadow: 0 0 25px var(--neon-glow-cyan);
+      transform: translateX(-4px);
+    }
+    .subpage-header {
+      text-align: center;
+      padding: 40px 20px 50px;
+    }
+    .subpage-header h1 {
+      font-family: 'Russo One', sans-serif;
+      font-size: clamp(36px, 5.5vw, 64px);
+      background: var(--grad-accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 18px;
+      letter-spacing: -1px;
+    }
+    .subpage-header p {
+      font-size: 18px;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    .clients-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+    .client-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 30px 24px;
+      backdrop-filter: blur(10px);
+      transition: var(--transition-smooth);
+    }
+    .client-card:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--neon-cyan);
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px var(--neon-glow-cyan);
+    }
+    .client-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-family: 'Oxanium', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--neon-cyan);
+      background: rgba(15, 51, 255, 0.15);
+      border: 1px solid var(--border-neon);
+      margin-bottom: 15px;
+      text-transform: uppercase;
+    }
+    .client-card h3 {
+      font-family: 'Russo One', sans-serif;
+      font-size: 20px;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+    .client-card p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+    .client-result {
+      font-family: 'Oxanium', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #00ff88;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .cta-banner {
+      background: linear-gradient(135deg, rgba(15, 51, 255, 0.2) 0%, rgba(0, 210, 255, 0.1) 100%);
+      border: 1px solid var(--border-neon);
+      border-radius: 16px;
+      padding: 50px 30px;
+      text-align: center;
+      margin-top: 60px;
+      box-shadow: var(--box-shadow-neon);
+    }
+    .cta-banner h3 {
+      font-family: 'Russo One', sans-serif;
+      font-size: 28px;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+    .cta-banner p {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+    }
+    .btn-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 34px;
+      background: var(--grad-primary);
+      color: #ffffff;
+      font-family: 'Oxanium', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      border-radius: 8px;
+      box-shadow: 0 0 25px var(--neon-glow);
+      transition: var(--transition-smooth);
+    }
+    .btn-action:hover {
+      box-shadow: 0 0 35px var(--neon-glow-cyan);
+      transform: translateY(-3px) scale(1.03);
+    }
+  </style>
+</head>
+<body class="theme-night">
+
+  <a href="javascript:void(0)" onclick="if(window.history.length > 1) { window.history.back(); } else { window.location.href='home.html'; }" class="back-button-fixed">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+    <span>Retour</span>
+  </a>
+
+  <div class="subpage-container">
+    <div class="subpage-header">
+      <h1>Nos Clients & Partenaires</h1>
+      <p>Découvrez les Entreprises, Startups et Institutions qui Font Confiance à C.A.D.C. pour Propulser leur Croissance</p>
+    </div>
+
+    <div class="clients-grid">
+      <div class="client-card">
+        <span class="client-badge">Banque & Fintech</span>
+        <h3>Afriland Express Mobile</h3>
+        <p>Conception et refonte UX/UI de l'application de micro-paiement et transferts régionaux.</p>
+        <div class="client-result">⚡ +240% d'utilisateurs actifs en 6 mois</div>
+      </div>
+
+      <div class="client-card">
+        <span class="client-badge">Logistique & Import</span>
+        <h3>Douala Port Logistics</h3>
+        <p>Développement d'une plateforme SaaS de suivi de conteneurs et de dédouanement en temps réel.</p>
+        <div class="client-result">⚡ Temps de traitement réduit de 65%</div>
+      </div>
+
+      <div class="client-card">
+        <span class="client-badge">Santé & E-Santé</span>
+        <h3>Clinique Médicale Saint-Luc</h3>
+        <p>Système de prise de rendez-vous en ligne, dossiers médicaux électroniques chiffrés et portail patient.</p>
+        <div class="client-result">⚡ 15 000+ consultations réservées en ligne</div>
+      </div>
+
+      <div class="client-card">
+        <span class="client-badge">Commerce & Retail</span>
+        <h3>K-Market Cameroun</h3>
+        <p>Marketplace E-commerce multi-vendeurs avec intégration MTN MoMo, Orange Money et livraison géolocalisée.</p>
+        <div class="client-result">⚡ +180% de ventes en ligne dès le 1er trimestre</div>
+      </div>
+
+      <div class="client-card">
+        <span class="client-badge">Éducation & EdTech</span>
+        <h3>EduTech Douala</h3>
+        <p>Plateforme e-learning interactive avec cours en streaming, quiz automatisés et certifications.</p>
+        <div class="client-result">⚡ 8 000+ étudiants formés avec succès</div>
+      </div>
+
+      <div class="client-card">
+        <span class="client-badge">Immobilier & BTP</span>
+        <h3>Prestige Immo Cameroun</h3>
+        <p>Portail d'annonces immobilières premium avec visites virtuelles 3D et passerelle de réservation.</p>
+        <div class="client-result">⚡ Taux de conversion x3 sur les biens de luxe</div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="cta-banner">
+      <h3>Rejoignez nos Réussites Digitales</h3>
+      <p>Transformez vos défis technologiques en avantage concurrentiel décisif.</p>
+      <a href="https://wa.me/237691223916?text=Bonjour%2C%20j%27aimerais%20devenir%20partenaire%20avec%20CADC." target="_blank" rel="noopener noreferrer" class="btn-action">
+        <span>Devenir Partenaire</span>
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>

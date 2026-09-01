@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <title>C.A.D.C. - Agence Digitale Douala, Cameroun | Innovation & Développement</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description"
+    content="C.A.D.C. - Agence Digitale d'Élite à Douala, Cameroun. Développement Web & Mobile, Architectures Cloud, Design UI/UX, IA & Stratégie Digitale.">
+  <meta name="keywords"
+    content="CADC, Agence Digitale Douala, Cameroun, Développement Web, Applications Mobiles, Cloud, UI UX Design, PWA">
+
+  <!-- PWA & Mobile Web App Meta -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0f33ff">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="C.A.D.C.">
+  <link rel="apple-touch-icon" href="assets/img/logo.svg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+
+  <!-- CSS Master Fusion -->
+  <link rel="stylesheet" href="assets/css/cadc-fusion.css">
+</head>
+
+<body class="theme-night">
+
+  <!-- NOTIFICATION CONTAINER / 3D PERSPECTIVE WRAPPER -->
+  <div class="perspective effect-rotate-left">
+    <div class="container">
+      <div class="outer-nav--return"></div>
+      <div id="viewport" class="l-viewport">
+        <div class="l-wrapper">
+
+          <!-- ===================================================================
+               HEADER TRANSLUCIDE ÉPURÉ & AÉRIEN (STYLE CADC ORIGINAL)
+               =================================================================== -->
+          <header class="header">
+            <!-- Logo & Titre C.A.D.C. -->
+            <a href="home.html" class="header--brand">
+              <div class="header--logo-icon">
+                <img src="assets/img/logo.svg" alt="C.A.D.C. Logo">
+              </div>
+              <span class="header--title-main">C.A.D.C.</span>
+            </a>
+
+            <!-- Liens de navigation rapide dans le header -->
+            <nav class="header--nav-links">
+              <a href="#" onclick="goToSectionExternal(0); return false;">Accueil</a>
+              <a href="#" onclick="goToSectionExternal(1); return false;">Équipe</a>
+              <a href="#" onclick="goToSectionExternal(2); return false;">À Propos</a>
+              <a href="#" onclick="goToSectionExternal(3); return false;">Contact</a>
+              <a href="#" onclick="goToSectionExternal(4); return false;">Services</a>
+            </nav>
+
+            <!-- Actions du Header (Metrics + Thème + 3D Toggle) -->
+            <div class="header--actions">
+              <!-- Bouton Performance Metrics -->
+              <button id="metrics-btn" class="metrics-btn" title="Statistiques de performance réelles">
+                <span class="pulse-dot"></span>
+                <span>Metrics</span>
+              </button>
+
+              <!-- Bouton Theme Toggle -->
+              <button id="theme-toggle-btn" class="theme-toggle-btn" title="Changer de thème">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z" />
+                </svg>
+              </button>
+
+              <!-- Bouton Hamburger 3D Navigation -->
+              <button id="nav-toggle-btn" class="header--nav-toggle" title="Menu 3D Perspective">
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+            </div>
+          </header>
+
+          <!-- ===================================================================
+               SIDE NAVIGATION TRANSLUCIDE NUMÉROTÉE (01-05)
+               =================================================================== -->
+          <nav class="l-side-nav">
+            <ul class="side-nav">
+              <li class="is-active"><span>01 &nbsp; Accueil</span></li>
+              <li><span>02 &nbsp; Équipe & Arsenal</span></li>
+              <li><span>03 &nbsp; À Propos</span></li>
+              <li><span>04 &nbsp; Contact</span></li>
+              <li><span>05 &nbsp; Services & Devis</span></li>
+            </ul>
+          </nav>
+
+          <!-- ===================================================================
+               CONTENU PRINCIPAL DES SECTIONS (DISPOSITION HAUTE & ÉQUILIBRÉE)
+               =================================================================== -->
+          <ul class="l-main-content main-content">
+
+            <!-- SECTION 01 : ACCUEIL / HERO & 3D INNOVATION CAROUSEL -->
+            <li class="l-section section section--is-active" id="section-intro">
+              <canvas id="intro-particles" class="section-particles"></canvas>
+              <div class="intro">
+
+                <!-- Sélecteur de Mode Hero -->
+                <div class="hero-mode-toggle">
+                  <button id="btnHeroSpatial" class="mode-btn active">✦ Hero Spatial CADC</button>
+                  <button id="btnHeroCarousel" class="mode-btn">✦ 3D Innovation Carousel</button>
+                </div>
+
+                <!-- Vue 1: Hero Spatial CADC -->
+                <div id="heroViewSpatial" class="hero-view-spatial">
+                  <div class="intro--banner">
+                    <span class="intro--badge">⚡ Agence Digitale de Référence • Douala, Cameroun</span>
+                    <h1>Votre Aventure<br>commence ici</h1>
+                    <button id="cta-intro-btn" class="cta">
+                      <span>Écrivez-nous</span>
+                      <svg viewBox="0 0 24 24">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                      </svg>
+                      <span class="btn-background"></span>
+                    </button>
+                    <!-- Visuel Astronaute en lévitation 3D -->
+                    <img src="assets/img/introduction-visual.png" alt="Astronaute C.A.D.C." class="astronaut-bg"
+                      loading="lazy">
+                  </div>
+
+                  <ul class="intro--options">
+                    <a href="strategie.html">
+                      <h3>✦ Stratégie Digitale</h3>
+                      <p>Transformation numérique sur mesure, cadrage & vision d'avenir.</p>
+                    </a>
+                    <a href="developpement.html">
+                      <h3>✦ Développement</h3>
+                      <p>Applications Web, Mobiles & SaaS scalables à haute performance.</p>
+                    </a>
+                    <a href="design.html">
+                      <h3>✦ Design UI / UX</h3>
+                      <p>Expériences immersives captivantes, identités de marque d'élite.</p>
+                    </a>
+                  </ul>
+                </div>
+
+                <!-- Vue 2: 3D Innovation Carousel (Prism Flux / Nex) -->
+                <div id="heroViewCarousel" class="hero-view-carousel">
+                  <div class="carousel-container">
+                    <div id="carousel" class="carousel">
+                      <!-- Les cartes 3D sont injectées par JS -->
+                    </div>
+                    <!-- Contrôles fléchés -->
+                    <div class="carousel-controls">
+                      <button id="carouselPrevBtn" class="carousel-btn" aria-label="Précédent">&#8249;</button>
+                      <button id="carouselNextBtn" class="carousel-btn" aria-label="Suivant">&#8250;</button>
+                    </div>
+                  </div>
+                  <!-- Indicateurs circulaires -->
+                  <div id="indicators" class="carousel-indicators"></div>
+                </div>
+
+              </div>
+            </li>
+
+            <!-- SECTION 02 : ÉQUIPE D'ÉLITE & TECHNICAL ARSENAL -->
+            <li class="l-section section" id="section-work">
+              <canvas id="work-particles" class="section-particles"></canvas>
+              <div class="work">
+                <h2 class="section-title-glow">Nos Talents & Arsenal</h2>
+
+                <!-- Sélecteur de sous-vue Section 2 -->
+                <div class="section-subtoggle">
+                  <button id="btnViewTeam" class="mode-btn active">✦ Notre Équipe (3D Slider)</button>
+                  <button id="btnViewSkills" class="mode-btn">✦ Technical Arsenal (Hexagones)</button>
+                </div>
+
+                <!-- Vue A: Slider 3D Rotatif de l'Équipe -->
+                <div id="viewTeamContainer" class="work--lockup">
+                  <ul class="slider">
+                    <!-- Membre 1 : Joseph OUSSI -->
+                    <li class="slider--item slider--item-left">
+                      <a href="christian-oussi.html">
+                        <div class="slider--item-image">
+                          <svg viewBox="0 0 100 100" class="member-avatar">
+                            <defs>
+                              <linearGradient id="grad-joseph" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#0f33ff;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#00d2ff;stop-opacity:1" />
+                              </linearGradient>
+                            </defs>
+                            <circle cx="50" cy="35" r="25" fill="url(#grad-joseph)" />
+                            <path d="M20 90 Q50 60 80 90" fill="url(#grad-joseph)" />
+                            <circle cx="42" cy="32" r="3" fill="#fff" />
+                            <circle cx="58" cy="32" r="3" fill="#fff" />
+                            <path d="M45 42 Q50 46 55 42" stroke="#fff" stroke-width="2" fill="none" />
+                            <rect x="30" y="20" width="40" height="5" rx="2" fill="#0f33ff" />
+                            <rect x="35" y="15" width="30" height="8" rx="2" fill="#0f33ff" />
+                          </svg>
+                        </div>
+                        <p class="slider--item-title">Joseph OUSSI</p>
+                        <p class="slider--item-description">Directeur & Lead Fullstack Architect</p>
+                      </a>
+                    </li>
+
+                    <!-- Membre 2 : Yann -->
+                    <li class="slider--item slider--item-center">
+                      <a href="marc-laurent.html">
+                        <div class="slider--item-image">
+                          <svg viewBox="0 0 100 100" class="member-avatar">
+                            <defs>
+                              <linearGradient id="grad-marc" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#00d2ff;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#0099cc;stop-opacity:1" />
+                              </linearGradient>
+                            </defs>
+                            <circle cx="50" cy="35" r="25" fill="url(#grad-marc)" />
+                            <path d="M20 90 Q50 60 80 90" fill="url(#grad-marc)" />
+                            <circle cx="42" cy="32" r="3" fill="#fff" />
+                            <circle cx="58" cy="32" r="3" fill="#fff" />
+                            <rect x="25" y="25" width="50" height="20" rx="3" fill="none" stroke="#fff"
+                              stroke-width="2" />
+                            <line x1="30" y1="32" x2="70" y2="32" stroke="#fff" stroke-width="2" />
+                            <line x1="30" y1="38" x2="60" y2="38" stroke="#fff" stroke-width="2" />
+                          </svg>
+                        </div>
+                        <p class="slider--item-title">Yann</p>
+                        <p class="slider--item-description">Expert Backend &amp; Cloud Infrastructure</p>
+                      </a>
+                    </li>
+
+                    <!-- Membre 3 : Franky -->
+                    <li class="slider--item slider--item-right">
+                      <a href="axel-dupont.html">
+                        <div class="slider--item-image">
+                          <svg viewBox="0 0 100 100" class="member-avatar">
+                            <defs>
+                              <linearGradient id="grad-axel" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#ff8e8e;stop-opacity:1" />
+                              </linearGradient>
+                            </defs>
+                            <circle cx="50" cy="35" r="25" fill="url(#grad-axel)" />
+                            <path d="M20 90 Q50 60 80 90" fill="url(#grad-axel)" />
+                            <circle cx="42" cy="32" r="3" fill="#fff" />
+                            <circle cx="58" cy="32" r="3" fill="#fff" />
+                            <path d="M40 42 Q50 48 60 42" stroke="#fff" stroke-width="2" fill="none" />
+                            <circle cx="50" cy="20" r="8" fill="none" stroke="#fff" stroke-width="2" />
+                            <circle cx="50" cy="20" r="4" fill="#fff" />
+                          </svg>
+                        </div>
+                        <p class="slider--item-title">Franky</p>
+                        <p class="slider--item-description">Lead UI / UX Designer &amp; Visionnaire</p>
+                      </a>
+                    </li>
+
+                    <!-- Membre 4 : Philippe -->
+                    <li class="slider--item">
+                      <a href="sarah-martin.html">
+                        <div class="slider--item-image">
+                          <svg viewBox="0 0 100 100" class="member-avatar">
+                            <defs>
+                              <linearGradient id="grad-sarah" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#a855f7;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#d8b4fe;stop-opacity:1" />
+                              </linearGradient>
+                            </defs>
+                            <circle cx="50" cy="35" r="25" fill="url(#grad-sarah)" />
+                            <path d="M20 90 Q50 60 80 90" fill="url(#grad-sarah)" />
+                            <circle cx="42" cy="32" r="3" fill="#fff" />
+                            <circle cx="58" cy="32" r="3" fill="#fff" />
+                            <path d="M45 42 Q50 46 55 42" stroke="#fff" stroke-width="2" fill="none" />
+                            <path d="M30 20 Q50 10 70 20" stroke="#fff" stroke-width="2" fill="none" />
+                            <circle cx="30" cy="20" r="3" fill="#fff" />
+                            <circle cx="70" cy="20" r="3" fill="#fff" />
+                          </svg>
+                        </div>
+                        <p class="slider--item-title">Philippe</p>
+                        <p class="slider--item-description">Growth Hacker &amp; Community Strategist</p>
+                      </a>
+                    </li>
+                  </ul>
+
+                  <!-- Boutons Fléchés Slider -->
+                  <div class="slider--prev" aria-label="Précédent">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+                    </svg>
+                  </div>
+                  <div class="slider--next" aria-label="Suivant">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+                    </svg>
+                  </div>
+                </div>
+
+                <!-- Vue B: Technical Arsenal - Grille Hexagonale (Nex / Prism Flux) -->
+                <div id="viewSkillsContainer" class="skills-container">
+                  <!-- Onglets de Catégories -->
+                  <div class="skill-categories">
+                    <button class="category-tab active" data-category="all">✦ Tous les Skills</button>
+                    <button class="category-tab" data-category="frontend">Frontend & UI</button>
+                    <button class="category-tab" data-category="backend">Backend & API</button>
+                    <button class="category-tab" data-category="cloud">Cloud & DevOps</button>
+                    <button class="category-tab" data-category="emerging">IA & Web3</button>
+                  </div>
+
+                  <!-- Grille d'Hexagones -->
+                  <div id="skillsGrid" class="skills-hexagon-grid">
+                    <!-- Hexagones injectés par JS -->
+                  </div>
+                </div>
+
+              </div>
+            </li>
+
+            <!-- SECTION 03 : À PROPOS (ABOUT) -->
+            <li class="l-section section" id="section-about">
+              <canvas id="about-particles" class="section-particles"></canvas>
+              <div class="about">
+                <div class="about--banner">
+                  <h2>Nous Croyons en<br>des personnes<br>passionnées</h2>
+                  <a href="nos-clients.html" class="btn-clients">
+                    <span>Nos clients</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </a>
+                  <!-- Visuel Créatif avec Halo (bien descendu) -->
+                  <img src="assets/img/about-visual.png" alt="Créativité CADC" class="about--visual" loading="lazy">
+                </div>
+
+                <ul class="about--options">
+                  <a href="nos-projets.html">
+                    <h3>Projets Innovants</h3>
+                  </a>
+                  <a href="nos-contrats.html">
+                    <h3>Contrats &amp; Modèles</h3>
+                  </a>
+                  <a href="nos-realisations.html">
+                    <h3>Réalisations Clés</h3>
+                  </a>
+                </ul>
+              </div>
+            </li>
+
+            <!-- SECTION 04 : CONTACT & LOCALISATION -->
+            <li class="l-section section" id="section-contact">
+              <canvas id="contact-particles" class="section-particles"></canvas>
+              <div class="contact">
+                <h2 class="section-title-glow">Contactez C.A.D.C.</h2>
+                <div class="contact--grid">
+                  <!-- Carte Google Maps -->
+                  <div class="contact--map">
+                    <iframe title="Boulangerie du Lycée de Bonabéri  Douala"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.612345!2d9.636!3d4.058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10610d4f2a5b5c5d%3A0xabcdef1234567890!2sBoulangerie%20du%20Lyc%C3%A9e%20de%20Bonab%C3%A9ri%2C%20Douala%2C%20Cameroun!5e0!3m2!1sfr!2scm!4v1693612800000!5m2!1sfr!2scm"
+                      allowfullscreen="" loading="lazy">
+                    </iframe>
+                  </div>
+
+                  <!-- Carte Informations & Actions Directes -->
+                  <div class="contact--info">
+                    <h3 class="contact-title">Parlons de Votre Projet</h3>
+                    <div class="contact-detail">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                          d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                      </svg>
+                      <span>Douala - Bonabéri, Cameroun</span>
+                    </div>
+                    <a href="mailto:CADC@gmail.com" class="contact-link">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                          d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                      </svg>
+                      <span>CADC@gmail.com</span>
+                    </a>
+                    <a href="tel:+237691223916" class="contact-link">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                          d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                      </svg>
+                      <span>+237 691 223 916</span>
+                    </a>
+
+                    <div class="contact-actions">
+                      <a href="https://wa.me/237691223916?text=Bonjour%20CADC%2C%20je%20souhaite%20des%20informations%20sur%20vos%20services."
+                        target="_blank" rel="noopener noreferrer" class="btn-contact-action btn-whatsapp">
+                        <span>WhatsApp Direct</span>
+                      </a>
+                      <a href="mailto:CADC@gmail.com?subject=Demande%20de%20projet%20CADC"
+                        class="btn-contact-action btn-email">
+                        <span>Envoyer un Mail</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- SECTION 05 : QUE VOULEZ-VOUS DE NOUS ? (SERVICES & DEVIS) -->
+            <li class="l-section section" id="section-hire">
+              <canvas id="hire-particles" class="section-particles"></canvas>
+              <div class="hire">
+                <h2 class="section-title-glow">Que voulez-vous de nous ?</h2>
+                <div class="hire--grid">
+                  <!-- Carte 1 -->
+                  <div class="hire-card">
+                    <div class="hire-icon">💻</div>
+                    <h3>Développement Web</h3>
+                    <p>Sites vitrines futuristes, plateformes SaaS, portails e-commerce réactifs.</p>
+                    <div class="hire-actions">
+                      <a href="https://wa.me/237691223916?text=Je%20veux%20un%20D%C3%A9veloppement%20Web"
+                        target="_blank" rel="noopener noreferrer" class="hire-btn whatsapp">WhatsApp</a>
+                      <a href="mailto:CADC@gmail.com?subject=Devis%20Web" class="hire-btn email">Email</a>
+                    </div>
+                  </div>
+
+                  <!-- Carte 2 -->
+                  <div class="hire-card">
+                    <div class="hire-icon">📱</div>
+                    <h3>Applications Mobiles</h3>
+                    <p>Apps natives et hybrides Android / iOS à ergonomie irréprochable.</p>
+                    <div class="hire-actions">
+                      <a href="https://wa.me/237691223916?text=Je%20veux%20une%20App%20Mobile" target="_blank"
+                        rel="noopener noreferrer" class="hire-btn whatsapp">WhatsApp</a>
+                      <a href="mailto:CADC@gmail.com?subject=Devis%20Mobile" class="hire-btn email">Email</a>
+                    </div>
+                  </div>
+
+                  <!-- Carte 3 -->
+                  <div class="hire-card">
+                    <div class="hire-icon">🎨</div>
+                    <h3>Design UI / UX</h3>
+                    <p>Identités de marque, maquettes Figma haute fidélité et Design Systems.</p>
+                    <div class="hire-actions">
+                      <a href="https://wa.me/237691223916?text=Je%20veux%20du%20Design%20UIUX" target="_blank"
+                        rel="noopener noreferrer" class="hire-btn whatsapp">WhatsApp</a>
+                      <a href="mailto:CADC@gmail.com?subject=Devis%20Design" class="hire-btn email">Email</a>
+                    </div>
+                  </div>
+
+                  <!-- Carte 4 -->
+                  <div class="hire-card">
+                    <div class="hire-icon">☁️</div>
+                    <h3>Cloud & DevOps</h3>
+                    <p>Déploiement AWS/GCP, automatisation CI/CD et sécurité serveurs.</p>
+                    <div class="hire-actions">
+                      <a href="https://wa.me/237691223916?text=Je%20veux%20du%20Cloud%20DevOps" target="_blank"
+                        rel="noopener noreferrer" class="hire-btn whatsapp">WhatsApp</a>
+                      <a href="mailto:CADC@gmail.com?subject=Devis%20Cloud" class="hire-btn email">Email</a>
+                    </div>
+                  </div>
+
+                  <!-- Carte 5 -->
+                  <div class="hire-card">
+                    <div class="hire-icon">🤖</div>
+                    <h3>IA & Automation</h3>
+                    <p>Intégration d'agents intelligents, bots WhatsApp et automatisation métier.</p>
+                    <div class="hire-actions">
+                      <a href="https://wa.me/237691223916?text=Je%20veux%20de%20l%20IA" target="_blank"
+                        rel="noopener noreferrer" class="hire-btn whatsapp">WhatsApp</a>
+                      <a href="mailto:CADC@gmail.com?subject=Devis%20IA" class="hire-btn email">Email</a>
+                    </div>
+                  </div>
+
+                  <!-- Carte 6 -->
+                  <div class="hire-card">
+                    <div class="hire-icon">📈</div>
+                    <h3>Growth & Marketing</h3>
+                    <p>Acquisition client ciblée, SEO, réseaux sociaux et conversion maximale.</p>
+                    <div class="hire-actions">
+                      <a href="https://wa.me/237691223916?text=Je%20veux%20du%20Growth%20Marketing" target="_blank"
+                        rel="noopener noreferrer" class="hire-btn whatsapp">WhatsApp</a>
+                      <a href="mailto:CADC@gmail.com?subject=Devis%20Growth" class="hire-btn email">Email</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================================================================
+         MENU VERTICAL 3D EXTERNE (OUTER NAV)
+         =================================================================== -->
+    <ul class="outer-nav">
+      <li class="is-active">Accueil</li>
+      <li>Équipe & Arsenal</li>
+      <li>À Propos</li>
+      <li>Contact</li>
+      <li>Services & Devis</li>
+    </ul>
+
+  </div>
+
+  <!-- ===================================================================
+       MODAL DE PERFORMANCE METRICS (RÉEL & DYNAMIQUE)
+       =================================================================== -->
+  <div id="metrics-modal" class="metrics-modal">
+    <div class="metrics-modal-card">
+      <button id="metrics-modal-close" class="metrics-modal-close" aria-label="Fermer">✕</button>
+      <div class="metrics-header">
+        <h2>Performance & Indicateurs CADC</h2>
+        <p>Métriques vérifiées en production sur l'ensemble de nos projets clients</p>
+      </div>
+      <div class="metrics-grid">
+        <div class="metric-box">
+          <div class="metric-value" data-target="20" data-suffix="+">0</div>
+          <div class="metric-label">Projets Livrés</div>
+          <div class="metric-desc">100% de déploiements réussis et maintenus</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-value" data-target="99.4" data-suffix="%">0</div>
+          <div class="metric-label">Satisfaction Client</div>
+          <div class="metric-desc">Taux de rétention et recommandations</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-value" data-target="99.9" data-suffix="%">0</div>
+          <div class="metric-label">Disponibilité Cloud</div>
+          <div class="metric-desc">Temps de fonctionnement haute fiabilité</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-value" data-target="500" data-suffix="+">0</div>
+          <div class="metric-label">Commits Mensuels</div>
+          <div class="metric-desc">Intégration et livraison continues (CI/CD)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Service Worker Registration for PWA -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+          .then((reg) => console.log('ServiceWorker CADC PWA enregistré avec succès :', reg.scope))
+          .catch((err) => console.log('Échec enregistrement ServiceWorker :', err));
+      });
+    }
+  </script>
+
+  <!-- Master JavaScript Application -->
+  <script src="assets/js/cadc-app.js"></script>
+</body>
+
+</html>

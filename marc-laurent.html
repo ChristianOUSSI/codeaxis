@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <title>Yann - Expert Backend & DevOps | C.A.D.C.</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="stylesheet" href="assets/css/cadc-fusion.css">
+  <style>
+    body {
+      overflow-y: auto !important;
+      background: var(--bg-primary);
+      color: var(--text-main);
+    }
+
+    .member-page-wrap {
+      min-height: 100vh;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 100px 25px 60px;
+    }
+
+    .back-btn-fixed {
+      position: fixed;
+      top: 25px;
+      left: 25px;
+      z-index: 1000;
+      padding: 10px 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-neon);
+      border-radius: 30px;
+      color: var(--neon-cyan);
+      font-family: 'Oxanium', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      backdrop-filter: blur(12px);
+      transition: var(--transition-smooth);
+    }
+
+    .back-btn-fixed:hover {
+      background: var(--neon-blue);
+      color: #ffffff;
+      box-shadow: 0 0 25px var(--neon-glow-cyan);
+      transform: translateX(-4px);
+    }
+
+    .member-header-card {
+      text-align: center;
+      padding: 40px 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      margin-bottom: 40px;
+      box-shadow: var(--box-shadow-card);
+    }
+
+    .avatar-wrapper {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      border: 3px solid var(--neon-cyan);
+      box-shadow: 0 0 30px var(--neon-glow-cyan);
+      padding: 6px;
+      background: var(--grad-dark);
+    }
+
+    .member-name {
+      font-family: 'Russo One', sans-serif;
+      font-size: 36px;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+
+    .member-role {
+      font-family: 'Oxanium', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--neon-cyan);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+    }
+
+    .member-bio {
+      font-size: 15px;
+      color: var(--text-muted);
+      max-width: 650px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .member-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .member-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .detail-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 30px 25px;
+    }
+
+    .detail-card h3 {
+      font-family: 'Oxanium', sans-serif;
+      font-size: 20px;
+      color: var(--neon-cyan);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .timeline-item {
+      border-left: 2px solid var(--neon-blue);
+      padding-left: 18px;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -6px;
+      top: 0;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--neon-cyan);
+      box-shadow: 0 0 10px var(--neon-cyan);
+    }
+
+    .timeline-year {
+      font-family: 'Oxanium', sans-serif;
+      font-size: 12px;
+      color: var(--neon-cyan);
+      font-weight: 700;
+    }
+
+    .timeline-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 2px 0 4px;
+    }
+
+    .timeline-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-badge {
+      background: rgba(15, 51, 255, 0.15);
+      border: 1px solid var(--border-neon);
+      padding: 8px 14px;
+      border-radius: 20px;
+      font-family: 'Oxanium', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .contact-cta {
+      text-align: center;
+      padding: 30px;
+    }
+  </style>
+</head>
+
+<body class="theme-night">
+
+  <a href="javascript:void(0)" onclick="if(window.history.length > 1) { window.history.back(); } else { window.location.href='home.html'; }" class="back-btn-fixed">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
+    </svg>
+    <span>Retour</span>
+  </a>
+
+  <div class="member-page-wrap">
+    <div class="member-header-card">
+      <div class="avatar-wrapper">
+        <svg viewBox="0 0 100 100" class="member-avatar">
+          <defs>
+            <linearGradient id="grad-marc" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#00d2ff;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#0099cc;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <circle cx="50" cy="35" r="25" fill="url(#grad-marc)" />
+          <path d="M20 90 Q50 60 80 90" fill="url(#grad-marc)" />
+          <circle cx="42" cy="32" r="3" fill="#fff" />
+          <circle cx="58" cy="32" r="3" fill="#fff" />
+          <rect x="25" y="25" width="50" height="20" rx="3" fill="none" stroke="#fff" stroke-width="2" />
+          <line x1="30" y1="32" x2="70" y2="32" stroke="#fff" stroke-width="2" />
+          <line x1="30" y1="38" x2="60" y2="38" stroke="#fff" stroke-width="2" />
+        </svg>
+      </div>
+
+      <h1 class="member-name">Yann</h1>
+      <div class="member-role">Lead Backend & Infrastructure Cloud</div>
+      <p class="member-bio">
+        L'architecte de l'ombre qui assure la robustesse, la rapidité et la haute disponibilité de vos serveurs.
+        Spécialiste de la conteneurisation, des clusters distribués et de la cybersécurité.
+      </p>
+    </div>
+
+    <div class="member-grid">
+      <div class="detail-card">
+        <h3><span>🛡️</span> Parcours & Expériences</h3>
+        <div class="timeline-item">
+          <span class="timeline-year">2021 - Présent</span>
+          <div class="timeline-title">Lead DevOps & Cloud Architect C.A.D.C.</div>
+          <div class="timeline-desc">Supervision des clusters, mise en place des pipelines CI/CD et durcissement de la
+            sécurité réseau.</div>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">2017 - 2021</span>
+          <div class="timeline-title">DevOps Engineer CloudSystems</div>
+          <div class="timeline-desc">Migration d'infrastructures vers AWS/GCP et optimisation drastique des coûts
+            d'hébergement.</div>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">2015 - 2017</span>
+          <div class="timeline-title">Administrateur Systèmes & Réseaux DataCorp</div>
+          <div class="timeline-desc">Gestion de parcs Linux haute sécurité et supervision de bases de données critiques.
+          </div>
+        </div>
+      </div>
+
+      <div class="detail-card">
+        <h3><span>⚙️</span> Arsenal Technique</h3>
+        <div class="skill-tags">
+          <span class="skill-badge">Kubernetes & Docker</span>
+          <span class="skill-badge">Terraform & Ansible</span>
+          <span class="skill-badge">PostgreSQL & Redis</span>
+          <span class="skill-badge">Linux Hardening</span>
+          <span class="skill-badge">CI/CD GitHub Actions</span>
+          <span class="skill-badge">Golang & Rust</span>
+          <span class="skill-badge">Sécurité Réseau & Pentest</span>
+          <span class="skill-badge">Prometheus & Grafana</span>
+        </div>
+
+        <h3 style="margin-top: 25px;"><span>🏗️</span> Réalisations Clés</h3>
+        <p style="font-size: 13px; color: var(--text-muted); line-height: 1.6;">
+          • Déploiement Zero-Downtime pour applications financières à Douala.<br>
+          • Architecture tolérante aux pannes avec failover automatique multi-région.<br>
+          • Audit de sécurité et conformité RGPD / données sensibles.
+        </p>
+      </div>
+    </div>
+
+    <div class="contact-cta">
+      <a href="https://wa.me/237691223916?text=Bonjour%20Yann%2C%20j%27aimerais%20discuter%20d%27infrastructure%20Cloud%20avec%20vous."
+        target="_blank" rel="noopener noreferrer" class="btn-action"
+        style="padding: 12px 30px; background: var(--grad-primary); border-radius: 30px; font-family: 'Oxanium', sans-serif; font-weight: 700; color: #fff;">
+        Contacter Yann sur WhatsApp
+      </a>
+    </div>
+  </div>
+
+</body>
+
+</html>

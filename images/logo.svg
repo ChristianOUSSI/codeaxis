@@ -1,0 +1,28 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5a7cff"/>
+      <stop offset="100%" stop-color="#0a2463"/>
+    </linearGradient>
+    <linearGradient id="whiteGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#888888"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Forme 3D Principale (Hexagone/Cube) -->
+  <path d="M64 10 L114 38 L114 90 L64 118 L14 90 L14 38 Z" fill="#0c0c0c" stroke="url(#blueGrad)" stroke-width="3"/>
+  
+  <!-- Faces Internes pour effet 3D -->
+  <path d="M64 64 L114 38 M64 64 L14 38 M64 64 L64 118" stroke="url(#blueGrad)" stroke-width="2" opacity="0.8"/>
+  
+  <!-- Texte Acronyme -->
+  <text x="64" y="80" font-family="Arial, sans-serif" font-weight="900" font-size="22" text-anchor="middle" fill="url(#whiteGrad)" filter="url(#glow)" letter-spacing="1">CADC</text>
+</svg>

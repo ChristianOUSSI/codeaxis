@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HealthPortal CM - Solution de téléconsultation médicale - C.A.D.C.">
+  <title>HealthPortal CM C.A.D.C.</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="assets/css/cadc-fusion.css">
+  <style>
+    body {
+      overflow-y: auto !important;
+      background: var(--bg-primary);
+      color: var(--text-main);
+    }
+
+    .proj-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 90px 30px 80px;
+    }
+
+    .back-btn {
+      position: fixed;
+      top: 20px;
+      left: 24px;
+      z-index: 1000;
+      padding: 10px 22px;
+      background: rgba(7, 9, 19, 0.85);
+      border: 1px solid var(--border-neon);
+      border-radius: 30px;
+      color: var(--neon-cyan);
+      font-family: 'Oxanium', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .back-btn:hover {
+      background: var(--neon-blue);
+      color: #fff;
+      transform: translateX(-4px);
+      box-shadow: 0 0 25px var(--neon-glow-cyan);
+    }
+
+    .proj-hero {
+      text-align: center;
+      padding: 50px 20px 50px;
+    }
+
+    .proj-tag {
+      font-family: 'Oxanium', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #a855f7;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .proj-hero h1 {
+      font-family: 'Russo One', sans-serif;
+      font-size: clamp(36px, 5.5vw, 68px);
+      background: linear-gradient(135deg, #a855f7, #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    .proj-hero p {
+      font-size: 18px;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .proj-visual {
+      width: 100%;
+      height: 360px;
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.15) 0%, rgba(236, 72, 153, 0.1) 50%, rgba(15, 51, 255, 0.1) 100%);
+      border-radius: 20px;
+      margin: 40px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 100px;
+      border: 1px solid rgba(168, 85, 247, 0.2);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .proj-visual::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 50%, rgba(168, 85, 247, 0.15) 0%, transparent 60%);
+      animation: pulse-bg 3s ease-in-out infinite;
+    }
+
+    @keyframes pulse-bg {
+
+      0%,
+      100% {
+        opacity: 0.4;
+      }
+
+      50% {
+        opacity: 1;
+      }
+    }
+
+    .section-block {
+      margin: 50px 0;
+    }
+
+    .section-block h2 {
+      font-family: 'Russo One', sans-serif;
+      font-size: 26px;
+      color: #fff;
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .section-block p {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .feature-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .feature-item:hover {
+      border-color: #a855f7;
+      transform: translateY(-3px);
+      box-shadow: 0 0 20px rgba(168, 85, 247, 0.2);
+    }
+
+    .feature-icon {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .feature-item h4 {
+      font-family: 'Oxanium', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .feature-item p {
+      font-size: 13px;
+      color: var(--text-dim);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .tech-chip {
+      background: rgba(168, 85, 247, 0.1);
+      border: 1px solid rgba(168, 85, 247, 0.25);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      color: #d8b4fe;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(168, 85, 247, 0.1);
+      border: 1px solid rgba(168, 85, 247, 0.3);
+      border-radius: 20px;
+      padding: 8px 18px;
+      font-family: 'Oxanium', sans-serif;
+      font-size: 13px;
+      color: #d8b4fe;
+      font-weight: 700;
+      margin-top: 20px;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background: #a855f7;
+      border-radius: 50%;
+      animation: blink 1.5s ease-in-out infinite;
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.3;
+      }
+    }
+
+    .cta-final {
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(236, 72, 153, 0.08));
+      border: 1px solid rgba(168, 85, 247, 0.3);
+      border-radius: 16px;
+      padding: 50px 30px;
+      text-align: center;
+      margin-top: 70px;
+    }
+
+    .cta-final h3 {
+      font-family: 'Russo One', sans-serif;
+      font-size: 28px;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .cta-final p {
+      color: var(--text-muted);
+      margin-bottom: 28px;
+    }
+
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 34px;
+      background: linear-gradient(135deg, #a855f7, #ec4899);
+      color: #fff;
+      font-family: 'Oxanium', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      border-radius: 8px;
+      box-shadow: 0 0 25px rgba(168, 85, 247, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    .btn-cta:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 0 40px rgba(168, 85, 247, 0.6);
+    }
+  </style>
+</head>
+
+<body class="theme-night">
+  <a href="javascript:void(0)" onclick="if(window.history.length > 1) { window.history.back(); } else { window.location.href='home.html'; }" class="back-btn">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+    Retour
+  </a>
+  <div class="proj-page">
+    <div class="proj-hero">
+      <span class="proj-tag">✦ Projet Innovant Santé &amp; Télémédecine</span>
+      <h1>HealthPortal CM</h1>
+      <p>Solution complète de téléconsultation médicale avec prescriptions certifiées, visioconférence chiffrée et
+        gestion des dossiers patients sécurisés.</p>
+      <div class="status-badge"><span class="status-dot"></span>Déployé 45 Cliniques Partenaires</div>
+    </div>
+    <div class="proj-visual">🏥</div>
+    <div class="section-block">
+      <h2>🚀 Description du Projet</h2>
+      <p>HealthPortal CM connecte les patients camerounais avec des médecins agréés via une plateforme sécurisée de
+        téléconsultation. Les consultations se font par vidéo chiffrée bout-en-bout, et les ordonnances générées sont
+        certifiées numériquement et envoyées directement aux pharmacies partenaires.</p>
+      <p>Le dossier médical du patient est centralisé et accessible à tous ses médecins traitants avec son consentement,
+        permettant une continuité des soins optimale même à distance.</p>
+    </div>
+    <div class="section-block">
+      <h2>⚡ Fonctionnalités Clés</h2>
+      <div class="features-grid">
+        <div class="feature-item">
+          <div class="feature-icon">📹</div>
+          <h4>Vidéo Sécurisée</h4>
+          <p>Visioconférence chiffrée E2E conforme aux standards HIPAA pour la confidentialité</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">📋</div>
+          <h4>Dossier Médical</h4>
+          <p>Historique complet : ordonnances, résultats analyses, antécédents et allergies</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">💊</div>
+          <h4>e-Prescriptions</h4>
+          <p>Ordonnances numériques certifiées envoyées directement aux pharmacies partenaires</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">💳</div>
+          <h4>Paiement Intégré</h4>
+          <p>Règlement des consultations par Mobile Money, carte bancaire ou assurance santé</p>
+        </div>
+      </div>
+    </div>
+    <div class="section-block">
+      <h2>🛠️ Technologies Utilisées</h2>
+      <div class="tech-list">
+        <span class="tech-chip">WebRTC</span>
+        <span class="tech-chip">Vue.js 3</span>
+        <span class="tech-chip">NestJS</span>
+        <span class="tech-chip">PostgreSQL</span>
+        <span class="tech-chip">FHIR HL7</span>
+        <span class="tech-chip">AES-256 + TLS 1.3</span>
+        <span class="tech-chip">AWS Healthcare</span>
+        <span class="tech-chip">Digital Signature</span>
+      </div>
+    </div>
+    <div class="cta-final">
+      <h3>Un projet santé numérique ?</h3>
+      <p>Nous développons des solutions médicales conformes aux standards internationaux pour l'Afrique.</p>
+      <a href="https://wa.me/237691223916?text=Bonjour%2C%20je%20veux%20d%C3%A9velopper%20une%20plateforme%20sant%C3%A9%20avec%20CADC."
+        target="_blank" rel="noopener noreferrer" class="btn-cta">Discutons de votre vision</a>
+    </div>
+  </div>
+</body>
+
+</html>

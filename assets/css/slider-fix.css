@@ -1,0 +1,49 @@
+/* Slider fixes: keep items visually fixed and remove positional translations */
+.work--lockup .slider{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:24px;
+}
+
+/* Make items participate in flow instead of absolute positioning */
+.work--lockup .slider--item{
+  position:relative !important;
+  display:inline-block !important;
+  top:auto !important;
+  left:auto !important;
+  right:auto !important;
+  transform:none !important;
+  opacity:1 !important;
+}
+
+/* Neutralize left/right/center specific translations */
+.work--lockup .slider--item-left,
+.work--lockup .slider--item-right,
+.work--lockup .slider--item-center{
+  margin:0 12px;
+  transform:none !important;
+}
+
+.work--lockup .slider--item-left:hover,
+.work--lockup .slider--item-right:hover{
+  /* keep a subtle hover without shifting position */
+  opacity:0.95 !important;
+  transform:none !important;
+}
+
+/* Keep center item visually emphasized but not shifted */
+.work--lockup .slider--item-center{
+  z-index:10;
+}
+
+/* Make description fade only change opacity (no translate movement) */
+@-webkit-keyframes descriptionFade{0%{opacity:0}100%{opacity:1}}
+@keyframes descriptionFade{0%{opacity:0}100%{opacity:1}}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce){
+  .work--lockup .slider--item-image,
+  .work--lockup .slider--item-title,
+  .work--lockup .slider--item-description{animation:none !important;transition:none !important}
+}

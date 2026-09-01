@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>Design UI/UX & Identité Visuelle - C.A.D.C.</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Design UI/UX d'élite, identité visuelle de marque et prototypage interactif par C.A.D.C. Douala Cameroun.">
+  <link rel="stylesheet" href="assets/css/cadc-fusion.css">
+  <style>
+    body {
+      overflow-y: auto !important;
+      background: var(--bg-primary);
+      color: var(--text-main);
+    }
+    .subpage-container {
+      min-height: 100vh;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 100px 30px 60px;
+    }
+    .back-button-fixed {
+      position: fixed;
+      top: 25px;
+      left: 30px;
+      z-index: 1000;
+      padding: 10px 22px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-neon);
+      border-radius: 30px;
+      color: var(--neon-cyan);
+      font-family: 'Oxanium', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      transition: var(--transition-smooth);
+    }
+    .back-button-fixed:hover {
+      background: var(--neon-blue);
+      color: #ffffff;
+      box-shadow: 0 0 25px var(--neon-glow-cyan);
+      transform: translateX(-4px);
+    }
+    .subpage-header {
+      text-align: center;
+      padding: 40px 20px 60px;
+      position: relative;
+    }
+    .subpage-header h1 {
+      font-family: 'Russo One', sans-serif;
+      font-size: clamp(36px, 5.5vw, 64px);
+      background: var(--grad-accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 18px;
+      letter-spacing: -1px;
+    }
+    .subpage-header p {
+      font-size: 18px;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    .content-section {
+      margin-bottom: 60px;
+    }
+    .content-section h2 {
+      font-family: 'Oxanium', sans-serif;
+      font-size: 28px;
+      color: var(--neon-cyan);
+      margin-bottom: 25px;
+      position: relative;
+      padding-bottom: 12px;
+    }
+    .content-section h2::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: var(--grad-primary);
+      box-shadow: 0 0 10px var(--neon-cyan);
+      border-radius: 2px;
+    }
+    .content-section p {
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 30px;
+    }
+    .feature-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      padding: 30px 24px;
+      border-radius: 12px;
+      backdrop-filter: blur(8px);
+      transition: var(--transition-smooth);
+    }
+    .feature-card:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--neon-cyan);
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px var(--neon-glow-cyan);
+    }
+    .feature-card h3 {
+      font-family: 'Oxanium', sans-serif;
+      font-size: 18px;
+      color: #ffffff;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    .feature-card p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+    .cta-banner {
+      background: linear-gradient(135deg, rgba(15, 51, 255, 0.2) 0%, rgba(0, 210, 255, 0.1) 100%);
+      border: 1px solid var(--border-neon);
+      border-radius: 16px;
+      padding: 50px 30px;
+      text-align: center;
+      margin-top: 60px;
+      box-shadow: var(--box-shadow-neon);
+    }
+    .cta-banner h3 {
+      font-family: 'Russo One', sans-serif;
+      font-size: 28px;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+    .cta-banner p {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+    }
+    .btn-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 34px;
+      background: var(--grad-primary);
+      color: #ffffff;
+      font-family: 'Oxanium', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      border-radius: 8px;
+      box-shadow: 0 0 25px var(--neon-glow);
+      transition: var(--transition-smooth);
+    }
+    .btn-action:hover {
+      box-shadow: 0 0 35px var(--neon-glow-cyan);
+      transform: translateY(-3px) scale(1.03);
+    }
+  </style>
+</head>
+<body class="theme-night">
+
+  <a href="javascript:void(0)" onclick="if(window.history.length > 1) { window.history.back(); } else { window.location.href='home.html'; }" class="back-button-fixed">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+    <span>Retour</span>
+  </a>
+
+  <div class="subpage-container">
+    <div class="subpage-header">
+      <h1>Design UI/UX & Image de Marque</h1>
+      <p>Création d'Interfaces Visuelles Saisissantes, Expériences Ergonomiques & Chartes Graphiques Mémorables</p>
+    </div>
+
+    <!-- Section Intro -->
+    <div class="content-section">
+      <h2>Le Design comme Arme de Persuasion</h2>
+      <p>
+        Dans un monde saturé d'informations, l'impact visuel de vos interfaces décide en moins de 3 secondes 
+        si un visiteur reste ou quitte votre plateforme.
+      </p>
+      <p>
+        Notre studio de design chez <strong>C.A.D.C.</strong> conçoit des expériences immersives, fluides et esthétiques 
+        qui valorisent votre proposition de valeur et maximisent l'engagement utilisateur.
+      </p>
+    </div>
+
+    <!-- Section Services -->
+    <div class="content-section">
+      <h2>Nos Prestations en Design</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>✦ Design UI/UX Web & Mobile</h3>
+          <p>Conception d'interfaces centrées utilisateur (User-Centric), wireframing et maquettes Figma haute fidélité.</p>
+        </div>
+        <div class="feature-card">
+          <h3>✦ Identité Visuelle & Branding</h3>
+          <p>Logotypes modernes, palettes de couleurs cohérentes, typographies et chartes graphiques complètes.</p>
+        </div>
+        <div class="feature-card">
+          <h3>✦ Design System Scalable</h3>
+          <p>Création de bibliothèques de composants réutilisables garantissant la cohérence sur tous vos produits.</p>
+        </div>
+        <div class="feature-card">
+          <h3>✦ Prototypage Interactif & Tests</h3>
+          <p>Prototypes cliquables réalistes pour valider l'ergonomie auprès de vrais utilisateurs avant le développement.</p>
+        </div>
+        <div class="feature-card">
+          <h3>✦ Micro-Animations & Motion Design</h3>
+          <p>Effets subtils, transitions dynamiques et animations vectorielles qui rendent vos applications vivantes.</p>
+        </div>
+        <div class="feature-card">
+          <h3>✦ Refonte Visuelle & Audit UX</h3>
+          <p>Diagnostic ergonomique de vos interfaces actuelles et modernisation complète de l'expérience utilisateur.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="cta-banner">
+      <h3>Envie d'une Identité Visuelle Révolutionnaire ?</h3>
+      <p>Donnez à votre marque le design premium qu'elle mérite en collaborant avec nos designers d'élite.</p>
+      <a href="https://wa.me/237691223916?text=Bonjour%2C%20je%20souhaite%20collaborer%20avec%20CADC%20sur%20un%20projet%20de%20Design." target="_blank" rel="noopener noreferrer" class="btn-action">
+        <span>Créer Mon Design</span>
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>

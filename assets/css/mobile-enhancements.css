@@ -1,0 +1,160 @@
+/* ============================================
+   MOBILE ENHANCEMENTS - ADDITIONAL STYLES
+   ============================================ */
+
+/* Mobile enhancements for astronaut */
+@media (max-width: 600px) {
+  .intro--banner img {
+    width: 280px !important;
+    margin: 30px auto !important;
+    filter: drop-shadow(0 20px 40px rgba(15, 51, 255, 0.4)) !important;
+    animation: floatImage 4s ease-in-out infinite !important;
+    position: relative !important;
+    z-index: 2 !important;
+  }
+}
+
+/* Mobile enhancements for team navigation arrows */
+@media (max-width: 600px) {
+  .slider--item-left,
+  .slider--item-right {
+    display: block !important;
+    opacity: 0.4 !important;
+  }
+
+  .slider--next,
+  .slider--prev {
+    width: 60px !important;
+    height: 60px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    background: rgba(15, 51, 255, 0.1) !important;
+    border: 2px solid #0f33ff !important;
+    backdrop-filter: blur(10px) !important;
+    box-shadow: 0 0 20px rgba(15, 51, 255, 0.3) !important;
+  }
+
+  .slider--next:hover,
+  .slider--prev:hover {
+    background: rgba(15, 51, 255, 0.3) !important;
+    box-shadow: 0 0 30px rgba(15, 51, 255, 0.6) !important;
+    transform: translateY(-50%) scale(1.1) !important;
+  }
+
+  .slider--next svg,
+  .slider--prev svg {
+    width: 24px !important;
+    fill: #0f33ff !important;
+  }
+
+  .slider--next {
+    right: 10px !important;
+  }
+
+  .slider--prev {
+    left: 10px !important;
+  }
+}
+
+/* Mobile enhancements for about section */
+@media (max-width: 600px) {
+  .about--banner {
+    min-height: 450px !important;
+    text-align: center !important;
+    padding: 30px 15px !important;
+  }
+
+  .about--banner h2 {
+    font-size: 2.4rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 25px !important;
+  }
+
+  .about--banner .btn-clients {
+    padding: 16px 35px 16px 30px !important;
+    font-size: 18px !important;
+    margin: 30px auto !important;
+    display: block !important;
+    width: auto !important;
+    max-width: 320px !important;
+    background: linear-gradient(135deg, rgba(15, 51, 255, 0.1) 0%, rgba(135, 206, 235, 0.1) 100%) !important;
+    border: 2px solid #0f33ff !important;
+    border-radius: 8px !important;
+    text-decoration: none !important;
+    color: #fff !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    transition: all 0.3s ease-in-out !important;
+    box-shadow: 0 0 20px rgba(15, 51, 255, 0.3) !important;
+  }
+
+  .about--banner .btn-clients:hover {
+    background: linear-gradient(135deg, rgba(15, 51, 255, 0.3) 0%, rgba(135, 206, 235, 0.3) 100%) !important;
+    box-shadow: 0 0 30px rgba(15, 51, 255, 0.6) !important;
+    transform: translateY(-3px) !important;
+  }
+
+  .about--banner .btn-clients span svg {
+    width: 20px !important;
+    fill: #0f33ff !important;
+    transition: transform 0.3s ease-in-out !important;
+  }
+
+  .about--banner .btn-clients:hover span svg {
+    transform: translateX(5px) !important;
+  }
+
+  .about--banner img {
+    display: block !important;
+    width: 280px !important;
+    height: auto !important;
+    margin: 30px auto !important;
+    filter: drop-shadow(0 20px 40px rgba(15, 51, 255, 0.4)) !important;
+    animation: floatImage 4s ease-in-out infinite !important;
+    position: relative !important;
+    z-index: 2 !important;
+  }
+
+  .about--options {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 25px !important;
+    padding: 0 20px !important;
+    margin-top: 30px !important;
+  }
+
+  .about--options a {
+    padding: 25px 20px !important;
+    text-align: center !important;
+    background: rgba(135, 206, 235, 0.06) !important;
+    border: 1px solid rgba(135, 206, 235, 0.14) !important;
+    border-radius: 10px !important;
+    transition: all 0.3s ease-in-out !important;
+    text-decoration: none !important;
+    color: inherit !important;
+    min-height: 80px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+  }
+
+  .about--options a:hover {
+    background: rgba(135, 206, 235, 0.12) !important;
+    border-color: rgba(135, 206, 235, 0.3) !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 20px rgba(135, 206, 235, 0.15) !important;
+  }
+
+  .about--options h3 {
+    font-size: 20px !important;
+    margin-bottom: 12px !important;
+    color: #5a7cff !important;
+    font-weight: 700 !important;
+  }
+
+  .about--options p {
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+    margin: 0 !important;
+  }
+}

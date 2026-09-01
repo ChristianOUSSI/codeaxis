@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nos Projets Innovants - C.A.D.C. Agence Digitale Douala">
+  <title>Nos Projets - C.A.D.C. Agence Digitale Douala</title>
+  <link rel="stylesheet" href="assets/css/cadc-fusion.css">
+  <style>
+    body {
+      overflow-y: auto !important;
+      background: var(--bg-primary);
+      color: var(--text-main);
+    }
+    .subpage-container {
+      min-height: 100vh;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 100px 30px 60px;
+    }
+    .back-button-fixed {
+      position: fixed;
+      top: 25px;
+      left: 30px;
+      z-index: 1000;
+      padding: 10px 22px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-neon);
+      border-radius: 30px;
+      color: var(--neon-cyan);
+      font-family: 'Oxanium', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      transition: var(--transition-smooth);
+    }
+    .back-button-fixed:hover {
+      background: var(--neon-blue);
+      color: #ffffff;
+      box-shadow: 0 0 25px var(--neon-glow-cyan);
+      transform: translateX(-4px);
+    }
+    .subpage-header {
+      text-align: center;
+      padding: 40px 20px 50px;
+    }
+    .subpage-header h1 {
+      font-family: 'Russo One', sans-serif;
+      font-size: clamp(36px, 5.5vw, 64px);
+      background: var(--grad-accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 18px;
+      letter-spacing: -1px;
+    }
+    .subpage-header p {
+      font-size: 18px;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+      transition: var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+    }
+    .project-card:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--neon-cyan);
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 25px var(--neon-glow-cyan);
+    }
+    .project-img-wrapper {
+      width: 100%;
+      height: 190px;
+      overflow: hidden;
+      position: relative;
+      background: var(--grad-dark);
+    }
+    .project-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .project-card:hover .project-img-wrapper img {
+      transform: scale(1.08);
+    }
+    .project-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .project-tag {
+      font-family: 'Oxanium', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--neon-cyan);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 8px;
+    }
+    .project-body h3 {
+      font-family: 'Russo One', sans-serif;
+      font-size: 20px;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+    .project-body p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 18px;
+      flex: 1;
+    }
+    .project-techs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: auto;
+    }
+    .tech-badge {
+      background: rgba(15, 51, 255, 0.15);
+      border: 1px solid var(--border-subtle);
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 11px;
+      color: #ffffff;
+    }
+    .cta-banner {
+      background: linear-gradient(135deg, rgba(15, 51, 255, 0.2) 0%, rgba(0, 210, 255, 0.1) 100%);
+      border: 1px solid var(--border-neon);
+      border-radius: 16px;
+      padding: 50px 30px;
+      text-align: center;
+      margin-top: 60px;
+      box-shadow: var(--box-shadow-neon);
+    }
+    .cta-banner h3 {
+      font-family: 'Russo One', sans-serif;
+      font-size: 28px;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+    .cta-banner p {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+    }
+    .btn-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 34px;
+      background: var(--grad-primary);
+      color: #ffffff;
+      font-family: 'Oxanium', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      border-radius: 8px;
+      box-shadow: 0 0 25px var(--neon-glow);
+      transition: var(--transition-smooth);
+    }
+    .btn-action:hover {
+      box-shadow: 0 0 35px var(--neon-glow-cyan);
+      transform: translateY(-3px) scale(1.03);
+    }
+  </style>
+</head>
+<body class="theme-night">
+
+  <a href="javascript:void(0)" onclick="if(window.history.length > 1) { window.history.back(); } else { window.location.href='home.html'; }" class="back-button-fixed">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+    <span>Retour</span>
+  </a>
+
+  <div class="subpage-container">
+    <div class="subpage-header">
+      <h1>Nos Projets Innovants</h1>
+      <p>Aperçu de Nos Dernières Créations Logicielles, Plateformes Web et Applications Mobiles Déployées</p>
+    </div>
+
+    <div class="projects-grid">
+      <!-- Projet 1 -->
+      <div class="project-card">
+        <div class="project-img-wrapper">
+          <img src="assets/img/cyber-defense.jpg" alt="Projet FinSecure" loading="lazy">
+        </div>
+        <div class="project-body">
+          <span class="project-tag">✦ Fintech & Sécurité</span>
+          <h3>FinSecure Cameroun</h3>
+          <p>Application de paiement sécurisé multi-banques avec authentification biométrique et détection de fraudes par IA.</p>
+          <div class="project-techs" style="margin-bottom: 16px;">
+            <span class="tech-badge">React Native</span>
+            <span class="tech-badge">Node.js</span>
+            <span class="tech-badge">PostgreSQL</span>
+            <span class="tech-badge">Biometrics</span>
+          </div>
+          <a href="projet-finsecure.html" class="btn-action" style="padding: 9px 18px; font-size: 11px; width: fit-content;">
+            <span>Découvrir le Projet ➔</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Projet 2 -->
+      <div class="project-card">
+        <div class="project-img-wrapper">
+          <img src="assets/img/data-nexus.jpg" alt="Projet SmartLogistics" loading="lazy">
+        </div>
+        <div class="project-body">
+          <span class="project-tag">✦ Logistique & Cloud</span>
+          <h3>SmartLogistics Douala</h3>
+          <p>Plateforme cloud de tracking de flotte de transport routier et maritime avec alertes télémétriques temps réel.</p>
+          <div class="project-techs" style="margin-bottom: 16px;">
+            <span class="tech-badge">Next.js</span>
+            <span class="tech-badge">FastAPI</span>
+            <span class="tech-badge">Docker</span>
+            <span class="tech-badge">IoT MQTT</span>
+          </div>
+          <a href="projet-smartlogistics.html" class="btn-action" style="padding: 9px 18px; font-size: 11px; width: fit-content;">
+            <span>Découvrir le Projet ➔</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Projet 3 -->
+      <div class="project-card">
+        <div class="project-img-wrapper">
+          <img src="assets/img/neural-network.jpg" alt="Projet AgriSmart AI" loading="lazy">
+        </div>
+        <div class="project-body">
+          <span class="project-tag">✦ IA & Agriculture</span>
+          <h3>AgriSmart AI</h3>
+          <p>Assistant agricole intelligent analysant la santé des cultures par vision par ordinateur et prévisions météo.</p>
+          <div class="project-techs" style="margin-bottom: 16px;">
+            <span class="tech-badge">Python AI</span>
+            <span class="tech-badge">TensorFlow</span>
+            <span class="tech-badge">Flutter</span>
+            <span class="tech-badge">GCP</span>
+          </div>
+          <a href="projet-agrismart.html" class="btn-action" style="padding: 9px 18px; font-size: 11px; width: fit-content;">
+            <span>Découvrir le Projet ➔</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Projet 4 -->
+      <div class="project-card">
+        <div class="project-img-wrapper">
+          <img src="assets/img/ar-interface.jpg" alt="Projet HealthPortal" loading="lazy">
+        </div>
+        <div class="project-body">
+          <span class="project-tag">✦ Santé & Télémédecine</span>
+          <h3>HealthPortal CM</h3>
+          <p>Solution complète de téléconsultation médicale avec prescriptions certifiées et visioconférence chiffrée.</p>
+          <div class="project-techs" style="margin-bottom: 16px;">
+            <span class="tech-badge">WebRTC</span>
+            <span class="tech-badge">Vue.js</span>
+            <span class="tech-badge">NestJS</span>
+            <span class="tech-badge">HIPAA</span>
+          </div>
+          <a href="projet-healthportal.html" class="btn-action" style="padding: 9px 18px; font-size: 11px; width: fit-content;">
+            <span>Découvrir le Projet ➔</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="cta-banner">
+      <h3>Vous avez une Idée Révolutionnaire ?</h3>
+      <p>Transformons votre vision en un produit digital performant et plébiscité par vos utilisateurs.</p>
+      <a href="https://wa.me/237691223916?text=Bonjour%2C%20j%27aimerais%20discuter%20d%27un%20nouveau%20projet%20avec%20CADC." target="_blank" rel="noopener noreferrer" class="btn-action">
+        <span>Démarrer un Projet</span>
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>

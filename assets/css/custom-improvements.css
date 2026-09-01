@@ -1,0 +1,2067 @@
+/**
+ * ✨ STYLES PERSONNALISÉS - Améliorations du Site CADC
+ *
+ * Ce fichier contient les styles additionnels pour améliorer:
+ * - La section contact
+ * - Les animations
+ * - La responsivité
+ * - L'expérience utilisateur
+ */
+
+/* ============================================
+   TRANSITIONS FLUIDES GLOBALES - Accélérées
+   ============================================ */
+
+* {
+  transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+              color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Fade in animation for sections */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade out animation */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Apply fade in to all sections - faster */
+.l-section {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.l-section.section--is-active {
+  animation: fadeIn 0.4s ease-out;
+}
+
+/* Smooth section transitions - faster */
+.section {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.section:not(.section--is-active) {
+  opacity: 0.3;
+  transform: scale(0.95);
+}
+
+.section.section--is-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ============================================
+   SVG AVATARS STYLES
+   ============================================ */
+
+.member-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), filter 0.4s ease;
+}
+
+.slider--item:hover .member-avatar {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 20px rgba(15, 51, 255, 0.5));
+}
+
+.slider--item-center .member-avatar {
+  filter: drop-shadow(0 0 15px rgba(15, 51, 255, 0.4));
+}
+
+/* ============================================
+   TEAM SECTION REDESIGN - Qui sommes nous
+   ============================================ */
+
+.work {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 40px 20px;
+}
+
+.work h2 {
+  font-family: 'Russo One', sans-serif;
+  font-size: 48px;
+  color: var(--theme-text);
+  margin-bottom: 50px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 20px rgba(15, 51, 255, 0.3);
+}
+
+.work--lockup {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+.slider--item {
+  position: absolute;
+  width: 280px;
+  height: 380px;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.slider--item a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--theme-text);
+  background: var(--theme-card);
+  border-radius: 20px;
+  padding: 30px 20px;
+  border: 2px solid var(--theme-border);
+  box-shadow: 0 10px 40px var(--theme-shadow);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 100%;
+}
+
+.slider--item:hover a {
+  transform: translateY(-10px) scale(1.05);
+  border-color: var(--theme-accent);
+  box-shadow: 0 20px 60px rgba(15, 51, 255, 0.3);
+}
+
+.slider--item-image {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border: 3px solid var(--theme-accent);
+  box-shadow: 0 0 20px rgba(15, 51, 255, 0.3);
+}
+
+.slider--item-title {
+  font-family: 'Oxanium', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--theme-accent);
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.slider--item-description {
+  font-size: 14px;
+  color: var(--theme-muted);
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* Slider positions */
+.slider--item-left {
+  transform: translateX(-320px) scale(0.8) rotateY(15deg);
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.slider--item-center {
+  transform: translateX(0) scale(1.1) rotateY(0deg);
+  opacity: 1;
+  z-index: 3;
+}
+
+.slider--item-right {
+  transform: translateX(320px) scale(0.8) rotateY(-15deg);
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.slider--item:not(.slider--item-center):not(.slider--item-left):not(.slider--item-right) {
+  transform: translateX(0) scale(0);
+  opacity: 0;
+  z-index: 0;
+}
+
+/* Slider buttons */
+.slider--prev,
+.slider--next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 70px;
+  height: 70px;
+  background: var(--theme-accent);
+  border: 3px solid var(--theme-accent);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+  opacity: 1;
+  box-shadow: 0 0 20px rgba(15, 51, 255, 0.5);
+}
+
+.slider--prev:hover,
+.slider--next:hover {
+  background: var(--theme-accent);
+  transform: translateY(-50%) scale(1.15);
+  opacity: 1;
+  box-shadow: 0 0 30px rgba(15, 51, 255, 0.8);
+}
+
+.slider--prev {
+  left: 20px;
+}
+
+.slider--next {
+  right: 20px;
+}
+
+.slider--prev svg,
+.slider--next svg {
+  width: 30px;
+  height: 30px;
+  fill: var(--theme-accent);
+  transition: fill 0.3s ease;
+}
+
+.slider--prev:hover svg,
+.slider--next:hover svg {
+  fill: #fff;
+}
+
+/* ============================================
+   SECTION CONTACT - Améliorations
+   ============================================ */
+
+/* Fluidité Globale */
+html {
+  scroll-behavior: smooth;
+}
+
+.contact {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 40px 20px;
+  overflow: hidden;
+}
+
+#contact-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.contact--lockup {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 1200px;
+  z-index: 2;
+}
+
+.contact--grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  height: 100%;
+  align-items: center;
+}
+
+.contact--map {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  animation: mapSlideIn 0.8s ease-out;
+}
+
+.contact--info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation: infoSlideIn 0.8s ease-out 0.2s both;
+}
+
+.contact .modal {
+  padding: 40px;
+  background-color: var(--theme-card);
+  border-radius: 12px;
+  border: 1px solid var(--theme-border);
+  box-shadow: 0 8px 32px var(--theme-shadow);
+  transition: all 0.3s ease;
+  will-change: transform, box-shadow;
+}
+
+.contact .modal:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 48px var(--theme-shadow);
+}
+
+.contact--info .modal--information {
+  padding: 0;
+  border-top: 3px solid var(--theme-accent);
+  padding-top: 20px;
+  /* Centrage du contenu */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.contact--info .modal--information a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--theme-accent);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 0;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.contact--info .modal--information a:hover {
+  transform: translateX(5px);
+  border-bottom-color: var(--theme-accent);
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes mapSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes infoSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   AMÉLIORATIONS GÉNÉRALES
+   ============================================ */
+
+/* Transitions fluides pour l'ergonomie */
+a, button, .btn, .card, input, textarea, .feature-card {
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.3s ease, background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Amélioration de la lisibilité des paragraphes */
+p {
+  line-height: 1.8;
+}
+
+/* Focus visible pour l'accessibilité */
+*:focus-visible {
+  outline: 2px solid var(--theme-accent);
+  outline-offset: 2px;
+}
+
+/* Amélioration des boutons */
+button, a[href*="wa.me"], a[href*="mailto:"] {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+/* Intro banner amélioré */
+.intro--banner {
+  position: relative;
+}
+
+.intro--banner h1 {
+  text-shadow: 0 2px 8px rgba(15, 51, 255, 0.1);
+  letter-spacing: -1px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Astronaut positioning fix */
+.intro--banner img {
+  position: relative;
+  margin-top: 0;
+  margin-bottom: 20px;
+  max-height: 350px;
+  object-fit: contain;
+  z-index: 2;
+}
+
+.intro--banner .astronaut-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  opacity: 0.4;
+  max-height: 400px;
+  width: auto;
+}
+
+/* Particle canvases positioning */
+#intro-particles,
+#work-particles,
+#about-particles,
+#contact-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.intro,
+.work,
+.about,
+.contact {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ============================================
+   RESPONSIVITÉ 100% - Tous les écrans
+   ============================================ */
+
+@media (max-width: 1400px) {
+  .work--lockup {
+    max-width: 1000px;
+  }
+
+  .slider--item {
+    width: 250px;
+    height: 350px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .work--lockup {
+    max-width: 900px;
+    height: 450px;
+  }
+
+  .slider--item {
+    width: 220px;
+    height: 320px;
+  }
+
+  .slider--item-left {
+    transform: translateX(-260px) scale(0.8) rotateY(15deg);
+  }
+
+  .slider--item-right {
+    transform: translateX(260px) scale(0.8) rotateY(-15deg);
+  }
+}
+
+@media (max-width: 1024px) {
+  .work h2 {
+    font-size: 36px;
+  }
+
+  .work--lockup {
+    height: 400px;
+  }
+
+  .slider--item {
+    width: 200px;
+    height: 300px;
+  }
+
+  .slider--item-left {
+    transform: translateX(-240px) scale(0.75) rotateY(15deg);
+  }
+
+  .slider--item-right {
+    transform: translateX(240px) scale(0.75) rotateY(-15deg);
+  }
+
+  .slider--prev,
+  .slider--next {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .work h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .work--lockup {
+    height: auto;
+    min-height: 350px;
+    flex-direction: column;
+  }
+
+  .slider {
+    flex-direction: column;
+    perspective: none;
+  }
+
+  .slider--item {
+    position: relative;
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    min-height: 320px;
+    margin: 10px 0;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+
+  .slider--item-left,
+  .slider--item-center,
+  .slider--item-right {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+
+  .slider--prev,
+  .slider--next {
+    display: none;
+  }
+
+  .hire--grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .hire-card {
+    padding: 15px 10px;
+  }
+
+  .hire-icon {
+    font-size: 24px;
+  }
+
+  .hire-card h3 {
+    font-size: 16px;
+  }
+
+  .hire-card p {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .work h2 {
+    font-size: 24px;
+  }
+
+  .slider--item {
+    max-width: 260px;
+    min-height: 300px;
+  }
+
+  .slider--item-image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .slider--item-title {
+    font-size: 18px;
+  }
+
+  .slider--item-description {
+    font-size: 12px;
+  }
+
+  .hire--grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .hire-card {
+    padding: 12px 8px;
+  }
+
+  .hire-icon {
+    font-size: 20px;
+  }
+
+  .hire-card h3 {
+    font-size: 14px;
+  }
+
+  .hire-card p {
+    font-size: 11px;
+  }
+
+  .hire-btn {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  .work h2 {
+    font-size: 20px;
+  }
+
+  .slider--item {
+    max-width: 240px;
+    min-height: 280px;
+  }
+
+  .slider--item-image {
+    width: 130px;
+    height: 130px;
+  }
+
+  .slider--item-title {
+    font-size: 16px;
+  }
+
+  .slider--item-description {
+    font-size: 11px;
+  }
+}
+
+/* Amélioration des cartes */
+.hire-card {
+  border-radius: 8px;
+  background-color: var(--theme-card);
+  border: 1px solid var(--theme-border);
+  transition: all 0.3s ease;
+  contain: content; /* Optimisation du rendu : isole le contenu pour éviter les repaints globaux */
+}
+
+.hire-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--theme-accent);
+  box-shadow: 0 8px 24px rgba(15, 51, 255, 0.15);
+}
+
+/* ============================================
+   SECTION CONTACT - RESPONSIVITÉ
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .contact--grid {
+    gap: 30px;
+  }
+
+  .contact--map {
+    height: 350px;
+  }
+
+  .contact .modal {
+    padding: 30px;
+  }
+
+  /* Ajustement Responsive H1 */
+  h1 {
+    font-size: 2.5rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 20px;
+  }
+
+  .contact--grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .contact--map {
+    height: 300px;
+  }
+
+  .contact .modal {
+    padding: 20px;
+  }
+
+  .contact--info .modal--information h2 {
+    font-size: 24px;
+  }
+
+  .contact--info .modal--information p,
+  .contact--info .modal--information a {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact {
+    padding: 15px;
+  }
+
+  .contact--grid {
+    gap: 15px;
+  }
+
+  .contact--map {
+    height: 250px;
+  }
+
+  .contact .modal {
+    padding: 15px;
+  }
+
+  .contact--info .modal--information h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .contact--info .modal--information p,
+  .contact--info .modal--information a {
+    font-size: 13px;
+    margin: 8px 0;
+  }
+
+  .contact--info .modal--information > div {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .contact--info .modal--information a[href*="wa.me"],
+  .contact--info .modal--information a[href*="mailto:"] {
+    width: 100%;
+    justify-content: center;
+    padding: 10px;
+  }
+}
+
+/* ============================================
+   AMÉLIORATIONS DU HEADER
+   ============================================ */
+
+.header {
+  background: transparent;
+  box-shadow: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header--logo {
+  transition: all 0.3s ease;
+}
+
+.header--logo:hover {
+  transform: scale(1.05);
+}
+
+.header--logo img {
+  transition: all 0.3s ease;
+}
+
+.header--logo:hover img {
+  filter: drop-shadow(0 2px 8px rgba(15, 51, 255, 0.2));
+}
+
+/* ============================================
+   AMÉLIORATIONS DES MODALES
+   ============================================ */
+
+.modal {
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.modal--information {
+  transition: all 0.3s ease;
+}
+
+.modal--information p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.modal--information a {
+  display: inline-block;
+  margin: 5px 0;
+  transition: all 0.2s ease;
+}
+
+.modal--information a:hover {
+  text-decoration: underline;
+}
+
+/* ============================================
+   SUPPORT DES MODES RÉDUITS
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* ============================================
+   SUPPORT DU DARK MODE SYSTÈME
+   ============================================ */
+
+@media (prefers-color-scheme: dark) {
+  .contact .modal {
+    background-color: var(--theme-card);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .contact .modal {
+    background-color: var(--theme-card);
+  }
+}
+
+/* ============================================
+   AMÉLIORATION DE L'IMPRESSION
+   ============================================ */
+
+@media print {
+  .header,
+  .l-side-nav,
+  .outer-nav,
+  .header--nav-toggle {
+    display: none;
+  }
+
+  .contact--grid {
+    grid-template-columns: 1fr;
+  }
+
+  body {
+    background-color: white;
+    color: black;
+  }
+}
+
+/* ============================================
+   COMPATIBILITÉ MOBILE (ANDROID/IOS)
+   ============================================ */
+
+@media (max-width: 900px) {
+  /* 1. Débloquer l'affichage sur mobile */
+  .device-notification {
+    display: none !important;
+  }
+
+  .perspective {
+    display: block !important;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .l-viewport {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  /* 2. Permettre le scroll dans les sections */
+  .l-section {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 80px; /* Espace pour le scroll */
+  }
+
+  /* 3. Ajustement Section Intro */
+  .intro--banner {
+    flex-direction: column;
+    height: auto;
+    min-height: 80vh;
+    padding: 100px 20px 40px;
+    justify-content: center;
+  }
+
+  .intro--banner h1 {
+    font-size: 42px !important;
+    line-height: 1.2;
+  }
+
+  .intro--banner img {
+    width: 60%;
+    max-width: 250px;
+    margin: 30px auto;
+  }
+
+  .intro--options {
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 20px 60px;
+  }
+
+  .intro--options > a {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+
+  /* 4. Ajustement Section Work (Équipe) */
+  .work--lockup .slider {
+    min-height: 400px;
+    padding-bottom: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .work--lockup .slider--item {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto !important;
+    display: none !important;
+    transform: none !important;
+    transition: opacity 0.3s ease;
+  }
+
+  /* Afficher uniquement l'élément actif */
+  .work--lockup .slider--item.slider--item-center {
+    opacity: 1 !important;
+    display: block !important;
+  }
+  .slider--prev,
+  .slider--next {
+    display: flex !important; /* Afficher les flèches */
+    top: 50% !important;
+    transform: tr
+  }
+  
+  .slider--prev { left: 10px !important; }
+  .slider--next { right: 10px !important; }
+
+  /* 5. Ajustement Section About */
+  .about--banner {
+    height: auto;
+    padding: 80px 20px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about--banner img {
+    width: 80%;
+    max-width: 300px;
+    height: auto;
+    margin: 30px auto;
+    display: block;
+  }
+
+  .about--banner .btn-clients {
+    margin: 20px auto;
+    display: inline-flex;
+  }
+
+  .about--options {
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 20px 60px;
+  }
+
+  .about--options > a {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+
+  /* 6. Ajustement Pages Annexes */
+  .page-wrapper {
+    padding: 80px 15px 40px !important;
+  }
+
+  .page-header h1 {
+    font-size: 32px !important;
+  }
+
+  /* 7. Fix Flexbox Index Mobile (Évite le crop du contenu centré) */
+  .intro, .work, .about {
+    height: auto !important;
+    min-height: 100% !important;
+    justify-content: flex-start !important;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+/* ============================================
+   COMPATIBILITÉ MOBILE - PAGES ANNEXES (GLOBAL)
+   ============================================ */
+
+@media (max-width: 900px) {
+  /* 1. Conteneurs de page */
+  .page-container, 
+  .page-wrapper {
+    padding: 20px 15px !important;
+    height: auto !important;
+    min-height: 100vh !important;
+    overflow-x: hidden;
+  }
+
+  /* 2. Headers */
+  .page-header {
+    padding: 40px 15px 30px !important;
+  }
+
+  .page-header h1 {
+    font-size: 28px !important;
+    line-height: 1.3 !important;
+    word-wrap: break-word;
+  }
+
+  .page-header p {
+    font-size: 14px !important;
+    padding: 0 10px;
+  }
+
+  /* 3. Contenu principal */
+  .page-content {
+    padding: 0 !important;
+    margin: 20px auto !important;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* Permet au contenu de prendre toute la largeur */
+    justify-content: flex-start; /* Aligne le contenu en haut */
+    width: 100% !important;
+  }
+
+  /* 4. Bouton Retour (Fix pour mobile - évite le fixed qui cache le contenu) */
+  .back-button {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    display: inline-block !important;
+    margin: 10px 0 10px 10px !important;
+    width: auto !important;
+    z-index: 1000;
+  }
+
+
+  /* 5. Grilles et Flexbox -> Colonne unique */
+  .features-grid, 
+  .tech-stack, 
+  .process-steps, 
+  .principles, 
+  .process-stages, 
+  .categories-grid, 
+  .projects-grid, 
+  .contracts-grid, 
+  .values-grid, 
+  .achievements-grid, 
+  .skills-grid, 
+  .projects,
+  .clients-logos {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  /* 6. Cartes et Items */
+  .feature-card, 
+  .tech-item, 
+  .step, 
+  .principle, 
+  .stage, 
+  .category-card, 
+  .project-card, 
+  .contract-card, 
+  .value-item, 
+  .achievement-card, 
+  .skill-card,
+  .client-logo {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  /* 7. Timeline (nos-realisations.html) */
+  .timeline::before {
+    left: 20px !important;
+  }
+  
+  .timeline-item {
+    padding-left: 50px !important;
+    padding-right: 0 !important;
+    margin: 0 0 30px 0 !important;
+    text-align: left !important;
+  }
+  
+  .timeline-item:nth-child(odd) {
+    text-align: left !important;
+    padding-right: 0 !important;
+  }
+  
+  .timeline-item .timeline-content::before {
+    left: -36px !important;
+    right: auto !important;
+  }
+
+  /* 8. Profils Membres (Pages équipe) */
+  .header-member {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 30px !important;
+    text-align: center;
+  }
+
+  .member-image {
+    margin: 0 auto !important;
+    width: 200px !important;
+    height: 200px !important;
+  }
+
+  .member-info h1 {
+    font-size: 32px !important;
+  }
+  
+  /* 9. Sections générales */
+  .section h2 {
+    font-size: 24px !important;
+  }
+  
+  .cta-section {
+    padding: 30px 20px !important;
+  }
+}
+
+/* ============================================
+   STYLES EXTRAITS DE INDEX.HTML (Refactoring)
+   ============================================ */
+
+/* Centrage global du contenu des sections principales */
+.intro, .work, .about {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center !important;
+  align-items: center !important;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (min-width: 900px) {
+  .intro, .about {
+    flex-direction: row;
+    gap: 50px;
+  }
+  /* Augmentation de la largeur des options d'intro sur bureau */
+  .intro--options {
+    min-width: max-content;
+  }
+}
+
+/* Augmentation de la taille du titre H2 dans la section About */
+.about--banner h2 {
+  font-size: 60px !important;
+  line-height: 1.1;
+  font-weight: 900;
+  margin-bottom: 30px;
+}
+
+/* Styles spécifiques pour la section HIRE */
+.hire {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.hire h2 {
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--theme-text);
+  margin-top: 70px;
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: none;
+}
+
+.hire--grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  width: 100%;
+  padding: 10px;
+  perspective: 1000px;
+}
+
+.hire-card {
+  background: var(--theme-card);
+  border: 1px solid var(--theme-border);
+  border-radius: 12px;
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--theme-shadow);
+}
+
+.hire-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  background: var(--theme-card);
+  border-color: var(--theme-accent);
+  box-shadow: 0 20px 40px rgba(15, 51, 255, 0.3);
+}
+
+.hire-icon {
+  font-size: 28px;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 0 15px rgba(90, 124, 255, 0.6));
+}
+
+.hire-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--theme-accent);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.hire-card p {
+  font-size: 13px;
+  color: var(--theme-muted);
+  margin-bottom: 15px;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+.hire-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.hire-btn {
+  font-size: 24px;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+  opacity: 0.9;
+}
+
+.hire-btn:hover {
+  transform: scale(1.2) rotate(5deg);
+  opacity: 1;
+}
+
+@media (max-width: 900px) {
+  .hire--grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .hire--grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    /* Suppression de la hauteur fixe pour permettre le scroll naturel sur mobile */
+    max-height: none;
+    overflow-y: visible;
+    padding-bottom: 20px;
+  }
+  .hire h2 {
+    font-size: 22px;
+    margin-top: 80px;
+    margin-bottom: 20px;
+  }
+  .hire-card {
+    padding: 5px 3px;
+  }
+  .hire-icon {
+    font-size: 18px;
+    margin-bottom: 4px;
+  }
+  .hire-card h3 {
+    font-size: 10px;
+    margin-bottom: 2px;
+  }
+  .hire-card p {
+    font-size: 8px;
+    margin-bottom: 4px;
+    line-height: 1.1;
+  }
+  .hire-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+    position: relative;
+  }
+  .hire-btn::after {
+    content: '';
+    position: absolute;
+    top: -6px; bottom: -6px;
+    left: -6px; right: -6px;
+  }
+}
+
+/* Réduction de la taille de la navigation principale (Menu Hamburger) */
+.outer-nav {
+  background: transparent;
+}
+
+.outer-nav li {
+  font-size: 32px !important;
+  line-height: 1.4 !important;
+  color: var(--theme-text);
+  opacity: 1 !important;
+}
+
+.outer-nav li.is-active {
+  color: var(--theme-accent);
+  animation: sparkle 1.5s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    text-shadow: 0 0 5px var(--theme-accent), 0 0 10px var(--theme-accent);
+  }
+  50% {
+    text-shadow: 0 0 20px var(--theme-accent), 0 0 30px var(--theme-accent), 0 0 40px var(--theme-accent);
+  }
+}
+
+.outer-nav li::before {
+  background-color: var(--theme-accent);
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .outer-nav li {
+    font-size: 24px !important;
+  }
+}
+
+/* Réduction de la taille de l'élément central du slider (Work) */
+.work--lockup .slider--item-center .slider--item-image {
+  width: 220px !important;
+  height: 220px !important;
+}
+
+/* Ajustement du bouton CTA sous l'image */
+.intro--banner .cta {
+  margin-top: 30px;
+}
+
+/* Réduction de la taille du modal information */
+.contact .modal {
+  padding: 25px !important;
+  max-width: 450px;
+}
+
+/* Réduction de la taille du logo et de la hauteur du header */
+.header {
+  height: 45px !important;
+  padding: 0 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+.header--logo {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.header--logo img {
+  width: 35px !important;
+  height: 35px !important;
+}
+
+.header--logo p {
+  font-size: 18px !important;
+  margin-left: 10px !important;
+}
+
+.header--nav-toggle {
+  position: relative !important;
+  top: auto !important;
+  right: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Styles extraits (Nettoyage du code inline) */
+.btn-clients {
+  position: relative;
+  z-index: 10; /* Assure que le bouton est au-dessus de l'image */
+  font-size: 18px;
+  padding: 10px 22px;
+  line-height: 1;
+  display: inline-block;
+  color: var(--theme-text, #fff);
+  font-weight: 700;
+  text-transform: uppercase;
+  border: 2px solid #5a7cff;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.btn-clients:hover {
+  background: #5a7cff;
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(15,51,255,0.3);
+}
+.contact-title {
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 900;
+}
+
+.page-header p {
+    text-align: center;
+}
+.contact-text {
+  margin: 12px 0;
+  font-size: 16px;
+}
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  margin: 12px 0;
+  padding: 12px 16px;
+  background: var(--theme-card);
+  border: 1px solid var(--theme-border);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  min-height: 50px;
+}
+.contact-link:hover {
+  background: var(--theme-accent);
+  color: #fff;
+}
+.contact-social-btn {
+  display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; color: #fff; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 14px; transition: all 0.3s ease;
+}
+.contact-social-btn:hover { transform: translateY(-3px); }
+.btn-whatsapp { background: #25d366; }
+.btn-whatsapp:hover { box-shadow: 0 8px 20px rgba(37,211,102,0.3); }
+.btn-email { background: #5a7cff; }
+.btn-email:hover { box-shadow: 0 8px 20px rgba(15,51,255,0.3); }
+
+/* Animation flèche bouton clients */
+.btn-clients svg { position: relative; left: 5px; width: 15px; fill: currentColor; transition: left .2s ease-in-out; }
+.btn-clients:hover svg { left: 10px; }
+
+/* ============================================
+   THÈME FUTURISTE - "Ecrivez nous"
+   ============================================ */
+
+/* 1. Police futuriste pour "Ecrivez-nous" et la section cible */
+.cta,
+.side-nav li:nth-child(5) span {
+  font-family: 'Oxanium', sans-serif !important;
+}
+
+.hire h2,
+.hire-card h3 {
+  font-family: 'Oxanium', sans-serif;
+}
+
+.hire h2 {
+  font-family: 'Russo One', sans-serif;
+  font-size: 42px;
+  text-shadow: 0 0 5px rgba(0, 210, 255, 0.7), 
+               0 0 10px rgba(0, 210, 255, 0.5), 
+               0 0 20px rgba(0, 210, 255, 0.3);
+  animation: textFlicker 5s linear infinite;
+}
+
+@keyframes textFlicker {
+  0%, 19.9%, 22%, 62.9%, 64%, 64.9%, 70%, 100% {
+    opacity: 0.99;
+    text-shadow: 0 0 5px rgba(0, 210, 255, 0.7), 
+                 0 0 10px rgba(0, 210, 255, 0.5), 
+                 0 0 20px rgba(0, 210, 255, 0.3);
+  }
+  20%, 21.9%, 63%, 63.9%, 65%, 69.9% {
+    opacity: 0.4;
+    text-shadow: none;
+  }
+}
+
+/* 2. Cartes futuristes */
+.hire-card {
+  position: relative;
+  overflow: hidden; /* Important pour le scan-line */
+  border-color: rgba(0, 210, 255, 0.3);
+  background: linear-gradient(145deg, rgba(20, 30, 60, 0.5), rgba(10, 15, 30, 0.7));
+}
+
+.hire-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00d2ff, transparent);
+  transform: translateY(-100%);
+  transition: transform 0.5s 0.5s ease-out;
+}
+
+.hire-card:hover::after {
+  transform: translateY(2000%); /* Fait bouger la ligne vers le bas */
+  transition: transform 2s ease-in-out;
+}
+
+.hire-card:hover {
+  border-color: #00d2ff;
+  box-shadow: 0 0 25px rgba(0, 210, 255, 0.4), 
+              inset 0 0 15px rgba(0, 210, 255, 0.2);
+}
+
+/* 4. Icônes Futuristes & Animations */
+.hire-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+  height: 60px;
+}
+
+.hire-icon svg {
+  width: 48px;
+  height: 48px;
+  stroke: #00d2ff;
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 8px rgba(0, 210, 255, 0.6));
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  will-change: transform, filter, stroke;
+}
+
+/* 5. Particules Interactives */
+#hire-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none; /* Permet de cliquer à travers */
+}
+
+.hire h2, 
+.hire--grid {
+  position: relative;
+  z-index: 2; /* Au-dessus des particules */
+}
+
+/* Animation d'entrée (Load) */
+.hire-card .hire-icon svg {
+  animation: iconTechLoad 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+}
+
+/* Délais en cascade pour l'entrée */
+.hire-card:nth-child(1) .hire-icon svg { animation-delay: 0.1s; }
+.hire-card:nth-child(2) .hire-icon svg { animation-delay: 0.2s; }
+.hire-card:nth-child(3) .hire-icon svg { animation-delay: 0.3s; }
+.hire-card:nth-child(4) .hire-icon svg { animation-delay: 0.4s; }
+.hire-card:nth-child(5) .hire-icon svg { animation-delay: 0.5s; }
+.hire-card:nth-child(6) .hire-icon svg { animation-delay: 0.6s; }
+
+@keyframes iconTechLoad {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(-180deg);
+    stroke: #ffffff;
+    filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0));
+  }
+  60% {
+    transform: scale(1.2) rotate(10deg);
+    stroke: #00d2ff;
+    filter: drop-shadow(0 0 20px rgba(0, 210, 255, 1));
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+    stroke: #00d2ff;
+    filter: drop-shadow(0 0 8px rgba(0, 210, 255, 0.6));
+  }
+}
+
+.hire-card h3 {
+  color: #00d2ff;
+  text-shadow: 0 0 5px rgba(0, 210, 255, 0.5);
+}
+
+/* 3. Fond de la section */
+.hire {
+  background: transparent;
+}
+
+/* Animation au survol (Hover) */
+.hire-card:hover .hire-icon svg {
+  stroke: #ffffff;
+  filter: drop-shadow(0 0 15px rgba(0, 210, 255, 1));
+  transform: scale(1.15) translateY(-5px);
+  animation: iconHoverPulse 2s infinite alternate;
+}
+
+@keyframes iconHoverPulse {
+  0% { filter: drop-shadow(0 0 10px rgba(0, 210, 255, 0.8)); }
+  100% { filter: drop-shadow(0 0 25px rgba(0, 210, 255, 1)); }
+}
+
+/* ============================================
+   PAGES MEMBRES ÉQUIPE - STYLES UNIQUES
+   ============================================ */
+
+/* Layout Général */
+.member-page {
+  color: #fff;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.page-header-simple {
+  padding: 20px 0;
+}
+
+.back-btn {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+.back-btn:hover { color: #fff; }
+
+.member-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px 80px;
+}
+
+/* Hero Section */
+.member-hero {
+  text-align: center;
+  margin-bottom: 60px;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.member-photo-wrapper {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 30px;
+}
+
+.member-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid rgba(255,255,255,0.1);
+  position: relative;
+  z-index: 2;
+}
+
+.member-hero h1 {
+  font-family: 'Russo One', sans-serif;
+  font-size: 48px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.role-badge {
+  display: inline-block;
+  padding: 8px 20px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  backdrop-filter: blur(5px);
+}
+
+.member-bio {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* Grid Layout */
+.member-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  margin-bottom: 60px;
+}
+
+@media (max-width: 768px) {
+  .member-grid { grid-template-columns: 1fr; gap: 40px; }
+  .member-hero h1 { font-size: 36px; }
+}
+
+.member-section h3 {
+  font-family: 'Oxanium', sans-serif;
+  font-size: 24px;
+  margin-bottom: 25px;
+  border-bottom: 2px solid rgba(255,255,255,0.1);
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Timeline Cards */
+.timeline-card {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  border-left: 4px solid rgba(255,255,255,0.3);
+  transition: transform 0.3s;
+}
+.timeline-card:hover { transform: translateX(5px); background: rgba(255,255,255,0.08); }
+.timeline-card .date { font-size: 12px; opacity: 0.6; display: block; margin-bottom: 5px; }
+.timeline-card h4 { margin: 0 0 5px 0; font-size: 18px; }
+.timeline-card .company { font-weight: 700; color: rgba(255,255,255,0.9); margin-bottom: 8px; font-size: 14px; }
+.timeline-card p { font-size: 14px; margin: 0; opacity: 0.8; }
+
+/* Skills & Projects */
+.skill-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+.skill-tags span {
+  background: rgba(255,255,255,0.1);
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.project-list { list-style: none; padding: 0; }
+.project-list li {
+  margin-bottom: 15px;
+  padding-left: 20px;
+  position: relative;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.project-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: rgba(255,255,255,0.5);
+}
+
+.member-footer { text-align: center; }
+.contact-btn {
+  display: inline-block;
+  padding: 15px 40px;
+  background: #fff;
+  color: #000;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.contact-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+
+/* --- STYLES SPÉCIFIQUES PAR MEMBRE --- */
+
+/* 1. Christian (Tech / Code) */
+.bg-christian {
+  background: radial-gradient(circle at top right, rgba(15, 51, 255, 0.2), transparent 40%),
+              linear-gradient(135deg, #050a14 0%, #0a1020 100%);
+}
+.bg-christian .tech-ring {
+  position: absolute; top: -10px; left: -10px; right: -10px; bottom: -10px;
+  border: 2px dashed #5a7cff; border-radius: 50%;
+  animation: spin 20s linear infinite;
+}
+.bg-christian .timeline-card { border-left-color: #5a7cff; }
+.bg-christian .skill-tags span { background: rgba(90, 124, 255, 0.2); color: #aaddff; }
+
+/* 2. Marc (Infra / Dark) */
+.bg-marc {
+  background: linear-gradient(to bottom, #1a1a1a, #000000);
+  background-image: radial-gradient(#333 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+.bg-marc .tech-ring.ring-square {
+  border-radius: 10px; border: 2px solid #00ff88;
+  transform: rotate(45deg);
+}
+.bg-marc .member-photo { border-radius: 10px; }
+.bg-marc .role-badge { background: rgba(0, 255, 136, 0.1); color: #00ff88; border: 1px solid #00ff88; }
+.bg-marc .timeline-card { border-left-color: #00ff88; background: rgba(0,0,0,0.6); }
+.bg-marc .contact-btn { background: #00ff88; color: #000; }
+
+/* 3. Axel (Design / Gradient) */
+.bg-axel {
+  background: linear-gradient(135deg, #2c3e50 0%, #000000 100%);
+}
+.bg-axel .member-hero::before {
+  content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 400px;
+  background: linear-gradient(45deg, #ff00cc, #333399);
+  opacity: 0.2; z-index: -1; clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+}
+.bg-axel .tech-ring.ring-gradient {
+  background: linear-gradient(45deg, #ff00cc, #333399);
+  z-index: 1; border: none; padding: 4px;
+}
+.bg-axel .role-badge { background: linear-gradient(90deg, #ff00cc, #333399); border: none; }
+.bg-axel .timeline-card { border-left-color: #ff00cc; }
+
+/* 4. Sarah (Growth / Vibrant) */
+.bg-sarah {
+  background: linear-gradient(135deg, #23074d 0%, #cc5333 100%);
+}
+.bg-sarah .tech-ring.ring-pulse {
+  border: 2px solid #ffcc00;
+  animation: pulseRing 2s infinite;
+}
+.bg-sarah .role-badge { background: rgba(255, 204, 0, 0.2); color: #ffcc00; border: 1px solid #ffcc00; }
+.bg-sarah .timeline-card { border-left-color: #ffcc00; }
+.bg-sarah .contact-btn { background: #ffcc00; color: #23074d; }
+
+@keyframes spin { 100% { transform: rotate(360deg); } }
+@keyframes pulseRing { 0% { transform: scale(1); opacity: 1; } 100% { transform: scale(1.2); opacity: 0; } }
+/* ============================================
+   AMÉLIORATIONS NATIVE FEEL (2026)
+   ============================================ */
+
+/* Fluidité scroll + momentum natif */
+html, body {
+  overscroll-behavior: none;           /* évite le rebond bizarre */
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;   /* momentum iOS */
+  touch-action: manipulation;          /* supprime délai 300ms clic */
+}
+
+/* Évite zoom indésirable sur double-tap */
+img, button, a {
+  touch-action: manipulation;
+}
+
+/* Boutons plus gros et espacés (touch-friendly) */
+button, a[href], .hire-btn {
+  min-height: 48px;
+  min-width: 48px;
+}
+
+/* Désactive highlight Android par défaut */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Animations + transitions fluides (60 fps) */
+.btn, .card, .hire-btn {
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease;
+  will-change: transform, opacity;
+}
+/* Disables animations if user prefers reduced motion accessibility setting in OS is enabled */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-delay: -1ms !important; animation-duration: 1ms !important; transition-delay: -1ms !important; transition-duration: 1ms !important;
+  }
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+/* ============================================
+   AMBIANCE COSMIQUE (ÉTOILES & LUNES)
+   ============================================ */
+body {
+  position: relative;
+  background-image: 
+    /* Dégradés de couleurs (Nebula) */
+    radial-gradient(circle at 15% 25%, var(--sky-nebula-1), transparent 40%),
+    radial-gradient(circle at 85% 75%, var(--sky-nebula-2), transparent 40%),
+    radial-gradient(circle at 50% 50%, var(--sky-nebula-3), transparent 60%);
+  
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: 0 0, 0 0, 0 0;
+  background-attachment: fixed;
+}
+
+/* Animation de scintillement des étoiles via pseudo-élément */
+body::before {
+  content: "";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 200vmax;
+  height: 200vmax;
+  transform: translate(-50%, -50%);
+  background-image: url("data:image/svg+xml,%3Csvg width='400' height='400' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%235a7cff'/%3E%3Cstop offset='100%25' stop-color='%23ff5ac8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M40 20 A 10 10 0 1 1 40 40 A 8 8 0 1 0 40 20 z' fill='url(%23g)' opacity='0.4'/%3E%3Ccircle cx='100' cy='100' r='1.5' fill='white' opacity='0.5'/%3E%3Ccircle cx='20' cy='150' r='1' fill='white' opacity='0.3'/%3E%3Ccircle cx='150' cy='50' r='2' fill='url(%23g)' opacity='0.4'/%3E%3Cpath d='M260 260 A 8 8 0 1 1 260 276 A 6 6 0 1 0 260 260 z' fill='white' opacity='0.2'/%3E%3Ccircle cx='350' cy='350' r='1.5' fill='white' opacity='0.4'/%3E%3Ccircle cx='200' cy='20' r='1' fill='white' opacity='0.2'/%3E%3Ccircle cx='300' cy='150' r='1' fill='white' opacity='0.2'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  pointer-events: none;
+  animation: twinkleStars 4s ease-in-out infinite alternate, rotateSky 240s linear infinite;
+  filter: var(--star-filter);
+  z-index: 0;
+  will-change: transform, opacity; /* Force l'accélération matérielle GPU */
+}
+
+@keyframes twinkleStars {
+  0% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
+@keyframes rotateSky {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Assurer que le fond du body est visible à travers le viewport */
+.l-viewport {
+  background: transparent !important;
+}
+
+/* Mise en avant et positionnement des boutons du slider équipe */
+.work--lockup .slider--prev,
+.work--lockup .slider--next {
+  position: absolute;
+  top: 50% !important;
+  margin-top: -25px !important; /* Centrage vertical exact (hauteur 50px) */
+  z-index: 100 !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  background: rgba(15, 51, 255, 0.1); /* Légère teinte pour meilleure visibilité */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 0; /* Par défaut collé au bord */
+  right: auto;
+}
+
+/* ============================================
+   ÉTOILES FILANTES (SHOOTING STARS)
+   ============================================ */
+.shooting-star {
+  position: absolute;
+  width: 150px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--shooting-star-color), transparent);
+  border-radius: 50%;
+  box-shadow: 0 0 4px var(--shooting-star-color);
+  opacity: 0;
+  z-index: 0;
+  will-change: transform, opacity;
+  pointer-events: none;
+}
+
+@keyframes shooting {
+  0% { transform: translateX(0) translateY(0) rotate(-45deg); opacity: 1; }
+  100% { transform: translateX(-500px) translateY(500px) rotate(-45deg); opacity: 0; }
+}
+
+/* Positionnement spécifique du bouton suivant */
+.work--lockup .slider--next {
+  left: auto;
+  right: 0;
+}
+
+@media (min-width: 1200px) {
+  .work--lockup .slider--prev { left: -60px !important; }
+  .work--lockup .slider--next { right: -60px !important; }
+}
+/* ============================================
+   THÈME JOUR - SOLEIL ET NUAGES
+   ============================================ */
+body.theme-day::before,
+body.theme-jour::before {
+  background-image: url("data:image/svg+xml,%3Csvg width='400' height='400' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Csymbol id='sun' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='5' fill='%23FFD700' /%3E%3Cg stroke='%23FFD700' stroke-width='2'%3E%3Cline x1='12' y1='1' x2='12' y2='4' /%3E%3Cline x1='12' y1='20' x2='12' y2='23' /%3E%3Cline x1='4.22' y1='4.22' x2='6.34' y2='6.34' /%3E%3Cline x1='17.66' y1='17.66' x2='19.78' y2='19.78' /%3E%3Cline x1='1' y1='12' x2='4' y2='12' /%3E%3Cline x1='20' y1='12' x2='23' y2='12' /%3E%3Cline x1='4.22' y1='19.78' x2='6.34' y2='17.66' /%3E%3Cline x1='17.66' y1='6.34' x2='19.78' y2='4.22' /%3E%3C/g%3E%3C/symbol%3E%3Csymbol id='cloud' viewBox='0 0 24 24'%3E%3Cpath d='M18,10 C17.4,6.8 14.5,4.5 11,4.5 C7.2,4.5 4,7.2 3.1,10.8 C1.3,11.4 0,13 0,15 C0,17.8 2.2,20 5,20 L18,20 C20.8,20 23,17.8 23,15 C23,12.4 20.9,10.2 18,10 Z' fill='white' opacity='0.8'/%3E%3C/symbol%3E%3C/defs%3E%3Cuse href='%23sun' x='50' y='50' width='30' height='30' /%3E%3Cuse href='%23sun' x='250' y='150' width='20' height='20' /%3E%3Cuse href='%23sun' x='150' y='300' width='25' height='25' /%3E%3Cuse href='%23cloud' x='150' y='80' width='60' height='60' /%3E%3Cuse href='%23cloud' x='300' y='250' width='50' height='50' /%3E%3Cuse href='%23cloud' x='50' y='300' width='70' height='70' /%3E%3Cuse href='%23cloud' x='200' y='20' width='40' height='40' /%3E%3C/svg%3E");
+  animation: moveClouds 60s linear infinite;
+  filter: none !important;
+  opacity: 0.8;
+  will-change: background-position;
+}
+
+@keyframes moveClouds {
+  from { background-position: 0 0; }
+  to { background-position: 200px 100px; }
+}
+

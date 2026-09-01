@@ -1,0 +1,294 @@
+/**
+ * 🌓 Styles de Thème Automatique
+ * Intègre les changements de thème selon l'heure
+ */
+
+:root {
+  /* Variables par défaut (thème nuit) */
+  --theme-background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #0f33ff 100%);
+  --theme-text: #ffffff;
+  --theme-accent: #5a7cff;
+  --theme-muted: #666666;
+  --theme-border: #282828;
+  --theme-card: #1a1a1a;
+  --theme-shadow: rgba(0, 0, 0, 0.5);
+  --sky-nebula-1: rgba(90, 124, 255, 0.12);
+  --sky-nebula-2: rgba(255, 0, 150, 0.08);
+  --sky-nebula-3: rgba(90, 124, 255, 0.05);
+  --star-filter: none;
+  --shooting-star-color: #5a7cff;
+}
+
+/* ============================================
+   THÈME JOUR - SUPPRIMÉ
+   ============================================ */
+
+/* ============================================
+   THÈME SOIRÉE (18h-22h) - Fond gris avec dégradé subtil
+   ============================================ */
+body.theme-evening {
+  --theme-background: linear-gradient(135deg, #3a3a3a 0%, #4a4a5a 50%, #2a2a4a 100%);
+  --theme-text: #ffffff;
+  --theme-accent: #5a7cff;
+  --theme-muted: #999999;
+  --theme-border: #555555;
+  --theme-card: #454545;
+  --theme-shadow: rgba(0, 0, 0, 0.3);
+  --sky-nebula-1: rgba(255, 140, 0, 0.15);
+  --sky-nebula-2: rgba(148, 0, 211, 0.1);
+  --sky-nebula-3: rgba(15, 51, 255, 0.15);
+  --star-filter: sepia(1) hue-rotate(-30deg) saturate(2) opacity(0.8);
+  --shooting-star-color: #ffcc00;
+}
+
+body.theme-evening {
+  background: linear-gradient(135deg, #3a3a3a 0%, #4a4a5a 50%, #2a2a4a 100%);
+  color: #ffffff;
+}
+
+body.theme-evening .header--logo,
+body.theme-evening .header--logo p {
+  color: #ffffff;
+}
+
+body.theme-evening .header--nav-toggle span,
+body.theme-evening .header--nav-toggle::before,
+body.theme-evening .header--nav-toggle::after {
+  background-color: #ffffff;
+}
+
+body.theme-evening .side-nav > li {
+  color: #ffffff;
+}
+
+body.theme-evening .side-nav > li span {
+  color: #ffffff;
+}
+
+body.theme-evening .side-nav > li::before {
+  color: #666;
+}
+
+body.theme-evening .side-nav li.is-active::before {
+  color: #ffffff;
+}
+
+body.theme-evening .intro--banner::before {
+  background-color: #555555;
+}
+
+body.theme-evening .intro--options > a {
+  color: #ffffff;
+  background-color: rgba(15, 51, 255, 0.05);
+}
+
+body.theme-evening .intro--options > a:hover {
+  background-color: rgba(15, 51, 255, 0.15);
+}
+
+body.theme-evening .intro--options h3 {
+  color: #5a7cff;
+}
+
+body.theme-evening .intro--options p {
+  color: #999999;
+}
+
+body.theme-evening .intro--options > a:hover p {
+  color: #ffffff;
+}
+
+body.theme-evening .device-notification {
+  background-color: #3a3a3a;
+  color: #ffffff;
+}
+
+body.theme-evening .device-notification--logo {
+  color: #ffffff;
+}
+
+body.theme-evening .device-notification--logo p {
+  color: #ffffff;
+}
+
+body.theme-evening .device-notification--message {
+  color: #ffffff;
+}
+
+body.theme-evening .l-side-nav::before {
+  background-color: #666;
+  opacity: 0.35;
+}
+
+body.theme-evening .container {
+  outline-color: #5a7cff;
+}
+
+body.theme-evening .effect-rotate-left--animate .container {
+  outline-color: #5a7cff;
+  background: linear-gradient(135deg, #3a3a3a 0%, #4a4a5a 50%, #2a2a4a 100%);
+}
+
+body.theme-night .effect-rotate-left--animate .container {
+  outline-color: #5a7cff;
+  background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #0f33ff 100%);
+}
+
+body.theme-evening .work-request--options label {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+body.theme-evening .work-request--information input[type="text"],
+body.theme-evening .work-request--information input[type="email"] {
+  border-bottom-color: #ffffff;
+  background-color: transparent;
+  color: #ffffff;
+}
+
+body.theme-evening .work-request--information input:focus {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* ============================================
+   THÈME NUIT (22h-6h) - Fond noir (défaut)
+   ============================================ */
+body.theme-night {
+  --theme-background: #0c0c0c;
+  --theme-text: #ffffff;
+  --theme-accent: #5a7cff;
+  --theme-muted: #666666;
+  --theme-border: #282828;
+  --theme-card: #1a1a1a;
+  --theme-shadow: rgba(0, 0, 0, 0.5);
+  --sky-nebula-1: rgba(90, 124, 255, 0.12);
+  --sky-nebula-2: rgba(255, 0, 150, 0.08);
+  --sky-nebula-3: rgba(90, 124, 255, 0.05);
+  --star-filter: none;
+  --shooting-star-color: #5a7cff;
+}
+
+body.theme-night {
+  background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #0f33ff 100%);
+  color: #ffffff;
+}
+
+/* ============================================
+   ÉLÉMENTS GÉNÉRIQUES AFFECTÉS PAR LE THÈME
+   ============================================ */
+
+/* Background par défaut avec gradient #0f33ff subtil */
+body {
+  background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #0f33ff 100%);
+  transition: background 0.4s ease;
+}
+
+/* Lorsqu'on change de thème, ajouter des transitions lisses */
+body.theme-transitioning,
+body.theme-transitioning * {
+  transition: background 0.4s ease, color 0.3s ease, border-color 0.3s ease !important;
+}
+
+/* Styles spécifiques pour chaque thème */
+body.theme-day .l-viewport {
+  background: linear-gradient(135deg, #fafbfc 0%, #f5f7fa 50%, #f0f2f5 100%);
+  box-shadow: 0 0 45px 5px rgba(0, 0, 0, 0.05);
+}
+
+body.theme-evening .l-viewport {
+  background: linear-gradient(135deg, #3a3a3a 0%, #4a4a5a 50%, #2a2a4a 100%);
+  box-shadow: 0 0 45px 5px rgba(15, 51, 255, 0.2);
+}
+
+body.theme-night .l-viewport {
+  background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #0f33ff 100%);
+  box-shadow: 0 0 45px 5px rgba(15, 51, 255, 0.3);
+}
+
+/* Bouton CTA */
+body.theme-day .header--cta {
+  background-color: #f0f0f0;
+  color: #1a1a1a;
+}
+
+body.theme-day .header--cta:hover {
+  background-color: #5a7cff;
+  color: #ffffff;
+}
+
+body.theme-evening .header--cta {
+  background-color: #555555;
+  color: #ffffff;
+}
+
+body.theme-evening .header--cta:hover {
+  background-color: #5a7cff;
+  color: #ffffff;
+}
+
+/* Sliders et carrousels */
+body.theme-day .work--lockup .slider--item-left a,
+body.theme-day .work--lockup .slider--item-right a {
+  color: #999;
+}
+
+body.theme-evening .work--lockup .slider--item-left a,
+body.theme-evening .work--lockup .slider--item-right a {
+  color: #999;
+}
+
+body.theme-day .work--lockup .slider--item-center a {
+  color: #ffffff;
+}
+
+body.theme-day .work--lockup .slider--item-center .slider--item-image {
+  background-color: #f5f5f5;
+}
+
+body.theme-evening .work--lockup .slider--item-center .slider--item-image {
+  background-color: #454545;
+}
+
+/* About options - images de fond */
+body.theme-day .about--options > a {
+  border-color: #ddd;
+}
+
+body.theme-evening .about--options > a {
+  border-color: #555;
+}
+
+body.theme-day .about--banner h2 {
+  color: #1a1a1a;
+}
+
+body.theme-day .about--banner a {
+  color: #1a1a1a;
+}
+
+body.theme-evening .about--banner h2 {
+  color: #ffffff;
+}
+
+body.theme-evening .about--banner a {
+  color: #ffffff;
+}
+
+/* Submit buttons */
+body.theme-day .work-request input[type="submit"] {
+  background-color: #5a7cff;
+  color: #ffffff;
+}
+
+body.theme-day .work-request input[type="submit"]:hover {
+  background-color: #0d2fb3;
+}
+
+body.theme-evening .work-request input[type="submit"] {
+  background-color: #5a7cff;
+  color: #ffffff;
+}
+
+body.theme-evening .work-request input[type="submit"]:hover {
+  background-color: #0d2fb3;
+}

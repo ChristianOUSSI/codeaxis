@@ -1,0 +1,92 @@
+/* --- Extracted and optimized styles moved from index.html --- */
+/* Contact layout adjustments and hire section styles (performance-optimized) */
+.modal { background:transparent; border-radius:8px; padding:0; width:100%; }
+/* Global harmonization: buttons and CTAs */
+.cta { background:linear-gradient(90deg,#5a7cff,#6a8bff); color:#fff; border:1px solid transparent; padding:10px 20px; border-radius:8px; font-weight:700; cursor:pointer; transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease; }
+.cta:hover { background:linear-gradient(90deg,#6a8bff,#5a7cff); transform:translateY(-1px); box-shadow:0 6px 16px rgba(15,51,255,0.12); }
+
+/* Global harmonization: intro-options cards */
+.intro--options a { background:rgba(135,206,235,0.06); border:1px solid rgba(135,206,235,0.14); padding:18px; border-radius:10px; text-decoration:none; color:#fff; transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease; }
+.intro--options a:hover { background:rgba(135,206,235,0.12); border-color:rgba(135,206,235,0.3); transform:translateY(-2px); box-shadow:0 6px 16px rgba(135,206,235,0.12); }
+.intro--options a h3 { color:#5a7cff; margin-top:0; }
+.intro--options a p { color:#b0b0b0; }
+
+/* Global harmonization: team slider cards */
+.slider--item { background:rgba(224,246,255,0.04); border:1px solid rgba(15,51,255,0.08); border-radius:10px; transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease; }
+.slider--item:hover { border-color:rgba(15,51,255,0.22); box-shadow:0 6px 18px rgba(15,51,255,0.10); transform:translateY(-3px); }
+.slider--item a { text-decoration:none; color:#fff; }
+.slider--item-title { color:#87ceeb; font-weight:700; }
+.slider--item-description { color:#b0b0b0; font-size:14px; }
+
+/* Prevent horizontal shifting on slider animation */
+.slider--item-left, .slider--item-right { transform: none !important; }
+.slider--item-left { left: 0 !important; position: absolute !important; top: 50% !important; transform: translateY(-50%) scale(0.8) !important; }
+.slider--item-right { right: 0 !important; position: absolute !important; top: 50% !important; transform: translateY(-50%) scale(0.8) !important; }
+
+/* Global color theme consistency */
+a { color:#87ceeb; transition:color 0.18s ease; }
+a:hover { color:#5a7cff; }
+
+@media (max-width:900px){\n  .modal--information{ padding:16px; }\n  .work h2, .about h2, .hire h2 { font-size:24px; }\n}
+  .contact--lockup{ max-width:100%; flex:1 1 100%; }
+  .contact-map{ max-width:100%; flex:1 1 100%; }
+  .modal--information{ padding:16px; }
+  .contact-map iframe { height:360px; }
+  .work h2, .about h2, .hire h2 { font-size:24px; }
+}
+
+/* Hire section grid & card styles (optimized) */
+.hire--grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 30px; padding: 0 20px; }
+.hire-card { background: linear-gradient(135deg, rgba(135,206,235,0.08) 0%, rgba(224,246,255,0.04) 100%); border: 1px solid rgba(15,51,255,0.12); border-radius: 10px; padding: 16px 14px; text-decoration: none; color: inherit; transition: transform 0.18s ease, opacity 0.18s ease, border-color 0.18s ease; display: flex; flex-direction: column; align-items: center; text-align: center; position: relative; overflow: hidden; will-change: transform, opacity; }
+.hire-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; transform: translateX(-100%); background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent); transition: transform 0.32s ease; pointer-events: none; }
+.hire-card:hover::before { transform: translateX(100%); }
+.hire-card:hover { border-color: rgba(15,51,255,0.28); box-shadow: 0 6px 18px rgba(15,51,255,0.10); background: linear-gradient(135deg, rgba(135,206,235,0.14) 0%, rgba(224,246,255,0.08) 100%); transform: translateY(-4px); }
+.hire-icon { font-size: 40px; margin-bottom: 10px; display: block; transition: transform 0.18s ease, opacity 0.18s ease; will-change: transform, opacity; }
+.hire-card h3 { font-size: 16px; font-weight: 700; margin: 0 0 6px 0; color: #5a7cff; transition: color 0.18s ease; }
+.hire-card:hover h3 { color: #87ceeb; }
+.hire-card p { font-size: 12px; color: #b0b0b0; margin: 0 0 10px 0; line-height: 1.3; }
+
+/* Hire action buttons */
+.hire-actions { display: flex; gap: 12px; justify-content: center; margin-top: auto; }
+.hire-btn { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 6px; font-size: 16px; text-decoration: none; transition: transform 0.18s ease, background-color 0.18s ease, border-color 0.18s ease; cursor: pointer; border: 1px solid rgba(15,51,255,0.14); }
+.hire-btn.whatsapp { background: rgba(37,211,102,0.1); border-color: rgba(37,211,102,0.3); }
+.hire-btn.whatsapp:hover { background: #25d366; border-color: #25d366; transform: scale(1.06); box-shadow: 0 3px 8px rgba(37,211,102,0.18); }
+.hire-btn.email { background: rgba(15,51,255,0.1); border-color: rgba(15,51,255,0.3); }
+.hire-btn.email:hover { background: #5a7cff; border-color: #5a7cff; transform: scale(1.06); box-shadow: 0 3px 8px rgba(15,51,255,0.18); }
+
+/* Hire card animations (reduced distance/durations) */
+@keyframes hire-slideUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes hire-bounce { 0% { transform: scale(1); } 50% { transform: scale(1.08) translateY(-6px); } 100% { transform: scale(1); } }
+@keyframes hire-rotate { 0% { transform: rotate(0deg) scale(1); } 50% { transform: rotate(6deg) scale(1.06); } 100% { transform: rotate(0deg) scale(1); } }
+@keyframes hire-pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.12); opacity: 0.9; } }
+@keyframes hire-swing { 0%, 100% { transform: rotate(0deg); } 25% { transform: rotate(-8deg); } 75% { transform: rotate(8deg); } }
+@keyframes hire-shimmer { 0% { transform: skewX(0deg) scale(1); opacity: 1; } 50% { transform: skewX(5deg) scale(1.05); opacity: 0.9; } 100% { transform: skewX(0deg) scale(1); opacity: 1; } }
+@keyframes hire-flip { 0% { transform: rotateY(0deg); } 100% { transform: rotateY(360deg); } }
+@keyframes hire-icon-1 { from { transform: translateY(-10px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+@keyframes hire-icon-2 { from { transform: scale(0.5) rotate(-10deg); opacity: 0; } to { transform: scale(1) rotate(0deg); opacity: 1; } }
+@keyframes hire-icon-3 { from { transform: scale(0); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+@keyframes hire-icon-4 { from { transform: skewX(-10deg); opacity: 0; } to { transform: skewX(0deg); opacity: 1; } }
+@keyframes hire-icon-5 { from { transform: rotate(45deg) scale(0.5); opacity: 0; } to { transform: rotate(0deg) scale(1); opacity: 1; } }
+@keyframes hire-icon-6 { from { transform: perspective(600px) rotateX(-90deg); opacity: 0; } to { transform: perspective(600px) rotateX(0deg); opacity: 1; } }
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .hire-card, .hire-icon, .cta, .intro--options a, .slider--item { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; transform: none !important; }
+}
+
+@media (max-width:900px){\n  .modal--information{ padding:16px; }\n  .work h2, .about h2, .hire h2 { font-size:24px; }\n}
+  .hire-card { padding: 12px 10px; }
+  .hire-icon { font-size: 32px; margin-bottom: 8px; }
+  .hire-card h3 { font-size: 14px; margin-bottom: 4px; }
+  .hire-card p { font-size: 11px; margin-bottom: 8px; }
+}
+
+@media (max-width:600px) {
+  .hire--grid { grid-template-columns: repeat(2, 1fr); gap: 5px; }
+  .hire-card { padding: 5px 3px; }
+  .hire-icon { font-size: 18px; margin-bottom: 4px; }
+  .hire-card h3 { font-size: 10px; margin-bottom: 2px; }
+  .hire-card p { font-size: 8px; margin-bottom: 4px; line-height: 1.1; }
+  .hire-btn { width: 32px; height: 32px; font-size: 14px; position: relative; }
+  .hire-btn::after { content: ''; position: absolute; top: -6px; bottom: -6px; left: -6px; right: -6px; }
+}
