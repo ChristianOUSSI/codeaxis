@@ -403,77 +403,20 @@
               <canvas id="hire-particles" class="section-particles"></canvas>
               <div class="hire">
                 <h2 class="section-title-glow">Que voulez-vous de nous ?</h2>
-                <div class="hire--grid">
-                  <!-- Carte 1 -->
-                  <div class="hire-card">
-                    <div class="hire-icon">💻</div>
-                    <h3>Développement Web</h3>
-                    <p>Sites vitrines futuristes, plateformes SaaS, portails e-commerce réactifs.</p>
-                    <div class="hire-actions">
-                      <a href="https://wa.me/237691223916?text=Je%20veux%20un%20D%C3%A9veloppement%20Web"
-                        target="_blank" rel="noopener noreferrer" class="hire-btn whatsapp">WhatsApp</a>
-                      <a href="mailto:CADC@gmail.com?subject=Devis%20Web" class="hire-btn email">Email</a>
-                    </div>
+                <div class="hire-carousel-wrap">
+                  <!-- Carrousel 3D Services -->
+                  <div class="carousel-container hire-carousel-container" id="hire-carousel-container">
+                    <div class="carousel" id="hire-carousel"></div>
                   </div>
-
-                  <!-- Carte 2 -->
-                  <div class="hire-card">
-                    <div class="hire-icon">📱</div>
-                    <h3>Applications Mobiles</h3>
-                    <p>Apps natives et hybrides Android / iOS à ergonomie irréprochable.</p>
-                    <div class="hire-actions">
-                      <a href="https://wa.me/237691223916?text=Je%20veux%20une%20App%20Mobile" target="_blank"
-                        rel="noopener noreferrer" class="hire-btn whatsapp">WhatsApp</a>
-                      <a href="mailto:CADC@gmail.com?subject=Devis%20Mobile" class="hire-btn email">Email</a>
-                    </div>
-                  </div>
-
-                  <!-- Carte 3 -->
-                  <div class="hire-card">
-                    <div class="hire-icon">🎨</div>
-                    <h3>Design UI / UX</h3>
-                    <p>Identités de marque, maquettes Figma haute fidélité et Design Systems.</p>
-                    <div class="hire-actions">
-                      <a href="https://wa.me/237691223916?text=Je%20veux%20du%20Design%20UIUX" target="_blank"
-                        rel="noopener noreferrer" class="hire-btn whatsapp">WhatsApp</a>
-                      <a href="mailto:CADC@gmail.com?subject=Devis%20Design" class="hire-btn email">Email</a>
-                    </div>
-                  </div>
-
-                  <!-- Carte 4 -->
-                  <div class="hire-card">
-                    <div class="hire-icon">☁️</div>
-                    <h3>Cloud & DevOps</h3>
-                    <p>Déploiement AWS/GCP, automatisation CI/CD et sécurité serveurs.</p>
-                    <div class="hire-actions">
-                      <a href="https://wa.me/237691223916?text=Je%20veux%20du%20Cloud%20DevOps" target="_blank"
-                        rel="noopener noreferrer" class="hire-btn whatsapp">WhatsApp</a>
-                      <a href="mailto:CADC@gmail.com?subject=Devis%20Cloud" class="hire-btn email">Email</a>
-                    </div>
-                  </div>
-
-                  <!-- Carte 5 -->
-                  <div class="hire-card">
-                    <div class="hire-icon">🤖</div>
-                    <h3>IA & Automation</h3>
-                    <p>Intégration d'agents intelligents, bots WhatsApp et automatisation métier.</p>
-                    <div class="hire-actions">
-                      <a href="https://wa.me/237691223916?text=Je%20veux%20de%20l%20IA" target="_blank"
-                        rel="noopener noreferrer" class="hire-btn whatsapp">WhatsApp</a>
-                      <a href="mailto:CADC@gmail.com?subject=Devis%20IA" class="hire-btn email">Email</a>
-                    </div>
-                  </div>
-
-                  <!-- Carte 6 -->
-                  <div class="hire-card">
-                    <div class="hire-icon">📈</div>
-                    <h3>Growth & Marketing</h3>
-                    <p>Acquisition client ciblée, SEO, réseaux sociaux et conversion maximale.</p>
-                    <div class="hire-actions">
-                      <a href="https://wa.me/237691223916?text=Je%20veux%20du%20Growth%20Marketing" target="_blank"
-                        rel="noopener noreferrer" class="hire-btn whatsapp">WhatsApp</a>
-                      <a href="mailto:CADC@gmail.com?subject=Devis%20Growth" class="hire-btn email">Email</a>
-                    </div>
+                  <div class="indicators" id="hire-indicators"></div>
+                  <!-- Flèches navigation -->
+                  <div class="hire-carousel-nav">
+                    <button class="hire-carousel-btn" id="hire-prev" aria-label="Précédent">
+                      <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+                    </button>
+                    <button class="hire-carousel-btn" id="hire-next" aria-label="Suivant">
+                      <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+                    </button>
                   </div>
                 </div>
               </div>

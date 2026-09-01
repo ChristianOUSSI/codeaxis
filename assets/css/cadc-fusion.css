@@ -1939,3 +1939,95 @@ button, input, textarea {
   }
 }
 
+/* ===================================================================
+   CARROUSEL 3D SERVICES & DEVIS
+   =================================================================== */
+.hire-carousel-wrap {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.hire-carousel-container {
+  width: 100%;
+  height: clamp(340px, 55vh, 440px);
+  position: relative;
+  perspective: 1000px;
+  overflow: visible;
+}
+
+.hire-icon-3d {
+  font-size: clamp(36px, 6vw, 52px);
+  margin-bottom: 10px;
+  filter: drop-shadow(0 0 12px rgba(0, 210, 255, 0.5));
+  line-height: 1;
+}
+
+.hire-card-3d {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+
+.hire-card-3d .card-title {
+  font-size: clamp(15px, 2.5vw, 19px);
+}
+
+.hire-card-3d .card-description {
+  font-size: clamp(12px, 1.8vw, 13px);
+  line-height: 1.55;
+}
+
+.hire-actions-3d {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: auto;
+  padding-top: 10px;
+}
+
+.hire-carousel-nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.hire-carousel-btn {
+  background: rgba(15, 51, 255, 0.2);
+  border: 1px solid rgba(0, 210, 255, 0.4);
+  color: var(--neon-cyan);
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.hire-carousel-btn:hover {
+  background: rgba(15, 51, 255, 0.45);
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 15px var(--neon-glow-cyan);
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .hire-carousel-container {
+    height: 320px;
+  }
+  .hire-icon-3d {
+    font-size: 36px;
+  }
+}
+
+

@@ -151,9 +151,10 @@
     }
   });
 
-  // Touch Swipe
+  // Gestes Tactiles Mobile — Seuil élevé pour éviter les changements accidentels
   let touchStartY = 0;
   let touchStartX = 0;
+  let touchStartTime = 0;
 
   window.addEventListener(
     'touchstart',
@@ -161,6 +162,7 @@
       if (e.touches && e.touches.length > 0) {
         touchStartY = e.touches[0].clientY;
         touchStartX = e.touches[0].clientX;
+        touchStartTime = Date.now();
       }
     },
     { passive: true }
@@ -175,8 +177,18 @@
 
       const deltaY = touchStartY - e.changedTouches[0].clientY;
       const deltaX = touchStartX - e.changedTouches[0].clientX;
+      const elapsed = Date.now() - touchStartTime;
 
-      if (Math.abs(deltaY) > 50 && Math.abs(deltaY) > Math.abs(deltaX)) {
+      // Seuil élevé (85px) + durée min 80ms pour éviter les glissements accidentels
+      const swipeThreshold = 85;
+      const minDuration = 80;
+
+      if (
+        Math.abs(deltaY) > swipeThreshold &&
+        Math.abs(deltaY) > Math.abs(deltaX) * 1.5 &&
+        elapsed > minDuration &&
+        elapsed < 600
+      ) {
         if (deltaY > 0) nextSection();
         else prevSection();
       }
@@ -834,9 +846,230 @@
     render();
   }
 
+  /* ===================================================================
+     8. CARROUSEL 3D SERVICES & DEVIS
+     =================================================================== */
+  const hireData = [
+    {
+      id: 1,
+      icon: '💻',
+      title: 'Développement Web',
+      description: 'Sites vitrines futuristes, plateformes SaaS, portails e-commerce réactifs et performants.',
+      tech: ['React / Next.js', 'Node.js', 'PostgreSQL'],
+      waLink: 'https://wa.me/237691223916?text=Je%20veux%20un%20D%C3%A9veloppement%20Web',
+      mailLink: 'mailto:CADC@gmail.com?subject=Devis%20Web'
+    },
+    {
+      id: 2,
+      icon: '📱',
+      title: 'Applications Mobiles',
+      description: 'Apps natives et hybrides Android / iOS à ergonomie irréprochable et UX premium.',
+      tech: ['React Native', 'Flutter', 'Firebase'],
+      waLink: 'https://wa.me/237691223916?text=Je%20veux%20une%20App%20Mobile',
+      mailLink: 'mailto:CADC@gmail.com?subject=Devis%20Mobile'
+    },
+    {
+      id: 3,
+      icon: '🎨',
+      title: 'Design UI / UX',
+      description: 'Identités de marque, maquettes Figma haute fidélité, Design Systems et prototypes.',
+      tech: ['Figma', 'Design System', 'Motion UI'],
+      waLink: 'https://wa.me/237691223916?text=Je%20veux%20du%20Design%20UIUX',
+      mailLink: 'mailto:CADC@gmail.com?subject=Devis%20Design'
+    },
+    {
+      id: 4,
+      icon: '☁️',
+      title: 'Cloud & DevOps',
+      description: 'Déploiement AWS/GCP, automatisation CI/CD, containers Docker et sécurité serveurs.',
+      tech: ['AWS / GCP', 'Docker / K8s', 'CI/CD GitLab'],
+      waLink: 'https://wa.me/237691223916?text=Je%20veux%20du%20Cloud%20DevOps',
+      mailLink: 'mailto:CADC@gmail.com?subject=Devis%20Cloud'
+    },
+    {
+      id: 5,
+      icon: '🤖',
+      title: 'IA & Automation',
+      description: 'Agents intelligents, bots WhatsApp/Telegram, scraping et automatisation métier avancée.',
+      tech: ['LLM / OpenAI', 'Make / n8n', 'Python AI'],
+      waLink: 'https://wa.me/237691223916?text=Je%20veux%20de%20l%20IA',
+      mailLink: 'mailto:CADC@gmail.com?subject=Devis%20IA'
+    },
+    {
+      id: 6,
+      icon: '📈',
+      title: 'Growth & Marketing',
+      description: 'Acquisition client ciblée, SEO technique, réseaux sociaux et entonnoir de conversion maximale.',
+      tech: ['SEO / SEM', 'Analytics', 'Social Ads'],
+      waLink: 'https://wa.me/237691223916?text=Je%20veux%20du%20Growth%20Marketing',
+      mailLink: 'mailto:CADC@gmail.com?subject=Devis%20Growth'
+    }
+  ];
+
+  let hireCarouselIndex = 0;
+  let hireAutoplay = null;
+
+  function initHireCarousel() {
+    const hireCarousel = document.getElementById('hire-carousel');
+    const hireIndicatorsEl = document.getElementById('hire-indicators');
+    if (!hireCarousel || !hireIndicatorsEl) return;
+
+    hireCarousel.innerHTML = '';
+    hireIndicatorsEl.innerHTML = '';
+
+    hireData.forEach((data, index) => {
+      const item = document.createElement('div');
+      item.className = 'carousel-item';
+      item.dataset.index = index;
+
+      const techBadges = data.tech.map(t => `<span class="tech-badge">${t}</span>`).join('');
+
+      item.innerHTML = `
+        <div class="card hire-card-3d">
+          <div class="card-number">0${data.id}</div>
+          <div class="hire-icon-3d">${data.icon}</div>
+          <h3 class="card-title">${data.title}</h3>
+          <p class="card-description">${data.description}</p>
+          <div class="card-tech">${techBadges}</div>
+          <div class="hire-actions-3d">
+            <a href="${data.waLink}" target="_blank" rel="noopener noreferrer" class="hire-btn whatsapp">
+              📞 WhatsApp
+            </a>
+            <a href="${data.mailLink}" class="hire-btn email">
+              ✉️ Email
+            </a>
+          </div>
+        </div>
+      `;
+
+      item.addEventListener('click', () => {
+        if (index !== hireCarouselIndex) {
+          hireCarouselIndex = index;
+          updateHireCarousel();
+        }
+      });
+
+      hireCarousel.appendChild(item);
+
+      const dot = document.createElement('div');
+      dot.className = 'indicator' + (index === 0 ? ' active' : '');
+      dot.dataset.index = index;
+      dot.addEventListener('click', () => {
+        hireCarouselIndex = index;
+        updateHireCarousel();
+      });
+      hireIndicatorsEl.appendChild(dot);
+    });
+
+    updateHireCarousel();
+    startHireAutoplay();
+
+    // Arrow buttons
+    const prevBtn = document.getElementById('hire-prev');
+    const nextBtn = document.getElementById('hire-next');
+    if (prevBtn) {
+      prevBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        hireCarouselIndex = (hireCarouselIndex - 1 + hireData.length) % hireData.length;
+        updateHireCarousel();
+        resetHireAutoplay();
+      });
+    }
+    if (nextBtn) {
+      nextBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        hireCarouselIndex = (hireCarouselIndex + 1) % hireData.length;
+        updateHireCarousel();
+        resetHireAutoplay();
+      });
+    }
+
+    // Touch swipe inside carousel (horizontal)
+    let hTouchStartX = 0;
+    let hTouchStartY = 0;
+    const container = document.getElementById('hire-carousel-container');
+    if (container) {
+      container.addEventListener('touchstart', (e) => {
+        if (e.touches.length > 0) {
+          hTouchStartX = e.touches[0].clientX;
+          hTouchStartY = e.touches[0].clientY;
+        }
+      }, { passive: true });
+
+      container.addEventListener('touchend', (e) => {
+        if (!e.changedTouches || e.changedTouches.length === 0) return;
+        const dx = hTouchStartX - e.changedTouches[0].clientX;
+        const dy = hTouchStartY - e.changedTouches[0].clientY;
+        if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+          // Horizontal swipe inside carousel → change card, DON'T change section
+          e.stopPropagation();
+          if (dx > 0) {
+            hireCarouselIndex = (hireCarouselIndex + 1) % hireData.length;
+          } else {
+            hireCarouselIndex = (hireCarouselIndex - 1 + hireData.length) % hireData.length;
+          }
+          updateHireCarousel();
+          resetHireAutoplay();
+        }
+      }, { passive: true });
+    }
+  }
+
+  function updateHireCarousel() {
+    const items = document.querySelectorAll('#hire-carousel .carousel-item');
+    const dots = document.querySelectorAll('#hire-indicators .indicator');
+    const total = items.length;
+    if (!total) return;
+
+    const isMobile = window.innerWidth <= 768;
+    const isTablet = window.innerWidth <= 1024;
+
+    items.forEach((item, index) => {
+      const offset = index - hireCarouselIndex;
+      const absOffset = Math.abs(offset);
+
+      item.classList.remove('active', 'left-1', 'left-2', 'right-1', 'right-2', 'hidden');
+
+      if (offset === 0) {
+        item.classList.add('active');
+        item.style.cssText = 'opacity:1; transform:translateX(0) translateZ(0) scale(1); z-index:5; pointer-events:auto;';
+      } else if (offset === -1 || offset === total - 1) {
+        item.classList.add('left-1');
+        const tx = isMobile ? '-120px' : isTablet ? '-200px' : '-280px';
+        item.style.cssText = `opacity:${isMobile ? '0' : '0.5'}; transform:translateX(${tx}) translateZ(-80px) scale(0.82) rotateY(20deg); z-index:3; pointer-events:${isMobile ? 'none' : 'auto'};`;
+      } else if (offset === 1 || offset === -(total - 1)) {
+        item.classList.add('right-1');
+        const tx = isMobile ? '120px' : isTablet ? '200px' : '280px';
+        item.style.cssText = `opacity:${isMobile ? '0' : '0.5'}; transform:translateX(${tx}) translateZ(-80px) scale(0.82) rotateY(-20deg); z-index:3; pointer-events:${isMobile ? 'none' : 'auto'};`;
+      } else {
+        item.classList.add('hidden');
+        item.style.cssText = 'opacity:0; transform:scale(0.6); z-index:1; pointer-events:none;';
+      }
+    });
+
+    dots.forEach((dot, index) => {
+      dot.classList.toggle('active', index === hireCarouselIndex);
+    });
+  }
+
+  function startHireAutoplay() {
+    hireAutoplay = setInterval(() => {
+      if (currentSection === 4) { // Section Services
+        hireCarouselIndex = (hireCarouselIndex + 1) % hireData.length;
+        updateHireCarousel();
+      }
+    }, 4000);
+  }
+
+  function resetHireAutoplay() {
+    clearInterval(hireAutoplay);
+    startHireAutoplay();
+  }
+
   // Initialisation Globale
   document.addEventListener('DOMContentLoaded', () => {
     init3DHeroCarousel();
+    initHireCarousel();
     initTechnicalArsenal();
     initParticleCanvas('intro-particles', { count: 50, distance: 110 });
     initParticleCanvas('work-particles', { count: 45, distance: 100 });
