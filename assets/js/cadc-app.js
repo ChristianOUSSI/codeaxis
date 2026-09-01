@@ -151,10 +151,11 @@
     }
   });
 
-  // Gestes Tactiles Mobile — Seuil élevé pour éviter les changements accidentels
+  // Touch Swipe Intelligent & Anti-Sauts Intempestifs sur Mobile
   let touchStartY = 0;
   let touchStartX = 0;
   let touchStartTime = 0;
+  let touchTarget = null;
 
   window.addEventListener(
     'touchstart',
@@ -163,6 +164,7 @@
         touchStartY = e.touches[0].clientY;
         touchStartX = e.touches[0].clientX;
         touchStartTime = Date.now();
+        touchTarget = e.target;
       }
     },
     { passive: true }
@@ -178,17 +180,48 @@
       const deltaY = touchStartY - e.changedTouches[0].clientY;
       const deltaX = touchStartX - e.changedTouches[0].clientX;
       const elapsed = Date.now() - touchStartTime;
+      const absY = Math.abs(deltaY);
+      const absX = Math.abs(deltaX);
 
-      // Seuil élevé (85px) + durée min 80ms pour éviter les glissements accidentels
-      const swipeThreshold = 85;
-      const minDuration = 80;
+      // Vérifier si le touch provient d'un carrousel interactif
+      const isInsideHeroCarousel = touchTarget && touchTarget.closest('#heroViewCarousel, .carousel-container, #carousel');
+      const isInsideHireCarousel = touchTarget && touchTarget.closest('#hireCarouselContainer, #hireCarousel');
+      const isInsideTeamSlider = touchTarget && touchTarget.closest('#viewTeamContainer, .slider');
+      const isInsideSkills = touchTarget && touchTarget.closest('#viewSkillsContainer, .skills-container');
+      const isInsideMapOrAction = touchTarget && touchTarget.closest('iframe, a, button, input, select, textarea');
 
-      if (
-        Math.abs(deltaY) > swipeThreshold &&
-        Math.abs(deltaY) > Math.abs(deltaX) * 1.5 &&
-        elapsed > minDuration &&
-        elapsed < 600
-      ) {
+      // 1. Swipe horizontal à l'intérieur du Carrousel 3D Hero
+      if (isInsideHeroCarousel && absX > 35 && absX > absY) {
+        if (deltaX > 0) nextHeroSlide();
+        else prevHeroSlide();
+        return;
+      }
+
+      // 2. Swipe horizontal à l'intérieur du Carrousel 3D Services & Devis
+      if (isInsideHireCarousel && absX > 35 && absX > absY) {
+        if (deltaX > 0) nextHireSlide();
+        else prevHireSlide();
+        return;
+      }
+
+      // 3. Swipe horizontal à l'intérieur du Slider Équipe
+      if (isInsideTeamSlider && absX > 35 && absX > absY) {
+        if (deltaX > 0) {
+          const nextBtn = document.querySelector('.slider--next');
+          if (nextBtn) nextBtn.click();
+        } else {
+          const prevBtn = document.querySelector('.slider--prev');
+          if (prevBtn) prevBtn.click();
+        }
+        return;
+      }
+
+      // Si l'utilisateur clique ou interagit dans un composant, éviter de sauter de page
+      if (isInsideMapOrAction && absY < 120) return;
+      if ((isInsideHeroCarousel || isInsideHireCarousel || isInsideSkills) && absY < 120) return;
+
+      // 4. Changement de section globale vertical (Swipe intentionnel avec amplitude nette)
+      if (absY > 90 && absY > 1.8 * absX && elapsed < 850) {
         if (deltaY > 0) nextSection();
         else prevSection();
       }
@@ -396,6 +429,17 @@
       indicatorsContainer.appendChild(indicator);
     });
 
+    update3DHeroCarousel();
+  }
+
+  
+  function nextHeroSlide() {
+    carouselIndex = (carouselIndex + 1) % portfolioData.length;
+    update3DHeroCarousel();
+  }
+
+  function prevHeroSlide() {
+    carouselIndex = (carouselIndex - 1 + portfolioData.length) % portfolioData.length;
     update3DHeroCarousel();
   }
 
@@ -846,97 +890,107 @@
     render();
   }
 
+  
   /* ===================================================================
-     8. CARROUSEL 3D SERVICES & DEVIS
+     4. 3D SERVICES & DEVIS CAROUSEL (SECTION 05 - ADAPTÉ PETITS ÉCRANS)
      =================================================================== */
-  const hireData = [
+  const hireServicesData = [
     {
       id: 1,
-      icon: '💻',
       title: 'Développement Web',
-      description: 'Sites vitrines futuristes, plateformes SaaS, portails e-commerce réactifs et performants.',
-      tech: ['React / Next.js', 'Node.js', 'PostgreSQL'],
-      waLink: 'https://wa.me/237691223916?text=Je%20veux%20un%20D%C3%A9veloppement%20Web',
-      mailLink: 'mailto:CADC@gmail.com?subject=Devis%20Web'
+      badge: 'Web Apps & SaaS',
+      icon: '💻',
+      description: 'Sites vitrines futuristes, plateformes SaaS haute disponibilité, portails e-commerce et dashboards réactifs.',
+      tech: ['Next.js 14', 'React', 'Node.js', 'PostgreSQL'],
+      waText: 'Bonjour CADC, je souhaite un devis pour un Développement Web.',
+      mailSubject: 'Devis Développement Web CADC'
     },
     {
       id: 2,
-      icon: '📱',
       title: 'Applications Mobiles',
-      description: 'Apps natives et hybrides Android / iOS à ergonomie irréprochable et UX premium.',
-      tech: ['React Native', 'Flutter', 'Firebase'],
-      waLink: 'https://wa.me/237691223916?text=Je%20veux%20une%20App%20Mobile',
-      mailLink: 'mailto:CADC@gmail.com?subject=Devis%20Mobile'
+      badge: 'iOS & Android',
+      icon: '📱',
+      description: 'Applications mobiles natives et hybrides ultra-fluides, offline-first et adaptées aux réseaux d\'Afrique subsaharienne.',
+      tech: ['Flutter', 'React Native', 'Swift', 'Kotlin'],
+      waText: 'Bonjour CADC, je souhaite un devis pour une Application Mobile.',
+      mailSubject: 'Devis Application Mobile CADC'
     },
     {
       id: 3,
-      icon: '🎨',
       title: 'Design UI / UX',
-      description: 'Identités de marque, maquettes Figma haute fidélité, Design Systems et prototypes.',
-      tech: ['Figma', 'Design System', 'Motion UI'],
-      waLink: 'https://wa.me/237691223916?text=Je%20veux%20du%20Design%20UIUX',
-      mailLink: 'mailto:CADC@gmail.com?subject=Devis%20Design'
+      badge: 'Identité & Figma',
+      icon: '🎨',
+      description: 'Identités visuelles marquantes, maquettes Figma haute fidélité, micro-animations immersives et Design Systems complets.',
+      tech: ['Figma', 'Design System', 'Motion UI', 'UX Audit'],
+      waText: 'Bonjour CADC, je souhaite un devis Design UI/UX.',
+      mailSubject: 'Devis Design UI/UX CADC'
     },
     {
       id: 4,
-      icon: '☁️',
       title: 'Cloud & DevOps',
-      description: 'Déploiement AWS/GCP, automatisation CI/CD, containers Docker et sécurité serveurs.',
-      tech: ['AWS / GCP', 'Docker / K8s', 'CI/CD GitLab'],
-      waLink: 'https://wa.me/237691223916?text=Je%20veux%20du%20Cloud%20DevOps',
-      mailLink: 'mailto:CADC@gmail.com?subject=Devis%20Cloud'
+      badge: 'Haute Disponibilité',
+      icon: '☁️',
+      description: 'Architectures cloud distribuées sur AWS/GCP, conteneurs Docker, pipelines CI/CD automatisés et cybersécurité proactive.',
+      tech: ['AWS Cloud', 'Docker', 'Kubernetes', 'CI/CD'],
+      waText: 'Bonjour CADC, je souhaite un devis Cloud & DevOps.',
+      mailSubject: 'Devis Cloud DevOps CADC'
     },
     {
       id: 5,
-      icon: '🤖',
       title: 'IA & Automation',
-      description: 'Agents intelligents, bots WhatsApp/Telegram, scraping et automatisation métier avancée.',
-      tech: ['LLM / OpenAI', 'Make / n8n', 'Python AI'],
-      waLink: 'https://wa.me/237691223916?text=Je%20veux%20de%20l%20IA',
-      mailLink: 'mailto:CADC@gmail.com?subject=Devis%20IA'
+      badge: 'IA Métier & Bots',
+      icon: '🤖',
+      description: 'Intégration d\'agents intelligents, modèles prédictifs, bots WhatsApp sur-mesure et automatisation des processus métier.',
+      tech: ['Python AI', 'LLMs', 'WhatsApp API', 'Workflows'],
+      waText: 'Bonjour CADC, je souhaite un devis IA et Automation.',
+      mailSubject: 'Devis IA Automation CADC'
     },
     {
       id: 6,
-      icon: '📈',
       title: 'Growth & Marketing',
-      description: 'Acquisition client ciblée, SEO technique, réseaux sociaux et entonnoir de conversion maximale.',
-      tech: ['SEO / SEM', 'Analytics', 'Social Ads'],
-      waLink: 'https://wa.me/237691223916?text=Je%20veux%20du%20Growth%20Marketing',
-      mailLink: 'mailto:CADC@gmail.com?subject=Devis%20Growth'
+      badge: 'Acquisition & SEO',
+      icon: '📈',
+      description: 'Stratégies d\'acquisition client ciblées, référencement SEO de pointe, campagnes digitales et conversion maximale.',
+      tech: ['SEO Pro', 'Google Ads', 'Analytics', 'Conversion Engine'],
+      waText: 'Bonjour CADC, je souhaite un devis Growth & Marketing.',
+      mailSubject: 'Devis Growth Marketing CADC'
     }
   ];
 
   let hireCarouselIndex = 0;
-  let hireAutoplay = null;
+  const hireCarousel = document.getElementById('hireCarousel');
+  const hireIndicatorsContainer = document.getElementById('hireIndicators');
+  const hirePrevBtn = document.getElementById('hirePrevBtn');
+  const hireNextBtn = document.getElementById('hireNextBtn');
 
-  function initHireCarousel() {
-    const hireCarousel = document.getElementById('hire-carousel');
-    const hireIndicatorsEl = document.getElementById('hire-indicators');
-    if (!hireCarousel || !hireIndicatorsEl) return;
-
+  function init3DHireCarousel() {
+    if (!hireCarousel || !hireIndicatorsContainer) return;
     hireCarousel.innerHTML = '';
-    hireIndicatorsEl.innerHTML = '';
+    hireIndicatorsContainer.innerHTML = '';
 
-    hireData.forEach((data, index) => {
+    hireServicesData.forEach((data, index) => {
       const item = document.createElement('div');
-      item.className = 'carousel-item';
+      item.className = 'hire-carousel-item';
       item.dataset.index = index;
 
-      const techBadges = data.tech.map(t => `<span class="tech-badge">${t}</span>`).join('');
+      const techBadges = data.tech
+        .map((t) => `<span class="hire-card-tech">${t}</span>`)
+        .join('');
 
       item.innerHTML = `
-        <div class="card hire-card-3d">
-          <div class="card-number">0${data.id}</div>
-          <div class="hire-icon-3d">${data.icon}</div>
-          <h3 class="card-title">${data.title}</h3>
-          <p class="card-description">${data.description}</p>
-          <div class="card-tech">${techBadges}</div>
-          <div class="hire-actions-3d">
-            <a href="${data.waLink}" target="_blank" rel="noopener noreferrer" class="hire-btn whatsapp">
-              📞 WhatsApp
+        <div class="hire-card-3d">
+          <div class="hire-card-number">0${data.id}</div>
+          <div class="hire-card-icon">${data.icon}</div>
+          <span class="hire-card-badge">${data.badge}</span>
+          <h3 class="hire-card-title">${data.title}</h3>
+          <p class="hire-card-desc">${data.description}</p>
+          <div class="hire-card-techs">${techBadges}</div>
+          <div class="hire-card-actions">
+            <a href="https://wa.me/237691223916?text=${encodeURIComponent(data.waText)}" target="_blank" rel="noopener noreferrer" class="hire-btn-action whatsapp">
+              WhatsApp
             </a>
-            <a href="${data.mailLink}" class="hire-btn email">
-              ✉️ Email
+            <a href="mailto:CADC@gmail.com?subject=${encodeURIComponent(data.mailSubject)}" class="hire-btn-action email">
+              Devis Email
             </a>
           </div>
         </div>
@@ -945,137 +999,132 @@
       item.addEventListener('click', () => {
         if (index !== hireCarouselIndex) {
           hireCarouselIndex = index;
-          updateHireCarousel();
+          update3DHireCarousel();
         }
       });
 
       hireCarousel.appendChild(item);
 
-      const dot = document.createElement('div');
-      dot.className = 'indicator' + (index === 0 ? ' active' : '');
-      dot.dataset.index = index;
-      dot.addEventListener('click', () => {
+      const indicator = document.createElement('div');
+      indicator.className = 'indicator';
+      if (index === 0) indicator.classList.add('active');
+      indicator.dataset.index = index;
+      indicator.addEventListener('click', () => {
         hireCarouselIndex = index;
-        updateHireCarousel();
+        update3DHireCarousel();
       });
-      hireIndicatorsEl.appendChild(dot);
+      hireIndicatorsContainer.appendChild(indicator);
     });
 
-    updateHireCarousel();
-    startHireAutoplay();
-
-    // Arrow buttons
-    const prevBtn = document.getElementById('hire-prev');
-    const nextBtn = document.getElementById('hire-next');
-    if (prevBtn) {
-      prevBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        hireCarouselIndex = (hireCarouselIndex - 1 + hireData.length) % hireData.length;
-        updateHireCarousel();
-        resetHireAutoplay();
-      });
-    }
-    if (nextBtn) {
-      nextBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        hireCarouselIndex = (hireCarouselIndex + 1) % hireData.length;
-        updateHireCarousel();
-        resetHireAutoplay();
+    if (hirePrevBtn) {
+      hirePrevBtn.addEventListener('click', () => {
+        prevHireSlide();
       });
     }
 
-    // Touch swipe inside carousel (horizontal)
-    let hTouchStartX = 0;
-    let hTouchStartY = 0;
-    const container = document.getElementById('hire-carousel-container');
-    if (container) {
-      container.addEventListener('touchstart', (e) => {
-        if (e.touches.length > 0) {
-          hTouchStartX = e.touches[0].clientX;
-          hTouchStartY = e.touches[0].clientY;
-        }
-      }, { passive: true });
-
-      container.addEventListener('touchend', (e) => {
-        if (!e.changedTouches || e.changedTouches.length === 0) return;
-        const dx = hTouchStartX - e.changedTouches[0].clientX;
-        const dy = hTouchStartY - e.changedTouches[0].clientY;
-        if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
-          // Horizontal swipe inside carousel → change card, DON'T change section
-          e.stopPropagation();
-          if (dx > 0) {
-            hireCarouselIndex = (hireCarouselIndex + 1) % hireData.length;
-          } else {
-            hireCarouselIndex = (hireCarouselIndex - 1 + hireData.length) % hireData.length;
-          }
-          updateHireCarousel();
-          resetHireAutoplay();
-        }
-      }, { passive: true });
+    if (hireNextBtn) {
+      hireNextBtn.addEventListener('click', () => {
+        nextHireSlide();
+      });
     }
+
+    update3DHireCarousel();
   }
 
-  function updateHireCarousel() {
-    const items = document.querySelectorAll('#hire-carousel .carousel-item');
-    const dots = document.querySelectorAll('#hire-indicators .indicator');
-    const total = items.length;
-    if (!total) return;
+  function nextHireSlide() {
+    hireCarouselIndex = (hireCarouselIndex + 1) % hireServicesData.length;
+    update3DHireCarousel();
+  }
+
+  function prevHireSlide() {
+    hireCarouselIndex = (hireCarouselIndex - 1 + hireServicesData.length) % hireServicesData.length;
+    update3DHireCarousel();
+  }
+
+  function update3DHireCarousel() {
+    const items = document.querySelectorAll('.hire-carousel-item');
+    const indicators = document.querySelectorAll('#hireIndicators .indicator');
+    const totalItems = items.length;
+    if (totalItems === 0) return;
 
     const isMobile = window.innerWidth <= 768;
     const isTablet = window.innerWidth <= 1024;
 
     items.forEach((item, index) => {
-      const offset = index - hireCarouselIndex;
+      let offset = index - hireCarouselIndex;
+      if (offset > totalItems / 2) offset -= totalItems;
+      else if (offset < -totalItems / 2) offset += totalItems;
+
       const absOffset = Math.abs(offset);
+      const sign = offset < 0 ? -1 : 1;
 
-      item.classList.remove('active', 'left-1', 'left-2', 'right-1', 'right-2', 'hidden');
+      item.style.transition = 'all 0.75s cubic-bezier(0.25, 1, 0.5, 1)';
 
-      if (offset === 0) {
-        item.classList.add('active');
-        item.style.cssText = 'opacity:1; transform:translateX(0) translateZ(0) scale(1); z-index:5; pointer-events:auto;';
-      } else if (offset === -1 || offset === total - 1) {
-        item.classList.add('left-1');
-        const tx = isMobile ? '-120px' : isTablet ? '-200px' : '-280px';
-        item.style.cssText = `opacity:${isMobile ? '0' : '0.5'}; transform:translateX(${tx}) translateZ(-80px) scale(0.82) rotateY(20deg); z-index:3; pointer-events:${isMobile ? 'none' : 'auto'};`;
-      } else if (offset === 1 || offset === -(total - 1)) {
-        item.classList.add('right-1');
-        const tx = isMobile ? '120px' : isTablet ? '200px' : '280px';
-        item.style.cssText = `opacity:${isMobile ? '0' : '0.5'}; transform:translateX(${tx}) translateZ(-80px) scale(0.82) rotateY(-20deg); z-index:3; pointer-events:${isMobile ? 'none' : 'auto'};`;
+      let spacing1 = 340;
+      let spacing2 = 520;
+      let spacing3 = 680;
+
+      if (isMobile) {
+        spacing1 = 220;
+        spacing2 = 340;
+        spacing3 = 450;
+      } else if (isTablet) {
+        spacing1 = 280;
+        spacing2 = 440;
+        spacing3 = 560;
+      }
+
+      if (absOffset === 0) {
+        item.style.transform = 'translate(-50%, -50%) translateZ(0) scale(1)';
+        item.style.opacity = '1';
+        item.style.zIndex = '10';
+        item.style.filter = 'drop-shadow(0 0 30px rgba(0, 210, 255, 0.35))';
+      } else if (absOffset === 1) {
+        const translateX = sign * spacing1;
+        const rotation = isMobile ? 25 : 30;
+        const scale = isMobile ? 0.85 : 0.82;
+        item.style.transform = `translate(-50%, -50%) translateX(${translateX}px) translateZ(-180px) rotateY(${-sign * rotation}deg) scale(${scale})`;
+        item.style.opacity = '0.75';
+        item.style.zIndex = '5';
+        item.style.filter = 'blur(0.5px)';
+      } else if (absOffset === 2) {
+        const translateX = sign * spacing2;
+        const rotation = isMobile ? 35 : 40;
+        const scale = isMobile ? 0.72 : 0.68;
+        item.style.transform = `translate(-50%, -50%) translateX(${translateX}px) translateZ(-320px) rotateY(${-sign * rotation}deg) scale(${scale})`;
+        item.style.opacity = '0.45';
+        item.style.zIndex = '3';
+        item.style.filter = 'blur(1.5px)';
       } else {
-        item.classList.add('hidden');
-        item.style.cssText = 'opacity:0; transform:scale(0.6); z-index:1; pointer-events:none;';
+        const translateX = sign * spacing3;
+        item.style.transform = `translate(-50%, -50%) translateX(${translateX}px) translateZ(-450px) rotateY(${-sign * 45}deg) scale(0.55)`;
+        item.style.opacity = '0.2';
+        item.style.zIndex = '1';
+        item.style.filter = 'blur(2px)';
       }
     });
 
-    dots.forEach((dot, index) => {
-      dot.classList.toggle('active', index === hireCarouselIndex);
+    indicators.forEach((ind, index) => {
+      if (index === hireCarouselIndex) ind.classList.add('active');
+      else ind.classList.remove('active');
     });
-  }
-
-  function startHireAutoplay() {
-    hireAutoplay = setInterval(() => {
-      if (currentSection === 4) { // Section Services
-        hireCarouselIndex = (hireCarouselIndex + 1) % hireData.length;
-        updateHireCarousel();
-      }
-    }, 4000);
-  }
-
-  function resetHireAutoplay() {
-    clearInterval(hireAutoplay);
-    startHireAutoplay();
   }
 
   // Initialisation Globale
   document.addEventListener('DOMContentLoaded', () => {
     init3DHeroCarousel();
-    initHireCarousel();
+    init3DHireCarousel();
     initTechnicalArsenal();
     initParticleCanvas('intro-particles', { count: 50, distance: 110 });
     initParticleCanvas('work-particles', { count: 45, distance: 100 });
     initParticleCanvas('about-particles', { count: 50, distance: 110 });
     initParticleCanvas('contact-particles', { count: 65, distance: 120 });
     initParticleCanvas('hire-particles', { count: 45, distance: 100 });
+  });
+
+    window.addEventListener('resize', () => {
+    update3DHeroCarousel();
+    update3DHireCarousel();
   });
 
   // Global helper

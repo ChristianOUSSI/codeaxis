@@ -398,27 +398,30 @@
               </div>
             </li>
 
-            <!-- SECTION 05 : QUE VOULEZ-VOUS DE NOUS ? (SERVICES & DEVIS) -->
+            <!-- SECTION 05 : QUE VOULEZ-VOUS DE NOUS ? (SERVICES & DEVIS 3D CAROUSEL) -->
             <li class="l-section section" id="section-hire">
               <canvas id="hire-particles" class="section-particles"></canvas>
               <div class="hire">
                 <h2 class="section-title-glow">Que voulez-vous de nous ?</h2>
-                <div class="hire-carousel-wrap">
-                  <!-- Carrousel 3D Services -->
-                  <div class="carousel-container hire-carousel-container" id="hire-carousel-container">
-                    <div class="carousel" id="hire-carousel"></div>
+                
+                <!-- Carrousel 3D Services & Devis (Ultra Fluide Mobile & PC) -->
+                <div class="hire-carousel-container" id="hireCarouselContainer">
+                  <div class="hire-carousel" id="hireCarousel">
+                    <!-- 3D Service Cards générés par JS -->
                   </div>
-                  <div class="indicators" id="hire-indicators"></div>
-                  <!-- Flèches navigation -->
-                  <div class="hire-carousel-nav">
-                    <button class="hire-carousel-btn" id="hire-prev" aria-label="Précédent">
-                      <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
-                    </button>
-                    <button class="hire-carousel-btn" id="hire-next" aria-label="Suivant">
-                      <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
-                    </button>
+
+                  <!-- Boutons de navigation Fléchés 3D -->
+                  <div class="hire-nav-btn hire-nav-prev" id="hirePrevBtn" aria-label="Service Précédent">
+                    <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
                   </div>
+                  <div class="hire-nav-btn hire-nav-next" id="hireNextBtn" aria-label="Service Suivant">
+                    <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+                  </div>
+
+                  <!-- Indicateurs à puces -->
+                  <div class="indicators" id="hireIndicators"></div>
                 </div>
+
               </div>
             </li>
 

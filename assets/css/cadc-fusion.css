@@ -1577,7 +1577,7 @@ button, input, textarea {
 }
 
 /* ===================================================================
-   SECTION 05 : SERVICES (HIRE)
+   SECTION 05 : SERVICES & DEVIS 3D CAROUSEL
    =================================================================== */
 .hire {
   position: relative;
@@ -1585,96 +1585,223 @@ button, input, textarea {
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  max-width: 1050px;
+  max-width: 1100px;
   margin: 0 auto;
   z-index: 2;
 }
 
-.hire--grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin-top: 10px;
+.hire-carousel-container {
+  position: relative;
+  width: 100%;
+  height: clamp(380px, 48vh, 450px);
+  perspective: 1200px;
+  perspective-origin: 50% 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  touch-action: pan-y;
+  user-select: none;
 }
 
-.hire-card {
+.hire-carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.hire-carousel-item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: clamp(280px, 32vw, 340px);
+  height: clamp(330px, 41vh, 380px);
+  transform-origin: center center;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
+  transition: all 0.75s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.hire-card-3d {
+  position: relative;
+  width: 100%;
+  height: 100%;
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
-  border-radius: 12px;
-  padding: 20px 16px;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  text-align: center;
+  border-radius: 16px;
+  padding: clamp(14px, 2vh, 22px) clamp(14px, 2.5vw, 20px);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: var(--transition-smooth);
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  box-sizing: border-box;
 }
 
-.hire-card:hover {
-  background: var(--bg-card-hover);
+.hire-card-3d:hover {
   border-color: var(--neon-cyan);
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6), 0 0 20px var(--neon-glow-cyan);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.75), 0 0 30px var(--neon-glow-cyan);
 }
 
-.hire-icon {
-  width: 46px;
-  height: 46px;
-  border-radius: 10px;
-  background: rgba(15, 51, 255, 0.15);
-  border: 1px solid var(--border-subtle);
+.hire-card-number {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  font-family: 'Oxanium', 'Russo One', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  color: rgba(0, 210, 255, 0.7);
+  letter-spacing: 1px;
+}
+
+.hire-card-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--neon-cyan);
+  background: rgba(0, 210, 255, 0.12);
+  border: 1px solid rgba(0, 210, 255, 0.25);
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.hire-card-icon {
+  width: clamp(44px, 5.5vh, 54px);
+  height: clamp(44px, 5.5vh, 54px);
+  font-size: clamp(22px, 2.8vh, 28px);
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(15, 51, 255, 0.25), rgba(0, 210, 255, 0.15));
+  border: 1px solid rgba(0, 210, 255, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 10px;
-  color: var(--neon-cyan);
-  transition: var(--transition-smooth);
+  box-shadow: 0 0 20px rgba(15, 51, 255, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.hire-card:hover .hire-icon {
-  background: var(--neon-blue);
-  color: #ffffff;
-  border-color: var(--neon-cyan);
-  box-shadow: 0 0 15px var(--neon-glow-cyan);
-  transform: scale(1.1);
+.hire-card-3d:hover .hire-card-icon {
+  transform: scale(1.12) rotate(3deg);
+  box-shadow: 0 0 25px var(--neon-glow-cyan);
 }
 
-.hire-card h3 {
+.hire-card-title {
   font-family: 'Oxanium', sans-serif;
-  font-size: 14px;
-  font-weight: 700;
+  font-size: clamp(14px, 1.8vw, 17px);
+  font-weight: 800;
   color: #ffffff;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
   text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-.hire-card p {
-  font-size: 11px;
+.hire-card-desc {
+  font-size: clamp(11px, 1.3vh, 12.5px);
   color: var(--text-muted);
-  margin-bottom: 12px;
   line-height: 1.4;
+  margin-bottom: 10px;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
 }
 
-.hire-actions {
+.hire-card-techs {
   display: flex;
-  gap: 6px;
+  flex-wrap: wrap;
+  gap: 4px;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.hire-card-tech {
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.hire-card-actions {
+  display: flex;
+  gap: 8px;
   width: 100%;
   margin-top: auto;
 }
 
-.hire-btn {
+.hire-btn-action {
   flex: 1;
-  padding: 6px 8px;
-  border-radius: 6px;
+  padding: clamp(8px, 1.3vh, 10px) 6px;
+  border-radius: 8px;
+  font-family: 'Oxanium', sans-serif;
+  font-size: clamp(10px, 1.1vw, 11.5px);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  text-decoration: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 4px;
-  font-size: 10px;
-  font-weight: 700;
-  text-transform: uppercase;
-  transition: var(--transition-smooth);
+  gap: 5px;
+  transition: all 0.25s ease;
+}
+
+.hire-btn-action.whatsapp {
+  background: #25d366;
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.35);
+}
+
+.hire-btn-action.whatsapp:hover {
+  background: #20ba5a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(37, 211, 102, 0.55);
+}
+
+.hire-btn-action.email {
+  background: var(--grad-primary);
+  color: #ffffff;
+  box-shadow: 0 4px 15px var(--neon-glow);
+}
+
+.hire-btn-action.email:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px var(--neon-glow-cyan);
+}
+
+/* Flèches de navigation 3D Services */
+.hire-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(7, 9, 19, 0.85);
+  border: 1px solid rgba(0, 210, 255, 0.4);
+  color: var(--neon-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.hire-nav-btn:hover {
+  background: var(--neon-blue);
 }
 
 .hire-btn.whatsapp {
@@ -1938,96 +2065,4 @@ button, input, textarea {
     padding-top: 50px;
   }
 }
-
-/* ===================================================================
-   CARROUSEL 3D SERVICES & DEVIS
-   =================================================================== */
-.hire-carousel-wrap {
-  position: relative;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-}
-
-.hire-carousel-container {
-  width: 100%;
-  height: clamp(340px, 55vh, 440px);
-  position: relative;
-  perspective: 1000px;
-  overflow: visible;
-}
-
-.hire-icon-3d {
-  font-size: clamp(36px, 6vw, 52px);
-  margin-bottom: 10px;
-  filter: drop-shadow(0 0 12px rgba(0, 210, 255, 0.5));
-  line-height: 1;
-}
-
-.hire-card-3d {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 8px;
-}
-
-.hire-card-3d .card-title {
-  font-size: clamp(15px, 2.5vw, 19px);
-}
-
-.hire-card-3d .card-description {
-  font-size: clamp(12px, 1.8vw, 13px);
-  line-height: 1.55;
-}
-
-.hire-actions-3d {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: auto;
-  padding-top: 10px;
-}
-
-.hire-carousel-nav {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  justify-content: center;
-}
-
-.hire-carousel-btn {
-  background: rgba(15, 51, 255, 0.2);
-  border: 1px solid rgba(0, 210, 255, 0.4);
-  color: var(--neon-cyan);
-  border-radius: 50%;
-  width: 42px;
-  height: 42px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
-
-.hire-carousel-btn:hover {
-  background: rgba(15, 51, 255, 0.45);
-  border-color: var(--neon-cyan);
-  box-shadow: 0 0 15px var(--neon-glow-cyan);
-  transform: scale(1.1);
-}
-
-@media (max-width: 768px) {
-  .hire-carousel-container {
-    height: 320px;
-  }
-  .hire-icon-3d {
-    font-size: 36px;
-  }
-}
-
 
