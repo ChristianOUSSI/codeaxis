@@ -1018,6 +1018,7 @@ button, input, textarea {
   width: 100%;
   max-width: 1150px;
   margin: 0 auto;
+  padding-top: clamp(70px, 9vh, 90px);
   z-index: 2;
 }
 
@@ -2102,6 +2103,10 @@ button, input, textarea {
   .metrics-grid { grid-template-columns: 1fr; }
   .carousel-item { width: 260px; height: 350px; }
   .skill-hexagon { width: 135px; height: 160px; margin: 5px; }
+  .work { padding-top: 80px; }
+  .work .section-title-glow { font-size: clamp(20px, 5.5vw, 26px); margin-bottom: 12px; }
+  .section-subtoggle { margin-bottom: 14px; gap: 8px; }
+  .mode-btn { padding: 6px 12px; font-size: 10.5px; }
 }
 
 /* ===================================================================
@@ -2115,7 +2120,7 @@ button, input, textarea {
     padding-top: 25px;
   }
   .work {
-    padding-top: 50px;
+    padding-top: 85px;
   }
   .contact {
     padding-top: 50px;
