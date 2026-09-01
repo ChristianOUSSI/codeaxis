@@ -1104,6 +1104,12 @@
       }
     });
 
+    
+    const counterEl = document.getElementById('hireCounterCurrent');
+    if (counterEl) {
+      counterEl.textContent = '0' + (hireCarouselIndex + 1);
+    }
+
     indicators.forEach((ind, index) => {
       if (index === hireCarouselIndex) ind.classList.add('active');
       else ind.classList.remove('active');

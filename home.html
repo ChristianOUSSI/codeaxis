@@ -410,12 +410,23 @@
                     <!-- 3D Service Cards générés par JS -->
                   </div>
 
-                  <!-- Boutons de navigation Fléchés 3D -->
-                  <div class="hire-nav-btn hire-nav-prev" id="hirePrevBtn" aria-label="Service Précédent">
-                    <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
-                  </div>
-                  <div class="hire-nav-btn hire-nav-next" id="hireNextBtn" aria-label="Service Suivant">
-                    <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+                  <!-- Barre de Contrôle Cyber Inférieure -->
+                  <div class="hire-controls-bar">
+                    <button class="hire-ctrl-btn hire-ctrl-prev" id="hirePrevBtn" aria-label="Service Précédent">
+                      <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+                      <span>Précédent</span>
+                    </button>
+                    
+                    <div class="hire-counter-capsule">
+                      <span class="hire-counter-current" id="hireCounterCurrent">01</span>
+                      <span class="hire-counter-sep">/</span>
+                      <span class="hire-counter-total">06</span>
+                    </div>
+
+                    <button class="hire-ctrl-btn hire-ctrl-next" id="hireNextBtn" aria-label="Service Suivant">
+                      <span>Suivant</span>
+                      <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+                    </button>
                   </div>
 
                   <!-- Indicateurs à puces -->
