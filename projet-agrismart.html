@@ -4,16 +4,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="AgriSmart AI - Assistant agricole intelligent par IA - C.A.D.C.">
-  <title>AgriSmart AI C.A.D.C.</title>
+  <meta name="description" content="AgriSmart AI - Assistant agricole intelligent par IA - CODE AXIS">
+  <title>AgriSmart AI CODE AXIS</title>
   <link rel="manifest" href="manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&family=Oxanium:wght@400;600;700;800&family=Russo+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/cadc-fusion.css">
   <style>
+    html {
+      overflow-y: auto !important;
+      background: var(--bg-primary);
+      color: var(--text-main);
+    
+      height: auto !important;
+      min-height: 100%;
+    }
     body {
       overflow-y: auto !important;
       background: var(--bg-primary);
       color: var(--text-main);
-    }
+    
+      height: auto !important;
+      min-height: 100%;  }
 
     .proj-page {
       max-width: 1100px;
@@ -62,7 +75,7 @@
       font-family: 'Oxanium', sans-serif;
       font-size: 13px;
       font-weight: 700;
-      color: #00ff88;
+      color: #a9c4de;
       text-transform: uppercase;
       letter-spacing: 2px;
       margin-bottom: 16px;
@@ -72,7 +85,7 @@
     .proj-hero h1 {
       font-family: 'Russo One', sans-serif;
       font-size: clamp(36px, 5.5vw, 68px);
-      background: linear-gradient(135deg, #00ff88, #00d2ff);
+      background: linear-gradient(135deg, #a9c4de, #9db9d6);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       line-height: 1.05;
@@ -90,14 +103,14 @@
     .proj-visual {
       width: 100%;
       height: 360px;
-      background: linear-gradient(135deg, rgba(0, 255, 136, 0.15) 0%, rgba(0, 210, 255, 0.1) 50%, rgba(15, 51, 255, 0.1) 100%);
+      background: linear-gradient(135deg, rgba(169, 196, 222, 0.15) 0%, rgba(157, 185, 214, 0.1) 50%, rgba(62, 95, 138, 0.1) 100%);
       border-radius: 20px;
       margin: 40px 0;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 100px;
-      border: 1px solid rgba(0, 255, 136, 0.2);
+      border: 1px solid rgba(169, 196, 222, 0.2);
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
       position: relative;
       overflow: hidden;
@@ -107,7 +120,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse at 60% 40%, rgba(0, 255, 136, 0.15) 0%, transparent 60%);
+      background: radial-gradient(ellipse at 60% 40%, rgba(169, 196, 222, 0.15) 0%, transparent 60%);
       animation: pulse-bg 3s ease-in-out infinite;
     }
 
@@ -159,9 +172,9 @@
     }
 
     .feature-item:hover {
-      border-color: #00ff88;
+      border-color: #a9c4de;
       transform: translateY(-3px);
-      box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
+      box-shadow: 0 0 20px rgba(169, 196, 222, 0.2);
     }
 
     .feature-icon {
@@ -192,25 +205,25 @@
     }
 
     .tech-chip {
-      background: rgba(0, 255, 136, 0.1);
-      border: 1px solid rgba(0, 255, 136, 0.2);
+      background: rgba(169, 196, 222, 0.1);
+      border: 1px solid rgba(169, 196, 222, 0.2);
       padding: 6px 14px;
       border-radius: 20px;
       font-size: 13px;
-      color: #00ff88;
+      color: #a9c4de;
     }
 
     .status-badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(0, 255, 136, 0.1);
-      border: 1px solid rgba(0, 255, 136, 0.3);
+      background: rgba(169, 196, 222, 0.1);
+      border: 1px solid rgba(169, 196, 222, 0.3);
       border-radius: 20px;
       padding: 8px 18px;
       font-family: 'Oxanium', sans-serif;
       font-size: 13px;
-      color: #00ff88;
+      color: #a9c4de;
       font-weight: 700;
       margin-top: 20px;
     }
@@ -218,7 +231,7 @@
     .status-dot {
       width: 8px;
       height: 8px;
-      background: #00ff88;
+      background: #a9c4de;
       border-radius: 50%;
       animation: blink 1.5s ease-in-out infinite;
     }
@@ -236,8 +249,8 @@
     }
 
     .cta-final {
-      background: linear-gradient(135deg, rgba(0, 255, 136, 0.1), rgba(0, 210, 255, 0.08));
-      border: 1px solid rgba(0, 255, 136, 0.3);
+      background: linear-gradient(135deg, rgba(169, 196, 222, 0.1), rgba(157, 185, 214, 0.08));
+      border: 1px solid rgba(169, 196, 222, 0.3);
       border-radius: 16px;
       padding: 50px 30px;
       text-align: center;
@@ -261,23 +274,35 @@
       align-items: center;
       gap: 10px;
       padding: 14px 34px;
-      background: linear-gradient(135deg, #00ff88, #00d2ff);
-      color: #070913;
+      background: linear-gradient(135deg, #a9c4de, #9db9d6);
+      color: #0b141f;
       font-family: 'Oxanium', sans-serif;
       font-weight: 800;
       font-size: 14px;
       text-transform: uppercase;
       letter-spacing: 1.5px;
       border-radius: 8px;
-      box-shadow: 0 0 25px rgba(0, 255, 136, 0.4);
+      box-shadow: 0 0 25px rgba(169, 196, 222, 0.4);
       transition: all 0.3s ease;
     }
 
     .btn-cta:hover {
       transform: translateY(-3px) scale(1.03);
-      box-shadow: 0 0 40px rgba(0, 255, 136, 0.6);
+      box-shadow: 0 0 40px rgba(169, 196, 222, 0.6);
     }
   </style>
+  <link rel="canonical" href="https://codeaxis.cm/projet-agrismart.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CODE AXIS Digital Cameroon">
+  <meta property="og:locale" content="fr_CM">
+  <meta property="og:url" content="https://codeaxis.cm/projet-agrismart.html">
+  <meta property="og:title" content="AgriSmart AI CODE AXIS">
+  <meta property="og:description" content="AgriSmart AI - Assistant agricole intelligent par IA - CODE AXIS">
+  <meta property="og:image" content="https://codeaxis.cm/assets/img/logo-cadc.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AgriSmart AI CODE AXIS">
+  <meta name="twitter:description" content="AgriSmart AI - Assistant agricole intelligent par IA - CODE AXIS">
+  <meta name="twitter:image" content="https://codeaxis.cm/assets/img/logo-cadc.png">
 </head>
 
 <body class="theme-night">
@@ -347,6 +372,8 @@
         target="_blank" rel="noopener noreferrer" class="btn-cta">Lançons votre projet</a>
     </div>
   </div>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/icons.js"></script>
 </body>
 
 </html>

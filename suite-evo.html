@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Suite evo, les produits CODE AXIS Digital Cameroon</title>
+  <meta name="description"
+    content="La suite evo de CODE AXIS Digital Cameroon : 22 produits digitaires conçus à Douala, evo-gaz, evo-agent, evo-cars, evo-wear et plus encore.">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2e4257">
+  <link rel="icon" type="image/png" href="assets/img/logo-mark.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&family=Oxanium:wght@400;600;700;800&family=Russo+One&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/cadc-fusion.css">
+  <link rel="stylesheet" href="assets/css/evo-suite.css">
+  <style>
+    html {
+      overflow-y: auto !important;
+      background: var(--bg-primary);
+      color: var(--text-main);
+    
+      height: auto !important;
+      min-height: 100%;
+    }
+    body {
+      overflow-y: auto !important;
+      background: var(--bg-primary);
+      color: var(--text-main);
+    
+      height: auto !important;
+      min-height: 100%;  }
+  </style>
+  <link rel="canonical" href="https://codeaxis.cm/suite-evo.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CODE AXIS Digital Cameroon">
+  <meta property="og:locale" content="fr_CM">
+  <meta property="og:url" content="https://codeaxis.cm/suite-evo.html">
+  <meta property="og:title" content="Suite evo, les produits CODE AXIS Digital Cameroon">
+  <meta property="og:description" content="CODE AXIS Digital Cameroon, agence digitale à Douala.">
+  <meta property="og:image" content="https://codeaxis.cm/assets/img/logo-cadc.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Suite evo, les produits CODE AXIS Digital Cameroon">
+  <meta name="twitter:description" content="CODE AXIS Digital Cameroon, agence digitale à Douala.">
+  <meta name="twitter:image" content="https://codeaxis.cm/assets/img/logo-cadc.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Suite evo par CODE AXIS Digital Cameroon",
+    "itemListOrder": "https://schema.org/ItemListUnordered",
+    "numberOfItems": 22,
+    "publisher": { "@type": "Organization", "name": "CODE AXIS Digital Cameroon", "url": "https://codeaxis.cm/" }
+  }
+  </script>
+</head>
+
+<body class="theme-night">
+  <a href="home.html" class="back-button-fixed">
+    <svg class="ico" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12H6M10.5 6.5L4.5 12l6 5.5"/></svg>
+    <span>Retour</span>
+  </a>
+
+  <header class="evo-hero">
+    <p class="dep-status">by CODE AXIS DIGITAL CAMEROON</p>
+    <h1>Suite evo</h1>
+    <p>Vingt-deux produits métiers conçus et opérés depuis Douala. Chaque brique est pensée pour le terrain camerounais :
+      mobile money, hors-ligne, faible bande passante.</p>
+  </header>
+
+  <main class="evo-grid" id="evoGrid"></main>
+
+  <!-- Modale projet -->
+  <div class="evo-modal" id="evoModal" role="dialog" aria-modal="true" aria-labelledby="evoModalName">
+    <div class="evo-modal-card">
+      <button class="evo-modal-close" id="evoModalClose" aria-label="Fermer">✕</button>
+      <div class="evo-stage" id="evoStage">
+        <img src="assets/img/evo/evo-gaz.jpg" alt="" id="evoModalImg">
+      </div>
+      <h2 class="evo-modal-name" id="evoModalName">evo-gaz</h2>
+      <p class="evo-modal-by">by CODE AXIS DIGITAL CAMEROON</p>
+      <p class="evo-modal-desc" id="evoModalDesc"></p>
+      <div class="evo-modal-actions">
+        <a class="btn-evo-discover" id="evoModalCta" href="deploiement.html">Découvrir</a>
+        <button class="btn-evo-ghost" id="evoModalBack" type="button">Fermer</button>
+      </div>
+    </div>
+  </div>
+
+  <button class="to-top-btn" id="toTopBtn" type="button" aria-label="Revenir en haut de la page">
+    <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19.5v-14M6.5 11l5.5-5.5 5.5 5.5"/></svg>
+  </button>
+
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/icons.js"></script>
+  <script src="assets/js/evo-suite.js"></script>
+  <script>
+    EvoSuite.mount({
+      grid: 'evoGrid', modal: 'evoModal', stage: 'evoStage', img: 'evoModalImg',
+      name: 'evoModalName', desc: 'evoModalDesc', cta: 'evoModalCta', close: 'evoModalClose', back: 'evoModalBack'
+    });
+  </script>
+  <script>
+    (function () {
+      'use strict';
+      var btn = document.getElementById('toTopBtn');
+      var ticking = false;
+      var lastScrollTime = Date.now();
+
+      function onScroll() {
+        lastScrollTime = Date.now();
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(function () {
+          ticking = false;
+          btn.classList.toggle('is-visible', window.scrollY > 420);
+        });
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      btn.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      /* Relais de continuité avec la home :
+         en haut + molette vers le haut -> À Propos ; en bas + molette vers le bas -> Contact */
+      var leaving = false;
+      window.addEventListener('wheel', function (e) {
+        if (leaving || Date.now() - lastScrollTime < 240) return;
+        var atTop = window.scrollY <= 1;
+        var atBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 1;
+        if (e.deltaY < -25 && atTop) { leaving = true; window.location.href = 'home.html#section-2'; }
+        else if (e.deltaY > 25 && atBottom) { leaving = true; window.location.href = 'home.html#section-3'; }
+      }, { passive: true });
+    })();
+  </script>
+</body>
+
+</html>

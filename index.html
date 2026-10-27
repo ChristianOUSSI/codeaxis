@@ -5,19 +5,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="description"
-    content="C.A.D.C.  Agence Digitale d'Élite. Innovation, Développement Web & Mobile, Design UI/UX, Cloud & IA à Douala, Cameroun.">
-  <title>C.A.D.C. Agence Digitale Douala | Lancer l'Expérience</title>
+    content="CODE AXIS Digital Cameroon. Agence Digitale d'Élite à Douala : Innovation, Développement Web & Mobile, Design UI/UX, Cloud & IA.">
+  <title>CODE AXIS Digital Cameroon | Chargement</title>
   <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#0f33ff">
+  <meta name="theme-color" content="#eef1f5">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="icon" type="image/png" href="assets/img/logo-mark.png">
+  <link rel="canonical" href="https://codeaxis.cm/">
 
+  <link rel="preload" as="image" href="assets/img/logo-cadc.png">
+  <link rel="prefetch" as="document" href="home.html">
+  <link rel="prefetch" as="style" href="assets/css/cadc-fusion.css">
+  <link rel="prefetch" as="script" href="assets/js/cadc-app.js">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Oxanium:wght@400;600;700;800;900&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
     *,
     *::before,
@@ -28,506 +32,317 @@
     }
 
     :root {
-      --neon-blue: #0f33ff;
-      --neon-cyan: #00d2ff;
-      --neon-green: #00ff88;
-      --bg-dark: #070913;
+      --ink: #2e4257;
+      --ink-deep: #1d2c3d;
+      --steel: #5c7794;
+      --teal: #0d8f7a;
+      --paper: #eef1f5;
+      --paper-hi: #f6f8fa;
+    }
+
+    html,
+    body {
+      height: 100%;
     }
 
     body {
-      background: var(--bg-dark);
-      color: #ffffff;
       font-family: 'Oxanium', sans-serif;
-      min-height: 100vh;
-      min-height: 100dvh;
-      width: 100%;
+      display: grid;
+      place-items: center;
       overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
+      isolation: isolate;
+      background: radial-gradient(125% 78% at 50% 34%, var(--paper-hi) 0%, var(--paper) 52%, #dfe6ee 100%) #dfe6ee;
+      /* grain papier en pointillés, comme le loader evo-gaz */
+      animation: splash-guard 4.2s ease forwards;
     }
 
-    /* ===== CANVAS BACKGROUND ===== */
-    #launcher-canvas {
+    body::before {
+      content: "";
       position: fixed;
       inset: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
+      background:
+        radial-gradient(rgba(46, 66, 87, 0.07) 0.7px, transparent 0.7px),
+        radial-gradient(rgba(92, 119, 148, 0.06) 0.7px, transparent 0.7px);
+      background-size: 9px 9px, 13px 13px;
+      background-position: 0 0, 4px 6px;
       pointer-events: none;
     }
 
-    /* ===== NEON GRID OVERLAY ===== */
-    .grid-overlay {
-      position: fixed;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(15, 51, 255, 0.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(15, 51, 255, 0.06) 1px, transparent 1px);
-      background-size: clamp(30px, 5vw, 60px) clamp(30px, 5vw, 60px);
-      z-index: 1;
-      pointer-events: none;
+    @keyframes splash-guard {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
-    /* ===== RADIAL GLOW CENTER ===== */
-    .center-glow {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: clamp(300px, 80vw, 750px);
-      height: clamp(300px, 80vw, 750px);
-      background: radial-gradient(ellipse, rgba(15, 51, 255, 0.22) 0%, rgba(0, 210, 255, 0.08) 45%, transparent 70%);
-      z-index: 1;
-      pointer-events: none;
-      animation: glow-pulse 4s ease-in-out infinite;
-    }
-
-    @keyframes glow-pulse {
-
-      0%,
-      100% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 0.75;
-      }
-
-      50% {
-        transform: translate(-50%, -50%) scale(1.15);
-        opacity: 1;
-      }
-    }
-
-    /* ===== LAUNCHER MAIN CARD ===== */
-    .launcher {
+    .splash {
       position: relative;
-      z-index: 10;
       text-align: center;
-      padding: clamp(20px, 4vw, 40px) clamp(16px, 4vw, 32px);
-      max-width: 680px;
-      width: 92%;
-      margin: 0 auto;
-      animation: fade-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+      padding: 20px;
+      z-index: 2;
     }
 
-    @keyframes fade-up {
-      from {
-        opacity: 0;
-        transform: translateY(35px) scale(0.96);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-    }
-
-    /* Badge agence */
-    .launcher-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(15, 51, 255, 0.18);
-      border: 1px solid rgba(0, 210, 255, 0.35);
-      border-radius: 30px;
-      padding: clamp(6px, 1.5vw, 9px) clamp(12px, 3vw, 22px);
-      font-size: clamp(10px, 2.2vw, 11px);
-      font-weight: 700;
-      color: var(--neon-cyan);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: clamp(18px, 4vh, 28px);
-      box-shadow: 0 0 20px rgba(15, 51, 255, 0.25);
-    }
-
-    .badge-dot {
-      width: 7px;
-      height: 7px;
-      background: var(--neon-green);
-      border-radius: 50%;
-      animation: blink 1.5s ease-in-out infinite;
-      box-shadow: 0 0 8px var(--neon-green);
-      flex-shrink: 0;
-    }
-
-    @keyframes blink {
-
-      0%,
-      100% {
-        opacity: 1;
-      }
-
-      50% {
-        opacity: 0.25;
-      }
-    }
-
-    /* Logo / Monogram */
-    .launcher-logo {
-      width: clamp(70px, 15vw, 90px);
-      height: clamp(70px, 15vw, 90px);
-      margin: 0 auto clamp(16px, 3vh, 24px);
-      background: linear-gradient(135deg, rgba(15, 51, 255, 0.35), rgba(0, 210, 255, 0.2));
-      border: 2px solid rgba(0, 210, 255, 0.45);
-      border-radius: clamp(18px, 4vw, 24px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Russo One', sans-serif;
-      font-size: clamp(22px, 5vw, 28px);
-      color: #fff;
-      letter-spacing: 2px;
-      box-shadow: 0 0 45px rgba(15, 51, 255, 0.45), inset 0 0 20px rgba(0, 210, 255, 0.15);
-      animation: logo-float 3.5s ease-in-out infinite;
-    }
-
-    @keyframes logo-float {
-
-      0%,
-      100% {
-        transform: translateY(0);
-        box-shadow: 0 0 40px rgba(15, 51, 255, 0.4), inset 0 0 20px rgba(0, 210, 255, 0.1);
-      }
-
-      50% {
-        transform: translateY(-8px);
-        box-shadow: 0 12px 60px rgba(15, 51, 255, 0.65), inset 0 0 30px rgba(0, 210, 255, 0.25);
-      }
-    }
-
-    /* Title */
-    .launcher-title {
-      font-family: 'Russo One', sans-serif;
-      font-size: clamp(42px, 11vw, 86px);
-      line-height: 1;
-      letter-spacing: -2px;
-      margin-bottom: 6px;
-      background: linear-gradient(135deg, #ffffff 0%, #00d2ff 50%, #0f33ff 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .launcher-subtitle {
-      font-size: clamp(11px, 2.5vw, 14px);
-      font-weight: 700;
-      color: rgba(255, 255, 255, 0.45);
-      text-transform: uppercase;
-      letter-spacing: clamp(2px, 1vw, 4px);
-      margin-bottom: clamp(14px, 2.5vh, 20px);
-    }
-
-    .launcher-desc {
-      font-size: clamp(13px, 2.4vw, 16px);
-      color: rgba(255, 255, 255, 0.65);
-      line-height: 1.65;
-      max-width: 520px;
-      margin: 0 auto clamp(24px, 5vh, 36px);
-    }
-
-    /* Neon lines accent */
-    .neon-line {
-      width: clamp(80px, 20vw, 120px);
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
-      margin: clamp(14px, 2.5vh, 20px) auto;
-      box-shadow: 0 0 10px var(--neon-cyan);
-    }
-
-    /* LAUNCH BUTTON */
-    .btn-launch {
+    .splash-plate {
       position: relative;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      padding: clamp(16px, 3vw, 20px) clamp(36px, 7vw, 56px);
-      background: linear-gradient(135deg, var(--neon-blue) 0%, #00a2ff 60%, var(--neon-cyan) 100%);
-      color: #ffffff;
-      font-family: 'Russo One', sans-serif;
-      font-size: clamp(14px, 3vw, 17px);
-      letter-spacing: clamp(1.5px, 0.5vw, 2.5px);
-      text-transform: uppercase;
-      text-decoration: none;
-      border-radius: 60px;
-      border: none;
-      cursor: pointer;
-      overflow: hidden;
-      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-      box-shadow: 0 0 35px rgba(15, 51, 255, 0.7), 0 0 70px rgba(0, 210, 255, 0.35);
-      animation: btn-appear 1s 0.4s ease both;
-      -webkit-tap-highlight-color: transparent;
+      display: inline-block;
     }
 
-    @keyframes btn-appear {
+    .splash-halo {
+      position: absolute;
+      inset: -14%;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(92, 119, 148, 0.34) 0%, rgba(46, 66, 87, 0.14) 46%, transparent 72%);
+      animation: splash-breathe 4.2s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    @keyframes splash-breathe {
+
+      0%,
+      100% {
+        opacity: 0.5;
+        transform: scale(0.95);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1.06);
+      }
+    }
+
+    .splash-mark {
+      position: relative;
+      display: block;
+      width: min(330px, 72vw);
+      max-height: 56vh;
+      height: auto;
+      margin: 0 auto;
+      animation: mark-in 1.05s cubic-bezier(0.16, 0.84, 0.28, 1) both, mark-hold 5.2s 1.1s ease-in-out infinite;
+    }
+
+    @keyframes mark-in {
       from {
         opacity: 0;
-        transform: scale(0.9);
+        transform: translateY(18px) scale(0.93);
+        filter: blur(4px);
       }
 
       to {
         opacity: 1;
+        transform: none;
+        filter: none;
+      }
+    }
+
+    @keyframes mark-hold {
+
+      0%,
+      100% {
         transform: scale(1);
       }
+
+      50% {
+        transform: scale(1.017);
+      }
     }
 
-    .btn-launch::before {
-      content: '';
+    /* Ligne de scan qui balaie l'emblème */
+    .splash-scan {
       position: absolute;
-      top: -50%;
-      left: -100%;
-      width: 300%;
-      height: 200%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-      animation: shimmer 3s ease-in-out infinite;
+      left: 8%;
+      right: 8%;
+      top: 6%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(13, 143, 122, 0.85), transparent);
+      box-shadow: 0 0 16px rgba(13, 143, 122, 0.55);
+      opacity: 0;
+      animation: splash-scan 3.1s 0.9s ease-in-out infinite;
+      pointer-events: none;
     }
 
-    @keyframes shimmer {
+    @keyframes splash-scan {
       0% {
-        left: -100%;
+        opacity: 0;
+        transform: translateY(0);
+      }
+
+      12% {
+        opacity: 1;
+      }
+
+      55% {
+        opacity: 1;
+        transform: translateY(240px);
+      }
+
+      70% {
+        opacity: 0;
+        transform: translateY(240px);
       }
 
       100% {
+        opacity: 0;
+        transform: translateY(0);
+      }
+    }
+
+    /* Barre glissante indéterminée */
+    .splash-bar {
+      display: block;
+      position: relative;
+      width: 148px;
+      height: 2px;
+      margin: 30px auto 0;
+      background: rgba(46, 66, 87, 0.18);
+      overflow: hidden;
+    }
+
+    .splash-bar::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -42%;
+      width: 42%;
+      background: linear-gradient(90deg, transparent, var(--ink), transparent);
+      animation: splash-slide 1.5s ease-in-out infinite;
+    }
+
+    @keyframes splash-slide {
+      to {
         left: 100%;
       }
     }
 
-    .btn-launch:hover,
-    .btn-launch:focus {
-      transform: scale(1.06) translateY(-3px);
-      box-shadow: 0 0 55px rgba(15, 51, 255, 0.9), 0 0 100px rgba(0, 210, 255, 0.5);
+    .splash-status {
+      margin: 16px 0 0;
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--steel);
+      min-height: 1.4em;
+      transition: opacity 0.35s ease;
     }
 
-    .btn-launch:active {
-      transform: scale(0.97);
-    }
-
-    .btn-launch svg {
-      width: clamp(18px, 3.5vw, 22px);
-      height: clamp(18px, 3.5vw, 22px);
-      transition: transform 0.3s ease;
-      flex-shrink: 0;
-    }
-
-    .btn-launch:hover svg {
-      transform: translateX(5px);
-    }
-
-    /* Corner decorations */
-    .corner {
+    .splash-skip {
       position: fixed;
-      z-index: 5;
+      bottom: clamp(16px, 4vh, 32px);
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      background: none;
+      border: 1px solid rgba(46, 66, 87, 0.28);
+      color: var(--ink);
+      font-family: inherit;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 9px 22px;
+      border-radius: 40px;
+      cursor: pointer;
+      opacity: 0;
+      animation: appear 0.7s 2s ease forwards;
+      transition: background 0.25s ease, color 0.25s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .splash-skip:hover {
+      background: var(--ink);
+      color: var(--paper-hi);
+    }
+
+    @keyframes appear {
+      to {
+        opacity: 1;
+      }
+    }
+
+    .curtain {
+      position: fixed;
+      inset: 0;
+      background: var(--paper);
+      z-index: 10;
+      opacity: 0;
       pointer-events: none;
+      transition: opacity 0.6s ease;
     }
 
-    .corner-tl {
-      top: 20px;
-      left: 20px;
+    .leaving .curtain {
+      opacity: 1;
+      pointer-events: all;
     }
 
-    .corner-tr {
-      top: 20px;
-      right: 20px;
-    }
+    @media (prefers-reduced-motion: reduce) {
 
-    .corner-bl {
-      bottom: 20px;
-      left: 20px;
-    }
-
-    .corner-br {
-      bottom: 20px;
-      right: 20px;
-    }
-
-    .corner svg {
-      opacity: 0.25;
-    }
-
-    @media (max-width: 768px) {
-      .corner {
-        display: none;
+      body,
+      .splash-mark,
+      .splash-halo,
+      .splash-scan,
+      .splash-skip,
+      .splash-bar::after {
+        animation: none !important;
+        opacity: 1;
       }
     }
   </style>
 </head>
 
 <body>
-  <canvas id="launcher-canvas"></canvas>
-  <div class="grid-overlay"></div>
-  <div class="center-glow"></div>
+  <div class="curtain"></div>
 
-  <!-- Corner decorations -->
-  <div class="corner corner-tl">
-    <svg width="50" height="50" viewBox="0 0 50 50" fill="none" stroke="#00d2ff" stroke-width="1.5">
-      <path d="M0 20 L0 0 L20 0" />
-    </svg>
-  </div>
-  <div class="corner corner-tr">
-    <svg width="50" height="50" viewBox="0 0 50 50" fill="none" stroke="#00d2ff" stroke-width="1.5">
-      <path d="M50 20 L50 0 L30 0" />
-    </svg>
-  </div>
-  <div class="corner corner-bl">
-    <svg width="50" height="50" viewBox="0 0 50 50" fill="none" stroke="#00d2ff" stroke-width="1.5">
-      <path d="M0 30 L0 50 L20 50" />
-    </svg>
-  </div>
-  <div class="corner corner-br">
-    <svg width="50" height="50" viewBox="0 0 50 50" fill="none" stroke="#00d2ff" stroke-width="1.5">
-      <path d="M50 30 L50 50 L30 50" />
-    </svg>
-  </div>
-
-  <!-- Main Launcher Content -->
-  <div class="launcher">
-    <div class="launcher-badge">
-      <span class="badge-dot"></span>
-      Douala, Cameroun &bull; Agence Digitale d'Élite
+  <main class="splash">
+    <div class="splash-plate">
+      <span class="splash-halo" aria-hidden="true"></span>
+      <img class="splash-mark" src="assets/img/logo-cadc.png" alt="CODE AXIS Digital Cameroon">
+      <span class="splash-scan" aria-hidden="true"></span>
     </div>
 
-    <div class="launcher-logo">CADC</div>
+    <span class="splash-bar" role="progressbar" aria-label="Chargement du site" aria-valuemin="0"
+      aria-valuemax="100"></span>
 
-    <h1 class="launcher-title">C.A.D.C.</h1>
-    <p class="launcher-subtitle">Creative &amp; Advanced Digital Creations</p>
+    <p class="splash-status" id="status">Initialisation</p>
+  </main>
 
-    <div class="neon-line"></div>
-
-    <p class="launcher-desc">
-      Nous concevons et propulsons des expériences digitales exceptionnelles : plateformes web futuristes, applications
-      mobiles haute performance, architectures cloud &amp; intelligence artificielle.
-    </p>
-
-    <a href="home.html" class="btn-launch" id="launch-btn">
-      <span>Lancer l'Expérience</span>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-        stroke-linejoin="round">
-        <path d="M5 12h14M12 5l7 7-7 7" />
-      </svg>
-    </a>
-  </div>
+  <button class="splash-skip" id="skip-btn" type="button">Entrer sur le site</button>
 
   <script>
-    // ===== PARTICLE NETWORK CANVAS =====
-    const canvas = document.getElementById('launcher-canvas');
-    const ctx = canvas.getContext('2d');
+    (function () {
+      var status = document.getElementById('status');
+      var skip = document.getElementById('skip-btn');
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var steps = [
+        ['Initialisation', 0],
+        ['Chargement des actifs', 1100],
+        ['Calibrage des surfaces', 2300],
+        ['Prêt', 3500]
+      ];
+      var done = false;
+      var timers = [];
 
-    function resize() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-    resize();
-    window.addEventListener('resize', resize);
-
-    const particles = [];
-    const isMobile = window.innerWidth < 768;
-    const PARTICLE_COUNT = isMobile ? 45 : 85;
-    const CONNECTION_DIST = isMobile ? 120 : 160;
-
-    class Particle {
-      constructor() { this.reset(); }
-      reset() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.vx = (Math.random() - 0.5) * 0.5;
-        this.vy = (Math.random() - 0.5) * 0.5;
-        this.r = Math.random() * 2 + 1;
-        this.alpha = Math.random() * 0.6 + 0.2;
-        this.color = Math.random() > 0.5 ? '15, 51, 255' : '0, 210, 255';
-      }
-      update() {
-        this.x += this.vx;
-        this.y += this.vy;
-        if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-        if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
-      }
-      draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${this.color}, ${this.alpha})`;
-        ctx.shadowColor = `rgba(${this.color}, 0.8)`;
-        ctx.shadowBlur = 8;
-        ctx.fill();
-        ctx.shadowBlur = 0;
-      }
-    }
-
-    for (let i = 0; i < PARTICLE_COUNT; i++) particles.push(new Particle());
-
-    // Shooting stars
-    const shootingStars = [];
-    function spawnStar() {
-      if (Math.random() < 0.02) {
-        shootingStars.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height * 0.4,
-          len: Math.random() * 100 + 60,
-          speed: Math.random() * 6 + 4,
-          alpha: 1,
-          angle: Math.PI / 6 + (Math.random() - 0.5) * 0.3,
-        });
-      }
-      shootingStars.forEach((s, i) => {
-        s.x += Math.cos(s.angle) * s.speed;
-        s.y += Math.sin(s.angle) * s.speed;
-        s.alpha -= 0.025;
-        if (s.alpha <= 0) shootingStars.splice(i, 1);
+      steps.forEach(function (s) {
+        timers.push(setTimeout(function () {
+          status.style.opacity = '0';
+          setTimeout(function () { status.textContent = s[0]; status.style.opacity = '1'; }, 180);
+        }, s[1]));
       });
-    }
 
-    function drawShootingStars() {
-      shootingStars.forEach(s => {
-        const grad = ctx.createLinearGradient(
-          s.x - Math.cos(s.angle) * s.len,
-          s.y - Math.sin(s.angle) * s.len,
-          s.x, s.y
-        );
-        grad.addColorStop(0, `rgba(0,210,255,0)`);
-        grad.addColorStop(1, `rgba(0,210,255,${s.alpha})`);
-        ctx.beginPath();
-        ctx.moveTo(s.x - Math.cos(s.angle) * s.len, s.y - Math.sin(s.angle) * s.len);
-        ctx.lineTo(s.x, s.y);
-        ctx.strokeStyle = grad;
-        ctx.lineWidth = 1.5;
-        ctx.stroke();
-      });
-    }
-
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x;
-          const dy = particles[i].y - particles[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < CONNECTION_DIST) {
-            const alpha = (1 - dist / CONNECTION_DIST) * 0.15;
-            ctx.beginPath();
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(0, 210, 255, ${alpha})`;
-            ctx.lineWidth = 1;
-            ctx.stroke();
-          }
-        }
+      function go() {
+        if (done) return;
+        done = true;
+        timers.forEach(clearTimeout);
+        document.body.classList.add('leaving');
+        setTimeout(function () { window.location.href = 'home.html'; }, 600);
       }
 
-      particles.forEach(p => { p.update(); p.draw(); });
-      spawnStar();
-      drawShootingStars();
-      requestAnimationFrame(animate);
-    }
-    animate();
-
-    // Launch button transition
-    document.getElementById('launch-btn').addEventListener('click', function (e) {
-      e.preventDefault();
-      this.style.transform = 'scale(0.95)';
-      this.innerHTML = '<span>Initialisation...</span>';
-      setTimeout(() => { window.location.href = 'home.html'; }, 350);
-    });
+      /* Le splash tient ~4,2 s, ou disparaît dès que home.html est préchargé si plus lent */
+      timers.push(setTimeout(go, reduced ? 900 : 4200));
+      skip.addEventListener('click', go);
+      window.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') go();
+      });
+    })();
   </script>
+  <script src="assets/js/icons.js"></script>
 </body>
 
 </html>

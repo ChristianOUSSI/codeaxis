@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Déploiement en cours, CODE AXIS Digital Cameroon</title>
+  <meta name="description"
+    content="Ce produit de la suite evo est en cours de déploiement par CODE AXIS Digital Cameroon à Douala.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/png" href="assets/img/logo-mark.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&family=Oxanium:wght@400;600;700;800&family=Russo+One&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/cadc-fusion.css">
+  <link rel="stylesheet" href="assets/css/evo-suite.css">
+  <link rel="canonical" href="https://codeaxis.cm/deploiement.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CODE AXIS Digital Cameroon">
+  <meta property="og:locale" content="fr_CM">
+  <meta property="og:url" content="https://codeaxis.cm/deploiement.html">
+  <meta property="og:title" content="Déploiement en cours, CODE AXIS Digital Cameroon">
+  <meta property="og:description" content="CODE AXIS Digital Cameroon, agence digitale à Douala.">
+  <meta property="og:image" content="https://codeaxis.cm/assets/img/logo-cadc.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Déploiement en cours, CODE AXIS Digital Cameroon">
+  <meta name="twitter:description" content="CODE AXIS Digital Cameroon, agence digitale à Douala.">
+  <meta name="twitter:image" content="https://codeaxis.cm/assets/img/logo-cadc.png">
+</head>
+
+<body class="theme-night">
+  <div class="dep-wrap">
+    <div class="dep-card">
+      <img class="dep-logo" id="depLogo" src="assets/img/evo/evo-gaz.jpg" alt="">
+      <p class="dep-status">Déploiement en cours</p>
+      <h1 id="depName">evo</h1>
+      <p id="depText">Cette plateforme est actuellement mise en production par nos équipes à Douala. Les derniers
+      tests de charge, la revue de sécurité et le déploiement initial sont en cours.</p>
+      <div class="dep-track" aria-hidden="true"></div>
+      <p class="dep-pct" id="depPct">0%</p>
+      <div class="evo-modal-actions">
+        <a class="btn-evo-discover" id="depNotify" href="suite-evo.html">Être informé</a>
+        <a class="btn-evo-ghost" style="text-decoration:none" href="suite-evo.html">Retour à la suite evo</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/theme.js"></script>
+  <script>
+    (function () {
+      'use strict';
+
+      var KNOWN = ['evo-agent', 'evo-voice', 'evo-carnet', 'evo-gaz', 'evo-hotel', 'evo-log', 'evo-tontaine',
+        'evo-clinic', 'evo-immo', 'evo-school', 'evo-shop', 'evo-market', 'evo-crm', 'evo-docs',
+        'evo-presence', 'evo-call', 'evo-auto', 'evo-import', 'evo-bijou', 'evo-moto',
+        'evo-cars', 'evo-wear'];
+
+      var params = new URLSearchParams(window.location.search);
+      var slug = (params.get('p') || '').toLowerCase();
+      if (KNOWN.indexOf(slug) < 0) slug = 'evo-gaz';
+
+      var logo = document.getElementById('depLogo');
+      logo.src = 'assets/img/evo/' + slug + '.jpg';
+      logo.alt = slug + ', CODE AXIS Digital Cameroon';
+      document.getElementById('depName').textContent = slug;
+      document.title = slug + ', Déploiement en cours | CODE AXIS';
+      document.getElementById('depNotify').href =
+        'https://wa.me/237691223916?text=' + encodeURIComponent('Bonjour CODE AXIS, je souhaite être informé du lancement de ' + slug + '.');
+
+      /* Progression simulée : ~4,5 s jusqu'au bout, puis retour à la suite evo */
+      var pct = document.getElementById('depPct');
+      var card = document.querySelector('.dep-card');
+      var value = 0;
+      var timer = setInterval(function () {
+        value += value < 70 ? 4.2 : 2.4;
+        if (value >= 100) {
+          value = 100;
+          clearInterval(timer);
+          pct.textContent = '100%, prêt';
+          document.querySelector('.dep-status').textContent = 'Prévue pour bientôt';
+          setTimeout(function () {
+            card.style.transition = 'opacity 0.45s ease, transform 0.45s ease';
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(14px) scale(0.98)';
+            setTimeout(function () { window.location.href = 'suite-evo.html'; }, 460);
+          }, 900);
+        }
+        pct.textContent = Math.round(value) + '%, mise en production';
+      }, 150);
+    })();
+  </script>
+  <script src="assets/js/icons.js"></script>
+</body>
+
+</html>

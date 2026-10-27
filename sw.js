@@ -1,12 +1,16 @@
-// Service Worker pour C.A.D.C. PWA
-const CACHE_NAME = 'cadc-pwa-v1';
+// Service Worker pour CODE AXIS Digital Cameroon PWA
+const CACHE_NAME = 'cadc-pwa-v3';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
+  './offline.html',
   './manifest.json',
   './assets/css/cadc-fusion.css',
   './assets/js/cadc-app.js',
-  './assets/img/logo.svg',
+  './assets/img/logo-mark.png',
+  './assets/img/logo-cadc.png',
+  './assets/img/logo-192.png',
+  './assets/img/logo-512.png',
   './assets/img/introduction-visual.png',
   './assets/img/about-visual.png',
   './assets/img/about-history.jpg',
@@ -19,6 +23,11 @@ const ASSETS_TO_CACHE = [
   './assets/img/data-nexus.jpg',
   './assets/img/ar-interface.jpg',
   './assets/img/iot-matrix.jpg',
+  './home.html',
+  './suite-evo.html',
+  './deploiement.html',
+  './assets/css/evo-suite.css',
+  './assets/js/theme.js',
   './strategie.html',
   './developpement.html',
   './design.html',
@@ -86,9 +95,9 @@ self.addEventListener('fetch', (event) => {
 
         return networkResponse;
       }).catch(() => {
-        // Mode hors-ligne secours
-        if (event.request.headers.get('accept').includes('text/html')) {
-          return caches.match('./index.html');
+        // Mode hors-ligne : page dédiée pour le HTML
+        if (event.request.mode === 'navigate') {
+          return caches.match('./offline.html');
         }
       });
     })

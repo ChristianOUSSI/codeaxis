@@ -1,19 +1,19 @@
 {
-  "name": "C.A.D.C. - Agence Digitale Douala",
-  "short_name": "C.A.D.C.",
+  "name": "CODE AXIS Digital Cameroon - Agence Digitale Douala",
+  "short_name": "CODE AXIS",
   "description": "Agence Digitale d'Élite à Douala, Cameroun. Développement Web, Mobile, Cloud, IA et Design.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#070913",
-  "theme_color": "#0f33ff",
+  "background_color": "#0b141f",
+  "theme_color": "#2e4257",
   "orientation": "any",
   "icons": [
     {
-      "src": "assets/img/logo.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "src": "assets/img/logo-mark.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
     },
     {
       "src": "assets/img/logo-192.png",

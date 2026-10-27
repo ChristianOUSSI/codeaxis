@@ -2,32 +2,132 @@
 <html lang="fr">
 
 <head>
-  <title>C.A.D.C. - Agence Digitale Douala, Cameroun | Innovation & Développement</title>
+  <title>CODE AXIS - Agence Digitale Douala, Cameroun | Innovation & Développement</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description"
-    content="C.A.D.C. - Agence Digitale d'Élite à Douala, Cameroun. Développement Web & Mobile, Architectures Cloud, Design UI/UX, IA & Stratégie Digitale.">
+    content="CODE AXIS - Agence Digitale d'Élite à Douala, Cameroun. Développement Web & Mobile, Architectures Cloud, Design UI/UX, IA & Stratégie Digitale.">
   <meta name="keywords"
     content="CADC, Agence Digitale Douala, Cameroun, Développement Web, Applications Mobiles, Cloud, UI UX Design, PWA">
 
   <!-- PWA & Mobile Web App Meta -->
   <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#0f33ff">
+  <meta name="theme-color" content="#3e5f8a">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="C.A.D.C.">
-  <link rel="apple-touch-icon" href="assets/img/logo.svg">
+  <meta name="apple-mobile-web-app-title" content="CODE AXIS">
+  <link rel="apple-touch-icon" href="assets/img/logo-mark.png">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+  <link rel="icon" type="image/png" href="assets/img/logo-mark.png">
 
   <!-- CSS Master Fusion -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&family=Oxanium:wght@400;600;700;800&family=Russo+One&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="assets/css/cadc-fusion.css">
+
+
+  <!-- Référencement -->
+  <link rel="canonical" href="https://codeaxis.cm/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CODE AXIS Digital Cameroon">
+  <meta property="og:locale" content="fr_CM">
+  <meta property="og:url" content="https://codeaxis.cm/">
+  <meta property="og:title" content="CODE AXIS Digital Cameroon, Agence Digitale à Douala">
+  <meta property="og:description"
+    content="Développement Web & Mobile, Cloud, Design UI/UX et Intelligence Artificielle à Douala, Cameroun.">
+  <meta property="og:image" content="https://codeaxis.cm/assets/img/logo-cadc.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CODE AXIS Digital Cameroon, Agence Digitale à Douala">
+  <meta name="twitter:description"
+    content="Développement Web & Mobile, Cloud, Design UI/UX et Intelligence Artificielle à Douala, Cameroun.">
+  <meta name="twitter:image" content="https://codeaxis.cm/assets/img/logo-cadc.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "CODE AXIS Digital Cameroon",
+    "alternateName": "CADC",
+    "url": "https://codeaxis.cm/",
+    "logo": "https://codeaxis.cm/assets/img/logo-mark.png",
+    "image": "https://codeaxis.cm/assets/img/logo-cadc.png",
+    "description": "Agence digitale à Douala : développement web et mobile, cloud, design UI/UX et intelligence artificielle.",
+    "telephone": "+237691223916",
+    "email": "contact@codeaxis.cm",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Bonabéri",
+      "addressLocality": "Douala",
+      "addressCountry": "CM"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 4.058, "longitude": 9.636 },
+    "areaServed": { "@type": "Country", "name": "Cameroun" },
+    "founder": { "@type": "Person", "name": "Christian OUSSI" },
+    "priceRange": "XAF",
+    "sameAs": ["https://github.com/ChristianOUSSI/codeaxis"]
+  }
+  </script>
 </head>
 
 <body class="theme-night">
+
+  <!-- Ecran de lancement (premiere entree de la session) -->
+  <div class="launch-splash" id="launch-splash" role="status" aria-label="Chargement du site">
+    <div class="launch-inner">
+      <div class="launch-plate">
+        <span class="launch-halo" aria-hidden="true"></span>
+        <img class="launch-mark" src="assets/img/logo-cadc.png" alt="CODE AXIS Digital Cameroon" width="300" height="450">
+        <span class="launch-scan" aria-hidden="true"></span>
+      </div>
+      <span class="launch-bar" aria-hidden="true"></span>
+      <p class="launch-status" id="launch-status">Initialisation</p>
+    </div>
+  </div>
+  <script>
+    (function () {
+      var splash = document.getElementById('launch-splash');
+      var status = document.getElementById('launch-status');
+      if (!splash) return;
+
+      var seen = false;
+      try { seen = sessionStorage.getItem('cadc_launch_seen') === '1'; } catch (e) {}
+
+      if (seen) {
+        splash.parentNode.removeChild(splash);
+        return;
+      }
+
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var steps = ['Initialisation', 'Chargement des actifs', 'Calibrage', 'Prêt'];
+      var timers = [];
+      steps.forEach(function (label, i) {
+        timers.push(setTimeout(function () {
+          status.style.opacity = '0';
+          setTimeout(function () { status.textContent = label; status.style.opacity = '1'; }, 150);
+        }, i * 620));
+      });
+
+      var dismissed = false;
+      function dismiss() {
+        if (dismissed) return;
+        dismissed = true;
+        timers.forEach(clearTimeout);
+        try { sessionStorage.setItem('cadc_launch_seen', '1'); } catch (e) {}
+        splash.classList.add('is-gone');
+        setTimeout(function () { if (splash.parentNode) splash.parentNode.removeChild(splash); }, 600);
+      }
+
+      /* même chorégraphie que index.html, allégée car les ressources sont déjà préchargées */
+      timers.push(setTimeout(dismiss, reduced ? 700 : 2700));
+      splash.addEventListener('click', dismiss);
+    })();
+  </script>
 
   <!-- NOTIFICATION CONTAINER / 3D PERSPECTIVE WRAPPER -->
   <div class="perspective effect-rotate-left">
@@ -40,21 +140,22 @@
                HEADER TRANSLUCIDE ÉPURÉ & AÉRIEN (STYLE CADC ORIGINAL)
                =================================================================== -->
           <header class="header">
-            <!-- Logo & Titre C.A.D.C. -->
+            <!-- Logo & Titre CODE AXIS -->
             <a href="home.html" class="header--brand">
               <div class="header--logo-icon">
-                <img src="assets/img/logo.svg" alt="C.A.D.C. Logo">
+                <img src="assets/img/logo-mark.png" alt="CODE AXIS, Logo">
               </div>
-              <span class="header--title-main">C.A.D.C.</span>
+              <span class="header--title-main">CODE AXIS</span>
             </a>
 
             <!-- Liens de navigation rapide dans le header -->
             <nav class="header--nav-links">
-              <a href="#" onclick="goToSectionExternal(0); return false;">Accueil</a>
-              <a href="#" onclick="goToSectionExternal(1); return false;">Équipe</a>
-              <a href="#" onclick="goToSectionExternal(2); return false;">À Propos</a>
-              <a href="#" onclick="goToSectionExternal(3); return false;">Contact</a>
-              <a href="#" onclick="goToSectionExternal(4); return false;">Services</a>
+              <a href="#" data-section="0">Accueil</a>
+              <a href="#" data-section="1">Équipe</a>
+              <a href="#" data-section="2">À Propos</a>
+              <a href="suite-evo.html">Suite evo</a>
+              <a href="#" data-section="3">Contact</a>
+              <a href="#" data-section="4">Services</a>
             </nav>
 
             <!-- Actions du Header (Metrics + Thème + 3D Toggle) -->
@@ -87,11 +188,12 @@
                =================================================================== -->
           <nav class="l-side-nav">
             <ul class="side-nav">
-              <li class="is-active"><span>01 &nbsp; Accueil</span></li>
-              <li><span>02 &nbsp; Équipe & Arsenal</span></li>
-              <li><span>03 &nbsp; À Propos</span></li>
-              <li><span>04 &nbsp; Contact</span></li>
-              <li><span>05 &nbsp; Services & Devis</span></li>
+              <li class="is-active" data-section="0"><span>01 &nbsp; Accueil</span></li>
+              <li data-section="1"><span>02 &nbsp; Équipe & Arsenal</span></li>
+              <li data-section="2"><span>03 &nbsp; À Propos</span></li>
+              <li data-href="suite-evo.html"><span>04 &nbsp; Suite evo</span></li>
+              <li data-section="3"><span>05 &nbsp; Contact</span></li>
+              <li data-section="4"><span>06 &nbsp; Services & Devis</span></li>
             </ul>
           </nav>
 
@@ -124,7 +226,7 @@
                       <span class="btn-background"></span>
                     </button>
                     <!-- Visuel Astronaute en lévitation 3D -->
-                    <img src="assets/img/introduction-visual.png" alt="Astronaute C.A.D.C." class="astronaut-bg"
+                    <img src="assets/img/introduction-visual.png" alt="Astronaute CODE AXIS" class="astronaut-bg"
                       loading="lazy">
                   </div>
 
@@ -144,7 +246,7 @@
                   </ul>
                 </div>
 
-                <!-- Vue 2: 3D Innovation Carousel (Prism Flux / Nex) -->
+                <!-- Vue 2: 3D Innovation Carousel (cartes projets) -->
                 <div id="heroViewCarousel" class="hero-view-carousel">
                   <div class="carousel-container">
                     <div id="carousel" class="carousel">
@@ -171,132 +273,46 @@
 
                 <!-- Sélecteur de sous-vue Section 2 -->
                 <div class="section-subtoggle">
-                  <button id="btnViewTeam" class="mode-btn active">✦ Notre Équipe (3D Slider)</button>
+                  <button id="btnViewOrbital" class="mode-btn active">✦ Équipe</button>
                   <button id="btnViewSkills" class="mode-btn">✦ Technical Arsenal (Hexagones)</button>
                 </div>
 
-                <!-- Vue A: Slider 3D Rotatif de l'Équipe -->
-                <div id="viewTeamContainer" class="work--lockup">
-                  <ul class="slider">
-                    <!-- Membre 1 : Joseph OUSSI -->
-                    <li class="slider--item slider--item-left">
-                      <a href="christian-oussi.html">
-                        <div class="slider--item-image">
-                          <svg viewBox="0 0 100 100" class="member-avatar">
-                            <defs>
-                              <linearGradient id="grad-joseph" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#0f33ff;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#00d2ff;stop-opacity:1" />
-                              </linearGradient>
-                            </defs>
-                            <circle cx="50" cy="35" r="25" fill="url(#grad-joseph)" />
-                            <path d="M20 90 Q50 60 80 90" fill="url(#grad-joseph)" />
-                            <circle cx="42" cy="32" r="3" fill="#fff" />
-                            <circle cx="58" cy="32" r="3" fill="#fff" />
-                            <path d="M45 42 Q50 46 55 42" stroke="#fff" stroke-width="2" fill="none" />
-                            <rect x="30" y="20" width="40" height="5" rx="2" fill="#0f33ff" />
-                            <rect x="35" y="15" width="30" height="8" rx="2" fill="#0f33ff" />
-                          </svg>
+                <!-- Vue A: Anneau Orbital de l'Équipe, l'équipe gravite autour du logo CODE AXIS -->
+                <div id="viewOrbitalContainer" class="work--orbital is-active">
+                  <div class="team-orb-container" id="orbitalStage">
+                    <div class="orb-parallax" id="orbitalParallax">
+                      <div class="orb-ring-tilt" id="orbitalTilt">
+                        <div class="orb-ring orb-ring--team" id="orbitalRing">
+                          <!-- Les panneaux membres sont injectés par JS -->
                         </div>
-                        <p class="slider--item-title">Joseph OUSSI</p>
-                        <p class="slider--item-description">Directeur & Lead Fullstack Architect</p>
-                      </a>
-                    </li>
+                      </div>
+                    </div>
 
-                    <!-- Membre 2 : Yann -->
-                    <li class="slider--item slider--item-center">
-                      <a href="marc-laurent.html">
-                        <div class="slider--item-image">
-                          <svg viewBox="0 0 100 100" class="member-avatar">
-                            <defs>
-                              <linearGradient id="grad-marc" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#00d2ff;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#0099cc;stop-opacity:1" />
-                              </linearGradient>
-                            </defs>
-                            <circle cx="50" cy="35" r="25" fill="url(#grad-marc)" />
-                            <path d="M20 90 Q50 60 80 90" fill="url(#grad-marc)" />
-                            <circle cx="42" cy="32" r="3" fill="#fff" />
-                            <circle cx="58" cy="32" r="3" fill="#fff" />
-                            <rect x="25" y="25" width="50" height="20" rx="3" fill="none" stroke="#fff"
-                              stroke-width="2" />
-                            <line x1="30" y1="32" x2="70" y2="32" stroke="#fff" stroke-width="2" />
-                            <line x1="30" y1="38" x2="60" y2="38" stroke="#fff" stroke-width="2" />
-                          </svg>
+                    <!-- Emblème central : l'équipe gravite autour de CODE AXIS -->
+                    <div class="orb-core" aria-hidden="true">
+                      <img src="assets/img/logo-mark.png" alt="">
+                    </div>
+
+                    <div class="orb-controls">
+                      <div class="orb-ctrl">
+                        <span class="orb-ctrl-label">Zoom</span>
+                        <button class="orb-switch" id="orbZoomSwitch" role="switch" aria-checked="false"
+                          aria-label="Agrandir l'anneau"><span class="knob"></span></button>
+                      </div>
+                      <div class="orb-ctrl">
+                        <span class="orb-ctrl-label">Espacement</span>
+                        <div class="orb-spacing" role="group" aria-label="Espacement de l'anneau">
+                          <button class="spacing-step" data-space="0" aria-label="Resserré"><i></i></button>
+                          <button class="spacing-step is-active" data-space="1" aria-label="Par défaut"><i></i></button>
+                          <button class="spacing-step" data-space="2" aria-label="Large"><i></i></button>
                         </div>
-                        <p class="slider--item-title">Yann</p>
-                        <p class="slider--item-description">Expert Backend &amp; Cloud Infrastructure</p>
-                      </a>
-                    </li>
-
-                    <!-- Membre 3 : Franky -->
-                    <li class="slider--item slider--item-right">
-                      <a href="axel-dupont.html">
-                        <div class="slider--item-image">
-                          <svg viewBox="0 0 100 100" class="member-avatar">
-                            <defs>
-                              <linearGradient id="grad-axel" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#ff8e8e;stop-opacity:1" />
-                              </linearGradient>
-                            </defs>
-                            <circle cx="50" cy="35" r="25" fill="url(#grad-axel)" />
-                            <path d="M20 90 Q50 60 80 90" fill="url(#grad-axel)" />
-                            <circle cx="42" cy="32" r="3" fill="#fff" />
-                            <circle cx="58" cy="32" r="3" fill="#fff" />
-                            <path d="M40 42 Q50 48 60 42" stroke="#fff" stroke-width="2" fill="none" />
-                            <circle cx="50" cy="20" r="8" fill="none" stroke="#fff" stroke-width="2" />
-                            <circle cx="50" cy="20" r="4" fill="#fff" />
-                          </svg>
-                        </div>
-                        <p class="slider--item-title">Franky</p>
-                        <p class="slider--item-description">Lead UI / UX Designer &amp; Visionnaire</p>
-                      </a>
-                    </li>
-
-                    <!-- Membre 4 : Philippe -->
-                    <li class="slider--item">
-                      <a href="sarah-martin.html">
-                        <div class="slider--item-image">
-                          <svg viewBox="0 0 100 100" class="member-avatar">
-                            <defs>
-                              <linearGradient id="grad-sarah" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#a855f7;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#d8b4fe;stop-opacity:1" />
-                              </linearGradient>
-                            </defs>
-                            <circle cx="50" cy="35" r="25" fill="url(#grad-sarah)" />
-                            <path d="M20 90 Q50 60 80 90" fill="url(#grad-sarah)" />
-                            <circle cx="42" cy="32" r="3" fill="#fff" />
-                            <circle cx="58" cy="32" r="3" fill="#fff" />
-                            <path d="M45 42 Q50 46 55 42" stroke="#fff" stroke-width="2" fill="none" />
-                            <path d="M30 20 Q50 10 70 20" stroke="#fff" stroke-width="2" fill="none" />
-                            <circle cx="30" cy="20" r="3" fill="#fff" />
-                            <circle cx="70" cy="20" r="3" fill="#fff" />
-                          </svg>
-                        </div>
-                        <p class="slider--item-title">Philippe</p>
-                        <p class="slider--item-description">Growth Hacker &amp; Community Strategist</p>
-                      </a>
-                    </li>
-                  </ul>
-
-                  <!-- Boutons Fléchés Slider -->
-                  <div class="slider--prev" aria-label="Précédent">
-                    <svg viewBox="0 0 24 24">
-                      <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
-                    </svg>
-                  </div>
-                  <div class="slider--next" aria-label="Suivant">
-                    <svg viewBox="0 0 24 24">
-                      <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
-                    </svg>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                <!-- Vue B: Technical Arsenal - Grille Hexagonale (Nex / Prism Flux) -->
+                <!-- Vue B: Technical Arsenal - Grille Hexagonale -->
                 <div id="viewSkillsContainer" class="skills-container">
-                  <!-- Onglets de Catégories -->
                   <div class="skill-categories">
                     <button class="category-tab active" data-category="all">✦ Tous les Skills</button>
                     <button class="category-tab" data-category="frontend">Frontend & UI</button>
@@ -305,7 +321,6 @@
                     <button class="category-tab" data-category="emerging">IA & Web3</button>
                   </div>
 
-                  <!-- Grille d'Hexagones -->
                   <div id="skillsGrid" class="skills-hexagon-grid">
                     <!-- Hexagones injectés par JS -->
                   </div>
@@ -344,17 +359,17 @@
               </div>
             </li>
 
-            <!-- SECTION 04 : CONTACT & LOCALISATION -->
+            <!-- SECTION 05 : CONTACT & LOCALISATION -->
             <li class="l-section section" id="section-contact">
               <canvas id="contact-particles" class="section-particles"></canvas>
               <div class="contact">
-                <h2 class="section-title-glow">Contactez C.A.D.C.</h2>
+                <h2 class="section-title-glow">Contactez CODE AXIS</h2>
                 <div class="contact--grid">
-                  <!-- Carte Google Maps -->
+                  <!-- Carte Google Maps, localisation réelle (rendu live Google Maps) -->
                   <div class="contact--map">
-                    <iframe title="Boulangerie du Lycée de Bonabéri  Douala"
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.612345!2d9.636!3d4.058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10610d4f2a5b5c5d%3A0xabcdef1234567890!2sBoulangerie%20du%20Lyc%C3%A9e%20de%20Bonab%C3%A9ri%2C%20Douala%2C%20Cameroun!5e0!3m2!1sfr!2scm!4v1693612800000!5m2!1sfr!2scm"
-                      allowfullscreen="" loading="lazy">
+                    <iframe title="CODE AXIS, Bonabéri, Douala, Cameroun"
+                      src="https://maps.google.com/maps?q=Bonab%C3%A9ri%2C%20Douala%2C%20Cameroun&z=15&hl=fr&output=embed"
+                      loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen>
                     </iframe>
                   </div>
 
@@ -368,12 +383,12 @@
                       </svg>
                       <span>Douala - Bonabéri, Cameroun</span>
                     </div>
-                    <a href="mailto:CADC@gmail.com" class="contact-link">
+                    <a href="mailto:contact@codeaxis.cm" class="contact-link">
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                         <path
                           d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
                       </svg>
-                      <span>CADC@gmail.com</span>
+                      <span>contact@codeaxis.cm</span>
                     </a>
                     <a href="tel:+237691223916" class="contact-link">
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -388,11 +403,44 @@
                         target="_blank" rel="noopener noreferrer" class="btn-contact-action btn-whatsapp">
                         <span>WhatsApp Direct</span>
                       </a>
-                      <a href="mailto:CADC@gmail.com?subject=Demande%20de%20projet%20CADC"
+                      <a href="mailto:contact@codeaxis.cm?subject=Demande%20de%20projet%20CODE%20AXIS"
                         class="btn-contact-action btn-email">
                         <span>Envoyer un Mail</span>
                       </a>
                     </div>
+
+                    <!-- Formulaire rapide de contact -->
+                    <form class="contact-form" id="quick-contact-form">
+                      <input type="text" name="name" placeholder="Votre nom" required autocomplete="name">
+                      <input type="email" name="email" placeholder="Votre email" required autocomplete="email">
+                      <textarea name="message" placeholder="Décrivez votre projet..." rows="3" required></textarea>
+                      <div class="contact-form-actions">
+                        <button type="submit" class="btn-contact-action btn-email"><span>Envoyer par Mail</span></button>
+                        <button type="button" id="form-whatsapp-btn" class="btn-contact-action btn-whatsapp"><span>Envoyer
+                            via WhatsApp</span></button>
+                      </div>
+                    </form>
+                    <script>
+                      (function () {
+                        var form = document.getElementById('quick-contact-form');
+                        if (!form) return;
+                        form.addEventListener('submit', function (e) {
+                          e.preventDefault();
+                          var d = new FormData(form);
+                          var body = 'Nom: ' + d.get('name') + '%0AEmail: ' + d.get('email') + '%0A%0A' +
+                            encodeURIComponent(d.get('message'));
+                          window.location.href = 'mailto:contact@codeaxis.cm?subject=' +
+                            encodeURIComponent('Projet de ' + d.get('name')) + '&body=' + body;
+                        });
+                        document.getElementById('form-whatsapp-btn').addEventListener('click', function () {
+                          var d = new FormData(form);
+                          if (!form.reportValidity()) return;
+                          var text = 'Bonjour CODE AXIS, je suis ' + d.get('name') + ' (' + d.get('email') +
+                            '). ' + d.get('message');
+                          window.open('https://wa.me/237691223916?text=' + encodeURIComponent(text), '_blank', 'noopener');
+                        });
+                      })();
+                    </script>
                   </div>
                 </div>
               </div>
@@ -409,29 +457,29 @@
                   <div class="hire-carousel" id="hireCarousel">
                     <!-- 3D Service Cards générés par JS -->
                   </div>
+                </div>
 
-                  <!-- Barre de Contrôle Cyber Inférieure -->
-                  <div class="hire-controls-bar">
-                    <button class="hire-ctrl-btn hire-ctrl-prev" id="hirePrevBtn" aria-label="Service Précédent">
-                      <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
-                      <span>Précédent</span>
-                    </button>
-                    
-                    <div class="hire-counter-capsule">
-                      <span class="hire-counter-current" id="hireCounterCurrent">01</span>
-                      <span class="hire-counter-sep">/</span>
-                      <span class="hire-counter-total">06</span>
-                    </div>
+                <!-- Barre de contrôle hors du contexte 3D : les flèches restent cliquables -->
+                <div class="hire-controls-bar hire-controls-bar--static">
+                  <button class="hire-ctrl-btn hire-ctrl-prev" id="hirePrevBtn" aria-label="Service Précédent">
+                    <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+                    <span>Précédent</span>
+                  </button>
 
-                    <button class="hire-ctrl-btn hire-ctrl-next" id="hireNextBtn" aria-label="Service Suivant">
-                      <span>Suivant</span>
-                      <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
-                    </button>
+                  <div class="hire-counter-capsule">
+                    <span class="hire-counter-current" id="hireCounterCurrent">01</span>
+                    <span class="hire-counter-sep">/</span>
+                    <span class="hire-counter-total">06</span>
                   </div>
 
-                  <!-- Indicateurs à puces -->
-                  <div class="indicators" id="hireIndicators"></div>
+                  <button class="hire-ctrl-btn hire-ctrl-next" id="hireNextBtn" aria-label="Service Suivant">
+                    <span>Suivant</span>
+                    <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+                  </button>
                 </div>
+
+                <!-- Indicateurs à puces -->
+                <div class="indicators" id="hireIndicators"></div>
 
               </div>
             </li>
@@ -446,11 +494,12 @@
          MENU VERTICAL 3D EXTERNE (OUTER NAV)
          =================================================================== -->
     <ul class="outer-nav">
-      <li class="is-active">Accueil</li>
-      <li>Équipe & Arsenal</li>
-      <li>À Propos</li>
-      <li>Contact</li>
-      <li>Services & Devis</li>
+      <li class="is-active" data-section="0">Accueil</li>
+      <li data-section="1">Équipe & Arsenal</li>
+      <li data-section="2">À Propos</li>
+      <li data-href="suite-evo.html">Suite evo</li>
+      <li data-section="3">Contact</li>
+      <li data-section="4">Services & Devis</li>
     </ul>
 
   </div>
@@ -502,6 +551,7 @@
   </script>
 
   <!-- Master JavaScript Application -->
+  <script src="assets/js/icons.js"></script>
   <script src="assets/js/cadc-app.js"></script>
 </body>
 
