@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Actualité CODE AXIS, nouvelles de l'agence à Douala</title>
+  <meta name="description"
+    content="Actualité de CODE AXIS Digital Cameroon à Douala : lancements de produits evo, mises en production, notes techniques et vie de l'agence.">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2e4257">
+  <link rel="icon" type="image/png" href="assets/img/logo-mark.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&family=Oxanium:wght@400;600;700;800&family=Russo+One&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/cadc-fusion.css">
+  <link rel="stylesheet" href="assets/css/evo-suite.css">
+  <style>
+    html,
+    body {
+      overflow-y: auto !important;
+      height: auto !important;
+      min-height: 100%;
+      background: var(--bg-primary);
+      color: var(--text-main);
+    }
+
+    .act-hero {
+      text-align: center;
+      padding: 88px 20px 26px;
+    }
+
+    .act-hero h1 {
+      font-family: 'Russo One', sans-serif;
+      font-size: clamp(28px, 6vw, 52px);
+      background: var(--grad-accent);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+      margin-bottom: 10px;
+    }
+
+    .act-hero p {
+      color: var(--text-muted);
+      max-width: 620px;
+      margin: 0 auto;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .act-filters {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 0 20px 26px;
+    }
+
+    .act-filter {
+      border: 1px solid var(--border-subtle);
+      background: transparent;
+      color: var(--text-muted);
+      font-family: 'Oxanium', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      padding: 8px 16px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .act-filter:hover { color: var(--text-main); border-color: var(--border-neon); }
+
+    .act-filter.is-active {
+      background: var(--grad-primary);
+      border-color: transparent;
+      color: #ffffff;
+      box-shadow: 0 6px 18px var(--neon-glow);
+    }
+
+    .act-list {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 22px 96px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 16px;
+    }
+
+    .act-card {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      text-align: left;
+      padding: 20px 20px 22px;
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      background: var(--bg-card);
+      color: inherit;
+      font-family: inherit;
+      cursor: pointer;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .act-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--border-neon);
+      box-shadow: 0 16px 34px var(--neon-glow);
+    }
+
+    .act-card-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Oxanium', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    .act-tag {
+      padding: 3px 9px;
+      border-radius: 20px;
+      border: 1px solid var(--border-neon);
+      color: var(--neon-cyan);
+    }
+
+    .act-date { color: var(--card-ink-dim); }
+
+    .act-card h2 {
+      font-family: 'Russo One', sans-serif;
+      font-size: 17px;
+      line-height: 1.3;
+      color: var(--card-ink);
+      margin: 2px 0 0;
+    }
+
+    .act-card p {
+      color: var(--card-ink-soft);
+      font-size: 13px;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .act-card-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: 2px;
+      font-family: 'Oxanium', sans-serif;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      color: var(--neon-cyan);
+    }
+
+    .act-card-more .ico { transition: transform 0.25s ease; }
+    .act-card:hover .act-card-more .ico { transform: translateX(4px); }
+
+    .act-empty {
+      grid-column: 1 / -1;
+      text-align: center;
+      color: var(--text-muted);
+      padding: 40px 0;
+      font-size: 14px;
+    }
+
+    .act-modal-body { text-align: left; }
+
+    .act-modal-body h3 {
+      font-family: 'Russo One', sans-serif;
+      font-size: 15px;
+      color: var(--neon-cyan);
+      margin: 18px 0 6px;
+    }
+
+    .act-modal-body p {
+      color: #c3d3e4;
+      font-size: 13.5px;
+      line-height: 1.75;
+      margin: 0 0 12px;
+    }
+
+    .act-modal-meta {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      align-items: center;
+      font-family: 'Oxanium', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .act-hero { padding: 70px 16px 20px; }
+      .act-hero p { font-size: 13px; }
+      .act-filters {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding: 0 16px 18px;
+      }
+      .act-filters::-webkit-scrollbar { display: none; }
+      .act-filter { flex: 0 0 auto; }
+      .act-list { grid-template-columns: 1fr; padding: 0 16px 96px; gap: 12px; }
+      .act-card { padding: 16px 16px 18px; }
+      .act-card h2 { font-size: 15px; }
+    }
+  </style>
+  <link rel="canonical" href="https://codeaxis.cm/actualites.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CODE AXIS Digital Cameroon">
+  <meta property="og:locale" content="fr_CM">
+  <meta property="og:url" content="https://codeaxis.cm/actualites.html">
+  <meta property="og:title" content="Actualité CODE AXIS, nouvelles de l'agence à Douala">
+  <meta property="og:description"
+    content="Lancements de produits evo, mises en production, notes techniques et vie de l'agence.">
+  <meta property="og:image" content="https://codeaxis.cm/assets/img/logo-cadc.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Actualité CODE AXIS, nouvelles de l'agence à Douala">
+  <meta name="twitter:description"
+    content="Lancements de produits evo, mises en production, notes techniques et vie de l'agence.">
+  <meta name="twitter:image" content="https://codeaxis.cm/assets/img/logo-cadc.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Actualité CODE AXIS Digital Cameroon",
+    "url": "https://codeaxis.cm/actualites.html",
+    "inLanguage": "fr-CM",
+    "publisher": { "@type": "Organization", "name": "CODE AXIS Digital Cameroon", "url": "https://codeaxis.cm/" }
+  }
+  </script>
+</head>
+
+<body class="theme-night">
+  <a href="home.html" class="back-button-fixed">
+    <svg class="ico" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12H6M10.5 6.5L4.5 12l6 5.5"/></svg>
+    <span>Retour</span>
+  </a>
+
+  <header class="act-hero">
+    <h1>Actualité CODE AXIS</h1>
+    <p>Nouvelles de l'agence, mises en production et temps forts techniques. Tout ce que nous construisons à Douala,
+      au Cameroun.</p>
+  </header>
+
+  <nav class="act-filters" id="actFilters" aria-label="Filtrer les actualités par thème"></nav>
+
+  <main class="act-list" id="actList"></main>
+
+  <!-- Détail d'une actualité -->
+  <div class="evo-modal" id="actModal" role="dialog" aria-modal="true" aria-labelledby="actModalTitle">
+    <div class="evo-modal-card">
+      <button class="evo-modal-close" id="actModalClose" aria-label="Fermer">✕</button>
+      <div class="act-modal-meta" id="actModalMeta"></div>
+      <h2 class="evo-modal-name" id="actModalTitle">Actualité</h2>
+      <div class="act-modal-body" id="actModalText"></div>
+      <div class="evo-modal-actions">
+        <button class="btn-evo-ghost" id="actModalBack" type="button">Fermer</button>
+      </div>
+    </div>
+  </div>
+
+  <button class="to-top-btn" id="toTopBtn" type="button" aria-label="Revenir en haut de la page">
+    <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19.5v-14M6.5 11l5.5-5.5 5.5 5.5"/></svg>
+  </button>
+
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/icons.js"></script>
+  <script>
+    (function () {
+      'use strict';
+
+      var NEWS = [
+        {
+          date: '2026-10-27', tag: 'Agence', title: 'Le nouveau site CODE AXIS est en ligne',
+          excerpt: 'Identité visuelle, palette encre et acier, écran de lancement et mode hors connexion : le site de l\'agence a été refait.',
+          body: [
+            ['Ce qui change', 'Le site adopte la marque CODE AXIS Digital Cameroon et sa palette d\'encre navy. Un écran de lancement présente l\'emblème avant d\'entrer, et le thème bascule entre nuit, jour et soirée en gardant votre choix d\'une page à l\'autre.'],
+            ['Côté technique', 'Le site fonctionne comme une application installable : service worker, cache des ressources et page dédiée quand le réseau tombe. Les polices ne bloquent plus l\'affichage et les icônes sont désormais des tracés SVG plutôt que des émojis.'],
+            ['Et ensuite', 'Les fiches produits de la suite evo vont recevoir leur page de démonstration au fur et à mesure des mises en production.']
+          ]
+        },
+        {
+          date: '2026-10-25', tag: 'Produit', title: 'La suite evo passe à 22 produits',
+          excerpt: 'evo-cars et evo-wear rejoignent le catalogue, aux côtés de evo-gaz, evo-clinic ou evo-tontaine.',
+          body: [
+            ['evo-cars', 'Gestion de parc automobile et de pièces détachées : fiches véhicules avec éclatés techniques, stock pièces, commandes croisées et suivi des livraisons.'],
+            ['evo-wear', 'Boutique de vêtements : fiches modèles avec mensurations, tailles et coloris, stock par variantes, ventes au comptoir et livraison.'],
+            ['Le catalogue', 'Chaque produit de la suite evo est conçu pour le terrain camerounais : paiement mobile money, usage en faible connexion et prise en main sans formation longue.']
+          ]
+        },
+        {
+          date: '2026-10-18', tag: 'Terrain', title: 'evo-gaz en production à Douala',
+          excerpt: 'La plateforme de vente et de livraison de bouteilles de GPL est exploitée au quotidien par nos équipes.',
+          body: [
+            ['Le besoin', 'Commandes, tarification, tournée des livreurs et reçus : la distribution de gaz domestique se heurtait au papier et au téléphone.'],
+            ['Ce que fait evo-gaz', 'Les clients commandent depuis leur téléphone, les agents reçoivent leur tournée, le paiement passe par mobile money et le reçu est délivré immédiatement. Les données de vente restent consultables même quand la connexion lâche.'],
+            ['Prochaine étape', 'Ouverture de la facturation par abonnement pour les revendeurs et les restaurants.']
+          ]
+        },
+        {
+          date: '2026-10-05', tag: 'Technique', title: 'Une interface qui tient hors connexion',
+          excerpt: 'Le service worker met en cache l\'essentiel de l\'interface et affiche une page lisible quand le réseau manque.',
+          body: [
+            ['Le choix', 'Plutôt que d\'afficher une erreur de navigateur, l\'application sert une version locale de l\'interface et une page hors connexion à nos couleurs.'],
+            ['Comment', 'Les fichiers critiques sont enregistrés au premier visite, puis resynchronisés en arrière-plan à chaque retour du réseau. Les images sont mises en cache à la volée.'],
+            ['Pourquoi ici', 'À Douala comme en région, une coupure de connexion ne doit pas bloquer une prise de commande ou un relevé sur le terrain.']
+          ]
+        },
+        {
+          date: '2026-09-22', tag: 'Produit', title: 'evo-presence en phase de déploiement',
+          excerpt: 'Le pointage des présences par empreinte ou code arrive chez nos premiers établissements pilotes.',
+          body: [
+            ['Le principe', 'Le salarié pointe à l\'arrivée et au départ. Les heures, retards et absences sont calculés automatiquement, avec un export prêt pour la paie.'],
+            ['En cours', 'Recette sur site, ajustement des règles de primes et formation des responsables de service.'],
+            ['Disponible', 'La fiche produit est visible dans la suite evo ; l\'accès démonstration se demande directement via WhatsApp.']
+          ]
+        },
+        {
+          date: '2026-09-10', tag: 'Agence', title: 'Nos équipes travaillent depuis Bonabéri',
+          excerpt: 'L\'agence est basée à Bonabéri, à Douala, pour être au plus près des entreprises de la zone industrielle.',
+          body: [
+            ['Pourquoi Bonabéri', 'Le quartier concentre dépôts, ateliers et sociétés de transport. Être sur place change le rythme des rendez-vous et des mises en service.'],
+            ['Nous joindre', 'Le plus rapide reste WhatsApp, sinon par téléphone ou par mail depuis la page de contact. Les visites se font sur rendez-vous.'],
+            ['Adresse exacte', 'Le point d\'envoi des courses et la rue précise sont communiqués lors de la prise de rendez-vous.']
+          ]
+        }
+      ];
+
+      var TAGS = ['Tous', 'Agence', 'Produit', 'Terrain', 'Technique'];
+      var active = 'Tous';
+
+      var list = document.getElementById('actList');
+      var filters = document.getElementById('actFilters');
+      var modal = document.getElementById('actModal');
+      var modalTitle = document.getElementById('actModalTitle');
+      var modalMeta = document.getElementById('actModalMeta');
+      var modalText = document.getElementById('actModalText');
+
+      TAGS.forEach(function (t) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'act-filter' + (t === active ? ' is-active' : '');
+        b.textContent = t;
+        b.addEventListener('click', function () {
+          active = t;
+          filters.querySelectorAll('.act-filter').forEach(function (x) { x.classList.toggle('is-active', x === b); });
+          render();
+        });
+        filters.appendChild(b);
+      });
+
+      function fmt(iso) {
+        var d = new Date(iso + 'T00:00:00');
+        return d.toLocaleDateString('fr-FR', { day: '2-digit', month: 'long', year: 'numeric' });
+      }
+
+      function render() {
+        list.innerHTML = '';
+        var items = NEWS.filter(function (n) { return active === 'Tous' || n.tag === active; });
+        if (!items.length) {
+          var empty = document.createElement('p');
+          empty.className = 'act-empty';
+          empty.textContent = 'Aucune actualité dans cette catégorie pour le moment.';
+          list.appendChild(empty);
+          return;
+        }
+        items.forEach(function (n) {
+          var card = document.createElement('article');
+          card.className = 'act-card';
+          card.setAttribute('tabindex', '0');
+          card.setAttribute('role', 'button');
+          card.innerHTML =
+            '<div class="act-card-head"><span class="act-tag">' + n.tag + '</span><time class="act-date" datetime="' + n.date + '">' + fmt(n.date) + '</time></div>' +
+            '<h2>' + n.title + '</h2>' +
+            '<p>' + n.excerpt + '</p>' +
+            '<span class="act-card-more">Lire' +
+            '<svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h14M13.5 6.5L19.5 12l-6 5.5"/></svg></span>';
+
+          function open() {
+            modalTitle.textContent = n.title;
+            modalMeta.innerHTML = '<span class="act-tag">' + n.tag + '</span><span>' + fmt(n.date) + '</span>';
+            modalText.innerHTML = n.body.map(function (sec) {
+              return '<h3>' + sec[0] + '</h3><p>' + sec[1] + '</p>';
+            }).join('');
+            modal.classList.add('is-active');
+            document.getElementById('actModalClose').focus();
+          }
+
+          card.addEventListener('click', open);
+          card.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+          });
+          list.appendChild(card);
+        });
+      }
+
+      function close() { modal.classList.remove('is-active'); }
+      document.getElementById('actModalClose').addEventListener('click', close);
+      document.getElementById('actModalBack').addEventListener('click', close);
+      modal.addEventListener('click', function (e) { if (e.target === modal) close(); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+
+      render();
+
+      /* Bouton retour en haut */
+      var btn = document.getElementById('toTopBtn');
+      var ticking = false;
+      window.addEventListener('scroll', function () {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(function () {
+          ticking = false;
+          btn.classList.toggle('is-visible', window.scrollY > 420);
+        });
+      }, { passive: true });
+      btn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    })();
+  </script>
+</body>
+
+</html>

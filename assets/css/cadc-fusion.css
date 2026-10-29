@@ -2932,3 +2932,52 @@ h1 .ico, h2 .ico, h3 .ico, .ico--title { vertical-align: -0.12em; }
   .category-tab { padding: 6px 11px; font-size: 10.5px; }
   .work { padding-top: clamp(58px, 8vh, 74px); }
 }
+
+/* ===================================================================
+   HAUTEUR : anneau d'équipe remonté, hero mobile sans collision
+   =================================================================== */
+.work {
+  padding-top: clamp(48px, 6.5vh, 68px);
+}
+
+.section-subtoggle {
+  margin-bottom: 10px;
+}
+
+/* L'anneau et ses réglages montent dans la section */
+.work--orbital {
+  margin-top: -14px;
+}
+
+.team-orb-container {
+  transform: translateY(-16px);
+}
+
+/* Sur mobile, la liste d'options devient une zone défilante :
+   le bouton « Écrivez-nous » ne touche plus la barre du dessous */
+@media (max-width: 768px) {
+  .work { padding-top: clamp(42px, 6vh, 58px); }
+  .work--orbital { margin-top: -6px; }
+  .team-orb-container { transform: translateY(-8px); }
+
+  .intro--banner { min-height: auto; }
+
+  .intro--options {
+    max-height: 30vh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+    margin-top: 18px;
+    padding: 2px 8px 10px 2px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--neon-blue) transparent;
+  }
+
+  .intro--options::-webkit-scrollbar { width: 5px; }
+  .intro--options::-webkit-scrollbar-thumb { background: var(--neon-blue); border-radius: 5px; }
+  .intro--options > a { padding: 12px 14px; }
+  .intro--options h3 { font-size: 13px; }
+  .intro--options p { font-size: 11px; }
+  .cta { margin-bottom: 2px; }
+}
