@@ -415,30 +415,6 @@ body.theme-day .dep-logo { mix-blend-mode: normal; }
   margin-bottom: 22px;
 }
 
-/* Fab thème + bouton retour sur sous-pages claires */
-.theme-fab {
-  position: fixed;
-  top: 22px;
-  right: 24px;
-  z-index: 1000;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  border: 1px solid var(--border-neon);
-  background: var(--bg-card);
-  color: var(--text-main);
-  cursor: pointer;
-  display: grid;
-  place-items: center;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.theme-fab:hover { transform: scale(1.08); box-shadow: 0 0 20px var(--neon-glow-cyan); }
-.theme-fab svg { width: 20px; height: 20px; fill: currentColor; }
-
 /* Bouton retour de page */
 .back-button-fixed {
   position: fixed;

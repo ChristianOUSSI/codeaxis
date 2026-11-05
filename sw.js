@@ -1,45 +1,60 @@
 // Service Worker pour CODE AXIS Digital Cameroon PWA
-const CACHE_NAME = 'cadc-pwa-v4';
+const CACHE_NAME = 'cadc-pwa-v11';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
   './offline.html',
+  './404.html',
   './manifest.json',
   './assets/css/cadc-fusion.css',
+  './assets/css/home-evo-news.css',
+  './assets/css/evo-suite.css',
   './assets/js/cadc-app.js',
+  './assets/js/evo-suite.js',
+  './assets/js/evo-page.js',
+  './assets/js/news-data.js',
+  './assets/js/news-page.js',
+  './assets/js/stack-data.js',
+  './assets/js/developpement-page.js',
+  './assets/js/contact-form.js',
+  './assets/js/pwa-register.js',
+  './assets/js/theme.js',
+  './assets/js/icons.js',
+  './assets/js/i18n-en-core.js',
+  './assets/js/i18n-en-pages.js',
+  './assets/js/i18n.js',
   './assets/img/logo-mark.png',
   './assets/img/logo-cadc.png',
   './assets/img/logo-192.png',
   './assets/img/logo-512.png',
   './assets/img/introduction-visual.png',
   './assets/img/about-visual.png',
-  './assets/img/about-history.jpg',
-  './assets/img/about-philosophy.jpg',
-  './assets/img/about-winners.jpg',
-  './assets/img/neural-network.jpg',
-  './assets/img/quantum-cloud.jpg',
-  './assets/img/blockchain-vault.jpg',
-  './assets/img/cyber-defense.jpg',
-  './assets/img/data-nexus.jpg',
-  './assets/img/ar-interface.jpg',
-  './assets/img/iot-matrix.jpg',
-  './home.html',
+  './assets/img/partenaires/mboa-bio-237.jpg',
+  './assets/img/partenaires/frost-co-group.jpg',
   './suite-evo.html',
   './actualites.html',
-  './deploiement.html',
-  './assets/css/evo-suite.css',
-  './assets/js/theme.js',
-  './strategie.html',
-  './developpement.html',
-  './design.html',
   './nos-clients.html',
   './nos-projets.html',
   './nos-contrats.html',
   './nos-realisations.html',
+  './projet-agrismart.html',
+  './projet-finsecure.html',
+  './projet-healthportal.html',
+  './projet-smartlogistics.html',
+  './realisation-fintech.html',
+  './realisation-logistique.html',
+  './realisation-marketplace.html',
   './christian-oussi.html',
   './marc-laurent.html',
+  './sarah-martin.html',
   './axel-dupont.html',
-  './sarah-martin.html'
+  './strategie.html',
+  './developpement.html',
+  './design.html',
+  './youth-partnership.html',
+  './confidentialite.html',
+  './assets/js/splash.js',
+  './assets/js/partnership.js'
 ];
 
 // Installation : mise en cache initiale
@@ -94,9 +109,11 @@ self.addEventListener('fetch', (event) => {
           cache.put(event.request, responseToCache);
         });
 
-        return networkResponse;
+        return responseToCache;
+      }).then((resp) => {
+        // Page hors-ligne pour les navigations qui échouent au réseau
+        return resp;
       }).catch(() => {
-        // Mode hors-ligne : page dédiée pour le HTML
         if (event.request.mode === 'navigate') {
           return caches.match('./offline.html');
         }

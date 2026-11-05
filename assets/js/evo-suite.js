@@ -1,6 +1,6 @@
 /**
  * Suite evo, catalogue des produits CODE AXIS Digital Cameroon
- * Utilisé par home.html (section 04) et suite-evo.html.
+ * Utilisé par index.html (aperçu et carrousel) et suite-evo.html (page complète).
  */
 (function () {
   'use strict';
@@ -39,7 +39,7 @@
     var img = document.getElementById(opts.img);
     var name = document.getElementById(opts.name);
     var desc = document.getElementById(opts.desc);
-    var cta = document.getElementById(opts.cta);
+    var cta = opts.cta && document.getElementById(opts.cta);
 
     PROJECTS.forEach(function (p) {
       var card = document.createElement('button');
@@ -60,13 +60,28 @@
       grid.appendChild(card);
     });
 
+    function demoHref(slug) {
+      var lang = (window.cadcLang && window.cadcLang()) || 'fr';
+      var text = lang === 'en'
+        ? 'Hello CODE AXIS, I would like a demonstration of ' + slug + '.'
+        : 'Bonjour CODE AXIS, je souhaite une démonstration de ' + slug + '.';
+      return 'https://wa.me/237691223916?text=' + encodeURIComponent(text);
+    }
+
+    function paintCta(p) {
+      if (!cta) return;
+      cta.href = demoHref(p.slug);
+      cta.setAttribute('target', '_blank');
+      cta.setAttribute('rel', 'noopener noreferrer');
+    }
+
     function open(p) {
       stage.className = 'evo-stage';
       img.src = 'assets/img/evo/' + p.slug + '.jpg';
       img.alt = p.slug;
       name.textContent = p.slug;
       desc.textContent = p.desc;
-      cta.href = 'deploiement.html?p=' + p.slug;
+      paintCta(p);
       void stage.offsetWidth;
       stage.classList.add('evo-anim-' + p.anim);
       modal.classList.add('is-active');
@@ -80,6 +95,29 @@
     }
     modal.addEventListener('click', function (e) { if (e.target === modal) close(); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+
+    /* La fiche suit la langue : le texte du bouton et le message WhatsApp se remettent à jour */
+    if (cta) {
+      document.documentElement.addEventListener('cadc:lang', function () {
+        if (modal.classList.contains('is-active')) {
+          var slug = name.textContent;
+          var p = PROJECTS.filter(function (x) { return x.slug === slug; })[0];
+          if (p) paintCta(p);
+        }
+      });
+    }
+
+    /* Ancre directe : suite-evo.html#evo-gaz ouvre la fiche */
+    if (opts.deepLink) {
+      var hash = decodeURIComponent((window.location.hash || '').replace('#', ''));
+      var target = PROJECTS.filter(function (x) { return x.slug === hash; })[0];
+      if (target) setTimeout(function () { open(target); }, 80);
+      window.addEventListener('hashchange', function () {
+        var h = decodeURIComponent(window.location.hash.replace('#', ''));
+        var t = PROJECTS.filter(function (x) { return x.slug === h; })[0];
+        if (t) open(t);
+      });
+    }
 
     return { open: open, close: close };
   }

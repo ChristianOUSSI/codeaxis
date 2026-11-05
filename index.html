@@ -2,347 +2,496 @@
 <html lang="fr">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Agence web & mobile à Douala | CODE AXIS Digital Cameroon</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="description"
-    content="CODE AXIS Digital Cameroon. Agence Digitale d'Élite à Douala : Innovation, Développement Web & Mobile, Design UI/UX, Cloud & IA.">
-  <title>CODE AXIS Digital Cameroon | Chargement</title>
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#eef1f5">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <link rel="icon" type="image/png" href="assets/img/logo-mark.png">
+    content="Studio numérique à Douala, Bonabéri : applications web et mobiles, suite evo de 22 produits métier, paiement mobile money et fonctionnement hors-ligne.">
   <link rel="canonical" href="https://codeaxis.cm/">
 
-  <link rel="preload" as="image" href="assets/img/logo-cadc.png">
-  <link rel="prefetch" as="document" href="home.html">
-  <link rel="prefetch" as="style" href="assets/css/cadc-fusion.css">
-  <link rel="prefetch" as="script" href="assets/js/cadc-app.js">
+  <!-- PWA & Mobile Web App Meta -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#3e5f8a">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="CODE AXIS">
+  <link rel="apple-touch-icon" href="assets/img/logo-mark.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/img/logo-mark.png">
+
+  <!-- CSS Master Fusion -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&family=Oxanium:wght@400;600;700;800&family=Russo+One&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/cadc-fusion.css">
+  <link rel="stylesheet" href="assets/css/home-evo-news.css">
 
-    :root {
-      --ink: #2e4257;
-      --ink-deep: #1d2c3d;
-      --steel: #5c7794;
-      --teal: #0d8f7a;
-      --paper: #eef1f5;
-      --paper-hi: #f6f8fa;
-    }
+  <!-- Partage social -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CODE AXIS Digital Cameroon">
+  <meta property="og:locale" content="fr_CM">
+  <meta property="og:url" content="https://codeaxis.cm/">
+  <meta property="og:title" content="CODE AXIS, agence web et mobile à Douala">
+  <meta property="og:description"
+    content="Applications web et mobiles, suite evo de 22 produits métier, mobile money et hors-ligne. Depuis Bonabéri, Douala.">
+  <meta property="og:image" content="https://codeaxis.cm/assets/img/logo-cadc.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CODE AXIS, agence web et mobile à Douala">
+  <meta name="twitter:description"
+    content="Applications web et mobiles, suite evo de 22 produits métier, mobile money et hors-ligne. Depuis Bonabéri, Douala.">
+  <meta name="twitter:image" content="https://codeaxis.cm/assets/img/logo-cadc.png">
 
-    html,
-    body {
-      height: 100%;
-    }
-
-    body {
-      font-family: 'Oxanium', sans-serif;
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-      isolation: isolate;
-      background: radial-gradient(125% 78% at 50% 34%, var(--paper-hi) 0%, var(--paper) 52%, #dfe6ee 100%) #dfe6ee;
-      /* grain papier en pointillés, comme le loader evo-gaz */
-      animation: splash-guard 4.2s ease forwards;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background:
-        radial-gradient(rgba(46, 66, 87, 0.07) 0.7px, transparent 0.7px),
-        radial-gradient(rgba(92, 119, 148, 0.06) 0.7px, transparent 0.7px);
-      background-size: 9px 9px, 13px 13px;
-      background-position: 0 0, 4px 6px;
-      pointer-events: none;
-    }
-
-    @keyframes splash-guard {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    .splash {
-      position: relative;
-      text-align: center;
-      padding: 20px;
-      z-index: 2;
-    }
-
-    .splash-plate {
-      position: relative;
-      display: inline-block;
-    }
-
-    .splash-halo {
-      position: absolute;
-      inset: -14%;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(92, 119, 148, 0.34) 0%, rgba(46, 66, 87, 0.14) 46%, transparent 72%);
-      animation: splash-breathe 4.2s ease-in-out infinite;
-      pointer-events: none;
-    }
-
-    @keyframes splash-breathe {
-
-      0%,
-      100% {
-        opacity: 0.5;
-        transform: scale(0.95);
-      }
-
-      50% {
-        opacity: 1;
-        transform: scale(1.06);
-      }
-    }
-
-    .splash-mark {
-      position: relative;
-      display: block;
-      width: min(330px, 72vw);
-      max-height: 56vh;
-      height: auto;
-      margin: 0 auto;
-      animation: mark-in 1.05s cubic-bezier(0.16, 0.84, 0.28, 1) both, mark-hold 5.2s 1.1s ease-in-out infinite;
-    }
-
-    @keyframes mark-in {
-      from {
-        opacity: 0;
-        transform: translateY(18px) scale(0.93);
-        filter: blur(4px);
-      }
-
-      to {
-        opacity: 1;
-        transform: none;
-        filter: none;
-      }
-    }
-
-    @keyframes mark-hold {
-
-      0%,
-      100% {
-        transform: scale(1);
-      }
-
-      50% {
-        transform: scale(1.017);
-      }
-    }
-
-    /* Ligne de scan qui balaie l'emblème */
-    .splash-scan {
-      position: absolute;
-      left: 8%;
-      right: 8%;
-      top: 6%;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, rgba(13, 143, 122, 0.85), transparent);
-      box-shadow: 0 0 16px rgba(13, 143, 122, 0.55);
-      opacity: 0;
-      animation: splash-scan 3.1s 0.9s ease-in-out infinite;
-      pointer-events: none;
-    }
-
-    @keyframes splash-scan {
-      0% {
-        opacity: 0;
-        transform: translateY(0);
-      }
-
-      12% {
-        opacity: 1;
-      }
-
-      55% {
-        opacity: 1;
-        transform: translateY(240px);
-      }
-
-      70% {
-        opacity: 0;
-        transform: translateY(240px);
-      }
-
-      100% {
-        opacity: 0;
-        transform: translateY(0);
-      }
-    }
-
-    /* Barre glissante indéterminée */
-    .splash-bar {
-      display: block;
-      position: relative;
-      width: 148px;
-      height: 2px;
-      margin: 30px auto 0;
-      background: rgba(46, 66, 87, 0.18);
-      overflow: hidden;
-    }
-
-    .splash-bar::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: -42%;
-      width: 42%;
-      background: linear-gradient(90deg, transparent, var(--ink), transparent);
-      animation: splash-slide 1.5s ease-in-out infinite;
-    }
-
-    @keyframes splash-slide {
-      to {
-        left: 100%;
-      }
-    }
-
-    .splash-status {
-      margin: 16px 0 0;
-      font-size: 0.66rem;
-      font-weight: 700;
-      letter-spacing: 0.26em;
-      text-transform: uppercase;
-      color: var(--steel);
-      min-height: 1.4em;
-      transition: opacity 0.35s ease;
-    }
-
-    .splash-skip {
-      position: fixed;
-      bottom: clamp(16px, 4vh, 32px);
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 3;
-      background: none;
-      border: 1px solid rgba(46, 66, 87, 0.28);
-      color: var(--ink);
-      font-family: inherit;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 9px 22px;
-      border-radius: 40px;
-      cursor: pointer;
-      opacity: 0;
-      animation: appear 0.7s 2s ease forwards;
-      transition: background 0.25s ease, color 0.25s ease;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    .splash-skip:hover {
-      background: var(--ink);
-      color: var(--paper-hi);
-    }
-
-    @keyframes appear {
-      to {
-        opacity: 1;
-      }
-    }
-
-    .curtain {
-      position: fixed;
-      inset: 0;
-      background: var(--paper);
-      z-index: 10;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.6s ease;
-    }
-
-    .leaving .curtain {
-      opacity: 1;
-      pointer-events: all;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-
-      body,
-      .splash-mark,
-      .splash-halo,
-      .splash-scan,
-      .splash-skip,
-      .splash-bar::after {
-        animation: none !important;
-        opacity: 1;
-      }
-    }
-  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "CODE AXIS Digital Cameroon",
+    "alternateName": "CADC",
+    "url": "https://codeaxis.cm/",
+    "logo": "https://codeaxis.cm/assets/img/logo-mark.png",
+    "image": "https://codeaxis.cm/assets/img/logo-cadc.png",
+    "description": "Studio numérique à Douala : applications web et mobiles, suite evo de produits métiers, paiement mobile money et fonctionnement hors-ligne.",
+    "telephone": "+237691223916",
+    "email": "contact@codeaxis.cm",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Bonabéri",
+      "addressLocality": "Douala",
+      "addressCountry": "CM"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 4.058, "longitude": 9.636 },
+    "areaServed": { "@type": "Country", "name": "Cameroun" },
+    "founder": { "@type": "Person", "name": "Christian OUSSI" },
+    "priceRange": "XAF",
+    "sameAs": ["https://github.com/ChristianOUSSI/codeaxis"]
+  }
+  </script>
 </head>
 
-<body>
-  <div class="curtain"></div>
+<body class="theme-night">
 
-  <main class="splash">
-    <div class="splash-plate">
-      <span class="splash-halo" aria-hidden="true"></span>
-      <img class="splash-mark" src="assets/img/logo-cadc.png" alt="CODE AXIS Digital Cameroon">
-      <span class="splash-scan" aria-hidden="true"></span>
+  <!-- Splash de marque : purement décoratif, le site est déjà chargé dessous,
+       il s'efface seul et ne bloque ni la lecture ni les robots -->
+  <div class="site-splash" id="site-splash" aria-hidden="true">
+    <div class="splash-inner">
+      <div class="splash-plate">
+        <span class="splash-halo"></span>
+        <img class="splash-mark" src="assets/img/logo-cadc.png" alt="" width="300" height="450">
+        <span class="splash-scan"></span>
+      </div>
+      <span class="splash-bar"></span>
+      <p class="splash-status" id="splash-status">Initialisation</p>
+    </div>
+  </div>
+
+  <!-- NOTIFICATION CONTAINER / 3D PERSPECTIVE WRAPPER -->
+  <div class="perspective effect-rotate-left">
+    <div class="container">
+      <div class="outer-nav--return"></div>
+      <div id="viewport" class="l-viewport">
+        <div class="l-wrapper">
+
+          <!-- ===================================================================
+               HEADER TRANSLUCIDE ÉPURÉ & AÉRIEN
+               =================================================================== -->
+          <header class="header">
+            <!-- Logo & Titre CODE AXIS -->
+            <a href="index.html" class="header--brand">
+              <div class="header--logo-icon">
+                <img src="assets/img/logo-mark.png" alt="CODE AXIS, Logo">
+              </div>
+              <span class="header--title-main">CODE AXIS</span>
+            </a>
+
+            <!-- Liens de navigation rapide dans le header -->
+            <nav class="header--nav-links">
+              <a href="#" data-section="0">Accueil</a>
+              <a href="#" data-section="1">Équipe</a>
+              <a href="#" data-section="2">À Propos</a>
+              <a href="#" data-section="3">Suite evo</a>
+              <a href="#" data-section="4">Actualité</a>
+              <a href="#" data-section="5">Contact</a>
+              <a href="#" data-section="6">Services</a>
+            </nav>
+
+            <!-- Actions du Header (Thème + 3D Toggle) -->
+            <div class="header--actions">
+              <!-- Bouton Theme Toggle -->
+              <button id="theme-toggle-btn" class="theme-toggle-btn" title="Changer de thème">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z" />
+                </svg>
+              </button>
+
+              <!-- Bouton Hamburger 3D Navigation -->
+              <button id="nav-toggle-btn" class="header--nav-toggle" title="Menu 3D Perspective">
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+            </div>
+          </header>
+
+          <!-- ===================================================================
+               SIDE NAVIGATION TRANSLUCIDE NUMÉROTÉE (01-07)
+               =================================================================== -->
+          <nav class="l-side-nav">
+            <ul class="side-nav">
+              <li class="is-active" data-section="0"><span>01 &nbsp; Accueil</span></li>
+              <li data-section="1"><span>02 &nbsp; Équipe & pile technique</span></li>
+              <li data-section="2"><span>03 &nbsp; À Propos</span></li>
+              <li data-section="3"><span>04 &nbsp; Suite evo</span></li>
+              <li data-section="4"><span>05 &nbsp; Actualité</span></li>
+              <li data-section="5"><span>06 &nbsp; Contact</span></li>
+              <li data-section="6"><span>07 &nbsp; Services & Devis</span></li>
+            </ul>
+          </nav>
+
+          <!-- ===================================================================
+               CONTENU PRINCIPAL DES SECTIONS
+               =================================================================== -->
+          <ul class="l-main-content main-content">
+
+            <!-- SECTION 01 : ACCUEIL / HERO & CARROUSEL PRODUITS -->
+            <li class="l-section section section--is-active" id="section-intro">
+              <canvas id="intro-particles" class="section-particles"></canvas>
+              <div class="intro">
+
+                <!-- Hero Spatial CODE AXIS -->
+                <div id="heroViewSpatial" class="hero-view-spatial">
+                  <div class="intro--banner">
+                    <span class="intro--badge">Studio numérique à Douala, Cameroun</span>
+                    <h1>Votre Aventure<br>commence ici</h1>
+                    <button id="cta-intro-btn" class="cta">
+                      <span>Écrivez-nous</span>
+                      <svg viewBox="0 0 24 24">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                      </svg>
+                      <span class="btn-background"></span>
+                    </button>
+                    <!-- Visuel Astronaute en lévitation 3D -->
+                    <img src="assets/img/introduction-visual.png" alt="Astronaute CODE AXIS" class="astronaut-bg"
+                      loading="lazy">
+                  </div>
+
+                  <ul class="intro--options">
+                    <a href="strategie.html">
+                      <h3>Stratégie Digitale</h3>
+                      <p>Cadrage, ateliers et roadmap avant la première ligne de code.</p>
+                    </a>
+                    <a href="developpement.html">
+                      <h3>Développement</h3>
+                      <p>Applications web et mobiles, pensées mobile money et hors-ligne.</p>
+                    </a>
+                    <a href="design.html">
+                      <h3>Design UI / UX</h3>
+                      <p>Interfaces claires, testées sur les téléphones réellement utilisés ici.</p>
+                    </a>
+                  </ul>
+                </div>
+
+              </div>
+            </li>
+
+            <!-- SECTION 02 : ÉQUIPE & PILE TECHNIQUE -->
+            <li class="l-section section" id="section-work">
+              <canvas id="work-particles" class="section-particles"></canvas>
+              <div class="work">
+                <h2 class="section-title-glow">Notre équipe & notre pile technique</h2>
+
+                <!-- Sélecteur de sous-vue Section 2 -->
+                <div class="section-subtoggle">
+                  <button id="btnViewOrbital" class="mode-btn active">Équipe</button>
+                  <button id="btnViewSkills" class="mode-btn">Pile technique</button>
+                </div>
+
+                <!-- Vue A: Anneau Orbital de l'Équipe, l'équipe gravite autour du logo CODE AXIS -->
+                <div id="viewOrbitalContainer" class="work--orbital is-active">
+                  <div class="team-orb-container" id="orbitalStage">
+                    <div class="orb-parallax" id="orbitalParallax">
+                      <div class="orb-ring-tilt" id="orbitalTilt">
+                        <div class="orb-ring orb-ring--team" id="orbitalRing">
+                          <!-- Les panneaux membres sont injectés par JS -->
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Emblème central : l'équipe gravite autour de CODE AXIS -->
+                    <div class="orb-core" aria-hidden="true">
+                      <img src="assets/img/logo-mark.png" alt="">
+                    </div>
+
+                    <div class="orb-controls">
+                      <div class="orb-ctrl">
+                        <span class="orb-ctrl-label">Zoom</span>
+                        <button class="orb-switch" id="orbZoomSwitch" role="switch" aria-checked="false"
+                          aria-label="Agrandir l'anneau"><span class="knob"></span></button>
+                      </div>
+                      <div class="orb-ctrl">
+                        <span class="orb-ctrl-label">Espacement</span>
+                        <div class="orb-spacing" role="group" aria-label="Espacement de l'anneau">
+                          <button class="spacing-step" data-space="0" aria-label="Resserré"><i></i></button>
+                          <button class="spacing-step is-active" data-space="1" aria-label="Par défaut"><i></i></button>
+                          <button class="spacing-step" data-space="2" aria-label="Large"><i></i></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Vue B: Pile technique - Grille Hexagonale -->
+                <div id="viewSkillsContainer" class="skills-container">
+                  <div class="skill-categories">
+                    <button class="category-tab active" data-category="all">Tout</button>
+                    <button class="category-tab" data-category="frontend">Frontend & UI</button>
+                    <button class="category-tab" data-category="backend">Backend & API</button>
+                    <button class="category-tab" data-category="cloud">Cloud & DevOps</button>
+                    <button class="category-tab" data-category="emerging">IA & Web3</button>
+                  </div>
+
+                  <div id="skillsGrid" class="skills-hexagon-grid">
+                    <!-- Hexagones injectés par JS -->
+                  </div>
+                </div>
+
+              </div>
+            </li>
+
+            <!-- SECTION 03 : À PROPOS (ABOUT) -->
+            <li class="l-section section" id="section-about">
+              <canvas id="about-particles" class="section-particles"></canvas>
+              <div class="about">
+                <div class="about--banner">
+                  <h2>Nous concevons à Douala<br>des logiciels<br>pour le terrain</h2>
+                  <a href="nos-clients.html" class="btn-clients">
+                    <span>Nos clients</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </a>
+                  <!-- Visuel Créatif avec Halo -->
+                  <img src="assets/img/about-visual.png" alt="Créativité CODE AXIS" class="about--visual" loading="lazy">
+                </div>
+
+                <ul class="about--options">
+                  <a href="nos-projets.html">
+                    <h3>Nos projets</h3>
+                  </a>
+                  <a href="nos-contrats.html">
+                    <h3>Contrats &amp; Modèles</h3>
+                  </a>
+                  <a href="nos-realisations.html">
+                    <h3>Nos réalisations</h3>
+                  </a>
+                </ul>
+              </div>
+            </li>
+
+            <!-- SECTION 04 : SUITE EVO (carrousel produits, lecture complète sur la page dédiée) -->
+            <li class="l-section section" id="section-evo">
+              <canvas id="evo-particles" class="section-particles"></canvas>
+              <div class="hn-block">
+                <div class="hn-head">
+                  <h2 class="hn-title">Suite evo</h2>
+                  <p class="hn-lede">Vingt-deux produits métiers conçus et opérés depuis Douala. Chaque brique est
+                    pensée pour le terrain camerounais : mobile money, hors-ligne, faible bande passante.</p>
+                </div>
+
+                <!-- Carrousel 3D produits evo (cartes injectées par JS) -->
+                <div class="hn-carousel" id="hnCarousel">
+                  <div class="carousel-container">
+                    <div id="carousel" class="carousel">
+                    </div>
+                    <div class="carousel-controls">
+                      <button id="carouselPrevBtn" class="carousel-btn" aria-label="Précédent">&#8249;</button>
+                      <button id="carouselNextBtn" class="carousel-btn" aria-label="Suivant">&#8250;</button>
+                    </div>
+                  </div>
+                  <div id="indicators" class="carousel-indicators"></div>
+                </div>
+
+                <div class="hn-foot">
+                  <a class="hn-readmore" href="suite-evo.html">
+                    <span>Lire la suite</span>
+                    <svg class="ico" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor"
+                      stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M4 12h14M13.5 6.5L19.5 12l-6 5.5" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </li>
+
+            <!-- SECTION 05 : ACTUALITÉ (bandeau presse, lecture complète sur la page dédiée) -->
+            <li class="l-section section" id="section-news">
+              <canvas id="news-particles" class="section-particles"></canvas>
+              <div class="hn-block">
+                <div class="hn-head">
+                  <h2 class="hn-title">Actualité</h2>
+                  <p class="hn-lede">Nouvelles de l'agence, mises en production et temps forts techniques.</p>
+                </div>
+
+                <div class="hn-press">
+                  <div class="hn-press-track" id="newsPeek" aria-label="Dernières actualités de l'agence">
+                    <!-- Cartes presse injectées par JS -->
+                  </div>
+                </div>
+
+                <div class="hn-foot">
+                  <a class="hn-readmore" href="actualites.html">
+                    <span>Lire la suite</span>
+                    <svg class="ico" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor"
+                      stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M4 12h14M13.5 6.5L19.5 12l-6 5.5" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </li>
+
+            <!-- SECTION 06 : CONTACT & LOCALISATION -->
+            <li class="l-section section" id="section-contact">
+              <canvas id="contact-particles" class="section-particles"></canvas>
+              <div class="contact">
+                <h2 class="section-title-glow">Contactez CODE AXIS</h2>
+                <div class="contact--grid">
+                  <!-- Carte Google Maps, localisation réelle (rendu live Google Maps) -->
+                  <div class="contact--map">
+                    <iframe title="CODE AXIS, Bonabéri, Douala, Cameroun"
+                      src="https://maps.google.com/maps?q=Bonab%C3%A9ri%2C%20Douala%2C%20Cameroun&z=15&hl=fr&output=embed"
+                      loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen>
+                    </iframe>
+                  </div>
+
+                  <!-- Carte Informations & Actions Directes -->
+                  <div class="contact--info">
+                    <h3 class="contact-title">Parlons de Votre Projet</h3>
+                    <div class="contact-detail">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                          d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                      </svg>
+                      <span>Douala - Bonabéri, Cameroun</span>
+                    </div>
+                    <a href="mailto:contact@codeaxis.cm" class="contact-link">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                          d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                      </svg>
+                      <span>contact@codeaxis.cm</span>
+                    </a>
+                    <a href="tel:+237691223916" class="contact-link">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                          d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                      </svg>
+                      <span>+237 691 223 916</span>
+                    </a>
+
+                    <div class="contact-actions">
+                      <a id="wa-direct-link"
+                        href="https://wa.me/237691223916?text=Bonjour%20CODE%20AXIS%2C%20je%20souhaite%20des%20informations%20sur%20vos%20services."
+                        target="_blank" rel="noopener noreferrer" class="btn-contact-action btn-whatsapp">
+                        <span>WhatsApp Direct</span>
+                      </a>
+                      <a id="mail-direct-link" href="mailto:contact@codeaxis.cm?subject=Demande%20de%20projet%20CODE%20AXIS"
+                        class="btn-contact-action btn-email">
+                        <span>Envoyer un Mail</span>
+                      </a>
+                    </div>
+
+                    <!-- Formulaire rapide de contact -->
+                    <form class="contact-form" id="quick-contact-form">
+                      <input type="text" name="name" placeholder="Votre nom" required autocomplete="name">
+                      <input type="email" name="email" placeholder="Votre email" required autocomplete="email">
+                      <textarea name="message" placeholder="Décrivez votre projet..." rows="3" required></textarea>
+                      <div class="contact-form-actions">
+                        <button type="submit" class="btn-contact-action btn-email"><span>Envoyer par Mail</span></button>
+                        <button type="button" id="form-whatsapp-btn" class="btn-contact-action btn-whatsapp"><span>Envoyer
+                            via WhatsApp</span></button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- SECTION 07 : QUE VOULEZ-VOUS DE NOUS ? (SERVICES & DEVIS 3D CAROUSEL) -->
+            <li class="l-section section" id="section-hire">
+              <canvas id="hire-particles" class="section-particles"></canvas>
+              <div class="hire">
+                <h2 class="section-title-glow">Que voulez-vous de nous ?</h2>
+
+                <!-- Carrousel 3D Services & Devis (Ultra Fluide Mobile & PC) -->
+                <div class="hire-carousel-container" id="hireCarouselContainer">
+                  <div class="hire-carousel" id="hireCarousel">
+                    <!-- Cartes services générées par JS -->
+                  </div>
+                </div>
+
+                <!-- Barre de contrôle hors du contexte 3D : les flèches restent cliquables -->
+                <div class="hire-controls-bar hire-controls-bar--static">
+                  <button class="hire-ctrl-btn hire-ctrl-prev" id="hirePrevBtn" aria-label="Service Précédent">
+                    <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+                    <span>Précédent</span>
+                  </button>
+
+                  <div class="hire-counter-capsule">
+                    <span class="hire-counter-current" id="hireCounterCurrent">01</span>
+                    <span class="hire-counter-sep">/</span>
+                    <span class="hire-counter-total">06</span>
+                  </div>
+
+                  <button class="hire-ctrl-btn hire-ctrl-next" id="hireNextBtn" aria-label="Service Suivant">
+                    <span>Suivant</span>
+                    <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+                  </button>
+                </div>
+
+                <!-- Indicateurs à puces -->
+                <div class="indicators" id="hireIndicators"></div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </div>
     </div>
 
-    <span class="splash-bar" role="progressbar" aria-label="Chargement du site" aria-valuemin="0"
-      aria-valuemax="100"></span>
+    <!-- ===================================================================
+         MENU VERTICAL 3D EXTERNE (OUTER NAV)
+         =================================================================== -->
+    <ul class="outer-nav">
+      <li class="is-active" data-section="0">Accueil</li>
+      <li data-section="1">Équipe & pile technique</li>
+      <li data-section="2">À Propos</li>
+      <li data-section="3">Suite evo</li>
+      <li data-section="4">Actualité</li>
+      <li data-section="5">Contact</li>
+      <li data-section="6">Services & Devis</li>
+    </ul>
 
-    <p class="splash-status" id="status">Initialisation</p>
-  </main>
+  </div>
 
-  <button class="splash-skip" id="skip-btn" type="button">Entrer sur le site</button>
-
-  <script>
-    (function () {
-      var status = document.getElementById('status');
-      var skip = document.getElementById('skip-btn');
-      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      var steps = [
-        ['Initialisation', 0],
-        ['Chargement des actifs', 1100],
-        ['Calibrage des surfaces', 2300],
-        ['Prêt', 3500]
-      ];
-      var done = false;
-      var timers = [];
-
-      steps.forEach(function (s) {
-        timers.push(setTimeout(function () {
-          status.style.opacity = '0';
-          setTimeout(function () { status.textContent = s[0]; status.style.opacity = '1'; }, 180);
-        }, s[1]));
-      });
-
-      function go() {
-        if (done) return;
-        done = true;
-        timers.forEach(clearTimeout);
-        document.body.classList.add('leaving');
-        setTimeout(function () { window.location.href = 'home.html'; }, 600);
-      }
-
-      /* Le splash tient ~4,2 s, ou disparaît dès que home.html est préchargé si plus lent */
-      timers.push(setTimeout(go, reduced ? 900 : 4200));
-      skip.addEventListener('click', go);
-      window.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' || e.key === ' ') go();
-      });
-    })();
-  </script>
+  <!-- Master JavaScript Application -->
   <script src="assets/js/icons.js"></script>
+  <script src="assets/js/news-data.js"></script>
+  <script src="assets/js/stack-data.js"></script>
+  <script src="assets/js/i18n-en-core.js"></script>
+  <script src="assets/js/i18n-en-pages.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/splash.js"></script>
+  <script src="assets/js/evo-suite.js"></script>
+  <script src="assets/js/cadc-app.js"></script>
+  <script src="assets/js/contact-form.js"></script>
+  <script src="assets/js/pwa-register.js"></script>
 </body>
 
 </html>

@@ -1,7 +1,7 @@
 {
-  "name": "CODE AXIS Digital Cameroon - Agence Digitale Douala",
+  "name": "CODE AXIS Digital Cameroon - Agence web et mobile à Douala",
   "short_name": "CODE AXIS",
-  "description": "Agence Digitale d'Élite à Douala, Cameroun. Développement Web, Mobile, Cloud, IA et Design.",
+  "description": "Studio numérique à Douala : applications web et mobiles, suite evo de 22 produits métier, mobile money et hors-ligne.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
