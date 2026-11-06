@@ -1,5 +1,5 @@
 // Service Worker pour CODE AXIS Digital Cameroon PWA
-const CACHE_NAME = 'cadc-pwa-v11';
+const CACHE_NAME = 'cadc-pwa-v12';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',

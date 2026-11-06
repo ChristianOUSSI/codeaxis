@@ -198,7 +198,7 @@ html, body {
   overflow: hidden;
   background-color: var(--bg-primary);
   color: var(--text-main);
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 14px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -297,7 +297,7 @@ button, input, textarea {
   position: relative;
   transform-style: preserve-3d;
   transform: translateX(250px) translateZ(-400px);
-  font-family: 'Russo One', 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: clamp(24px, 4.5vw, 50px);
   font-weight: 900;
   text-transform: uppercase;
@@ -408,7 +408,7 @@ button, input, textarea {
 }
 
 .header--title-main {
-  font-family: 'Russo One', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 22px;
   font-weight: 900;
   letter-spacing: 2.5px;
@@ -424,7 +424,7 @@ button, input, textarea {
 }
 
 .header--nav-links a {
-  font-family: 'Oxanium', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
@@ -568,7 +568,7 @@ button, input, textarea {
 }
 
 .side-nav > li span {
-  font-family: 'Oxanium', 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 12px;
   font-weight: 600;
   color: var(--text-dim);
@@ -672,7 +672,7 @@ button, input, textarea {
 .mode-btn {
   padding: 6px 16px;
   border-radius: 20px;
-  font-family: 'Oxanium', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
@@ -738,7 +738,7 @@ button, input, textarea {
   background: rgba(62, 95, 138, 0.15);
   border: 1px solid var(--border-neon);
   border-radius: 20px;
-  font-family: 'Oxanium', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
@@ -749,7 +749,7 @@ button, input, textarea {
 }
 
 .intro--banner h1 {
-  font-family: 'Russo One', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: clamp(34px, 5.2vw, 68px);
   font-weight: 900;
   line-height: 1.1;
@@ -779,7 +779,7 @@ button, input, textarea {
   align-items: center;
   gap: 12px;
   padding: 12px 28px;
-  font-family: 'Oxanium', 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-weight: 700;
   font-size: 13px;
   text-transform: uppercase;
@@ -867,7 +867,7 @@ button, input, textarea {
 .intro--options > a:hover::before { opacity: 1; }
 
 .intro--options h3 {
-  font-family: 'Oxanium', 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 14px;
   font-weight: 700;
   text-transform: uppercase;
@@ -954,7 +954,7 @@ button, input, textarea {
   font-size: 48px;
   font-weight: 900;
   color: rgba(92, 119, 148, 0.15);
-  font-family: 'Oxanium', monospace;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 .card-image {
@@ -978,7 +978,7 @@ button, input, textarea {
 }
 
 .card-title {
-  font-family: 'Russo One', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 19px;
   font-weight: 700;
   color: var(--card-ink);
@@ -1017,7 +1017,7 @@ button, input, textarea {
   border: none;
   border-radius: 6px;
   color: #ffffff;
-  font-family: 'Oxanium', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-weight: 700;
   font-size: 11px;
   text-transform: uppercase;
@@ -1174,7 +1174,7 @@ button, input, textarea {
 }
 
 .slider--item-title {
-  font-family: 'Oxanium', 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 17px;
   font-weight: 800;
   text-transform: uppercase;
@@ -1272,7 +1272,7 @@ button, input, textarea {
 .category-tab {
   padding: 6px 16px;
   border-radius: 20px;
-  font-family: 'Oxanium', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
@@ -1353,7 +1353,7 @@ button, input, textarea {
 }
 
 .skill-name-hex {
-  font-family: 'Oxanium', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
@@ -1381,7 +1381,7 @@ button, input, textarea {
 }
 
 .skill-percentage-hex {
-  font-family: 'Oxanium', monospace;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 11px;
   font-weight: 700;
   color: var(--neon-cyan);
@@ -1410,7 +1410,7 @@ button, input, textarea {
 }
 
 .about--banner h2 {
-  font-family: 'Russo One', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: clamp(32px, 5vw, 64px);
   font-weight: 900;
   line-height: 1.15;
@@ -1429,7 +1429,7 @@ button, input, textarea {
   padding: 12px 28px;
   background: var(--grad-primary);
   color: #ffffff;
-  font-family: 'Oxanium', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
@@ -1508,7 +1508,7 @@ button, input, textarea {
 
 .about--options h3 {
   position: relative;
-  font-family: 'Oxanium', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 14px;
   font-weight: 800;
   text-transform: uppercase;
@@ -1574,7 +1574,7 @@ button, input, textarea {
 }
 
 .contact-title {
-  font-family: 'Russo One', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 24px;
   font-weight: 900;
   color: var(--card-ink);
@@ -1632,7 +1632,7 @@ button, input, textarea {
   gap: 6px;
   padding: 10px 14px;
   border-radius: 6px;
-  font-family: 'Oxanium', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
@@ -1739,7 +1739,7 @@ button, input, textarea {
   position: absolute;
   top: 14px;
   right: 18px;
-  font-family: 'Oxanium', 'Russo One', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 13px;
   font-weight: 800;
   color: rgba(157, 185, 214, 0.7);
@@ -1781,7 +1781,7 @@ button, input, textarea {
 }
 
 .hire-card-title {
-  font-family: 'Oxanium', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: clamp(14px, 1.8vw, 17px);
   font-weight: 800;
   color: var(--card-ink);
@@ -1829,7 +1829,7 @@ button, input, textarea {
   flex: 1;
   padding: clamp(8px, 1.3vh, 10px) 6px;
   border-radius: 8px;
-  font-family: 'Oxanium', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: clamp(10px, 1.1vw, 11.5px);
   font-weight: 700;
   text-transform: uppercase;
@@ -1889,7 +1889,7 @@ button, input, textarea {
   border: 1px solid rgba(157, 185, 214, 0.4);
   border-radius: 30px;
   color: #ffffff;
-  font-family: 'Oxanium', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
@@ -1932,7 +1932,7 @@ button, input, textarea {
   background: rgba(7, 9, 19, 0.75);
   border: 1px solid rgba(157, 185, 214, 0.3);
   border-radius: 20px;
-  font-family: 'Oxanium', 'Russo One', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 1.5px;
@@ -1978,7 +1978,7 @@ button, input, textarea {
    ANIMATIONS
    =================================================================== */
 .section-title-glow {
-  font-family: 'Russo One', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: clamp(26px, 4vw, 44px);
   font-weight: 900;
   text-align: center;
@@ -2211,13 +2211,13 @@ button, input, textarea {
   align-items: baseline;
   gap: 10px;
   color: #ffffff;
-  font-family: 'Russo One', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 14px;
   letter-spacing: 0.5px;
 }
 
 .orb-cap b {
-  font-family: 'Oxanium', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 11px;
   font-weight: 800;
   color: var(--neon-cyan);
@@ -2225,7 +2225,7 @@ button, input, textarea {
 }
 
 .orb-num {
-  font-family: 'Oxanium', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 44px;
   font-weight: 800;
   color: var(--neon-cyan);
@@ -2235,7 +2235,7 @@ button, input, textarea {
 
 .orb-meta {
   display: block;
-  font-family: 'Oxanium', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 1.5px;
@@ -2246,7 +2246,7 @@ button, input, textarea {
 
 .orb-label {
   display: block;
-  font-family: 'Russo One', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 19px;
   line-height: 1.25;
   color: var(--text-main);
@@ -2256,7 +2256,7 @@ button, input, textarea {
 .orb-techs i {
   display: inline-block;
   font-style: normal;
-  font-family: 'Oxanium', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 10px;
   font-weight: 600;
   padding: 3px 8px;
@@ -2300,7 +2300,7 @@ button, input, textarea {
 }
 
 .orb-ctrl-label {
-  font-family: 'Oxanium', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 2px;
@@ -2476,7 +2476,7 @@ button, input, textarea {
   border-radius: 50%;
   display: grid;
   place-items: center;
-  font-family: 'Russo One', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 20px;
   color: #ffffff;
   background: linear-gradient(135deg, #3e5f8a, #9db9d6);
@@ -2485,14 +2485,14 @@ button, input, textarea {
 }
 
 .orb-member-name {
-  font-family: 'Russo One', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 13px;
   color: var(--card-ink);
   line-height: 1.25;
 }
 
 .orb-member-role {
-  font-family: 'Oxanium', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -2772,7 +2772,7 @@ h1 .ico, h2 .ico, h3 .ico, .ico--title { vertical-align: -0.12em; }
   background: transparent;
   color: var(--text-muted);
   cursor: pointer;
-  font-family: 'Oxanium', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 1.6px;

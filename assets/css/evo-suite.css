@@ -7,7 +7,7 @@
 }
 
 .evo-hero h1 {
-  font-family: 'Russo One', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: clamp(30px, 6vw, 56px);
   letter-spacing: 1px;
   background: var(--grad-accent);
@@ -93,7 +93,7 @@
 .evo-card-tag { display: block; }
 
 .evo-card-name {
-  font-family: 'Oxanium', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-weight: 800;
   font-size: 15px;
   letter-spacing: 0.5px;
@@ -111,7 +111,7 @@
 .evo-card-badge {
   position: static;
   flex: 0 0 auto;
-  font-family: 'Oxanium', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 8.5px;
   font-weight: 700;
   letter-spacing: 1px;
@@ -266,7 +266,7 @@
 }
 
 .evo-modal-name {
-  font-family: 'Russo One', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 24px;
   color: #ffffff;
   margin-bottom: 12px;
@@ -294,7 +294,7 @@
   border: none;
   background: var(--grad-primary);
   color: #ffffff;
-  font-family: 'Oxanium', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 1.5px;
@@ -313,7 +313,7 @@
   border: 1px solid var(--border-subtle);
   background: transparent;
   color: var(--text-muted);
-  font-family: 'Oxanium', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 1.5px;
@@ -365,7 +365,7 @@ body.theme-day .dep-logo { mix-blend-mode: normal; }
 }
 
 .dep-status {
-  font-family: 'Oxanium', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 3px;
@@ -375,7 +375,7 @@ body.theme-day .dep-logo { mix-blend-mode: normal; }
 }
 
 .dep-card h1 {
-  font-family: 'Russo One', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: clamp(22px, 5vw, 34px);
   color: var(--text-main);
   margin-bottom: 12px;
@@ -407,7 +407,7 @@ body.theme-day .dep-logo { mix-blend-mode: normal; }
 @keyframes dep-slide { to { left: 100%; } }
 
 .dep-pct {
-  font-family: 'Oxanium', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 2px;
@@ -431,7 +431,7 @@ body.theme-day .dep-logo { mix-blend-mode: normal; }
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   color: var(--card-ink-soft);
-  font-family: 'Oxanium', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 1.4px;
