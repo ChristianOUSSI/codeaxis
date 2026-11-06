@@ -8,7 +8,7 @@
   var NEWS = [
     {
       date: '2026-11-05', tag: 'Partenariat', title: 'MBOA BIO 237 rejoint la maison CODE AXIS',
-      image: 'assets/img/partenaires/mboa-bio-237.jpg',
+      image: 'assets/img/partenaires/mboa-bio-237.webp',
       excerpt: 'Nouveau partenariat avec MBOA BIO 237, marque de produits frais et biologiques de Douala : panier en ligne et paiement mobile money suivront.',
       body: [
         ['Le partenariat', 'MBOA BIO 237, épicerie de produits frais et biologiques à Douala, s’associe à CODE AXIS Digital Cameroon. Bananes, plantains, manioc, papayes et agrumes : la marque veut vendre son panier en ligne, payé par Orange Money ou MTN MoMo.'],
@@ -18,7 +18,7 @@
     },
     {
       date: '2026-11-05', tag: 'Partenariat', title: 'FROST & CO GROUP renouvelle son amitié avec CODE AXIS',
-      image: 'assets/img/partenaires/frost-co-group.jpg',
+      image: 'assets/img/partenaires/frost-co-group.webp',
       excerpt: 'FROST & CO GROUP prolonge son partenariat avec CODE AXIS et prépare le lancement prochain d’un site de location de voitures.',
       body: [
         ['Le renouvellement', 'FROST & CO GROUP renouvelle sa confiance et son amitié avec CODE AXIS Digital Cameroon. Collaborateurs de la première heure, nous poursuivons ensemble sur les sujets digitaux du groupe.'],

@@ -362,7 +362,7 @@
         <div class="card">
           <div class="card-number">0${index + 1}</div>
           <div class="card-image">
-            <img src="assets/img/evo/${p.slug}.jpg" alt="${p.slug}" loading="lazy">
+            <img src="assets/img/evo/${p.slug}.webp" alt="${p.slug}" loading="lazy" decoding="async">
           </div>
           <div class="card-kicker">${p.tag}</div>
           <h3 class="card-title">${p.slug}</h3>

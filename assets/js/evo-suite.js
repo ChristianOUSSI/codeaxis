@@ -47,7 +47,7 @@
       card.className = 'evo-card';
       card.innerHTML =
         '<span class="evo-card-media">' +
-        '<img src="assets/img/evo/' + p.slug + '.jpg" alt="' + p.slug + ', ' + p.tag + '" loading="lazy">' +
+        '<img src="assets/img/evo/' + p.slug + '.webp" alt="' + p.slug + ', ' + p.tag + '" loading="lazy" decoding="async">' +
         '</span>' +
         '<span class="evo-card-body">' +
         '<span class="evo-card-top">' +
@@ -77,7 +77,7 @@
 
     function open(p) {
       stage.className = 'evo-stage';
-      img.src = 'assets/img/evo/' + p.slug + '.jpg';
+      img.src = 'assets/img/evo/' + p.slug + '.webp';
       img.alt = p.slug;
       name.textContent = p.slug;
       desc.textContent = p.desc;

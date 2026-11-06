@@ -1481,9 +1481,9 @@ button, input, textarea {
 
 /* Photos réelles déposées dans assets/img/about/ : le premier fichier qui existe s'affiche,
    l'ancien visuel reste en secours tant que la photo n'est pas là */
-.about--options > a:nth-child(1) { background-image: url('../img/about/projets.jpg'), url('../img/about-winners.jpg'); }
-.about--options > a:nth-child(2) { background-image: url('../img/about/contrats.jpg'), url('../img/about-philosophy.jpg'); }
-.about--options > a:nth-child(3) { background-image: url('../img/about/realisations.jpg'), url('../img/about-history.jpg'); }
+.about--options > a:nth-child(1) { background-image: url('../img/about/projets.jpg'), url('../img/about-winners.webp'); }
+.about--options > a:nth-child(2) { background-image: url('../img/about/contrats.jpg'), url('../img/about-philosophy.webp'); }
+.about--options > a:nth-child(3) { background-image: url('../img/about/realisations.jpg'), url('../img/about-history.webp'); }
 
 .about--options > a::before {
   content: "";

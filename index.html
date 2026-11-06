@@ -16,14 +16,16 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="CODE AXIS">
-  <link rel="apple-touch-icon" href="assets/img/logo-mark.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/img/logo-mark.png">
+  <link rel="icon" type="image/png" href="assets/img/favicon-64.png">
 
   <!-- CSS Master Fusion -->
   <link rel="stylesheet" href="assets/css/cadc-fusion.css">
   <link rel="stylesheet" href="assets/css/home-evo-news.css">
+
+  <link rel="preload" as="image" href="assets/img/introduction-visual.webp" fetchpriority="high">
 
   <!-- Partage social -->
   <meta property="og:type" content="website">
@@ -75,7 +77,7 @@
     <div class="splash-inner">
       <div class="splash-plate">
         <span class="splash-halo"></span>
-        <img class="splash-mark" src="assets/img/logo-cadc.png" alt="" width="300" height="450">
+        <img class="splash-mark" src="assets/img/logo-cadc.webp" alt="" width="600" height="900">
         <span class="splash-scan"></span>
       </div>
       <span class="splash-bar"></span>
@@ -97,7 +99,7 @@
             <!-- Logo & Titre CODE AXIS -->
             <a href="index.html" class="header--brand">
               <div class="header--logo-icon">
-                <img src="assets/img/logo-mark.png" alt="CODE AXIS, Logo">
+                <img src="assets/img/logo-mark.webp" alt="CODE AXIS, Logo" width="256" height="256">
               </div>
               <span class="header--title-main">CODE AXIS</span>
             </a>
@@ -170,8 +172,8 @@
                       <span class="btn-background"></span>
                     </button>
                     <!-- Visuel Astronaute en lévitation 3D -->
-                    <img src="assets/img/introduction-visual.png" alt="Astronaute CODE AXIS" class="astronaut-bg"
-                      loading="lazy">
+                    <img src="assets/img/introduction-visual.webp" alt="Astronaute CODE AXIS" class="astronaut-bg"
+                      width="511" height="463" decoding="async" fetchpriority="high">
                   </div>
 
                   <ul class="intro--options">
@@ -218,7 +220,7 @@
 
                     <!-- Emblème central : l'équipe gravite autour de CODE AXIS -->
                     <div class="orb-core" aria-hidden="true">
-                      <img src="assets/img/logo-mark.png" alt="">
+                      <img src="assets/img/logo-mark.webp" alt="" width="256" height="256" loading="lazy" decoding="async">
                     </div>
 
                     <div class="orb-controls">
@@ -270,7 +272,7 @@
                     </svg>
                   </a>
                   <!-- Visuel Créatif avec Halo -->
-                  <img src="assets/img/about-visual.png" alt="Créativité CODE AXIS" class="about--visual" loading="lazy">
+                  <img src="assets/img/about-visual.webp" alt="Créativité CODE AXIS" class="about--visual" width="392" height="631" loading="lazy" decoding="async">
                 </div>
 
                 <ul class="about--options">
@@ -480,7 +482,6 @@
   <script src="assets/js/news-data.js"></script>
   <script src="assets/js/stack-data.js"></script>
   <script src="assets/js/i18n-en-core.js"></script>
-  <script src="assets/js/i18n-en-pages.js"></script>
   <script src="assets/js/i18n.js"></script>
   <script src="assets/js/splash.js"></script>
   <script src="assets/js/evo-suite.js"></script>

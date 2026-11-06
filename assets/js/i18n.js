@@ -1,6 +1,8 @@
 /**
  * Bascule de langue FR / EN
- * Dictionnaires dans i18n-en-core.js (window.CADC_I18N) et i18n-en-pages.js (window.CADC_I18N_EXTRA).
+ * Dictionnaire courant dans i18n-en-core.js (window.CADC_I18N), chargé avec la page.
+ * Dictionnaire des pages dans i18n-en-pages.js (window.CADC_I18N_EXTRA), chargé à la demande
+ * au premier passage en anglais : un visiteur qui reste en français ne le télécharge pas.
  * Le français d'origine est conservé en mémoire par noeud, donc revenir à FR restaure exactement le texte de départ.
  */
 (function () {
@@ -12,6 +14,33 @@
   var textOriginals = new Map();
   var attrOriginals = new WeakMap();
   var lang = read();
+
+  var selfSrc = document.currentScript && document.currentScript.src;
+  var EXTRA_SRC = selfSrc
+    ? selfSrc.replace(/i18n\.js(\?.*)?$/, 'i18n-en-pages.js')
+    : 'assets/js/i18n-en-pages.js';
+  var extraCallbacks = [];
+  var extraLoading = false;
+
+  function loadExtra(done) {
+    if (typeof window.CADC_I18N_EXTRA === 'string') { if (done) done(); return; }
+    if (done) extraCallbacks.push(done);
+    if (extraLoading) return;
+    extraLoading = true;
+    var s = document.createElement('script');
+    s.src = EXTRA_SRC;
+    s.onload = s.onerror = function () {
+      dictionary = null;
+      extraLoading = false;
+      var waiters = extraCallbacks;
+      extraCallbacks = [];
+      for (var i = 0; i < waiters.length; i++) waiters[i]();
+    };
+    document.head.appendChild(s);
+  }
+
+  /* Le survol ou la tabulation vers EN lance le téléchargement avant le clic */
+  function prefetchExtra() { loadExtra(null); }
 
   function read() {
     try {
@@ -176,6 +205,9 @@
     wrap.querySelectorAll('.lang-opt').forEach(function (b) {
       b.addEventListener('click', function () { setLang(b.getAttribute('data-lang')); });
     });
+    var enOpt = wrap.querySelector('[data-lang="en"]');
+    enOpt.addEventListener('pointerenter', prefetchExtra);
+    enOpt.addEventListener('focusin', prefetchExtra);
     return wrap;
   }
 
@@ -188,13 +220,23 @@
     });
   }
 
-  function setLang(next) {
-    lang = next;
-    try { localStorage.setItem(KEY, next); } catch (e) {}
+  function apply(announce) {
     sweep(document.body);
     translateMeta();
     paintToggle();
-    document.documentElement.dispatchEvent(new CustomEvent('cadc:lang', { detail: { lang: next } }));
+    if (announce) {
+      document.documentElement.dispatchEvent(new CustomEvent('cadc:lang', { detail: { lang: lang } }));
+    }
+  }
+
+  function setLang(next) {
+    lang = next;
+    try { localStorage.setItem(KEY, next); } catch (e) {}
+    if (next === 'en') {
+      loadExtra(function () { apply(true); });
+    } else {
+      apply(true);
+    }
   }
 
   function mount() {
@@ -212,9 +254,8 @@
     }
 
     document.documentElement.setAttribute('lang', lang);
-    sweep(document.body);
-    translateMeta();
-    paintToggle();
+    apply(false);
+    if (lang === 'en') loadExtra(function () { apply(true); });
 
     /* contenu injecté après coup (cartes, modales, grilles) */
     var queued = [];
@@ -242,6 +283,9 @@
 
   window.cadcSetLang = setLang;
   window.cadcLang = function () { return lang; };
+
+  /* Visiteur déjà en anglais : le dictionnaire part tout de suite, sans attendre le DOM */
+  if (lang === 'en') prefetchExtra();
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', mount);
