@@ -207,6 +207,14 @@
       text-align: center;
     }
 
+    .yp-contract-note a {
+      color: var(--neon-cyan);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border-neon);
+    }
+
+    .yp-contract-note a:hover { border-bottom-color: var(--neon-cyan); }
+
     /* Simulateur */
     .yp-sim {
       border: 1px solid var(--border-neon);
@@ -622,6 +630,30 @@
     "inLanguage": ["fr", "en"]
   }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://codeaxis.cm/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Opération Youth Partnership",
+          "item": "https://codeaxis.cm/youth-partnership.html"
+        }
+      ]
+    }
+  ]
+}
+  </script>
 </head>
 
 <body class="theme-night">
@@ -672,7 +704,7 @@
       </div>
     </div>
     <p class="yp-contract-note">Contrat de partenariat signé avec CADC SARL. Aucun frais à payer pour rejoindre le
-      programme.</p>
+      programme. Détails de l'entité dans les <a href="mentions-legales.html">mentions légales</a>.</p>
 
     <section id="simulateur">
       <h2 class="yp-section-title">Simulateur</h2>
@@ -705,7 +737,7 @@
           <div class="yp-sim-cell"><span class="k">Ta part mensuelle</span><span class="v" id="simMonth">6 750 FCFA</span></div>
           <div class="yp-sim-cell"><span class="k">Durée du contrat</span><span class="v" id="simMonths">12 mois</span></div>
           <div class="yp-sim-cell"><span class="k">Total sur 12 mois</span><span class="v" id="simTotal">81 000 FCFA</span></div>
-          <div class="yp-sim-cell"><span class="k">Part reversée à CODE AXIS</span><span class="v" id="simRest">72 000 FCFA</span></div>
+          <div class="yp-sim-cell"><span class="k">Part reversée à CODE AXIS</span><span class="v" id="simRest">99 000 FCFA</span></div>
         </div>
 
         <div class="yp-sim-foot">
@@ -830,6 +862,7 @@
   <script src="assets/js/icons.js"></script>
   <script src="assets/js/i18n-en-core.js"></script>
   <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/whatsapp-fab.js"></script>
   <script src="assets/js/partnership.js"></script>
 </body>
 

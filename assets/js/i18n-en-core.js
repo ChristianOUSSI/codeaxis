@@ -4,7 +4,8 @@
  * Format compact : une ligne par chaîne, "Français|English".
  * Une apostrophe typographique dans le texte retrouve la clé en apostrophe droite.
  */
-window.CADC_I18N = `CODE AXIS|CODE AXIS
+window.CADC_I18N = `
+CODE AXIS|CODE AXIS
 CODE AXIS Digital Cameroon|CODE AXIS Digital Cameroon
 Agence web & mobile à Douala %7C CODE AXIS Digital Cameroon|Web & mobile agency in Douala %7C CODE AXIS Digital Cameroon
 Studio numérique à Douala, Bonabéri : applications web et mobiles, suite evo de 22 produits métier, paiement mobile money et fonctionnement hors-ligne.|Digital studio in Douala, Bonabéri: web and mobile applications, the evo suite of 22 business products, mobile money payments and offline operation.

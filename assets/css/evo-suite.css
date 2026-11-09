@@ -463,7 +463,7 @@ body.theme-day .dep-logo { mix-blend-mode: normal; }
 .to-top-btn {
   position: fixed;
   right: 24px;
-  bottom: 26px;
+  bottom: 86px;
   z-index: 1000;
   width: 46px;
   height: 46px;
@@ -501,7 +501,7 @@ body.theme-day .dep-logo { mix-blend-mode: normal; }
 
 @media (max-width: 768px) {
   .back-button-fixed { top: 14px; left: 14px; padding: 8px 15px 8px 11px; font-size: 10.5px; }
-  .to-top-btn { right: 16px; bottom: 18px; width: 42px; height: 42px; }
+  .to-top-btn { right: 16px; bottom: 76px; width: 42px; height: 42px; }
 }
 
 body.theme-day .back-button-fixed {

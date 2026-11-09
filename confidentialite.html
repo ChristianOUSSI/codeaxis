@@ -96,6 +96,14 @@
 
     .pol-block p:last-child { margin-bottom: 0; }
 
+    .pol-block a {
+      color: var(--neon-cyan);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border-neon);
+    }
+
+    .pol-block a:hover { border-bottom-color: var(--neon-cyan); }
+
     @media (max-width: 768px) {
       .pol-hero { padding: 76px 16px 20px; }
       .pol-wrap { padding: 6px 16px 80px; }
@@ -112,6 +120,40 @@
     content="Ce que CODE AXIS fait des informations transmises par ses formulaires de candidature et de contact.">
   <meta property="og:image" content="https://codeaxis.cm/assets/img/logo-cadc.png">
   <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://codeaxis.cm/confidentialite.html#webpage",
+      "name": "Politique de confidentialité",
+      "url": "https://codeaxis.cm/confidentialite.html",
+      "inLanguage": "fr-CM",
+      "about": {
+        "@id": "https://codeaxis.cm/#organization"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://codeaxis.cm/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Politique de confidentialité",
+          "item": "https://codeaxis.cm/confidentialite.html"
+        }
+      ]
+    }
+  ]
+}
+  </script>
 </head>
 
 <body class="theme-night">
@@ -166,6 +208,7 @@
         contact@codeaxis.cm ou sur WhatsApp au +237 691 223 916 en mentionnant « données personnelles ». Nous
         répondons sous trente jours. Si tu refuses le traitement, ne coche pas la case : le formulaire ne partira
         pas.</p>
+      <p>Voir aussi les <a href="mentions-legales.html">mentions légales</a> du site.</p>
     </section>
   </main>
 
@@ -173,6 +216,7 @@
   <script src="assets/js/icons.js"></script>
   <script src="assets/js/i18n-en-core.js"></script>
   <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/whatsapp-fab.js"></script>
 </body>
 
 </html>

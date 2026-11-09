@@ -2,7 +2,8 @@
  * Dictionnaire FR -> EN, deuxième volet : pages autonomes et contenu injecté par JS
  * (produits de la suite evo, carrousel services, actualités du journal).
  */
-window.CADC_I18N_EXTRA = `Suite evo, les produits CODE AXIS Digital Cameroon|Suite evo, the CODE AXIS Digital Cameroon products
+window.CADC_I18N_EXTRA = `
+Suite evo, les produits CODE AXIS Digital Cameroon|Suite evo, the CODE AXIS Digital Cameroon products
 La suite evo de CODE AXIS Digital Cameroon : 22 produits digitaires conçus à Douala, evo-gaz, evo-agent, evo-cars, evo-wear et plus encore.|The CODE AXIS Digital Cameroon evo suite: 22 digital products built in Douala, including evo-gaz, evo-agent, evo-cars and evo-wear.
 Distribution de GPL|LPG distribution
 En production|In production
@@ -112,27 +113,21 @@ Découvrez les Entreprises, Startups et Institutions qui Font Confiance à CODE 
 Banque & Fintech|Banking & fintech
 Afriland Express Mobile|Afriland Express Mobile
 Conception et refonte UX/UI de l'application de micro-paiement et transferts régionaux.|Design and UX/UI redesign of the micro-payment and regional transfer app.
-+240% d'utilisateurs actifs en 6 mois|+240% active users in 6 months
 Logistique & Import|Logistics & import
 Douala Port Logistics|Douala Port Logistics
 Développement d'une plateforme SaaS de suivi de conteneurs et de dédouanement en temps réel.|Development of a SaaS platform for container tracking and real-time customs clearance.
-Temps de traitement réduit de 65%|Processing time cut by 65%
 Santé & E-Santé|Health & eHealth
 Clinique Médicale Saint-Luc|Clinique Médicale Saint-Luc
 Système de prise de rendez-vous en ligne, dossiers médicaux électroniques chiffrés et portail patient.|Online booking system, encrypted electronic medical records and a patient portal.
-15 000+ consultations réservées en ligne|15,000+ consultations booked online
 Commerce & Retail|Commerce & retail
 K-Market Cameroun|K-Market Cameroon
 Marketplace E-commerce multi-vendeurs avec intégration MTN MoMo, Orange Money et livraison géolocalisée.|Multi-vendor e-commerce marketplace with MTN MoMo and Orange Money integration and geolocated delivery.
-+180% de ventes en ligne dès le 1er trimestre|+180% online sales from the first quarter
 Éducation & EdTech|Education & EdTech
 EduTech Douala|EduTech Douala
 Plateforme e-learning interactive avec cours en streaming, quiz automatisés et certifications.|Interactive e-learning platform with streaming courses, automated quizzes and certifications.
-8 000+ étudiants formés avec succès|8,000+ students trained successfully
 Immobilier & BTP|Real estate & construction
 Prestige Immo Cameroun|Prestige Immo Cameroon
 Portail d'annonces immobilières premium avec visites virtuelles 3D et passerelle de réservation.|Premium property listing portal with 3D virtual tours and a booking gateway.
-Taux de conversion x3 sur les biens de luxe|Conversion rate x3 on luxury properties
 Rejoignez nos Réussites Digitales|Join our digital success stories
 Transformez vos défis technologiques en avantage concurrentiel décisif.|Turn your technology challenges into a decisive competitive advantage.
 Devenir Partenaire|Become a partner
@@ -193,20 +188,13 @@ Plongez au Cœur des Projets qui Ont Transformé les Activités de Nos Clients|G
 Fintech & Banking|Fintech & banking
 Digitalisation des Flux de Paiement|Digitising payment flows
 Conception et implémentation d'un système de micro-transactions instantanées avec réconciliation automatique et notifications SMS/Push.|Design and implementation of an instant micro-transaction system with automatic reconciliation and SMS/push notifications.
-Volume traité|Volume processed
 Disponibilité|Availability
 Voir l'Étude de Cas Complète|Read the full case study
 Cloud & Logistique Portuaire|Cloud & port logistics
 Gestion de Fret Maritime en Temps Réel|Real-time sea freight management
-Déploiement d'une architecture conteneurisée sur AWS traitant plus de 50 000 événements logistiques par jour avec tableau de bord télémétrique.|Deployment of a containerised AWS architecture handling over 50,000 logistics events a day with a telemetry dashboard.
-Temps de transit|Transit time
-0 panne|zero downtime
-depuis 1 an|for 1 year
 E-Commerce & Growth|E-commerce & growth
 Marketplace B2B & B2C Nationale|National B2B & B2C marketplace
 Plateforme de vente omnicanale intégrant les paiements locaux, la gestion multi-magasins et une application mobile pour les livreurs.|Omnichannel sales platform with local payments, multi-store management and a courier mobile app.
-Commandes livrées|Orders delivered
-Note utilisateurs|User rating
 Envie d'Écrire Votre Prochaine Réussite ?|Ready to write your next success story?
 Nos architectes et designers vous accompagnent pour concevoir une solution d'envergure.|Our architects and designers help you build a solution of scale.
 Plateforme Fintech|Fintech platform
@@ -219,7 +207,6 @@ Contexte & Problématique|Context & problem
 Solution CODE AXIS|CODE AXIS solution
 Stack Technologique|Technology stack
 Déroulement du Projet|Project timeline
-Résultats Obtenus|Results achieved
 Projet Innovant IA & Agriculture|Innovative AI & agriculture project
 Projet Innovant Fintech & Sécurité|Innovative fintech & security project
 Projet Innovant Santé & Télémédecine|Innovative health & telemedicine project
@@ -232,7 +219,6 @@ Phase Bêta 1 200 Agriculteurs|Beta phase 1,200 farmers
 AgriSmart AI est une application mobile qui permet aux agriculteurs camerounais d'analyser l'état de leurs cultures en prenant simplement une photo. Le modèle d'IA identifie les maladies, carences et nuisibles en quelques secondes et propose un plan de traitement personnalisé.|AgriSmart AI is a mobile app that lets Cameroonian farmers assess their crops by simply taking a photo. The AI model identifies disease, deficiencies and pests in seconds and proposes a personalised treatment plan.
 Connectée aux données météo locales et au calendrier cultural, l'application anticipe les risques avant qu'ils n'impactent la récolte, réduisant significativement les pertes agricoles.|Connected to local weather data and the farming calendar, the app anticipates risks before they hit the harvest, significantly reducing crop losses.
 Diagnostic Visuel IA|AI visual diagnosis
-Identification des maladies par photo avec 94% de précision validée sur cultures locales|Disease identification from photos at 94% accuracy, validated on local crops
 Météo Agricole|Agricultural weather
 Prévisions hyper-localisées à 500m et alertes risques (pluie excessive, sécheresse)|Hyper-local forecasts at 500m and risk alerts (excess rain, drought)
 Plans de Traitement|Treatment plans
@@ -287,51 +273,23 @@ Une flotte à optimiser ?|A fleet to optimise?
 Nous digitalisons vos opérations logistiques du premier au dernier kilomètre.|We digitise your logistics operations from first to last mile.
 Parler à un expert|Talk to an expert
 Conception et implémentation d'un système de micro-transactions instantanées avec réconciliation automatique et notifications SMS/Push pour un acteur bancaire majeur de la zone CEMAC.|Design and implementation of an instant micro-transaction system with automatic reconciliation and SMS/push notifications for a major banking player in the CEMAC zone.
-Temps de transaction|Transaction time
-Détectée & bloquée|Detected & blocked
-Notre client, un réseau de coopératives financières au Cameroun, gérait encore ses transactions par voie papier et virements manuels. La croissance rapide de sa base d'adhérents (12 000 en 3 ans) rendait le système obsolète, risqué et coûteux.|Our client, a network of financial cooperatives in Cameroon, still handled transactions on paper and by manual transfer. Rapid growth of its membership (12,000 in 3 years) made the system obsolete, risky and costly.
 Le besoin : une plateforme digitale capable de traiter des milliers de micropaiements quotidiens avec une fiabilité absolue, accessible depuis mobile et guichets physiques.|The need: a digital platform able to process thousands of daily micropayments with absolute reliability, accessible from mobile and physical counters.
 Nous avons conçu une architecture microservices avec une API centrale de traitement des paiements, un moteur de réconciliation automatique en temps réel, et un tableau de bord analytique pour les gestionnaires.|We designed a microservices architecture with a central payment-processing API, a real-time automatic reconciliation engine and an analytics dashboard for managers.
 L'application mobile (Android/iOS) permet aux membres de consulter leur solde, effectuer des transferts et recevoir des notifications instantanées par SMS et Push.|The mobile app (Android/iOS) lets members check their balance, make transfers and receive instant SMS and push notifications.
-Audit des flux existants, analyse des besoins et cadrage fonctionnel (3 semaines)|Audit of existing flows, requirements analysis and functional scoping (3 weeks)
-Architecture technique, conception des bases de données et API (4 semaines)|Technical architecture, database and API design (4 weeks)
-Développement de l'interface mobile et du dashboard administrateur (8 semaines)|Development of the mobile interface and admin dashboard (8 weeks)
-Tests de charge, audit de sécurité et migration des données (3 semaines)|Load testing, security audit and data migration (3 weeks)
 Déploiement progressif, formation des équipes et support post-lancement (ongoing)|Progressive rollout, team training and post-launch support (ongoing)
-Six mois après le déploiement, le volume de transactions traités a augmenté de 310%. Le système n'a enregistré aucune panne majeure avec un uptime de 99.98%. Le délai de réconciliation est passé de 48h à moins de 3 secondes.|Six months after deployment, transaction volume processed grew 310%. The system recorded no major outage, with 99.98% uptime. Reconciliation time fell from 48h to under 3 seconds.
-La satisfaction des utilisateurs finaux a atteint 4.8/5 sur les stores d'applications, avec plus de 8 000 téléchargements organiques en 2 mois.|End-user satisfaction reached 4.8/5 on the app stores, with over 8,000 organic downloads in 2 months.
 Vous avez un projet similaire ?|Have a similar project?
 Parlons de votre transformation digitale dès aujourd'hui.|Let's talk about your digital transformation today.
 Contactez-nous sur WhatsApp|Contact us on WhatsApp
-Déploiement d'une architecture conteneurisée sur AWS traitant plus de 50 000 événements logistiques par jour avec tableau de bord télémétrique pour les opérateurs du Port de Douala.|Deployment of a containerised AWS architecture handling over 50,000 logistics events a day with a telemetry dashboard for operators at the Port of Douala.
-La gestion du fret au Port de Douala impliquait de multiples intervenants (transitaires, armateurs, douanes) utilisant des systèmes disparates et des échanges par e-mail et téléphone. Les délais de coordination allongeaient le séjour moyen des conteneurs de 8 à 14 jours.|Freight handling at the Port of Douala involved many parties (forwarders, shipowners, customs) using disparate systems and email or phone exchanges. Coordination delays stretched average container stays from 8 to 14 days.
 L'objectif : une plateforme unifiée offrant une vision 360° du fret en temps réel, des alertes automatiques et une coordination digitale entre tous les acteurs de la chaîne logistique.|The goal: a unified platform giving a 360° real-time view of freight, automatic alerts and digital coordination between every actor in the logistics chain.
 Nous avons construit une architecture cloud-native sur AWS avec des services event-driven : chaque conteneur est tracé par capteurs IoT, les données centralisées sur AWS IoT Core, traitées par Lambda et visualisées en temps réel sur un dashboard React.|We built a cloud-native AWS architecture with event-driven services: every container is tracked by IoT sensors, data is centralised in AWS IoT Core, processed by Lambda and visualised in real time on a React dashboard.
 Un système de notifications (email, SMS, webhook API) alerte chaque partie prenante lors des événements critiques : arrivée, dédouanement, transfert, livraison finale.|A notification system (email, SMS, API webhook) alerts each stakeholder at critical events: arrival, customs clearance, transfer, final delivery.
-Cartographie des flux existants et interviews terrain avec transitaires (2 semaines)|Mapping existing flows and field interviews with forwarders (2 weeks)
-Design de l'architecture cloud et modèle de données événementielles (3 semaines)|Cloud architecture design and event data model (3 weeks)
-Développement backend microservices et intégration IoT (6 semaines)|Microservice backend development and IoT integration (6 weeks)
-Dashboard analytique temps réel et interfaces utilisateurs (4 semaines)|Real-time analytics dashboard and user interfaces (4 weeks)
-Pilote sur 500 conteneurs, ajustements et déploiement général (4 semaines)|Pilot on 500 containers, adjustments and general rollout (4 weeks)
-Le temps moyen de séjour des conteneurs est passé de 11 jours à 3,3 jours, soit une réduction de 70%. La plateforme traite plus de 50 000 événements par jour sans interruption depuis son lancement il y a un an.|Average container stay dropped from 11 days to 3.3 days, a 70% reduction. The platform has handled over 50,000 events a day without interruption since its launch a year ago.
-La visibilité accrue a également réduit les litiges commerciaux de 85% et amélioré significativement la relation entre les transitaires et leurs clients.|Greater visibility also cut commercial disputes by 85% and significantly improved relations between forwarders and their clients.
 Un projet logistique à transformer ?|A logistics project to transform?
 Nos architectes cloud vous accompagnent de la conception au déploiement.|Our cloud architects support you from design to deployment.
 Lancer le projet|Launch the project
 Plateforme de vente omnicanale intégrant les paiements locaux (Orange Money, MTN MoMo), la gestion multi-magasins et une application mobile dédiée aux livreurs.|Omnichannel sales platform with local payments (Orange Money, MTN MoMo), multi-store management and a dedicated courier mobile app.
-Marchands actifs|Active merchants
-CA client en 6 mois|Client revenue in 6 months
 Un grossiste camerounais souhaitait passer d'une activité physique à une présence digitale complète, permettant aussi bien aux particuliers d'acheter en ligne qu'aux revendeurs B2B de passer des commandes en gros avec des tarifs différenciés.|A Cameroonian wholesaler wanted to move from a physical business to a full digital presence, letting individuals buy online and B2B resellers place wholesale orders with tiered pricing.
-Le défi majeur : intégrer les paiements mobiles locaux (Orange Money, MTN MoMo), souvent indisponibles dans les solutions e-commerce occidentales, tout en supportant un catalogue de plus de 8 000 produits.|The main challenge: integrating local mobile payments (Orange Money, MTN MoMo), often missing from Western e-commerce solutions, while supporting a catalogue of over 8,000 products.
 Nous avons développé une marketplace multi-vendeurs avec double espace client (B2B et B2C), des API de paiement local propriétaires, et une application mobile dédiée aux livreurs permettant de gérer les tournées et les confirmations de livraison en temps réel.|We built a multi-vendor marketplace with dual client spaces (B2B and B2C), proprietary local payment APIs, and a courier mobile app managing routes and delivery confirmations in real time.
 Le système de gestion de stocks multi-entrepôts synchronise automatiquement les disponibilités entre la boutique en ligne et les points de vente physiques.|The multi-warehouse stock system automatically synchronises availability between the online store and physical points of sale.
-Ateliers UX avec le client et ses revendeurs clés, benchmarking solutions locales (2 semaines)|UX workshops with the client and its key resellers, benchmarking local solutions (2 weeks)
-Conception des maquettes Figma haute fidélité et validation client (3 semaines)|High-fidelity Figma mockups and client validation (3 weeks)
-Développement plateforme web B2B/B2C et intégration paiements locaux (10 semaines)|B2B/B2C web platform development and local payment integration (10 weeks)
-Application mobile livreurs et tableau de bord logistique (4 semaines)|Courier mobile app and logistics dashboard (4 weeks)
-Tests bêta avec 20 marchands pilotes, corrections et déploiement (3 semaines)|Beta testing with 20 pilot merchants, fixes and rollout (3 weeks)
-La plateforme a atteint 320 marchands actifs en seulement 4 mois, avec plus de 45 000 commandes livrées. Le chiffre d'affaires du client a été multiplié par 5,2 grâce à l'ouverture au marché national.|The platform reached 320 active merchants in just 4 months, with over 45,000 orders delivered. The client's revenue grew 5.2x thanks to opening the national market.
-La note de 4.9/5 sur le Play Store valide la qualité de l'expérience utilisateur, et le taux de réachat a atteint 68% dès le 3ème mois.|A 4.9/5 rating on the Play Store validates the user experience quality, and repeat purchase reached 68% by the third month.
 Prêt à digitaliser votre commerce ?|Ready to digitise your business?
 Nous construisons des plateformes e-commerce taillées pour le marché africain.|We build e-commerce platforms tailored to the African market.
 Discutons de votre projet|Let's discuss your project
@@ -429,10 +387,6 @@ Email Automation|Email automation
 SEO Content Strategy|SEO content strategy
 TikTok & LinkedIn Growth|TikTok & LinkedIn growth
 A/B Testing & Funnels|A/B testing & funnels
-Impact Mesurable|Measurable impact
-+350% de portée organique pour nos clients partenaires.|+350% organic reach for our partner clients.
-Génération de plus de 5 000 leads qualifiés via des tunnels automatisés.|Over 5,000 qualified leads generated through automated funnels.
-Gestion de communautés cumulant plus de 100 000 abonnés actifs.|Managing communities totalling over 100,000 active followers.
 Contacter Philippe sur WhatsApp|Contact Philippe on WhatsApp
 Stratégie & Audit Digital - CODE AXIS|Digital Strategy & Audit - CODE AXIS
 Stratégie Digitale|Digital Strategy
@@ -686,4 +640,79 @@ Le formulaire n'utilise pas de serveur de collecte : ta candidature part par Wha
 Combien de temps|How long
 Une candidature non retenue est effacée au bout de douze mois. Un dossier de partenariat signé est conservé le temps du contrat, augmenté des durées légales de conservation comptable et fiscale au Cameroun.|An unsuccessful application is erased after twelve months. A signed partnership file is kept for the length of the contract plus the legal accounting and tax retention periods in Cameroon.
 Tes droits|Your rights
+Ce qui a été livré|What we delivered
+Les indicateurs de production de ce projet ne sont pas publiés sur cette page.|Production figures for this project are not published on this page.
+Une API centrale de traitement des paiements, un moteur de réconciliation automatique et un tableau de bord analytique pour les gestionnaires. Depuis l'application mobile, les membres consultent leur solde, effectuent leurs transferts et reçoivent les notifications par SMS et Push.|A central payment processing API, an automatic reconciliation engine and an analytics dashboard for managers. From the mobile app, members check their balance, make transfers and receive notifications by SMS and push.
+Une plateforme unifiée qui rassemble les événements du fret en temps réel, avec alertes automatiques et coordination digitale entre transitaires, armateurs et douanes. Le tableau de bord télémétrique donne aux opérateurs une vision commune de la chaîne logistique.|A unified platform gathering freight events in real time, with automatic alerts and digital coordination between forwarders, shipowners and customs. The telemetry dashboard gives operators a shared view of the logistics chain.
+Une plateforme de vente omnicanale avec tarifs différenciés pour les particuliers et les revendeurs B2B, paiements Orange Money et MTN MoMo, gestion multi-magasins et application mobile dédiée aux livreurs.|An omnichannel sales platform with separate pricing for consumers and B2B resellers, Orange Money and MTN MoMo payments, multi-warehouse management and a mobile app for delivery drivers.
+Domaines d'intervention|Areas of work
+Croissance organique et ligne éditoriale pour les marques partenaires.|Organic growth and editorial direction for partner brands.
+Tunnels d'acquisition et automatisation des prises de contact.|Acquisition funnels and automated lead capture.
+Animation de communautés et suivi des audiences.|Community management and audience tracking.
+Identification des maladies par photo, sur les cultures locales|Identifying diseases from a photo, on local crops
+Déploiement d'une architecture conteneurisée sur AWS avec tableau de bord télémétrique et suivi des événements logistiques en temps réel.|Deployment of a containerised architecture on AWS with a telemetry dashboard and real-time tracking of logistics events.
+Déploiement d'une architecture conteneurisée sur AWS avec tableau de bord télémétrique et suivi des événements logistiques en temps réel pour les opérateurs du Port de Douala.|Deployment of a containerised architecture on AWS with a telemetry dashboard and real-time tracking of logistics events for operators at the Port of Douala.
+Notre client, un réseau de coopératives financières au Cameroun, gérait encore ses transactions par voie papier et virements manuels. La croissance rapide de sa base d'adhérents rendait le système obsolète, risqué et coûteux.|Our client, a network of financial cooperatives in Cameroon, was still handling transactions on paper and by manual transfer. The rapid growth of its membership base made the system obsolete, risky and costly.
+La gestion du fret au Port de Douala impliquait de multiples intervenants (transitaires, armateurs, douanes) utilisant des systèmes disparates et des échanges par e-mail et téléphone. Les délais de coordination allongeaient le séjour des conteneurs au port.|Freight management at the Port of Douala involved many parties (forwarders, shipowners, customs) using disparate systems and exchanging by email and phone. Coordination delays lengthened container stays at the port.
+Le défi majeur : intégrer les paiements mobiles locaux (Orange Money, MTN MoMo), souvent indisponibles dans les solutions e-commerce occidentales, tout en supportant l'ensemble du catalogue du grossiste.|The main challenge: integrating local mobile payments (Orange Money, MTN MoMo), often unavailable in Western e-commerce solutions, while supporting the wholesaler's entire catalogue.
+Audit des flux existants, analyse des besoins et cadrage fonctionnel|Audit of existing flows, requirements analysis and functional scoping
+Architecture technique, conception des bases de données et API|Technical architecture, database and API design
+Développement de l'interface mobile et du dashboard administrateur|Development of the mobile interface and the admin dashboard
+Tests de charge, audit de sécurité et migration des données|Load testing, security audit and data migration
+Cartographie des flux existants et interviews terrain avec transitaires|Mapping of existing flows and field interviews with freight forwarders
+Design de l'architecture cloud et modèle de données événementielles|Cloud architecture design and event data model
+Développement backend microservices et intégration IoT|Microservices backend development and IoT integration
+Dashboard analytique temps réel et interfaces utilisateurs|Real-time analytics dashboard and user interfaces
+Pilote sur un périmètre restreint, ajustements et déploiement général|Pilot on a limited scope, adjustments and full rollout
+Ateliers UX avec le client et ses revendeurs clés, benchmarking solutions locales|UX workshops with the client and its key resellers, benchmarking of local solutions
+Conception des maquettes Figma haute fidélité et validation client|High-fidelity Figma mockups and client approval
+Développement plateforme web B2B/B2C et intégration paiements locaux|B2B/B2C web platform development and local payment integration
+Application mobile livreurs et tableau de bord logistique|Delivery driver mobile app and logistics dashboard
+Tests bêta avec un groupe de marchands pilotes, corrections et déploiement|Beta testing with a group of pilot merchants, fixes and rollout
+Mentions légales %7C CODE AXIS Digital Cameroon|Legal notice %7C CODE AXIS Digital Cameroon
+Mentions légales|Legal notice
+Confidentialité|Privacy
+Qui édite ce site, qui le publie, où il est hébergé et ce que tu peux faire de son contenu. Dernière mise à jour : novembre 2026.|Who edits this site, who publishes it, where it is hosted and what you may do with its content. Last updated: November 2026.
+Éditeur du site|Site publisher
+Nom commercial|Trade name
+CODE AXIS Digital Cameroon, également désigné CADC|CODE AXIS Digital Cameroon, also referred to as CADC
+Entité contractante|Contracting entity
+CADC SARL, société à responsabilité limitée|CADC SARL, a limited liability company
+Siège|Registered office
+Bonabéri, Douala, Région du Littoral, Cameroun|Bonaberi, Douala, Littoral Region, Cameroon
+Téléphone et WhatsApp|Phone and WhatsApp
+Adresse du site|Website address
+Pour obtenir les références d'immatriculation de CADC SARL (RCCM, numéro d'identifiant unique), son capital social ou toute pièce contractuelle, écris à contact@codeaxis.cm. Ces éléments ne sont pas publiés sur cette page.|To obtain the registration references of CADC SARL (RCCM, unique identifier number), its share capital or any contractual document, write to contact@codeaxis.cm. These details are not published on this page.
+Publication|Publication
+La publication du site est assurée par Christian OUSSI, fondateur de CODE AXIS Digital Cameroon. Toute demande relative au contenu éditorial, à une correction ou à un retrait peut être adressée à contact@codeaxis.cm.|The site is published by Christian OUSSI, founder of CODE AXIS Digital Cameroon. Any request concerning editorial content, a correction or a removal can be sent to contact@codeaxis.cm.
+Hébergement|Hosting
+Le site est hébergé par Vercel Inc., aux États-Unis. Les fichiers sont servis depuis son réseau de diffusion, avec une redirection permanente des anciennes adresses vers codeaxis.cm.|The site is hosted by Vercel Inc., in the United States. Files are served from its content delivery network, with a permanent redirect from the former addresses to codeaxis.cm.
+Le code source du site est versionné sur un dépôt GitHub de CODE AXIS Digital Cameroon.|The site's source code is versioned in a CODE AXIS Digital Cameroon GitHub repository.
+Propriété intellectuelle|Intellectual property
+L'ensemble de ce site est protégé : textes, identité visuelle, logo CODE AXIS, icônes, visuels, maquettes, structure des pages et code source. Les noms de la suite evo (evo-gaz, evo-clinic, evo-shop, evo-log, evo-hotel, evo-market, evo-tontaine et les autres) désignent les produits de CODE AXIS Digital Cameroon.|This entire site is protected: text, visual identity, the CODE AXIS logo, icons, visuals, mockups, page structure and source code. The evo suite names (evo-gaz, evo-clinic, evo-shop, evo-log, evo-hotel, evo-market, evo-tontaine and the others) refer to CODE AXIS Digital Cameroon products.
+Toute reproduction, représentation ou adaptation, totale ou partielle, par quelque procédé que ce soit, est soumise à l'autorisation écrite préalable de CODE AXIS Digital Cameroon, sauf pour les courtes citations accompagnées de la mention de la source et d'un lien vers la page d'origine.|Any reproduction, representation or adaptation, in whole or in part, by any process whatsoever, requires the prior written permission of CODE AXIS Digital Cameroon, except for short quotations accompanied by a source credit and a link to the original page.
+Les marques et services tiers cités sur ce site, notamment WhatsApp, Orange Money, MTN MoMo, GitHub et les technologies open source employées, restent la propriété de leurs titulaires respectifs. Leur mention ne vaut ni partenariat ni affiliation au-delà de ce qui est explicitement indiqué.|Third-party brands and services mentioned on this site, including WhatsApp, Orange Money, MTN MoMo, GitHub and the open source technologies used, remain the property of their respective owners. Mentioning them implies no partnership or affiliation beyond what is explicitly stated.
+Données personnelles et traceurs|Personal data and trackers
+Le traitement des informations transmises par les formulaires est décrit dans la|The processing of information submitted through the forms is described in the
+Le site ne dépose aucun cookie publicitaire et n'intègre aucun traceur tiers. Il conserve uniquement, dans le stockage local de ton navigateur, la langue choisie et le thème d'affichage. Un service worker met les pages en cache pour permettre la consultation hors connexion ; ce cache reste sur ton appareil et peut être vidé à tout moment depuis les réglages de ton navigateur.|The site sets no advertising cookie and embeds no third-party tracker. It only keeps, in your browser's local storage, the chosen language and the display theme. A service worker caches pages so they can be read offline; that cache stays on your device and can be cleared at any time from your browser settings.
+Liens et services externes|Links and external services
+Ce site renvoie vers des services tiers : WhatsApp pour la prise de contact, Google Maps pour la localisation, et les adresses e-mail et téléphoniques de l'agence. Ces services sont exploités par leurs propriétaires respectifs, qui en définissent les conditions et la disponibilité. CODE AXIS Digital Cameroon ne peut être tenu responsable de leur contenu, de leur fonctionnement ou de l'usage qui en est fait.|This site links to third-party services: WhatsApp for contact, Google Maps for location, and the agency's email and phone addresses. These services are operated by their respective owners, who set their terms and availability. CODE AXIS Digital Cameroon cannot be held liable for their content, their operation or the use made of them.
+Les liens sortants s'ouvrent dans un nouvel onglet. Aucune garantie n'est donnée quant à l'exactitude des informations publiées sur des sites externes.|Outbound links open in a new tab. No guarantee is given as to the accuracy of information published on external sites.
+Responsabilité|Liability
+CODE AXIS Digital Cameroon s'efforce de maintenir les informations de ce site à jour, sans pouvoir garantir l'absence d'erreur, d'omission ou d'interruption. Les descriptions de produits, de services et de programmes sont données à titre informatif et ne constituent pas une offre contractuelle : seules les conditions signées entre les parties engagent l'agence.|CODE AXIS Digital Cameroon works to keep the information on this site up to date, without being able to guarantee the absence of errors, omissions or interruptions. Descriptions of products, services and programmes are provided for information and do not constitute a contractual offer: only the terms signed between the parties bind the agency.
+Les simulateurs présents sur ce site, notamment celui de l'Opération Youth Partnership, produisent des estimations indicatives. Ils ne valent ni engagement de revenu ni promesse de résultat.|The simulators on this site, in particular the Youth Partnership one, produce indicative estimates. They are neither an income commitment nor a promise of results.
+Droit applicable|Governing law
+Le site et son utilisation sont régis par le droit camerounais. Les actes de commerce conclus par CADC SARL relèvent du droit OHADA. En cas de différend, une solution amiable sera recherchée en priorité avant toute action, par échange à contact@codeaxis.cm.|The site and its use are governed by Cameroonian law. Commercial acts entered into by CADC SARL fall under OHADA law. In the event of a dispute, an amicable settlement will be sought first, before any action, by writing to contact@codeaxis.cm.
+Signaler un contenu|Report content
+Si tu estimes qu'un contenu de ce site porte atteinte à tes droits, ou s'il contient une erreur factuelle, écris à contact@codeaxis.cm en précisant la page concernée et l'URL. Nous examinons la demande et répondons sous trente jours.|If you believe that content on this site infringes your rights, or contains a factual error, write to contact@codeaxis.cm stating the page concerned and its URL. We review the request and reply within thirty days.
+Voir aussi la|See also the
+Voir aussi les|See also the
+mentions légales|legal notice
+du site.|of the site.
+Détails de l'entité dans les|Entity details in the
+Écrire à CODE AXIS sur WhatsApp|Write to CODE AXIS on WhatsApp
+FinSecure Cameroun CODE AXIS|FinSecure Cameroon CODE AXIS
+Digitalisation des Flux de Paiement CODE AXIS|Payment Flow Digitalisation CODE AXIS
+Gestion de Fret Maritime CODE AXIS|Maritime Freight Management CODE AXIS
+Marketplace B2B & B2C Nationale CODE AXIS|National B2B & B2C Marketplace CODE AXIS
 Tu peux demander à consulter, corriger ou supprimer tes informations, sans justification, en écrivant à contact@codeaxis.cm ou sur WhatsApp au +237 691 223 916 en mentionnant « données personnelles ». Nous répondons sous trente jours. Si tu refuses le traitement, ne coche pas la case : le formulaire ne partira pas.|You can ask to view, correct or delete your information, without justification, by writing to contact@codeaxis.cm or on WhatsApp at +237 691 223 916 mentioning "personal data". We answer within thirty days. If you refuse the processing, do not tick the box: the form will not go.`;

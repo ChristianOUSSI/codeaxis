@@ -2435,6 +2435,30 @@ button, input, textarea {
   flex-wrap: wrap;
 }
 
+.contact-legal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 20px;
+  margin: 16px 0 0;
+  font-size: 11.5px;
+  letter-spacing: 0.6px;
+}
+
+.contact-legal a {
+  color: var(--text-muted);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 2px;
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.contact-legal a:hover,
+.contact-legal a:focus-visible {
+  color: var(--neon-cyan);
+  border-bottom-color: var(--neon-cyan);
+}
+
 /* ===================================================================
    ORBITAL ÉQUIPE (compact, section 02)
    =================================================================== */
@@ -2813,4 +2837,63 @@ body.theme-day .lang-opt { color: #45596f; }
   .lang-fab { top: 14px; right: 68px; }
   .lang-opt { padding: 5px 10px; min-width: 36px; font-size: 10.5px; letter-spacing: 1.2px; }
   .header--actions { gap: 6px; }
+}
+
+/* ===================================================================
+   RACCOURCI WHATSAPP FLOTTANT
+   =================================================================== */
+.wa-fab {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 900;
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border-neon);
+  border-radius: 50%;
+  background: var(--bg-card);
+  color: #25d366;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease,
+    border-color 0.3s ease, opacity 0.25s ease, visibility 0s linear 0s;
+}
+
+.wa-fab:hover,
+.wa-fab:focus-visible {
+  border-color: #25d366;
+  box-shadow: 0 10px 28px rgba(37, 211, 102, 0.32);
+  transform: translateY(-3px);
+}
+
+.wa-fab:active { transform: translateY(0) scale(0.96); }
+
+.wa-fab .ico { width: 26px; height: 26px; }
+
+.wa-fab.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(12px);
+  transition-delay: 0s, 0s, 0s, 0s, 0.25s;
+}
+
+body.theme-day .wa-fab {
+  background: rgba(255, 255, 255, 0.88);
+  border-color: rgba(27, 42, 59, 0.22);
+  color: #128c4a;
+  box-shadow: 0 6px 20px rgba(22, 40, 60, 0.18);
+}
+
+@media (max-width: 768px) {
+  .wa-fab { right: 16px; bottom: 16px; width: 48px; height: 48px; }
+  .wa-fab .ico { width: 24px; height: 24px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wa-fab { transition: none; }
+  .wa-fab:hover, .wa-fab:focus-visible, .wa-fab:active { transform: none; }
 }
