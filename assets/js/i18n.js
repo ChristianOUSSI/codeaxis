@@ -13,7 +13,10 @@
   var SKIP = { SCRIPT: 1, STYLE: 1, NOSCRIPT: 1, TEXTAREA: 1, CODE: 1, PRE: 1 };
   var textOriginals = new Map();
   var attrOriginals = new WeakMap();
-  var lang = read();
+  var linkOriginals = new WeakMap();
+  var STATIC = document.documentElement.getAttribute('data-static-lang');
+  var NEEDS_DICT = STATIC === 'en' && document.documentElement.hasAttribute('data-static-dict');
+  var lang = STATIC === 'en' ? 'en' : read();
 
   var selfSrc = document.currentScript && document.currentScript.src;
   var EXTRA_SRC = selfSrc
@@ -40,7 +43,10 @@
   }
 
   /* Le survol ou la tabulation vers EN lance le téléchargement avant le clic */
-  function prefetchExtra() { loadExtra(null); }
+  function prefetchExtra() {
+    if (STATIC === 'en' && !NEEDS_DICT) return;
+    loadExtra(null);
+  }
 
   function read() {
     try {
@@ -137,6 +143,30 @@
         delete stored[a];
       }
     }
+
+    if (el.tagName === 'A' && el.hasAttribute('href')) {
+      var href = el.getAttribute('href');
+      if (lang === 'en') {
+        var next = translateQuery(enHref(href));
+        if (next !== href) {
+          if (!linkOriginals.has(el)) linkOriginals.set(el, href);
+          el.setAttribute('href', next);
+        }
+      } else if (linkOriginals.has(el)) {
+        el.setAttribute('href', linkOriginals.get(el));
+        linkOriginals.delete(el);
+      }
+    }
+  }
+
+  /* Messages préremplis WhatsApp et objets de courriel */
+  function translateQuery(href) {
+    return href.replace(/([?&](?:text|subject)=)([^&#]*)/g, function (whole, prefix, encoded) {
+      var decoded;
+      try { decoded = decodeURIComponent(encoded); } catch (e) { return whole; }
+      var en = lookup(decoded);
+      return en === null ? whole : prefix + encodeURIComponent(en);
+    });
   }
 
   function sweep(root) {
@@ -147,6 +177,17 @@
       if (n.nodeType === 3) translateText(n);
       else if (n.nodeType === 1) translateAttrs(n);
     }
+  }
+
+  /* Liens internes vers la version anglaise quand elle existe */
+  function enHref(href) {
+    if (!href || /^(?:[a-z][a-z0-9+.-]*:|\/\/|#)/i.test(href)) return href;
+    var cut = href.search(/[?#]/);
+    var path = cut < 0 ? href : href.slice(0, cut);
+    var rest = cut < 0 ? '' : href.slice(cut);
+    var m = path.match(/^(.*?)([^/]*)\.html$/i);
+    if (!m || /-en$/i.test(m[2])) return href;
+    return m[1] + (m[2] === 'index' ? 'index-en' : m[2] + '-en') + '.html' + rest;
   }
 
   /* Balises de partage et description : même traitement que le titre */
@@ -230,6 +271,13 @@
   }
 
   function setLang(next) {
+    if (STATIC === 'en') {
+      if (next !== 'en') {
+        location.href = (location.pathname.split('/').pop() || 'index.html')
+          .replace(/-en\.html$/, '.html') + location.search + location.hash;
+      }
+      return;
+    }
     lang = next;
     try { localStorage.setItem(KEY, next); } catch (e) {}
     if (next === 'en') {
@@ -255,7 +303,10 @@
 
     document.documentElement.setAttribute('lang', lang);
     apply(false);
-    if (lang === 'en') loadExtra(function () { apply(true); });
+    if (lang === 'en' && (STATIC !== 'en' || NEEDS_DICT)) {
+      /* Page anglaise statique : le dictionnaire rattrape le contenu injecté par JS */
+      loadExtra(function () { apply(STATIC !== 'en'); });
+    }
 
     /* contenu injecté après coup (cartes, modales, grilles) */
     var queued = [];
@@ -283,6 +334,11 @@
 
   window.cadcSetLang = setLang;
   window.cadcLang = function () { return lang; };
+  window.cadcT = function (s) {
+    if (lang !== 'en') return s;
+    var en = lookup(s);
+    return en === null ? s : en;
+  };
 
   /* Visiteur déjà en anglais : le dictionnaire part tout de suite, sans attendre le DOM */
   if (lang === 'en') prefetchExtra();

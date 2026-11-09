@@ -80,7 +80,7 @@
       img.src = 'assets/img/evo/' + p.slug + '.webp';
       img.alt = p.slug;
       name.textContent = p.slug;
-      desc.textContent = p.desc;
+      desc.textContent = window.cadcT ? window.cadcT(p.desc) : p.desc;
       paintCta(p);
       void stage.offsetWidth;
       stage.classList.add('evo-anim-' + p.anim);

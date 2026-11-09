@@ -2897,3 +2897,60 @@ body.theme-day .wa-fab {
   .wa-fab { transition: none; }
   .wa-fab:hover, .wa-fab:focus-visible, .wa-fab:active { transform: none; }
 }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  z-index: 3000;
+  padding: 10px 18px;
+  border: 1px solid var(--neon-cyan);
+  border-radius: 999px;
+  background: var(--bg-card);
+  color: var(--text-main);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transform: translate(-50%, -180%);
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus-visible {
+  transform: translate(-50%, 0);
+  outline: none;
+}
+
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.contact-status {
+  min-height: 16px;
+  margin: 10px 0 0;
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.contact-status.is-ok { color: var(--neon-cyan); }
+.contact-status.is-error { color: #e08a7a; }
+
+@media (prefers-reduced-motion: reduce) {
+  .skip-link { transition: none; }
+}

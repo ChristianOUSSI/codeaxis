@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en" data-static-lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="assets/img/favicon-64.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Étude de Cas : Marketplace B2B &amp; B2C Nationale - CODE AXIS Agence Digitale Douala">
+  <title>National B2B &amp; B2C Marketplace CODE AXIS</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="assets/css/cadc-fusion.css">
+  <style>
+    html {
+      overflow-y: auto !important;
+      background: var(--bg-primary);
+      color: var(--text-main);
+    
+      height: auto !important;
+      min-height: 100%;
+    }
+    body {
+      overflow-y: auto !important;
+      background: var(--bg-primary);
+      color: var(--text-main);
+    
+      height: auto !important;
+      min-height: 100%;  }
+
+    .case-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 90px 30px 80px;
+    }
+
+    .back-btn {
+      position: fixed;
+      top: 20px;
+      left: 24px;
+      z-index: 1000;
+      padding: 10px 22px;
+      background: rgba(7, 9, 19, 0.85);
+      border: 1px solid var(--border-neon);
+      border-radius: 30px;
+      color: var(--neon-cyan);
+      font-family: Georgia, 'Times New Roman', serif;
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .back-btn:hover {
+      background: var(--neon-blue);
+      color: #fff;
+      transform: translateX(-4px);
+      box-shadow: 0 0 25px var(--neon-glow-cyan);
+    }
+
+    .case-hero {
+      text-align: center;
+      padding: 50px 20px 60px;
+    }
+
+    .case-tag {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--neon-cyan);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .case-hero h1 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(32px, 5vw, 60px);
+      background: var(--grad-accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .case-hero p {
+      font-size: 18px;
+      color: var(--text-muted);
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .section-block {
+      margin: 50px 0;
+    }
+
+    .section-block h2 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 26px;
+      color: #fff;
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .section-block p {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .tech-chip {
+      background: rgba(62, 95, 138, 0.15);
+      border: 1px solid var(--border-subtle);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      color: #fff;
+    }
+
+    .timeline {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    .timeline li {
+      position: relative;
+      padding: 12px 16px 12px 36px;
+      margin-bottom: 12px;
+      background: var(--bg-card);
+      border-radius: 10px;
+      border-left: 3px solid var(--neon-blue);
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .timeline li::before {
+      content: '▶';
+      position: absolute;
+      left: 12px;
+      color: var(--neon-cyan);
+      font-size: 11px;
+      top: 14px;
+    }
+
+    .cta-final {
+      background: linear-gradient(135deg, rgba(62, 95, 138, 0.2), rgba(157, 185, 214, 0.1));
+      border: 1px solid var(--border-neon);
+      border-radius: 16px;
+      padding: 50px 30px;
+      text-align: center;
+      margin-top: 70px;
+    }
+
+    .cta-final h3 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 28px;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .cta-final p {
+      color: var(--text-muted);
+      margin-bottom: 28px;
+    }
+
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 34px;
+      background: var(--grad-primary);
+      color: #fff;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-weight: 700;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      border-radius: 8px;
+      box-shadow: 0 0 25px var(--neon-glow);
+      transition: all 0.3s ease;
+    }
+
+    .btn-cta:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 0 35px var(--neon-glow-cyan);
+    }
+  </style>
+  <link rel="canonical" href="https://codeaxis.cm/realisation-marketplace-en.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CODE AXIS Digital Cameroon">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://codeaxis.cm/realisation-marketplace-en.html">
+  <meta property="og:title" content="National B2B &amp; B2C Marketplace CODE AXIS">
+  <meta property="og:description" content="Étude de Cas : Marketplace B2B &amp; B2C Nationale - CODE AXIS Agence Digitale Douala">
+  <meta property="og:image" content="https://codeaxis.cm/assets/img/og-codeaxis-1200x630.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="National B2B &amp; B2C Marketplace CODE AXIS">
+  <meta name="twitter:description" content="Étude de Cas : Marketplace B2B &amp; B2C Nationale - CODE AXIS Agence Digitale Douala">
+  <meta name="twitter:image" content="https://codeaxis.cm/assets/img/og-codeaxis-1200x630.jpg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://codeaxis.cm/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Our case studies",
+          "item": "https://codeaxis.cm/nos-realisations-en.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Marketplace B2B &amp; B2C Nationale CODE AXIS",
+          "item": "https://codeaxis.cm/realisation-marketplace-en.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+  <link rel="alternate" hreflang="fr" href="https://codeaxis.cm/realisation-marketplace.html">
+  <link rel="alternate" hreflang="en" href="https://codeaxis.cm/realisation-marketplace-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://codeaxis.cm/realisation-marketplace.html">
+</head>
+
+<body class="theme-night">
+
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <a href="index-en.html" class="back-btn">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+    Back
+  </a>
+
+  <div class="case-page" id="main-content" tabindex="-1">
+    <div class="case-hero">
+      <span class="case-tag">E-commerce &amp; growth case study</span>
+      <h1>National B2B &amp; B2C marketplace</h1>
+      <p>Omnichannel sales platform with local payments (Orange Money, MTN MoMo), multi-store management and a dedicated courier mobile app.</p>
+    </div>
+
+    <div class="section-block">
+      <h2>Context &amp; problem</h2>
+      <p>A Cameroonian wholesaler wanted to move from a physical business to a full digital presence, letting individuals buy online and B2B resellers place wholesale orders with tiered pricing.</p>
+      <p>The main challenge: integrating local mobile payments (Orange Money, MTN MoMo), often unavailable in Western e-commerce solutions, while supporting the wholesaler's entire catalogue.</p>
+    </div>
+
+    <div class="section-block">
+      <h2>CODE AXIS solution</h2>
+      <p>We built a multi-vendor marketplace with dual client spaces (B2B and B2C), proprietary local payment APIs, and a courier mobile app managing routes and delivery confirmations in real time.</p>
+      <p>The multi-warehouse stock system automatically synchronises availability between the online store and physical points of sale.</p>
+    </div>
+
+    <div class="section-block">
+      <h2>Technology stack</h2>
+      <div class="tech-list">
+        <span class="tech-chip">Next.js 14</span>
+        <span class="tech-chip">Node.js + NestJS</span>
+        <span class="tech-chip">MongoDB</span>
+        <span class="tech-chip">React Native</span>
+        <span class="tech-chip">Orange Money API</span>
+        <span class="tech-chip">MTN MoMo API</span>
+        <span class="tech-chip">Redis</span>
+        <span class="tech-chip">AWS S3 + CloudFront</span>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <h2>Project timeline</h2>
+      <ul class="timeline">
+        <li><strong>Phase 1:</strong> UX workshops with the client and its key resellers, benchmarking of local solutions</li>
+        <li><strong>Phase 2:</strong> High-fidelity Figma mockups and client approval
+        </li>
+        <li><strong>Phase 3:</strong> B2B/B2C web platform development and local payment integration</li>
+        <li><strong>Phase 4:</strong> Delivery driver mobile app and logistics dashboard</li>
+        <li><strong>Phase 5:</strong> Beta testing with a group of pilot merchants, fixes and rollout
+        </li>
+      </ul>
+    </div>
+
+    <div class="section-block">
+      <h2>What we delivered</h2>
+      <p>An omnichannel sales platform with separate pricing for consumers and B2B resellers, Orange Money and MTN MoMo payments, multi-warehouse management and a mobile app for delivery drivers.</p>
+      <p>Production figures for this project are not published on this page.</p>
+    </div>
+
+    <div class="cta-final">
+      <h3>Ready to digitise your business?</h3>
+      <p>We build e-commerce platforms tailored to the African market.</p>
+      <a href="https://wa.me/237691223916?text=Hello%20CODE%20AXIS%2C%20I%20want%20to%20create%20a%20marketplace%20with%20CODE%20AXIS."
+        target="_blank" rel="noopener noreferrer" class="btn-cta">Let's discuss your project</a>
+    </div>
+  </div>
+
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/icons.js"></script>
+  <script src="assets/js/i18n-en-core.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/whatsapp-fab.js"></script>
+  <script src="assets/js/analytics.js"></script>
+</body>
+
+</html>

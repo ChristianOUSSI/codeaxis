@@ -118,7 +118,7 @@
   <meta property="og:title" content="Politique de confidentialité | CODE AXIS Digital Cameroon">
   <meta property="og:description"
     content="Ce que CODE AXIS fait des informations transmises par ses formulaires de candidature et de contact.">
-  <meta property="og:image" content="https://codeaxis.cm/assets/img/logo-cadc.png">
+  <meta property="og:image" content="https://codeaxis.cm/assets/img/og-codeaxis-1200x630.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">
 {
@@ -154,9 +154,14 @@
   ]
 }
   </script>
+  <link rel="alternate" hreflang="fr" href="https://codeaxis.cm/confidentialite.html">
+  <link rel="alternate" hreflang="en" href="https://codeaxis.cm/confidentialite-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://codeaxis.cm/confidentialite.html">
 </head>
 
 <body class="theme-night">
+
+  <a class="skip-link" href="#main-content">Aller au contenu</a>
   <a href="index.html" class="back-button-fixed">
     <svg class="ico" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6"
       stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12H6M10.5 6.5L4.5 12l6 5.5"/></svg>
@@ -169,7 +174,7 @@
       transmises. Dernière mise à jour : novembre 2026.</p>
   </header>
 
-  <main class="pol-wrap">
+  <main class="pol-wrap" id="main-content" tabindex="-1">
     <section class="pol-block">
       <h2>Quelles informations nous collectons</h2>
       <ul>
@@ -191,9 +196,11 @@
 
     <section class="pol-block">
       <h2>Comment elles circulent</h2>
-      <p>Le formulaire n'utilise pas de serveur de collecte : ta candidature part par WhatsApp et par e-mail, que tu
-        valides toi-même dans ton appareil. Elles transitent par les services de Meta (WhatsApp) et de ton fournisseur
-        de messagerie, et sont ensuite conservées dans nos dossiers internes de recrutement.</p>
+      <p>Le formulaire de contact tente un envoi direct par une fonction hébergée sur Vercel, qui transmet ton message
+        par e-mail à CODE AXIS sans le conserver dans une base de données ; si ce service est indisponible, ton client
+        mail s'ouvre. La candidature Youth Partnership part par WhatsApp ou par e-mail, que tu valides toi-même dans
+        ton appareil. Ces échanges transitent par Vercel et notre prestataire d'envoi d'e-mails, Meta (WhatsApp) ou ton
+        fournisseur de messagerie, puis restent dans nos dossiers internes de recrutement.</p>
     </section>
 
     <section class="pol-block">
@@ -217,6 +224,7 @@
   <script src="assets/js/i18n-en-core.js"></script>
   <script src="assets/js/i18n.js"></script>
   <script src="assets/js/whatsapp-fab.js"></script>
+  <script src="assets/js/analytics.js"></script>
 </body>
 
 </html>

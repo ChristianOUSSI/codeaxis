@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en" data-static-lang="en">
+
+<head>
+  <title>Yann - Backend &amp; DevOps Expert | CODE AXIS</title>
+  <meta charset="utf-8">
+  <link rel="icon" type="image/png" href="assets/img/favicon-64.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description"
+    content="Yann, backend and DevOps expert at CODE AXIS: architecture, deployment and reliability of the applications delivered from Douala.">
+  <link rel="stylesheet" href="assets/css/cadc-fusion.css">
+  <style>
+    html {
+      overflow-y: auto !important;
+      background: var(--bg-primary);
+      color: var(--text-main);
+    
+      height: auto !important;
+      min-height: 100%;
+    }
+    body {
+      overflow-y: auto !important;
+      background: var(--bg-primary);
+      color: var(--text-main);
+    
+      height: auto !important;
+      min-height: 100%;  }
+
+    .member-page-wrap {
+      min-height: 100vh;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 100px 25px 60px;
+    }
+
+    .back-btn-fixed {
+      position: fixed;
+      top: 25px;
+      left: 25px;
+      z-index: 1000;
+      padding: 10px 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-neon);
+      border-radius: 30px;
+      color: var(--neon-cyan);
+      font-family: Georgia, 'Times New Roman', serif;
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      backdrop-filter: blur(12px);
+      transition: var(--transition-smooth);
+    }
+
+    .back-btn-fixed:hover {
+      background: var(--neon-blue);
+      color: #ffffff;
+      box-shadow: 0 0 25px var(--neon-glow-cyan);
+      transform: translateX(-4px);
+    }
+
+    .member-header-card {
+      text-align: center;
+      padding: 40px 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      margin-bottom: 40px;
+      box-shadow: var(--box-shadow-card);
+    }
+
+    .avatar-wrapper {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      border: 3px solid var(--neon-cyan);
+      box-shadow: 0 0 30px var(--neon-glow-cyan);
+      padding: 6px;
+      background: var(--grad-dark);
+    }
+
+    .member-name {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 36px;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+
+    .member-role {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--neon-cyan);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+    }
+
+    .member-bio {
+      font-size: 15px;
+      color: var(--text-muted);
+      max-width: 650px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .member-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .member-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .detail-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 30px 25px;
+    }
+
+    .detail-card h3 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 20px;
+      color: var(--neon-cyan);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .timeline-item {
+      border-left: 2px solid var(--neon-blue);
+      padding-left: 18px;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -6px;
+      top: 0;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--neon-cyan);
+      box-shadow: 0 0 10px var(--neon-cyan);
+    }
+
+    .timeline-year {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 12px;
+      color: var(--neon-cyan);
+      font-weight: 700;
+    }
+
+    .timeline-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 2px 0 4px;
+    }
+
+    .timeline-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-badge {
+      background: rgba(62, 95, 138, 0.15);
+      border: 1px solid var(--border-neon);
+      padding: 8px 14px;
+      border-radius: 20px;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 12px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .contact-cta {
+      text-align: center;
+      padding: 30px;
+    }
+  </style>
+  <link rel="canonical" href="https://codeaxis.cm/marc-laurent-en.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CODE AXIS Digital Cameroon">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://codeaxis.cm/marc-laurent-en.html">
+  <meta property="og:title" content="Yann - Backend &amp; DevOps Expert | CODE AXIS">
+  <meta property="og:description" content="CODE AXIS Digital Cameroon, agence digitale à Douala.">
+  <meta property="og:image" content="https://codeaxis.cm/assets/img/og-codeaxis-1200x630.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Yann - Backend &amp; DevOps Expert | CODE AXIS">
+  <meta name="twitter:description" content="CODE AXIS Digital Cameroon, agence digitale à Douala.">
+  <meta name="twitter:image" content="https://codeaxis.cm/assets/img/og-codeaxis-1200x630.jpg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://codeaxis.cm/marc-laurent-en.html#person",
+      "name": "Yann",
+      "jobTitle": "Lead Backend & Cloud Infrastructure",
+      "url": "https://codeaxis.cm/marc-laurent-en.html",
+      "worksFor": {
+        "@id": "https://codeaxis.cm/#organization"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://codeaxis.cm/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Yann",
+          "item": "https://codeaxis.cm/marc-laurent-en.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+  <link rel="alternate" hreflang="fr" href="https://codeaxis.cm/marc-laurent.html">
+  <link rel="alternate" hreflang="en" href="https://codeaxis.cm/marc-laurent-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://codeaxis.cm/marc-laurent.html">
+</head>
+
+<body class="theme-night">
+
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <a href="index-en.html" class="back-btn-fixed">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
+    </svg>
+    <span>Back</span>
+  </a>
+
+  <div class="member-page-wrap" id="main-content" tabindex="-1">
+    <div class="member-header-card">
+      <div class="avatar-wrapper">
+        <svg viewBox="0 0 100 100" class="member-avatar">
+          <defs>
+            <linearGradient id="grad-marc" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#9db9d6;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#46617f;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <circle cx="50" cy="35" r="25" fill="url(#grad-marc)" />
+          <path d="M20 90 Q50 60 80 90" fill="url(#grad-marc)" />
+          <circle cx="42" cy="32" r="3" fill="#fff" />
+          <circle cx="58" cy="32" r="3" fill="#fff" />
+          <rect x="25" y="25" width="50" height="20" rx="3" fill="none" stroke="#fff" stroke-width="2" />
+          <line x1="30" y1="32" x2="70" y2="32" stroke="#fff" stroke-width="2" />
+          <line x1="30" y1="38" x2="60" y2="38" stroke="#fff" stroke-width="2" />
+        </svg>
+      </div>
+
+      <h1 class="member-name">Yann</h1>
+      <div class="member-role">Lead Backend &amp; Cloud Infrastructure</div>
+      <p class="member-bio">
+        The behind-the-scenes architect ensuring your servers' robustness, speed and high availability. Specialist in containerisation, distributed clusters and cybersecurity.
+      </p>
+    </div>
+
+    <div class="member-grid">
+      <div class="detail-card">
+        <h3><span>🛡️</span> Background &amp; experience</h3>
+        <div class="timeline-item">
+          <span class="timeline-year">2021 - Present</span>
+          <div class="timeline-title">Lead DevOps &amp; Cloud Architect, CODE AXIS</div>
+          <div class="timeline-desc">Cluster supervision, CI/CD pipeline setup and network security hardening.</div>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">2017 - 2021</span>
+          <div class="timeline-title">DevOps Engineer, CloudSystems</div>
+          <div class="timeline-desc">Infrastructure migration to AWS/GCP and drastic hosting cost optimisation.</div>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">2015 - 2017</span>
+          <div class="timeline-title">Systems &amp; Network Administrator, DataCorp</div>
+          <div class="timeline-desc">Managing high-security Linux estates and supervising critical databases.
+          </div>
+        </div>
+      </div>
+
+      <div class="detail-card">
+        <h3><span>⚙️</span> Technical arsenal</h3>
+        <div class="skill-tags">
+          <span class="skill-badge">Kubernetes &amp; Docker</span>
+          <span class="skill-badge">Terraform &amp; Ansible</span>
+          <span class="skill-badge">PostgreSQL &amp; Redis</span>
+          <span class="skill-badge">Linux hardening</span>
+          <span class="skill-badge">CI/CD GitHub Actions</span>
+          <span class="skill-badge">Golang &amp; Rust</span>
+          <span class="skill-badge">Network security &amp; pentesting</span>
+          <span class="skill-badge">Prometheus &amp; Grafana</span>
+        </div>
+
+        <h3 style="margin-top: 25px;"><span>🏗️</span> Key achievements</h3>
+        <p style="font-size: 13px; color: var(--text-muted); line-height: 1.6;">
+          • Zero-downtime deployment for financial applications in Douala.<br>
+          • Fault-tolerant architecture with automatic multi-region failover.<br>
+          • Security audit and GDPR compliance for sensitive data.
+        </p>
+      </div>
+    </div>
+
+    <div class="contact-cta">
+      <a href="https://wa.me/237691223916?text=Hello%20Yann%2C%20I%20would%20like%20to%20discuss%20cloud%20infrastructure%20with%20you."
+        target="_blank" rel="noopener noreferrer" class="btn-action"
+        style="padding: 12px 30px; background: var(--grad-primary); border-radius: 30px; font-family: Georgia, 'Times New Roman', serif; font-weight: 700; color: #fff;">
+        Contact Yann on WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/icons.js"></script>
+  <script src="assets/js/i18n-en-core.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/whatsapp-fab.js"></script>
+  <script src="assets/js/analytics.js"></script>
+</body>
+
+</html>

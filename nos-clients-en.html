@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en" data-static-lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="assets/img/favicon-64.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nos Clients Partenaires - CODE AXIS Agence Digitale Douala">
+  <title>Our Clients - CODE AXIS Digital Agency Douala</title>
+  <link rel="stylesheet" href="assets/css/cadc-fusion.css">
+  <style>
+    html {
+      overflow-y: auto !important;
+      background: var(--bg-primary);
+      color: var(--text-main);
+    
+      height: auto !important;
+      min-height: 100%;
+    }
+    body {
+      overflow-y: auto !important;
+      background: var(--bg-primary);
+      color: var(--text-main);
+    
+      height: auto !important;
+      min-height: 100%;  }
+    .subpage-container {
+      min-height: 100vh;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 100px 30px 60px;
+    }
+    .back-button-fixed {
+      position: fixed;
+      top: 25px;
+      left: 30px;
+      z-index: 1000;
+      padding: 10px 22px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-neon);
+      border-radius: 30px;
+      color: var(--neon-cyan);
+      font-family: Georgia, 'Times New Roman', serif;
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      transition: var(--transition-smooth);
+    }
+    .back-button-fixed:hover {
+      background: var(--neon-blue);
+      color: #ffffff;
+      box-shadow: 0 0 25px var(--neon-glow-cyan);
+      transform: translateX(-4px);
+    }
+    .subpage-header {
+      text-align: center;
+      padding: 40px 20px 50px;
+    }
+    .subpage-header h1 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(36px, 5.5vw, 64px);
+      background: var(--grad-accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 18px;
+      letter-spacing: -1px;
+    }
+    .subpage-header p {
+      font-size: 18px;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    .clients-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+    .client-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 30px 24px;
+      backdrop-filter: blur(10px);
+      transition: var(--transition-smooth);
+    }
+    .client-card:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--neon-cyan);
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px var(--neon-glow-cyan);
+    }
+    .client-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--neon-cyan);
+      background: rgba(62, 95, 138, 0.15);
+      border: 1px solid var(--border-neon);
+      margin-bottom: 15px;
+      text-transform: uppercase;
+    }
+    .client-card h3 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 20px;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+    .client-card p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+    .client-result {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #a9c4de;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .cta-banner {
+      background: linear-gradient(135deg, rgba(62, 95, 138, 0.2) 0%, rgba(157, 185, 214, 0.1) 100%);
+      border: 1px solid var(--border-neon);
+      border-radius: 16px;
+      padding: 50px 30px;
+      text-align: center;
+      margin-top: 60px;
+      box-shadow: var(--box-shadow-neon);
+    }
+    .cta-banner h3 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 28px;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+    .cta-banner p {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+    }
+    .btn-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 34px;
+      background: var(--grad-primary);
+      color: #ffffff;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-weight: 700;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      border-radius: 8px;
+      box-shadow: 0 0 25px var(--neon-glow);
+      transition: var(--transition-smooth);
+    }
+    .btn-action:hover {
+      box-shadow: 0 0 35px var(--neon-glow-cyan);
+      transform: translateY(-3px) scale(1.03);
+    }
+  </style>
+  <link rel="canonical" href="https://codeaxis.cm/nos-clients-en.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CODE AXIS Digital Cameroon">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://codeaxis.cm/nos-clients-en.html">
+  <meta property="og:title" content="Our Clients - CODE AXIS Digital Agency Douala">
+  <meta property="og:description" content="Nos Clients Partenaires - CODE AXIS Agence Digitale Douala">
+  <meta property="og:image" content="https://codeaxis.cm/assets/img/og-codeaxis-1200x630.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Our Clients - CODE AXIS Digital Agency Douala">
+  <meta name="twitter:description" content="Nos Clients Partenaires - CODE AXIS Agence Digitale Douala">
+  <meta name="twitter:image" content="https://codeaxis.cm/assets/img/og-codeaxis-1200x630.jpg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://codeaxis.cm/nos-clients-en.html#webpage",
+      "name": "Nos clients et partenaires",
+      "url": "https://codeaxis.cm/nos-clients-en.html",
+      "inLanguage": "en",
+      "about": {
+        "@id": "https://codeaxis.cm/#organization"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://codeaxis.cm/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Nos clients et partenaires",
+          "item": "https://codeaxis.cm/nos-clients-en.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+  <link rel="alternate" hreflang="fr" href="https://codeaxis.cm/nos-clients.html">
+  <link rel="alternate" hreflang="en" href="https://codeaxis.cm/nos-clients-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://codeaxis.cm/nos-clients.html">
+</head>
+<body class="theme-night">
+
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <a href="index-en.html" class="back-button-fixed">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+    <span>Back</span>
+  </a>
+
+  <div class="subpage-container" id="main-content" tabindex="-1">
+    <div class="subpage-header">
+      <h1>Our clients &amp; partners</h1>
+      <p>Discover the companies, startups and institutions that trust CODE AXIS to drive their growth</p>
+    </div>
+
+    <div class="clients-grid">
+      <div class="client-card">
+        <span class="client-badge">Banking &amp; fintech</span>
+        <h3>Afriland Express Mobile</h3>
+        <p>Design and UX/UI redesign of the micro-payment and regional transfer app.</p>
+      </div>
+
+      <div class="client-card">
+        <span class="client-badge">Logistics &amp; import</span>
+        <h3>Douala Port Logistics</h3>
+        <p>Development of a SaaS platform for container tracking and real-time customs clearance.</p>
+      </div>
+
+      <div class="client-card">
+        <span class="client-badge">Health &amp; eHealth</span>
+        <h3>Clinique Médicale Saint-Luc</h3>
+        <p>Online booking system, encrypted electronic medical records and a patient portal.</p>
+      </div>
+
+      <div class="client-card">
+        <span class="client-badge">Commerce &amp; retail</span>
+        <h3>K-Market Cameroon</h3>
+        <p>Multi-vendor e-commerce marketplace with MTN MoMo and Orange Money integration and geolocated delivery.</p>
+      </div>
+
+      <div class="client-card">
+        <span class="client-badge">Education &amp; EdTech</span>
+        <h3>EduTech Douala</h3>
+        <p>Interactive e-learning platform with streaming courses, automated quizzes and certifications.</p>
+      </div>
+
+      <div class="client-card">
+        <span class="client-badge">Real estate &amp; construction</span>
+        <h3>Prestige Immo Cameroon</h3>
+        <p>Premium property listing portal with 3D virtual tours and a booking gateway.</p>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="cta-banner">
+      <h3>Join our digital success stories</h3>
+      <p>Turn your technology challenges into a decisive competitive advantage.</p>
+      <a href="https://wa.me/237691223916?text=Hello%20CODE%20AXIS%2C%20I%20would%20like%20to%20become%20a%20partner%20with%20CODE%20AXIS." target="_blank" rel="noopener noreferrer" class="btn-action">
+        <span>Become a partner</span>
+      </a>
+    </div>
+  </div>
+
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/icons.js"></script>
+  <script src="assets/js/i18n-en-core.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/whatsapp-fab.js"></script>
+  <script src="assets/js/analytics.js"></script>
+</body>
+</html>

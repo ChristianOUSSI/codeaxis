@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en" data-static-lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="assets/img/favicon-64.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nos Modèles de Contrats et Collaboration - CODE AXIS Agence Digitale">
+  <title>Our Engagement Models - CODE AXIS Digital Agency Douala</title>
+  <link rel="stylesheet" href="assets/css/cadc-fusion.css">
+  <style>
+    html {
+      overflow-y: auto !important;
+      background: var(--bg-primary);
+      color: var(--text-main);
+    
+      height: auto !important;
+      min-height: 100%;
+    }
+    body {
+      overflow-y: auto !important;
+      background: var(--bg-primary);
+      color: var(--text-main);
+    
+      height: auto !important;
+      min-height: 100%;  }
+    .subpage-container {
+      min-height: 100vh;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 100px 30px 60px;
+    }
+    .back-button-fixed {
+      position: fixed;
+      top: 25px;
+      left: 30px;
+      z-index: 1000;
+      padding: 10px 22px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-neon);
+      border-radius: 30px;
+      color: var(--neon-cyan);
+      font-family: Georgia, 'Times New Roman', serif;
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      transition: var(--transition-smooth);
+    }
+    .back-button-fixed:hover {
+      background: var(--neon-blue);
+      color: #ffffff;
+      box-shadow: 0 0 25px var(--neon-glow-cyan);
+      transform: translateX(-4px);
+    }
+    .subpage-header {
+      text-align: center;
+      padding: 40px 20px 50px;
+    }
+    .subpage-header h1 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(36px, 5.5vw, 64px);
+      background: var(--grad-accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 18px;
+      letter-spacing: -1px;
+    }
+    .subpage-header p {
+      font-size: 18px;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    .contracts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .contract-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 35px 28px;
+      backdrop-filter: blur(10px);
+      transition: var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+    .contract-card.featured {
+      border-color: var(--neon-cyan);
+      box-shadow: 0 0 30px var(--neon-glow-cyan);
+    }
+    .contract-card.featured::before {
+      content: "RECOMMANDÉ";
+      position: absolute;
+      top: 15px;
+      right: -30px;
+      transform: rotate(45deg);
+      background: var(--grad-primary);
+      color: #ffffff;
+      font-size: 10px;
+      font-weight: 800;
+      padding: 4px 35px;
+      letter-spacing: 1px;
+    }
+    .contract-card:hover {
+      background: var(--bg-card-hover);
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 25px var(--neon-glow-cyan);
+    }
+    .contract-icon {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+    .contract-card h3 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 22px;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+    .contract-subtitle {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--neon-cyan);
+      margin-bottom: 18px;
+      text-transform: uppercase;
+    }
+    .contract-card p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 20px;
+      flex: 1;
+    }
+    .contract-points {
+      list-style: none;
+      margin-bottom: 25px;
+    }
+    .contract-points li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    .contract-points li span {
+      color: var(--neon-cyan);
+      font-weight: bold;
+    }
+    .cta-banner {
+      background: linear-gradient(135deg, rgba(15, 51, 255, 0.2) 0%, rgba(0, 210, 255, 0.1) 100%);
+      border: 1px solid var(--border-neon);
+      border-radius: 16px;
+      padding: 50px 30px;
+      text-align: center;
+      margin-top: 60px;
+      box-shadow: var(--box-shadow-neon);
+    }
+    .cta-banner h3 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 28px;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+    .cta-banner p {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+    }
+    .btn-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 34px;
+      background: var(--grad-primary);
+      color: #ffffff;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-weight: 700;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      border-radius: 8px;
+      box-shadow: 0 0 25px var(--neon-glow);
+      transition: var(--transition-smooth);
+    }
+    .btn-action:hover {
+      box-shadow: 0 0 35px var(--neon-glow-cyan);
+      transform: translateY(-3px) scale(1.03);
+    }
+  </style>
+  <link rel="canonical" href="https://codeaxis.cm/nos-contrats-en.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CODE AXIS Digital Cameroon">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://codeaxis.cm/nos-contrats-en.html">
+  <meta property="og:title" content="Our Engagement Models - CODE AXIS Digital Agency Douala">
+  <meta property="og:description" content="Nos Modèles de Contrats et Collaboration - CODE AXIS Agence Digitale">
+  <meta property="og:image" content="https://codeaxis.cm/assets/img/og-codeaxis-1200x630.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Our Engagement Models - CODE AXIS Digital Agency Douala">
+  <meta name="twitter:description" content="Nos Modèles de Contrats et Collaboration - CODE AXIS Agence Digitale">
+  <meta name="twitter:image" content="https://codeaxis.cm/assets/img/og-codeaxis-1200x630.jpg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://codeaxis.cm/nos-contrats-en.html#webpage",
+      "name": "Nos contrats et modèles",
+      "url": "https://codeaxis.cm/nos-contrats-en.html",
+      "inLanguage": "en",
+      "about": {
+        "@id": "https://codeaxis.cm/#organization"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://codeaxis.cm/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Nos contrats et modèles",
+          "item": "https://codeaxis.cm/nos-contrats-en.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+  <link rel="alternate" hreflang="fr" href="https://codeaxis.cm/nos-contrats.html">
+  <link rel="alternate" hreflang="en" href="https://codeaxis.cm/nos-contrats-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://codeaxis.cm/nos-contrats.html">
+</head>
+<body class="theme-night">
+
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <a href="index-en.html" class="back-button-fixed">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+    <span>Back</span>
+  </a>
+
+  <div class="subpage-container" id="main-content" tabindex="-1">
+    <div class="subpage-header">
+      <h1>Collaboration &amp; contract models</h1>
+      <p>Flexible, clear and secure arrangements to support your projects at every stage</p>
+    </div>
+
+    <div class="contracts-grid">
+      <!-- Formule 1 : Forfait Clé en Main -->
+      <div class="contract-card">
+        <div class="contract-icon">📦</div>
+        <h3>Fixed-scope package</h3>
+        <div class="contract-subtitle">Fixed price &amp; deadlines</div>
+        <p>Ideal for projects with a clearly defined specification. Guaranteed delivery on time and on budget.</p>
+        <ul class="contract-points">
+          <li><span>✓</span> Specification and milestones signed off</li>
+          <li><span>✓</span> Compliance and delivery guarantee</li>
+          <li><span>✓</span> 3 months of maintenance and support included</li>
+          <li><span>✓</span> Full transfer of intellectual property</li>
+        </ul>
+        <a href="https://wa.me/237691223916?text=Hello%20CODE%20AXIS%2C%20I%20would%20like%20a%20quote%20for%20a%20turnkey%20package." target="_blank" rel="noopener noreferrer" class="btn-action" style="font-size: 12px; padding: 10px 20px; justify-content: center;">
+          Choose this plan
+        </a>
+      </div>
+
+      <!-- Formule 2 : Équipe Dédiée Agile -->
+      <div class="contract-card featured">
+        <div class="contract-icon">⚡</div>
+        <h3>Dedicated agile team</h3>
+        <div class="contract-subtitle">Time &amp; materials, weekly sprints</div>
+        <p>For evolving projects, startups and SaaS platforms needing a full-time, responsive engineering team.</p>
+        <ul class="contract-points">
+          <li><span>✓</span> Dedicated developers, designer and project manager</li>
+          <li><span>✓</span> Agile sprints with weekly demos</li>
+          <li><span>✓</span> Total flexibility on features</li>
+          <li><span>✓</span> Transparent, adjustable monthly billing</li>
+        </ul>
+        <a href="https://wa.me/237691223916?text=Hello%20CODE%20AXIS%2C%20I%20would%20like%20a%20dedicated%20agile%20team." target="_blank" rel="noopener noreferrer" class="btn-action" style="font-size: 12px; padding: 10px 20px; justify-content: center;">
+          Choose this plan
+        </a>
+      </div>
+
+      <!-- Formule 3 : Maintenance & SLA 24/7 -->
+      <div class="contract-card">
+        <div class="contract-icon">🛡️</div>
+        <h3>SLA &amp; support contract</h3>
+        <div class="contract-subtitle">High availability &amp; security</div>
+        <p>Secure the longevity, speed and safety of applications already in production, with our supervision team.</p>
+        <ul class="contract-points">
+          <li><span>✓</span> Response time guaranteed under 1h</li>
+          <li><span>✓</span> Daily cloud backups and 24/7 monitoring</li>
+          <li><span>✓</span> Security updates and regular audits</li>
+          <li><span>✓</span> Development hours included every month</li>
+        </ul>
+        <a href="https://wa.me/237691223916?text=Hello%20CODE%20AXIS%2C%20I%20would%20like%20a%20maintenance%20contract%20with%20an%20SLA." target="_blank" rel="noopener noreferrer" class="btn-action" style="font-size: 12px; padding: 10px 20px; justify-content: center;">
+          Choose this plan
+        </a>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="cta-banner">
+      <h3>Need a hybrid or bespoke model?</h3>
+      <p>Our advisers draft a contractual proposal matched to your budget and technical constraints.</p>
+      <a href="https://wa.me/237691223916?text=Hello%20CODE%20AXIS%2C%20I%20would%20like%20to%20discuss%20a%20custom%20contract%20model." target="_blank" rel="noopener noreferrer" class="btn-action">
+        <span>Request a proposal</span>
+      </a>
+    </div>
+  </div>
+
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/icons.js"></script>
+  <script src="assets/js/i18n-en-core.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/whatsapp-fab.js"></script>
+  <script src="assets/js/analytics.js"></script>
+</body>
+</html>

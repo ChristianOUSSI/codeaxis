@@ -236,12 +236,12 @@
   <meta property="og:title" content="Actualité CODE AXIS, nouvelles de l'agence à Douala">
   <meta property="og:description"
     content="Lancements de produits evo, mises en production, notes techniques et vie de l'agence.">
-  <meta property="og:image" content="https://codeaxis.cm/assets/img/logo-cadc.png">
+  <meta property="og:image" content="https://codeaxis.cm/assets/img/og-codeaxis-1200x630.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Actualité CODE AXIS, nouvelles de l'agence à Douala">
   <meta name="twitter:description"
     content="Lancements de produits evo, mises en production, notes techniques et vie de l'agence.">
-  <meta name="twitter:image" content="https://codeaxis.cm/assets/img/logo-cadc.png">
+  <meta name="twitter:image" content="https://codeaxis.cm/assets/img/og-codeaxis-1200x630.jpg">
 
   <script type="application/ld+json">
   {
@@ -277,9 +277,14 @@
   ]
 }
   </script>
+  <link rel="alternate" hreflang="fr" href="https://codeaxis.cm/actualites.html">
+  <link rel="alternate" hreflang="en" href="https://codeaxis.cm/actualites-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://codeaxis.cm/actualites.html">
 </head>
 
 <body class="theme-night">
+
+  <a class="skip-link" href="#actList">Aller au contenu</a>
   <a href="index.html" class="back-button-fixed">
     <svg class="ico" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12H6M10.5 6.5L4.5 12l6 5.5"/></svg>
     <span>Retour</span>
@@ -293,7 +298,7 @@
 
   <nav class="act-filters" id="actFilters" aria-label="Filtrer les actualités par thème"></nav>
 
-  <main class="act-list" id="actList"></main>
+  <main class="act-list" id="actList" tabindex="-1"></main>
 
   <!-- Détail d'une actualité -->
   <div class="evo-modal" id="actModal" role="dialog" aria-modal="true" aria-labelledby="actModalTitle">
@@ -325,6 +330,7 @@
   <script src="assets/js/i18n.js"></script>
   <script src="assets/js/whatsapp-fab.js"></script>
   <script src="assets/js/news-page.js"></script>
+  <script src="assets/js/analytics.js"></script>
 </body>
 
 </html>

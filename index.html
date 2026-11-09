@@ -35,12 +35,12 @@
   <meta property="og:title" content="CODE AXIS, agence web et mobile à Douala">
   <meta property="og:description"
     content="Applications web et mobiles, suite evo de 22 produits métier, mobile money et hors-ligne. Depuis Bonabéri, Douala.">
-  <meta property="og:image" content="https://codeaxis.cm/assets/img/logo-cadc.png">
+  <meta property="og:image" content="https://codeaxis.cm/assets/img/og-codeaxis-1200x630.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="CODE AXIS, agence web et mobile à Douala">
   <meta name="twitter:description"
     content="Applications web et mobiles, suite evo de 22 produits métier, mobile money et hors-ligne. Depuis Bonabéri, Douala.">
-  <meta name="twitter:image" content="https://codeaxis.cm/assets/img/logo-cadc.png">
+  <meta name="twitter:image" content="https://codeaxis.cm/assets/img/og-codeaxis-1200x630.jpg">
 
   <script type="application/ld+json">
   {
@@ -68,9 +68,14 @@
     "sameAs": ["https://github.com/ChristianOUSSI/codeaxis"]
   }
   </script>
+  <link rel="alternate" hreflang="fr" href="https://codeaxis.cm/">
+  <link rel="alternate" hreflang="en" href="https://codeaxis.cm/index-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://codeaxis.cm/">
 </head>
 
 <body class="theme-night">
+
+  <a class="skip-link" href="#main-content">Aller au contenu</a>
 
   <!-- Splash de marque : purement décoratif, le site est déjà chargé dessous,
        il s'efface seul et ne bloque ni la lecture ni les robots -->
@@ -153,7 +158,7 @@
           <!-- ===================================================================
                CONTENU PRINCIPAL DES SECTIONS
                =================================================================== -->
-          <ul class="l-main-content main-content">
+          <ul class="l-main-content main-content" id="main-content" tabindex="-1">
 
             <!-- SECTION 01 : ACCUEIL / HERO & CARROUSEL PRODUITS -->
             <li class="l-section section section--is-active" id="section-intro">
@@ -401,18 +406,29 @@
                         class="btn-contact-action btn-email">
                         <span>Envoyer un Mail</span>
                       </a>
+                      <button type="button" id="copy-mail-btn" class="btn-contact-action btn-email">
+                        <span>Copier l'adresse</span>
+                      </button>
                     </div>
 
                     <!-- Formulaire rapide de contact -->
                     <form class="contact-form" id="quick-contact-form">
-                      <input type="text" name="name" placeholder="Votre nom" required autocomplete="name">
-                      <input type="email" name="email" placeholder="Votre email" required autocomplete="email">
-                      <textarea name="message" placeholder="Décrivez votre projet..." rows="3" required></textarea>
+                      <label class="sr-only" for="cf-name">Votre nom</label>
+                      <input id="cf-name" type="text" name="name" placeholder="Votre nom" required autocomplete="name">
+                      <label class="sr-only" for="cf-email">Votre email</label>
+                      <input id="cf-email" type="email" name="email" placeholder="Votre email" required autocomplete="email">
+                      <label class="sr-only" for="cf-message">Décrivez votre projet...</label>
+                      <textarea id="cf-message" name="message" placeholder="Décrivez votre projet..." rows="3" required></textarea>
+                      <div class="hp-field" aria-hidden="true">
+                        <label for="cf-company">Société</label>
+                        <input id="cf-company" type="text" name="company" tabindex="-1" autocomplete="off">
+                      </div>
                       <div class="contact-form-actions">
-                        <button type="submit" class="btn-contact-action btn-email"><span>Envoyer par Mail</span></button>
+                        <button type="submit" class="btn-contact-action btn-email"><span>Envoyer le message</span></button>
                         <button type="button" id="form-whatsapp-btn" class="btn-contact-action btn-whatsapp"><span>Envoyer
                             via WhatsApp</span></button>
                       </div>
+                      <p class="contact-status" id="contact-status" role="status" aria-live="polite"></p>
                     </form>
 
                     <p class="contact-legal">
@@ -495,6 +511,7 @@
   <script src="assets/js/cadc-app.js"></script>
   <script src="assets/js/contact-form.js"></script>
   <script src="assets/js/pwa-register.js"></script>
+  <script src="assets/js/analytics.js"></script>
 </body>
 
 </html>

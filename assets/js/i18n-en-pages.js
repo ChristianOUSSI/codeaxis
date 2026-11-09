@@ -636,7 +636,7 @@ Rien d'autre : pas de cookie publicitaire, pas de traqueur tiers, pas de profila
 Pourquoi et sur quelle base|Why and on what basis
 Tes informations servent uniquement à traiter ta candidature ou ta demande : te rappeler, vérifier l'éligibilité (moins de 35 ans pour le Youth Partnership), préparer l'entretien et, en cas de signature, établir le contrat de partenariat. La base légale est ton consentement, donné par la case cochée du formulaire, et l'exécution des pourparlers.|Your information is used only to process your application or request: calling you back, checking eligibility (under 35 for the Youth Partnership), preparing the interview and, once signed, drawing up the partnership contract. The legal basis is your consent, given through the form checkbox, and the performance of pre-contract talks.
 Comment elles circulent|How it travels
-Le formulaire n'utilise pas de serveur de collecte : ta candidature part par WhatsApp et par e-mail, que tu valides toi-même dans ton appareil. Elles transitent par les services de Meta (WhatsApp) et de ton fournisseur de messagerie, et sont ensuite conservées dans nos dossiers internes de recrutement.|The form uses no collection server: your application goes by WhatsApp and by email, which you confirm yourself on your device. It transits through Meta services (WhatsApp) and your email provider, then is kept in our internal recruitment files.
+Le formulaire de contact tente un envoi direct par une fonction hébergée sur Vercel, qui transmet ton message par e-mail à CODE AXIS sans le conserver dans une base de données ; si ce service est indisponible, ton client mail s'ouvre. La candidature Youth Partnership part par WhatsApp ou par e-mail, que tu valides toi-même dans ton appareil. Ces échanges transitent par Vercel et notre prestataire d'envoi d'e-mails, Meta (WhatsApp) ou ton fournisseur de messagerie, puis restent dans nos dossiers internes de recrutement.|The contact form first attempts a direct send through a function hosted on Vercel, which forwards your message by email to CODE AXIS without storing it in a database; if that service is unavailable, your mail app opens. The Youth Partnership application goes by WhatsApp or email, which you confirm yourself on your device. These exchanges pass through Vercel and our email delivery provider, Meta (WhatsApp) or your email provider, then remain in our internal recruitment files.
 Combien de temps|How long
 Une candidature non retenue est effacée au bout de douze mois. Un dossier de partenariat signé est conservé le temps du contrat, augmenté des durées légales de conservation comptable et fiscale au Cameroun.|An unsuccessful application is erased after twelve months. A signed partnership file is kept for the length of the contract plus the legal accounting and tax retention periods in Cameroon.
 Tes droits|Your rights
@@ -715,4 +715,65 @@ FinSecure Cameroun CODE AXIS|FinSecure Cameroon CODE AXIS
 Digitalisation des Flux de Paiement CODE AXIS|Payment Flow Digitalisation CODE AXIS
 Gestion de Fret Maritime CODE AXIS|Maritime Freight Management CODE AXIS
 Marketplace B2B & B2C Nationale CODE AXIS|National B2B & B2C Marketplace CODE AXIS
-Tu peux demander à consulter, corriger ou supprimer tes informations, sans justification, en écrivant à contact@codeaxis.cm ou sur WhatsApp au +237 691 223 916 en mentionnant « données personnelles ». Nous répondons sous trente jours. Si tu refuses le traitement, ne coche pas la case : le formulaire ne partira pas.|You can ask to view, correct or delete your information, without justification, by writing to contact@codeaxis.cm or on WhatsApp at +237 691 223 916 mentioning "personal data". We answer within thirty days. If you refuse the processing, do not tick the box: the form will not go.`;
+Aller au contenu|Skip to content
+Envoyer le message|Send message
+Copier l'adresse|Copy address
+Adresse copiée|Address copied
+Envoi en cours...|Sending...
+Message envoyé. Nous revenons vers toi par e-mail.|Message sent. We will get back to you by email.
+Envoi direct indisponible, ton client mail s'ouvre.|Direct sending is unavailable, your mail app will open.
+Trop de demandes envoyées. Réessaie dans une heure.|Too many requests. Try again in an hour.
+Joseph Christian OUSSI, directeur et architecte fullstack de CODE AXIS Digital Cameroon : parcours, vision et projets menés depuis Douala.|Joseph Christian OUSSI, director and fullstack architect at CODE AXIS Digital Cameroon: background, vision and projects led from Douala.
+Franky, Lead UI/UX Designer chez CODE AXIS à Douala : parcours, méthodes de conception et rôle dans les interfaces livrées aux clients.|Franky, Lead UI/UX Designer at CODE AXIS in Douala: background, design methods and role in the interfaces delivered to clients.
+Yann, expert backend et DevOps chez CODE AXIS : architecture, déploiement et fiabilité des applications livrées depuis Douala.|Yann, backend and DevOps expert at CODE AXIS: architecture, deployment and reliability of the applications delivered from Douala.
+Philippe, Growth Hacker et Community Strategist chez CODE AXIS : acquisition, animation de communauté et lancement des produits numériques.|Philippe, Growth Hacker and Community Strategist at CODE AXIS: acquisition, community management and product launches.
+Société|Company
+Ne pas remplir|Do not fill
+Technologies Utilisées|Technologies used
+Stack Technologique|Technology stack
+🛠️ Technologies Utilisées|Technologies used
+🛠️ Stack Technologique|Technology stack
+45 % de 15 000 FCFA encaissés par le client|45% of 15 000 FCFA collected by the client
+Définition précise du comportement de vos acheteurs types et des opportunités inexploitées.|A precise definition of your typical buyers' behaviour and untapped opportunities.
+Contrat de partenariat signé avec CADC SARL. Aucun frais à payer pour rejoindre le programme. Détails de l'entité dans les|Partnership contract signed with CADC SARL. No fee to join the programme. Entity details in the
+Phase 1 :|Phase 1:
+Phase 2 :|Phase 2:
+Phase 3 :|Phase 3:
+Phase 4 :|Phase 4:
+Phase 5 :|Phase 5:
+• Plateforme SaaS E-commerce avec intégration Mobile Money.|• SaaS e-commerce platform with Mobile Money integration.
+• Application Bancaire sécurisée avec authentification biométrique.|• Secure banking application with biometric authentication.
+• Moteur de matching IA pour la logistique portuaire de Douala.|• AI matching engine for Douala port logistics.
+• Déploiement Zero-Downtime pour applications financières à Douala.|• Zero-downtime deployment for financial applications in Douala.
+• Architecture tolérante aux pannes avec failover automatique multi-région.|• Fault-tolerant architecture with automatic multi-region failover.
+• Audit de sécurité et conformité RGPD / données sensibles.|• Security audit and GDPR compliance for sensitive data.
+• Croissance organique et ligne éditoriale pour les marques partenaires.|• Organic growth and editorial line for partner brands.
+• Tunnels d'acquisition et automatisation des prises de contact.|• Acquisition funnels and contact automation.
+• Animation de communautés et suivi des audiences.|• Community management and audience tracking.
+• Refonte complète de l'application mobile pour une banque camerounaise.|• Complete redesign of the mobile app for a Cameroonian bank.
+• Design System unifié pour 12 produits SaaS d'un groupe international.|• Unified design system for 12 SaaS products of an international group.
+• Direction artistique de CODE AXIS et animations 3D cyber.|• CODE AXIS art direction and cyber 3D animations.
+Tu peux demander à consulter, corriger ou supprimer tes informations, sans justification, en écrivant à contact@codeaxis.cm ou sur WhatsApp au +237 691 223 916 en mentionnant « données personnelles ». Nous répondons sous trente jours. Si tu refuses le traitement, ne coche pas la case : le formulaire ne partira pas.|You can ask to view, correct or delete your information, without justification, by writing to contact@codeaxis.cm or on WhatsApp at +237 691 223 916 mentioning "personal data". We answer within thirty days. If you refuse the processing, do not tick the box: the form will not go.
+Bonjour CODE AXIS, j'aimerais devenir partenaire avec CODE AXIS.|Hello CODE AXIS, I would like to become a partner with CODE AXIS.
+Bonjour CODE AXIS, j'aimerais discuter d'un modèle de contrat sur mesure.|Hello CODE AXIS, I would like to discuss a custom contract model.
+Bonjour CODE AXIS, j'aimerais discuter d'un nouveau projet avec CODE AXIS.|Hello CODE AXIS, I would like to discuss a new project with CODE AXIS.
+Bonjour CODE AXIS, j'aimerais réserver un audit stratégique avec CODE AXIS.|Hello CODE AXIS, I would like to book a strategic audit with CODE AXIS.
+Bonjour CODE AXIS, je souhaite collaborer avec CODE AXIS sur un projet de Design.|Hello CODE AXIS, I would like to work with CODE AXIS on a design project.
+Bonjour CODE AXIS, je souhaite des informations sur vos services.|Hello CODE AXIS, I would like information about your services.
+Bonjour CODE AXIS, je souhaite discuter d'un projet Cloud Logistique avec CODE AXIS.|Hello CODE AXIS, I would like to discuss a cloud logistics project with CODE AXIS.
+Bonjour CODE AXIS, je souhaite discuter d'un projet Fintech avec CODE AXIS.|Hello CODE AXIS, I would like to discuss a fintech project with CODE AXIS.
+Bonjour CODE AXIS, je souhaite lancer un projet avec CODE AXIS.|Hello CODE AXIS, I would like to launch a project with CODE AXIS.
+Bonjour CODE AXIS, je souhaite lancer un projet de développement avec CODE AXIS.|Hello CODE AXIS, I would like to launch a development project with CODE AXIS.
+Bonjour CODE AXIS, je souhaite un contrat de Maintenance SLA.|Hello CODE AXIS, I would like a maintenance contract with an SLA.
+Bonjour CODE AXIS, je souhaite un devis Forfait Clé en Main.|Hello CODE AXIS, I would like a quote for a turnkey package.
+Bonjour CODE AXIS, je souhaite une Equipe Dédiée Agile.|Hello CODE AXIS, I would like a dedicated agile team.
+Bonjour CODE AXIS, je veux créer une marketplace avec CODE AXIS.|Hello CODE AXIS, I want to create a marketplace with CODE AXIS.
+Bonjour CODE AXIS, je veux développer un projet Fintech avec CODE AXIS.|Hello CODE AXIS, I want to develop a fintech project with CODE AXIS.
+Bonjour CODE AXIS, je veux développer un projet IA avec CODE AXIS.|Hello CODE AXIS, I want to develop an AI project with CODE AXIS.
+Bonjour CODE AXIS, je veux développer une plateforme santé avec CODE AXIS.|Hello CODE AXIS, I want to develop a health platform with CODE AXIS.
+Bonjour CODE AXIS, je veux un système de tracking de flotte avec CODE AXIS.|Hello CODE AXIS, I want a fleet tracking system with CODE AXIS.
+Bonjour Franky, j'aimerais discuter de Design UI/UX avec vous.|Hello Franky, I would like to discuss UI/UX design with you.
+Bonjour Joseph, j'aimerais discuter d'un projet avec vous.|Hello Joseph, I would like to discuss a project with you.
+Bonjour Philippe, j'aimerais discuter de Growth Hacking avec vous.|Hello Philippe, I would like to discuss growth hacking with you.
+Bonjour Yann, j'aimerais discuter d'infrastructure Cloud avec vous.|Hello Yann, I would like to discuss cloud infrastructure with you.
+Demande de projet CODE AXIS|CODE AXIS project inquiry`;

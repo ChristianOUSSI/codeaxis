@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en" data-static-lang="en" data-static-dict="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>CODE AXIS news, latest from our Douala agency</title>
+  <meta name="description"
+    content="Actualité de CODE AXIS Digital Cameroon à Douala : lancements de produits evo, mises en production, notes techniques et vie de l'agence.">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2e4257">
+  <link rel="icon" type="image/png" href="assets/img/favicon-64.png">
+  <link rel="stylesheet" href="assets/css/cadc-fusion.css">
+  <link rel="stylesheet" href="assets/css/evo-suite.css">
+  <style>
+    html,
+    body {
+      overflow-y: auto !important;
+      height: auto !important;
+      min-height: 100%;
+      background: var(--bg-primary);
+      color: var(--text-main);
+    }
+
+    .act-hero {
+      text-align: center;
+      padding: 88px 20px 26px;
+    }
+
+    .act-hero h1 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(28px, 6vw, 52px);
+      background: var(--grad-accent);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+      margin-bottom: 10px;
+    }
+
+    .act-hero p {
+      color: var(--text-muted);
+      max-width: 620px;
+      margin: 0 auto;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .act-filters {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 0 20px 26px;
+    }
+
+    .act-filter {
+      border: 1px solid var(--border-subtle);
+      background: transparent;
+      color: var(--text-muted);
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      padding: 8px 16px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .act-filter:hover { color: var(--text-main); border-color: var(--border-neon); }
+
+    .act-filter.is-active {
+      background: var(--grad-primary);
+      border-color: transparent;
+      color: #ffffff;
+      box-shadow: 0 6px 18px var(--neon-glow);
+    }
+
+    .act-list {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 22px 96px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 16px;
+    }
+
+    .act-card {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      text-align: left;
+      padding: 20px 20px 22px;
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      background: var(--bg-card);
+      color: inherit;
+      font-family: inherit;
+      cursor: pointer;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .act-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--border-neon);
+      box-shadow: 0 16px 34px var(--neon-glow);
+    }
+
+    .act-card-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    .act-tag {
+      padding: 3px 9px;
+      border-radius: 20px;
+      border: 1px solid var(--border-neon);
+      color: var(--neon-cyan);
+    }
+
+    .act-date { color: var(--card-ink-dim); }
+
+    .act-card h2 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 17px;
+      line-height: 1.3;
+      color: var(--card-ink);
+      margin: 2px 0 0;
+    }
+
+    .act-card p {
+      color: var(--card-ink-soft);
+      font-size: 13px;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .act-card-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: 2px;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      color: var(--neon-cyan);
+    }
+
+    .act-card-more .ico { transition: transform 0.25s ease; }
+    .act-card:hover .act-card-more .ico { transform: translateX(4px); }
+
+    .act-empty {
+      grid-column: 1 / -1;
+      text-align: center;
+      color: var(--text-muted);
+      padding: 40px 0;
+      font-size: 14px;
+    }
+
+    .act-modal-body { text-align: left; }
+
+    .act-modal-body h3 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 15px;
+      color: var(--neon-cyan);
+      margin: 18px 0 6px;
+    }
+
+    .act-modal-body p {
+      color: #c3d3e4;
+      font-size: 13.5px;
+      line-height: 1.75;
+      margin: 0 0 12px;
+    }
+
+    .act-modal-meta {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      align-items: center;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 16px;
+    }
+
+    .act-modal-logo {
+      display: block;
+      max-width: 170px;
+      max-height: 96px;
+      margin: 0 auto 16px;
+      padding: 8px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--border-subtle);
+      background: #f6f8fa;
+      object-fit: contain;
+    }
+
+    @media (max-width: 768px) {
+      .act-hero { padding: 70px 16px 20px; }
+      .act-hero p { font-size: 13px; }
+      .act-filters {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding: 0 16px 18px;
+      }
+      .act-filters::-webkit-scrollbar { display: none; }
+      .act-filter { flex: 0 0 auto; }
+      .act-list { grid-template-columns: 1fr; padding: 0 16px 96px; gap: 12px; }
+      .act-card { padding: 16px 16px 18px; }
+      .act-card h2 { font-size: 15px; }
+    }
+  </style>
+  <link rel="canonical" href="https://codeaxis.cm/actualites-en.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CODE AXIS Digital Cameroon">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://codeaxis.cm/actualites-en.html">
+  <meta property="og:title" content="CODE AXIS news, latest from our Douala agency">
+  <meta property="og:description"
+    content="evo product launches, production releases, engineering notes and agency life.">
+  <meta property="og:image" content="https://codeaxis.cm/assets/img/og-codeaxis-1200x630.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CODE AXIS news, latest from our Douala agency">
+  <meta name="twitter:description"
+    content="evo product launches, production releases, engineering notes and agency life.">
+  <meta name="twitter:image" content="https://codeaxis.cm/assets/img/og-codeaxis-1200x630.jpg">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Actualité CODE AXIS Digital Cameroon",
+  "url": "https://codeaxis.cm/actualites-en.html",
+  "inLanguage": "en",
+  "publisher": {
+    "@type": "Organization",
+    "name": "CODE AXIS Digital Cameroon",
+    "url": "https://codeaxis.cm/"
+  }
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://codeaxis.cm/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "News",
+          "item": "https://codeaxis.cm/actualites-en.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+  <link rel="alternate" hreflang="fr" href="https://codeaxis.cm/actualites.html">
+  <link rel="alternate" hreflang="en" href="https://codeaxis.cm/actualites-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://codeaxis.cm/actualites.html">
+</head>
+
+<body class="theme-night">
+
+  <a class="skip-link" href="#actList">Skip to content</a>
+  <a href="index-en.html" class="back-button-fixed">
+    <svg class="ico" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12H6M10.5 6.5L4.5 12l6 5.5"/></svg>
+    <span>Back</span>
+  </a>
+
+  <header class="act-hero">
+    <h1>CODE AXIS news</h1>
+    <p>Agency updates, production launches and technical highlights. Everything we build in Douala, Cameroon.</p>
+  </header>
+
+  <nav class="act-filters" id="actFilters" aria-label="Filter news by topic"></nav>
+
+  <main class="act-list" id="actList" tabindex="-1"></main>
+
+  <!-- Détail d'une actualité -->
+  <div class="evo-modal" id="actModal" role="dialog" aria-modal="true" aria-labelledby="actModalTitle">
+    <div class="evo-modal-card">
+      <button class="evo-modal-close" id="actModalClose" aria-label="Close">
+        <svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <div class="act-modal-meta" id="actModalMeta"></div>
+      <img class="act-modal-logo" id="actModalLogo" alt="" width="170" height="96" style="display:none">
+      <h2 class="evo-modal-name" id="actModalTitle">News</h2>
+      <div class="act-modal-body" id="actModalText"></div>
+      <div class="evo-modal-actions">
+        <span id="actModalCtaWrap" style="display:none">
+          <a class="btn-evo-discover" id="actModalCta" href="youth-partnership-en.html">Apply</a>
+        </span>
+        <button class="btn-evo-ghost" id="actModalBack" type="button">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <button class="to-top-btn" id="toTopBtn" type="button" aria-label="Back to top of page">
+    <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19.5v-14M6.5 11l5.5-5.5 5.5 5.5"/></svg>
+  </button>
+
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/icons.js"></script>
+  <script src="assets/js/news-data.js"></script>
+  <script src="assets/js/i18n-en-core.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/whatsapp-fab.js"></script>
+  <script src="assets/js/news-page.js"></script>
+  <script src="assets/js/analytics.js"></script>
+</body>
+
+</html>

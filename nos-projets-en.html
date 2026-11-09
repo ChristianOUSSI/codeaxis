@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en" data-static-lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="assets/img/favicon-64.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nos Projets Innovants - CODE AXIS Agence Digitale Douala">
+  <title>Our Projects - CODE AXIS Digital Agency Douala</title>
+  <link rel="stylesheet" href="assets/css/cadc-fusion.css">
+  <style>
+    html {
+      overflow-y: auto !important;
+      background: var(--bg-primary);
+      color: var(--text-main);
+    
+      height: auto !important;
+      min-height: 100%;
+    }
+    body {
+      overflow-y: auto !important;
+      background: var(--bg-primary);
+      color: var(--text-main);
+    
+      height: auto !important;
+      min-height: 100%;  }
+    .subpage-container {
+      min-height: 100vh;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 100px 30px 60px;
+    }
+    .back-button-fixed {
+      position: fixed;
+      top: 25px;
+      left: 30px;
+      z-index: 1000;
+      padding: 10px 22px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-neon);
+      border-radius: 30px;
+      color: var(--neon-cyan);
+      font-family: Georgia, 'Times New Roman', serif;
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      transition: var(--transition-smooth);
+    }
+    .back-button-fixed:hover {
+      background: var(--neon-blue);
+      color: #ffffff;
+      box-shadow: 0 0 25px var(--neon-glow-cyan);
+      transform: translateX(-4px);
+    }
+    .subpage-header {
+      text-align: center;
+      padding: 40px 20px 50px;
+    }
+    .subpage-header h1 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(36px, 5.5vw, 64px);
+      background: var(--grad-accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 18px;
+      letter-spacing: -1px;
+    }
+    .subpage-header p {
+      font-size: 18px;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+      transition: var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+    }
+    .project-card:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--neon-cyan);
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 25px var(--neon-glow-cyan);
+    }
+    .project-img-wrapper {
+      width: 100%;
+      height: 190px;
+      overflow: hidden;
+      position: relative;
+      background: var(--grad-dark);
+    }
+    .project-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .project-card:hover .project-img-wrapper img {
+      transform: scale(1.08);
+    }
+    .project-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .project-tag {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--neon-cyan);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 8px;
+    }
+    .project-body h3 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 20px;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+    .project-body p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 18px;
+      flex: 1;
+    }
+    .project-techs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: auto;
+    }
+    .tech-badge {
+      background: rgba(15, 51, 255, 0.15);
+      border: 1px solid var(--border-subtle);
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 11px;
+      color: #ffffff;
+    }
+    .cta-banner {
+      background: linear-gradient(135deg, rgba(15, 51, 255, 0.2) 0%, rgba(0, 210, 255, 0.1) 100%);
+      border: 1px solid var(--border-neon);
+      border-radius: 16px;
+      padding: 50px 30px;
+      text-align: center;
+      margin-top: 60px;
+      box-shadow: var(--box-shadow-neon);
+    }
+    .cta-banner h3 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 28px;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+    .cta-banner p {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+    }
+    .btn-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 34px;
+      background: var(--grad-primary);
+      color: #ffffff;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-weight: 700;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      border-radius: 8px;
+      box-shadow: 0 0 25px var(--neon-glow);
+      transition: var(--transition-smooth);
+    }
+    .btn-action:hover {
+      box-shadow: 0 0 35px var(--neon-glow-cyan);
+      transform: translateY(-3px) scale(1.03);
+    }
+  </style>
+  <link rel="canonical" href="https://codeaxis.cm/nos-projets-en.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CODE AXIS Digital Cameroon">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://codeaxis.cm/nos-projets-en.html">
+  <meta property="og:title" content="Our Projects - CODE AXIS Digital Agency Douala">
+  <meta property="og:description" content="Nos Projets Innovants - CODE AXIS Agence Digitale Douala">
+  <meta property="og:image" content="https://codeaxis.cm/assets/img/og-codeaxis-1200x630.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Our Projects - CODE AXIS Digital Agency Douala">
+  <meta name="twitter:description" content="Nos Projets Innovants - CODE AXIS Agence Digitale Douala">
+  <meta name="twitter:image" content="https://codeaxis.cm/assets/img/og-codeaxis-1200x630.jpg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://codeaxis.cm/nos-projets-en.html#webpage",
+      "name": "Our projects",
+      "url": "https://codeaxis.cm/nos-projets-en.html",
+      "inLanguage": "en",
+      "about": {
+        "@id": "https://codeaxis.cm/#organization"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://codeaxis.cm/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Our projects",
+          "item": "https://codeaxis.cm/nos-projets-en.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+  <link rel="alternate" hreflang="fr" href="https://codeaxis.cm/nos-projets.html">
+  <link rel="alternate" hreflang="en" href="https://codeaxis.cm/nos-projets-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://codeaxis.cm/nos-projets.html">
+</head>
+<body class="theme-night">
+
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <a href="index-en.html" class="back-button-fixed">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+    <span>Back</span>
+  </a>
+
+  <div class="subpage-container" id="main-content" tabindex="-1">
+    <div class="subpage-header">
+      <h1>Our innovative projects</h1>
+      <p>A look at our latest software creations, web platforms and mobile apps in production</p>
+    </div>
+
+    <div class="projects-grid">
+      <!-- Projet 1 -->
+      <div class="project-card">
+        <div class="project-img-wrapper">
+          <img src="assets/img/cyber-defense.webp" alt="FinSecure project" loading="lazy" width="400" height="200" decoding="async">
+        </div>
+        <div class="project-body">
+          <span class="project-tag">Fintech &amp; security</span>
+          <h3>FinSecure Cameroon</h3>
+          <p>Secure multi-bank payment app with biometric authentication and AI fraud detection.</p>
+          <div class="project-techs" style="margin-bottom: 16px;">
+            <span class="tech-badge">React Native</span>
+            <span class="tech-badge">Node.js</span>
+            <span class="tech-badge">PostgreSQL</span>
+            <span class="tech-badge">Biometrics</span>
+          </div>
+          <a href="projet-finsecure-en.html" class="btn-action" style="padding: 9px 18px; font-size: 11px; width: fit-content;">
+            <span>Discover the project</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Projet 2 -->
+      <div class="project-card">
+        <div class="project-img-wrapper">
+          <img src="assets/img/data-nexus.webp" alt="SmartLogistics project" loading="lazy" width="400" height="200" decoding="async">
+        </div>
+        <div class="project-body">
+          <span class="project-tag">Logistics &amp; cloud</span>
+          <h3>SmartLogistics Douala</h3>
+          <p>Cloud platform for road and sea fleet tracking with real-time telemetry alerts.</p>
+          <div class="project-techs" style="margin-bottom: 16px;">
+            <span class="tech-badge">Next.js</span>
+            <span class="tech-badge">FastAPI</span>
+            <span class="tech-badge">Docker</span>
+            <span class="tech-badge">IoT MQTT</span>
+          </div>
+          <a href="projet-smartlogistics-en.html" class="btn-action" style="padding: 9px 18px; font-size: 11px; width: fit-content;">
+            <span>Discover the project</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Projet 3 -->
+      <div class="project-card">
+        <div class="project-img-wrapper">
+          <img src="assets/img/neural-network.webp" alt="AgriSmart AI project" loading="lazy" width="400" height="200" decoding="async">
+        </div>
+        <div class="project-body">
+          <span class="project-tag">AI &amp; agriculture</span>
+          <h3>AgriSmart AI</h3>
+          <p>Intelligent farm assistant analysing crop health with computer vision and weather forecasts.</p>
+          <div class="project-techs" style="margin-bottom: 16px;">
+            <span class="tech-badge">Python AI</span>
+            <span class="tech-badge">TensorFlow</span>
+            <span class="tech-badge">Flutter</span>
+            <span class="tech-badge">GCP</span>
+          </div>
+          <a href="projet-agrismart-en.html" class="btn-action" style="padding: 9px 18px; font-size: 11px; width: fit-content;">
+            <span>Discover the project</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Projet 4 -->
+      <div class="project-card">
+        <div class="project-img-wrapper">
+          <img src="assets/img/ar-interface.webp" alt="HealthPortal project" loading="lazy" width="400" height="200" decoding="async">
+        </div>
+        <div class="project-body">
+          <span class="project-tag">Health &amp; telemedicine</span>
+          <h3>HealthPortal CM</h3>
+          <p>Complete teleconsultation solution with certified prescriptions and encrypted video calls.</p>
+          <div class="project-techs" style="margin-bottom: 16px;">
+            <span class="tech-badge">WebRTC</span>
+            <span class="tech-badge">Vue.js</span>
+            <span class="tech-badge">NestJS</span>
+            <span class="tech-badge">HIPAA</span>
+          </div>
+          <a href="projet-healthportal-en.html" class="btn-action" style="padding: 9px 18px; font-size: 11px; width: fit-content;">
+            <span>Discover the project</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="cta-banner">
+      <h3>Have a groundbreaking idea?</h3>
+      <p>Let's turn your vision into a high-performing digital product your users will embrace.</p>
+      <a href="https://wa.me/237691223916?text=Hello%20CODE%20AXIS%2C%20I%20would%20like%20to%20discuss%20a%20new%20project%20with%20CODE%20AXIS." target="_blank" rel="noopener noreferrer" class="btn-action">
+        <span>Start a project</span>
+      </a>
+    </div>
+  </div>
+
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/icons.js"></script>
+  <script src="assets/js/i18n-en-core.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/whatsapp-fab.js"></script>
+  <script src="assets/js/analytics.js"></script>
+</body>
+</html>

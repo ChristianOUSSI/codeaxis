@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en" data-static-lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="assets/img/favicon-64.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Étude de Cas : Digitalisation des Flux de Paiement - CODE AXIS Agence Digitale Douala">
+  <title>Payment Flow Digitalisation CODE AXIS</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="assets/css/cadc-fusion.css">
+  <style>
+    html {
+      overflow-y: auto !important;
+      background: var(--bg-primary);
+      color: var(--text-main);
+    
+      height: auto !important;
+      min-height: 100%;
+    }
+    body {
+      overflow-y: auto !important;
+      background: var(--bg-primary);
+      color: var(--text-main);
+    
+      height: auto !important;
+      min-height: 100%;  }
+
+    .case-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 90px 30px 80px;
+    }
+
+    .back-btn {
+      position: fixed;
+      top: 20px;
+      left: 24px;
+      z-index: 1000;
+      padding: 10px 22px;
+      background: rgba(7, 9, 19, 0.85);
+      border: 1px solid var(--border-neon);
+      border-radius: 30px;
+      color: var(--neon-cyan);
+      font-family: Georgia, 'Times New Roman', serif;
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .back-btn:hover {
+      background: var(--neon-blue);
+      color: #fff;
+      transform: translateX(-4px);
+      box-shadow: 0 0 25px var(--neon-glow-cyan);
+    }
+
+    .case-hero {
+      text-align: center;
+      padding: 50px 20px 60px;
+    }
+
+    .case-tag {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--neon-cyan);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .case-hero h1 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(32px, 5vw, 60px);
+      background: var(--grad-accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .case-hero p {
+      font-size: 18px;
+      color: var(--text-muted);
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .section-block {
+      margin: 50px 0;
+    }
+
+    .section-block h2 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 26px;
+      color: #fff;
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .section-block p {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .tech-chip {
+      background: rgba(62, 95, 138, 0.15);
+      border: 1px solid var(--border-subtle);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      color: #fff;
+    }
+
+    .timeline {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    .timeline li {
+      position: relative;
+      padding: 12px 16px 12px 36px;
+      margin-bottom: 12px;
+      background: var(--bg-card);
+      border-radius: 10px;
+      border-left: 3px solid var(--neon-blue);
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .timeline li::before {
+      content: '▶';
+      position: absolute;
+      left: 12px;
+      color: var(--neon-cyan);
+      font-size: 11px;
+      top: 14px;
+    }
+
+    .cta-final {
+      background: linear-gradient(135deg, rgba(62, 95, 138, 0.2), rgba(157, 185, 214, 0.1));
+      border: 1px solid var(--border-neon);
+      border-radius: 16px;
+      padding: 50px 30px;
+      text-align: center;
+      margin-top: 70px;
+    }
+
+    .cta-final h3 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 28px;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .cta-final p {
+      color: var(--text-muted);
+      margin-bottom: 28px;
+    }
+
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 34px;
+      background: var(--grad-primary);
+      color: #fff;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-weight: 700;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      border-radius: 8px;
+      box-shadow: 0 0 25px var(--neon-glow);
+      transition: all 0.3s ease;
+    }
+
+    .btn-cta:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 0 35px var(--neon-glow-cyan);
+    }
+  </style>
+  <link rel="canonical" href="https://codeaxis.cm/realisation-fintech-en.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CODE AXIS Digital Cameroon">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://codeaxis.cm/realisation-fintech-en.html">
+  <meta property="og:title" content="Payment Flow Digitalisation CODE AXIS">
+  <meta property="og:description" content="CODE AXIS Digital Cameroon, agence digitale à Douala.">
+  <meta property="og:image" content="https://codeaxis.cm/assets/img/og-codeaxis-1200x630.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Payment Flow Digitalisation CODE AXIS">
+  <meta name="twitter:description" content="CODE AXIS Digital Cameroon, agence digitale à Douala.">
+  <meta name="twitter:image" content="https://codeaxis.cm/assets/img/og-codeaxis-1200x630.jpg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://codeaxis.cm/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Our case studies",
+          "item": "https://codeaxis.cm/nos-realisations-en.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Payment Flow Digitalisation CODE AXIS",
+          "item": "https://codeaxis.cm/realisation-fintech-en.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+  <link rel="alternate" hreflang="fr" href="https://codeaxis.cm/realisation-fintech.html">
+  <link rel="alternate" hreflang="en" href="https://codeaxis.cm/realisation-fintech-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://codeaxis.cm/realisation-fintech.html">
+</head>
+
+<body class="theme-night">
+
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <a href="index-en.html" class="back-btn">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+    Back
+  </a>
+
+  <div class="case-page" id="main-content" tabindex="-1">
+    <div class="case-hero">
+      <span class="case-tag">Fintech &amp; banking case study</span>
+      <h1>Digitising payment flows</h1>
+      <p>Design and implementation of an instant micro-transaction system with automatic reconciliation and SMS/push notifications for a major banking player in the CEMAC zone.</p>
+    </div>
+
+    <div class="section-block">
+      <h2>Context &amp; problem</h2>
+      <p>Our client, a network of financial cooperatives in Cameroon, was still handling transactions on paper and by manual transfer. The rapid growth of its membership base made the system obsolete, risky and costly.</p>
+      <p>The need: a digital platform able to process thousands of daily micropayments with absolute reliability, accessible from mobile and physical counters.</p>
+    </div>
+
+    <div class="section-block">
+      <h2>CODE AXIS solution</h2>
+      <p>We designed a microservices architecture with a central payment-processing API, a real-time automatic reconciliation engine and an analytics dashboard for managers.</p>
+      <p>The mobile app (Android/iOS) lets members check their balance, make transfers and receive instant SMS and push notifications.</p>
+    </div>
+
+    <div class="section-block">
+      <h2>Technology stack</h2>
+      <div class="tech-list">
+        <span class="tech-chip">React Native</span>
+        <span class="tech-chip">Node.js + Express</span>
+        <span class="tech-chip">PostgreSQL</span>
+        <span class="tech-chip">Redis Cache</span>
+        <span class="tech-chip">AWS Lambda</span>
+        <span class="tech-chip">Twilio SMS</span>
+        <span class="tech-chip">Firebase Push</span>
+        <span class="tech-chip">Docker + Kubernetes</span>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <h2>Project timeline</h2>
+      <ul class="timeline">
+        <li><strong>Phase 1:</strong> Audit of existing flows, requirements analysis and functional scoping
+        </li>
+        <li><strong>Phase 2:</strong> Technical architecture, database and API design</li>
+        <li><strong>Phase 3:</strong> Development of the mobile interface and the admin dashboard
+        </li>
+        <li><strong>Phase 4:</strong> Load testing, security audit and data migration</li>
+        <li><strong>Phase 5:</strong> Progressive rollout, team training and post-launch support (ongoing)
+        </li>
+      </ul>
+    </div>
+
+    <div class="section-block">
+      <h2>What we delivered</h2>
+      <p>A central payment processing API, an automatic reconciliation engine and an analytics dashboard for managers. From the mobile app, members check their balance, make transfers and receive notifications by SMS and push.</p>
+      <p>Production figures for this project are not published on this page.</p>
+    </div>
+
+    <div class="cta-final">
+      <h3>Have a similar project?</h3>
+      <p>Let's talk about your digital transformation today.</p>
+      <a href="https://wa.me/237691223916?text=Hello%20CODE%20AXIS%2C%20I%20would%20like%20to%20discuss%20a%20fintech%20project%20with%20CODE%20AXIS."
+        target="_blank" rel="noopener noreferrer" class="btn-cta">Contact us on WhatsApp</a>
+    </div>
+  </div>
+
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/icons.js"></script>
+  <script src="assets/js/i18n-en-core.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/whatsapp-fab.js"></script>
+  <script src="assets/js/analytics.js"></script>
+</body>
+
+</html>
