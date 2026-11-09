@@ -1479,8 +1479,8 @@ button, input, textarea {
   transition: var(--transition-smooth);
 }
 
-/* Photos réelles déposées dans assets/img/about/ : le premier fichier qui existe s'affiche,
-   l'ancien visuel reste en secours tant que la photo n'est pas là */
+/* Visuels provisoires : remplacer projets.jpg, contrats.jpg et realisations.jpg
+   par les photos définitives, sans toucher au CSS */
 .about--options > a:nth-child(1) { background-image: url('../img/about/projets.jpg'), url('../img/about-winners.webp'); }
 .about--options > a:nth-child(2) { background-image: url('../img/about/contrats.jpg'), url('../img/about-philosophy.webp'); }
 .about--options > a:nth-child(3) { background-image: url('../img/about/realisations.jpg'), url('../img/about-history.webp'); }
