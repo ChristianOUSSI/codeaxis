@@ -80,6 +80,16 @@
       var v = fields(form);
       status(live, t.sending, '');
 
+      // Désactiver le bouton pendant l'envoi pour éviter les doubles soumissions
+      var submitBtn = form.querySelector('[type="submit"]');
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.setAttribute('aria-busy', 'true'); }
+
+      // AbortController avec timeout de 12 secondes (connexion mobile lente)
+      var controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
+      var timeoutId = controller
+        ? setTimeout(function () { controller.abort(); }, 12000)
+        : null;
+
       fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -88,14 +98,17 @@
           email: (v.email || '').trim(),
           message: (v.message || '').trim(),
           company: v.company || ''
-        })
+        }),
+        signal: controller ? controller.signal : undefined
       })
         .then(function (r) {
+          if (timeoutId) clearTimeout(timeoutId);
           return r.json().catch(function () { return {}; }).then(function (data) {
             return { code: r.status, data: data };
           });
         })
         .then(function (res) {
+          if (submitBtn) { submitBtn.disabled = false; submitBtn.removeAttribute('aria-busy'); }
           if (res.code === 200) {
             form.reset();
             status(live, t.sent, 'ok');
@@ -106,7 +119,9 @@
             mailto(t, v);
           }
         })
-        .catch(function () {
+        .catch(function (err) {
+          if (timeoutId) clearTimeout(timeoutId);
+          if (submitBtn) { submitBtn.disabled = false; submitBtn.removeAttribute('aria-busy'); }
           status(live, t.fallback, '');
           mailto(t, v);
         });

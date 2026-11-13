@@ -1,0 +1,15 @@
+{
+  "name": "codeaxis-site",
+  "version": "1.0.0",
+  "description": "Site officiel CODE AXIS Digital Cameroon",
+  "private": true,
+  "scripts": {
+    "sw:gen": "node scripts/generate-sw-cache.js",
+    "sitemap:dates": "node scripts/update-sitemap-dates.js",
+    "minify": "node scripts/minify.js",
+    "prebuild": "npm run sw:gen && npm run sitemap:dates"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

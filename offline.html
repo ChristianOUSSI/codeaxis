@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
   <title>CODE AXIS, Hors connexion</title>
   <link rel="icon" type="image/png" href="assets/img/favicon-64.png">
   <style>
@@ -25,11 +26,26 @@
       padding: 24px;
     }
 
+    /* Adaptation thème jour si déjà choisi */
+    body.theme-day {
+      background: #d9e1ea;
+      color: #1b2a3b;
+    }
+
+    body.theme-evening {
+      background: #1e1e28;
+    }
+
     .offline-card img {
       width: min(220px, 55vw);
       margin-bottom: 26px;
       filter: brightness(0) invert(1);
       opacity: 0.9;
+    }
+
+    body.theme-day .offline-card img {
+      filter: none;
+      opacity: 1;
     }
 
     h1 {
@@ -47,6 +63,8 @@
       margin: 0 auto 26px;
     }
 
+    body.theme-day p { color: rgba(27, 42, 59, 0.65); }
+
     a {
       display: inline-block;
       padding: 13px 34px;
@@ -61,10 +79,30 @@
       transition: background 0.25s ease;
     }
 
-    a:hover {
-      background: #3e5f8a;
+    a:hover { background: #3e5f8a; }
+
+    /* Contenu de langue masqué par défaut, affiché selon [data-lang] */
+    [data-lang-fr], [data-lang-en] { display: none; }
+
+    /* Affichage conditionnel selon l'attribut posé par le script */
+    .is-fr [data-lang-fr], .is-en [data-lang-en] { display: inline; }
+    p[data-lang-fr], p[data-lang-en] { display: none; }
+    .is-fr p[data-lang-fr], .is-en p[data-lang-en] { display: block; }
+    .skip-link {
+      position: fixed; top: 10px; left: 50%;
+      transform: translate(-50%, -200%);
+      opacity: 0; pointer-events: none;
+      z-index: 3000; padding: 10px 18px;
+      border: 1px solid #9db9d6; border-radius: 999px;
+      background: rgba(12,18,38,0.85); color: #fff;
+      font-size: 12px; text-decoration: none;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+    .skip-link:focus-visible {
+      transform: translate(-50%, 0); opacity: 1; outline: none;
     }
   </style>
+  <script>/* Theme anti-flash */(function(){var t=localStorage.getItem('cadc_theme');if(t==='day'||t==='evening'){document.body.className='theme-'+t;}})()</script>
   <link rel="canonical" href="https://codeaxis.cm/offline.html">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CODE AXIS Digital Cameroon">
@@ -80,19 +118,38 @@
 </head>
 
 <body>
+  <!-- Script inline bilingue : pas de dépendance réseau, fonctionne hors ligne -->
+  <script>
+    (function () {
+      var lang = 'fr';
+      try { lang = localStorage.getItem('cadc_lang') === 'en' ? 'en' : 'fr'; } catch (e) {}
+      document.documentElement.setAttribute('lang', lang);
+      document.body.classList.add('is-' + lang);
+    })();
+  </script>
 
-  <a class="skip-link" href="#main-content">Aller au contenu</a>
+  <a class="skip-link" href="#main-content">
+    <span data-lang-fr>Aller au contenu</span>
+    <span data-lang-en>Skip to content</span>
+  </a>
+
   <div class="offline-card" id="main-content" tabindex="-1">
     <img src="assets/img/logo-mark.webp" alt="CODE AXIS" width="256" height="256">
-    <h1>HORS CONNEXION</h1>
-    <p>Le réseau est indisponible. Reconnectez-vous puis réessayez, le site CODE AXIS Digital Cameroon vous attend
-      à Douala, Cameroun.</p>
-    <a href="index.html">Réessayer</a>
+
+    <h1>
+      <span data-lang-fr>HORS CONNEXION</span>
+      <span data-lang-en>OFFLINE</span>
+    </h1>
+
+    <p data-lang-fr>Le réseau est indisponible. Reconnectez-vous puis réessayez, le site CODE AXIS Digital Cameroon vous attend à Douala, Cameroun.</p>
+    <p data-lang-en>The network is unavailable. Reconnect and try again — the CODE AXIS Digital Cameroon site is waiting for you in Douala, Cameroon.</p>
+
+    <a href="index.html">
+      <span data-lang-fr>Réessayer</span>
+      <span data-lang-en>Try again</span>
+    </a>
   </div>
-  <script src="assets/js/theme.js"></script>
-  <script src="assets/js/icons.js"></script>
-  <script src="assets/js/i18n-en-core.js"></script>
-  <script src="assets/js/i18n.js"></script>
+
   <script src="assets/js/analytics.js"></script>
 </body>
 

@@ -1,5 +1,8 @@
 /* Mesure d'audience Vercel, sans cookie. Chargée uniquement sur le domaine public
-   pour ne pas polluer les aperçus locaux ; l'option doit être activée dans Vercel. */
+   pour ne pas polluer les aperçus locaux ; l'option doit être activée dans Vercel.
+   CSP : le script est servi depuis /_vercel/ (same-origin, couvert par script-src 'self').
+   Les beacons partent vers vitals.vercel-insights.com (couvert par connect-src dans vercel.json).
+   Si tu ajoutes un autre outil analytics tiers, penser à mettre à jour connect-src. */
 (function () {
   'use strict';
   var host = location.hostname;

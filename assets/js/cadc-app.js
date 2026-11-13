@@ -659,7 +659,8 @@
   const ORB_BIAS_X = 8;
 
   function orbVisible() {
-    return !!viewOrbitalContainer && viewOrbitalContainer.classList.contains('is-active');
+    return !document.hidden &&
+           !!viewOrbitalContainer && viewOrbitalContainer.classList.contains('is-active');
   }
 
   if (orbitalStage) {
@@ -873,7 +874,9 @@
 
     function render() {
       const parentSection = canvas.closest('.l-section');
-      if (parentSection && !parentSection.classList.contains('section--is-active')) {
+      // Pause si la section est inactive OU si la page est en arrière-plan
+      if (document.hidden ||
+          (parentSection && !parentSection.classList.contains('section--is-active'))) {
         requestAnimationFrame(render);
         return;
       }

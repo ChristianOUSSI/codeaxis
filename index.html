@@ -12,6 +12,7 @@
   <!-- PWA & Mobile Web App Meta -->
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#3e5f8a">
+  <meta name="color-scheme" content="dark light">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -26,6 +27,8 @@
   <link rel="stylesheet" href="assets/css/home-evo-news.css">
 
   <link rel="preload" as="image" href="assets/img/introduction-visual.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/img/about-visual.webp">
+  <link rel="preload" as="image" href="assets/img/about-winners.webp">
 
   <!-- Partage social -->
   <meta property="og:type" content="website">
@@ -71,6 +74,7 @@
   <link rel="alternate" hreflang="fr" href="https://codeaxis.cm/">
   <link rel="alternate" hreflang="en" href="https://codeaxis.cm/index-en.html">
   <link rel="alternate" hreflang="x-default" href="https://codeaxis.cm/">
+  <script>/* Theme anti-flash */(function(){var t=localStorage.getItem('cadc_theme');if(t==='day'||t==='evening'){document.body.className='theme-'+t;}})()</script>
 </head>
 
 <body class="theme-night">
@@ -111,7 +115,7 @@
             </a>
 
             <!-- Liens de navigation rapide dans le header -->
-            <nav class="header--nav-links">
+            <nav class="header--nav-links" aria-label="Navigation principale">
               <a href="#" data-section="0">Accueil</a>
               <a href="#" data-section="1">Équipe</a>
               <a href="#" data-section="2">À Propos</a>
@@ -143,7 +147,7 @@
           <!-- ===================================================================
                SIDE NAVIGATION TRANSLUCIDE NUMÉROTÉE (01-07)
                =================================================================== -->
-          <nav class="l-side-nav">
+          <nav class="l-side-nav" aria-label="Navigation latérale des sections">
             <ul class="side-nav">
               <li class="is-active" data-section="0"><span>01 &nbsp; Accueil</span></li>
               <li data-section="1"><span>02 &nbsp; Équipe & pile technique</span></li>
@@ -418,7 +422,7 @@
                       <label class="sr-only" for="cf-email">Votre email</label>
                       <input id="cf-email" type="email" name="email" placeholder="Votre email" required autocomplete="email">
                       <label class="sr-only" for="cf-message">Décrivez votre projet...</label>
-                      <textarea id="cf-message" name="message" placeholder="Décrivez votre projet..." rows="3" required></textarea>
+                      <textarea id="cf-message" name="message" placeholder="Décrivez votre projet..." rows="3" required autocomplete="off"></textarea>
                       <div class="hp-field" aria-hidden="true">
                         <label for="cf-company">Société</label>
                         <input id="cf-company" type="text" name="company" tabindex="-1" autocomplete="off">
@@ -511,6 +515,7 @@
   <script src="assets/js/cadc-app.js"></script>
   <script src="assets/js/contact-form.js"></script>
   <script src="assets/js/pwa-register.js"></script>
+  <script src="assets/js/pwa-install.js"></script>
   <script src="assets/js/analytics.js"></script>
 </body>
 
