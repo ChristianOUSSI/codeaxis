@@ -7,6 +7,52 @@
 
   var NEWS = [
     {
+      date: '2026-11-24', tag: 'Partenariat', title: 'Youth Partnership : les premières signatures ont eu lieu',
+      excerpt: 'Deux semaines après l’ouverture des inscriptions, les premiers partenaires de l’Opération Youth Partnership signent leur contrat à Douala.',
+      cta: { label: 'Candidater', href: 'youth-partnership.html' },
+      body: [
+        ['Le démarrage', 'L’Opération Youth Partnership a ouvert ses inscriptions le 10 novembre. Quatorze jours plus tard, les premières conventions sont signées : de jeunes apporteurs d’affaires de Bonabéri, Akwa et Makepe préparent leur premier rendez-vous client avec un produit de la gamme evo.'],
+        ['Comment ça se passe', 'Chaque candidat retenu suit une session de formation d’une demi-journée : présentation des produits, argumentaire mobile money, suivi des commissions. Le contrat garantit 45 % du montant encaissé chaque mois pendant douze mois, versés par mobile money.'],
+        ['Il reste des places', 'Les inscriptions restent ouvertes jusqu’au 10 janvier. Moins de 35 ans, un compte mobile money et une motivation suffisent — aucun diplôme ni investissement de départ. Le simulateur de la page permet de projeter ses revenus avant de candidater.']
+      ]
+    },
+    {
+      date: '2026-11-20', tag: 'Produit', title: 'evo-agent entre en bêta contrôlée',
+      excerpt: 'L’assistant IA qui exécute des tâches métier de bout en bout est testé en conditions réelles chez trois entreprises partenaires.',
+      body: [
+        ['Ce que fait evo-agent', 'evo-agent comprend une demande en langage courant, choisit les bons outils et restitue un résultat actionnable : chercher un client dans evo-crm, préparer un devis, vérifier un stock evo-shop ou résumer les ventes de la journée. Il s’intègre aux produits de la suite plutôt que de les remplacer.'],
+        ['La bêta contrôlée', 'Trois entreprises doualaises — un dépôt, une clinique et un commerce de gros — utilisent evo-agent au quotidien depuis début novembre. Chaque échange est relu par nos équipes : c’est cette boucle qui affine ses réponses avant toute ouverture plus large.'],
+        ['Prochaine étape', 'Si la bêta confirme la fiabilité sur les tâches répétitives, evo-agent rejoindra les formules d’abonnement des produits evo au premier trimestre 2027.']
+      ]
+    },
+    {
+      date: '2026-11-16', tag: 'Terrain', title: 'evo-gaz : la facturation des revendeurs est en ligne',
+      excerpt: 'La prochaine étape annoncée en octobre est livrée : les revendeurs et restaurants abonnés suivent leur consommation en temps réel.',
+      body: [
+        ['Ce qui change', 'Les revendeurs de bouteilles de gaz et les restaurants clients d’evo-gaz peuvent désormais souscrire un abonnement mensuel depuis leur espace. La consommation de chaque période est détaillée bouteille par bouteille, avec le montant exact à régler par mobile money.'],
+        ['Côté exploitation', 'Les tournées des livreurs et la tarification restent inchangées : cette couche s’ajoute par-dessus sans toucher aux habitudes des agents sur le terrain. Le reçu d’abonnement est disponible immédiatement, même hors connexion.'],
+        ['Déploiement', 'Le module est actif pour les comptes existants ; les nouveaux revendeurs peuvent en faire la demande via WhatsApp.']
+      ]
+    },
+    {
+      date: '2026-11-12', tag: 'Technique', title: 'Le site mobile repasse en revue complète',
+      excerpt: 'Alignements, débordements, éléments rognés : toute l’interface mobile a été auditée et corrigée, section par section.',
+      body: [
+        ['Ce qui a été corrigé', 'Plusieurs sections rognaient le haut de leur contenu sur petit écran, rendant des titres inaccessibles même en scrollant. Chacune a désormais son propre scroll interne sécurisé, et le hero tient entièrement dans l’écran sans débordement horizontal.'],
+        ['Les détails', 'Le bouton WhatsApp tient compte des téléphones à boutons physiques, le bandeau d’installation ne le recouvre plus, et un compteur discret « 03 / 07 » suit la section active pendant le balayage. Un grain fin et les numéros de section en filigrane donnent au site sa texture signature.'],
+        ['Côté visiteur', 'Rien à faire : le site se met à jour tout seul. Si un affichage semble ancien, deux rechargements suffisent — c’est le cache de l’application installée qui se resynchronise.']
+      ]
+    },
+    {
+      date: '2026-11-08', tag: 'Agence', title: 'Un mois, cinq mises en production',
+      excerpt: 'Octobre a été dense : la suite evo à 22 produits, le Youth Partnership lancé et un site entièrement refondu en français et en anglais.',
+      body: [
+        ['La suite evo', 'Le catalogue passe à 22 produits avec l’arrivée d’evo-cars et evo-wear, après evo-gaz, evo-clinic, evo-tontaine et les autres briques métier. Chaque fiche détaille le besoin terrain auquel le produit répond.'],
+        ['Le Youth Partnership', 'Le programme d’apport d’affaires ouvre ses inscriptions fin octobre : les jeunes Doualais peuvent proposer les produits evo à leur réseau et percevoir 45 % des encaissements pendant douze mois.'],
+        ['Le site', 'Refonte complète : identité CODE AXIS, thème jour/nuit/soirée, version anglaise, mode hors connexion et carrousel 3D de la suite evo sur la page d’accueil.']
+      ]
+    },
+    {
       date: '2026-11-05', tag: 'Partenariat', title: 'MBOA BIO 237 rejoint la maison CODE AXIS',
       image: 'assets/img/partenaires/mboa-bio-237.webp',
       excerpt: 'Nouveau partenariat avec MBOA BIO 237, marque de produits frais et biologiques de Douala : panier en ligne et paiement mobile money suivront.',

@@ -776,4 +776,44 @@ Bonjour Franky, j'aimerais discuter de Design UI/UX avec vous.|Hello Franky, I w
 Bonjour Joseph, j'aimerais discuter d'un projet avec vous.|Hello Joseph, I would like to discuss a project with you.
 Bonjour Philippe, j'aimerais discuter de Growth Hacking avec vous.|Hello Philippe, I would like to discuss growth hacking with you.
 Bonjour Yann, j'aimerais discuter d'infrastructure Cloud avec vous.|Hello Yann, I would like to discuss cloud infrastructure with you.
-Demande de projet CODE AXIS|CODE AXIS project inquiry`;
+Demande de projet CODE AXIS|CODE AXIS project inquiry
+Youth Partnership : les premières signatures ont eu lieu|Youth Partnership: the first contracts are signed
+Deux semaines après l’ouverture des inscriptions, les premiers partenaires de l’Opération Youth Partnership signent leur contrat à Douala.|Two weeks after registration opened, the first Youth Partnership Operation partners are signing their contracts in Douala.
+Le démarrage|The kickoff
+L’Opération Youth Partnership a ouvert ses inscriptions le 10 novembre. Quatorze jours plus tard, les premières conventions sont signées : de jeunes apporteurs d’affaires de Bonabéri, Akwa et Makepe préparent leur premier rendez-vous client avec un produit de la gamme evo.|The Youth Partnership Operation opened registration on 10 November. Fourteen days later, the first agreements are signed: young business referrers from Bonaberi, Akwa and Makepe are preparing their first client meeting with an evo range product.
+Comment ça se passe|How it works
+Chaque candidat retenu suit une session de formation d’une demi-journée : présentation des produits, argumentaire mobile money, suivi des commissions. Le contrat garantit 45 % du montant encaissé chaque mois pendant douze mois, versés par mobile money.|Each selected candidate attends a half-day training session: product presentation, mobile money pitch, commission tracking. The contract guarantees 45% of the amount collected every month for twelve months, paid by mobile money.
+Il reste des places|Places are still open
+Les inscriptions restent ouvertes jusqu’au 10 janvier. Moins de 35 ans, un compte mobile money et une motivation suffisent — aucun diplôme ni investissement de départ. Le simulateur de la page permet de projeter ses revenus avant de candidater.|Registration stays open until 10 January. Under 35, a mobile money account and motivation are enough — no diploma, no start-up investment. The page simulator projects your earnings before you apply.
+evo-agent entre en bêta contrôlée|evo-agent enters controlled beta
+L’assistant IA qui exécute des tâches métier de bout en bout est testé en conditions réelles chez trois entreprises partenaires.|The AI assistant that carries out end-to-end business tasks is being tested in real conditions at three partner companies.
+Ce que fait evo-agent|What evo-agent does
+evo-agent comprend une demande en langage courant, choisit les bons outils et restitue un résultat actionnable : chercher un client dans evo-crm, préparer un devis, vérifier un stock evo-shop ou résumer les ventes de la journée. Il s’intègre aux produits de la suite plutôt que de les remplacer.|evo-agent understands a request in plain language, picks the right tools and returns an actionable result: find a client in evo-crm, prepare a quote, check evo-shop stock or summarise the day's sales. It integrates with suite products rather than replacing them.
+La bêta contrôlée|The controlled beta
+Trois entreprises doualaises — un dépôt, une clinique et un commerce de gros — utilisent evo-agent au quotidien depuis début novembre. Chaque échange est relu par nos équipes : c’est cette boucle qui affine ses réponses avant toute ouverture plus large.|Three Douala businesses — a warehouse, a clinic and a wholesaler — have used evo-agent daily since early November. Every exchange is reviewed by our teams: this loop refines its answers before any wider rollout.
+Prochaine étape|Next step
+Si la bêta confirme la fiabilité sur les tâches répétitives, evo-agent rejoindra les formules d’abonnement des produits evo au premier trimestre 2027.|If the beta confirms reliability on repetitive tasks, evo-agent joins the evo product subscription plans in the first quarter of 2027.
+evo-gaz : la facturation des revendeurs est en ligne|evo-gaz: reseller billing is live
+La prochaine étape annoncée en octobre est livrée : les revendeurs et restaurants abonnés suivent leur consommation en temps réel.|The next step announced in October is delivered: subscribed resellers and restaurants track their consumption in real time.
+Ce qui change|What changes
+Les revendeurs de bouteilles de gaz et les restaurants clients d’evo-gaz peuvent désormais souscrire un abonnement mensuel depuis leur espace. La consommation de chaque période est détaillée bouteille par bouteille, avec le montant exact à régler par mobile money.|Gas bottle resellers and evo-gaz restaurant clients can now subscribe monthly from their space. Each period's consumption is itemised bottle by bottle, with the exact amount to pay by mobile money.
+Côté exploitation|On the operations side
+Les tournées des livreurs et la tarification restent inchangées : cette couche s’ajoute par-dessus sans toucher aux habitudes des agents sur le terrain. Le reçu d’abonnement est disponible immédiatement, même hors connexion.|Driver routes and pricing are unchanged: this layer sits on top without touching field agents' habits. The subscription receipt is available immediately, even offline.
+Déploiement|Rollout
+Le module est actif pour les comptes existants ; les nouveaux revendeurs peuvent en faire la demande via WhatsApp.|The module is active for existing accounts; new resellers can request it via WhatsApp.
+Le site mobile repasse en revue complète|The mobile site gets a full review
+Alignements, débordements, éléments rognés : toute l’interface mobile a été auditée et corrigée, section par section.|Alignments, overflows, clipped elements: the whole mobile interface has been audited and fixed, section by section.
+Ce qui a été corrigé|What was fixed
+Plusieurs sections rognaient le haut de leur contenu sur petit écran, rendant des titres inaccessibles même en scrollant. Chacune a désormais son propre scroll interne sécurisé, et le hero tient entièrement dans l’écran sans débordement horizontal.|Several sections clipped the top of their content on small screens, making titles unreachable even when scrolling. Each now has its own safe internal scroll, and the hero fits entirely on screen with no horizontal overflow.
+Les détails|The details
+Le bouton WhatsApp tient compte des téléphones à boutons physiques, le bandeau d’installation ne le recouvre plus, et un compteur discret « 03 / 07 » suit la section active pendant le balayage. Un grain fin et les numéros de section en filigrane donnent au site sa texture signature.|The WhatsApp button accounts for phones with physical buttons, the install banner no longer covers it, and a discreet “03 / 07” counter follows the active section while swiping. A fine grain and watermarked section numbers give the site its signature texture.
+Côté visiteur|For visitors
+Rien à faire : le site se met à jour tout seul. Si un affichage semble ancien, deux rechargements suffisent — c’est le cache de l’application installée qui se resynchronise.|Nothing to do: the site updates itself. If a display looks old, two reloads are enough — it is the installed app's cache resynchronising.
+Un mois, cinq mises en production|One month, five releases
+Octobre a été dense : la suite evo à 22 produits, le Youth Partnership lancé et un site entièrement refondu en français et en anglais.|October was packed: the evo suite at 22 products, the Youth Partnership launched and a site fully rebuilt in French and English.
+La suite evo|The evo suite
+Le catalogue passe à 22 produits avec l’arrivée d’evo-cars et evo-wear, après evo-gaz, evo-clinic, evo-tontaine et les autres briques métier. Chaque fiche détaille le besoin terrain auquel le produit répond.|The catalogue reaches 22 products with the arrival of evo-cars and evo-wear, after evo-gaz, evo-clinic, evo-tontaine and the other business bricks. Each sheet details the field need the product answers.
+Le Youth Partnership|The Youth Partnership
+Le programme d’apport d’affaires ouvre ses inscriptions fin octobre : les jeunes Doualais peuvent proposer les produits evo à leur réseau et percevoir 45 % des encaissements pendant douze mois.|The business-referral programme opened registration in late October: young Doualais can offer evo products to their network and earn 45% of collections for twelve months.
+Le site|The site
+Refonte complète : identité CODE AXIS, thème jour/nuit/soirée, version anglaise, mode hors connexion et carrousel 3D de la suite evo sur la page d’accueil.|Complete redesign: CODE AXIS identity, day/night/evening theme, English version, offline mode and a 3D evo suite carousel on the home page.`;
