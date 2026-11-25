@@ -3393,3 +3393,43 @@ body.theme-day .btn-action {
     min-height: 30px;
   }
 }
+
+/* ===================================================================
+   MOBILE REDMI / PETITS TÉLÉPHONES — visibilité des éléments fixes
+   =================================================================== */
+
+/* Quand la bannière d'installation PWA est visible (bas de l'écran,
+   z-index 9000), on remonte le bouton WhatsApp et les autres FAB
+   au-dessus d'elle au lieu de les laisser masqués. */
+.pwa-banner-open .wa-fab {
+  bottom: calc(92px + env(safe-area-inset-bottom, 0px));
+  transition: bottom 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.3s ease, border-color 0.3s ease, opacity 0.25s ease,
+    visibility 0s linear 0s;
+}
+
+@media (max-width: 768px) {
+  /* PWA installée : la zone gestuelle du bas ne doit pas recouvrir
+     les barres de contrôle des sections (hire, orbitale, etc.) */
+  .l-viewport {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  /* Plancher de lisibilité : les plus petits libellés passent à 10 px
+     minimum sur très petit écran (Redmi 14C ≈ 360 px) */
+  .intro--badge,
+  .about-card-sub,
+  .orb-techs i,
+  .orb-member-role,
+  .orb-ctrl-label,
+  .contact-legal {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 360px) {
+  /* Écrans ≤ 360 px : on détend légèrement les grilles de contrôle
+     pour éviter que les libellés ne touchent les bords */
+  .hire-ctrl-btn { padding: 7px 10px; }
+  .hire-counter-capsule { padding: 4px 8px; }
+}

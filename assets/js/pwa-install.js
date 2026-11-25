@@ -80,6 +80,7 @@
     requestAnimationFrame(function () {
       requestAnimationFrame(function () {
         bannerEl.classList.add('pwa-install-banner--visible');
+        document.body.classList.add('pwa-banner-open');
       });
     });
   }
@@ -87,6 +88,7 @@
   function hideBanner() {
     if (!bannerEl) return;
     bannerEl.classList.remove('pwa-install-banner--visible');
+    document.body.classList.remove('pwa-banner-open');
   }
 
   function onDismiss() {
