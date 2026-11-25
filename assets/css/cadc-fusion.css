@@ -3609,3 +3609,77 @@ body.theme-day .btn-action {
     line-height: 1.5;
   }
 }
+
+/* ===================================================================
+   HERO ENRICHI — icônes de services + halo + visuel mobile
+   =================================================================== */
+
+/* Halo radial derrière le hero : de la profondeur sans alourdir */
+.hero-view-spatial { position: relative; }
+.hero-view-spatial::before {
+  content: "";
+  position: absolute;
+  inset: -60px -30px;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(55% 42% at 50% 30%, rgba(92, 119, 148, 0.16), transparent 70%);
+}
+.intro--banner,
+.intro--options { position: relative; z-index: 1; }
+
+/* Cartes services : icône + texte en deux colonnes */
+.intro--options > a {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  align-items: center;
+  column-gap: 14px;
+}
+.opt-ico {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: rgba(92, 119, 148, 0.14);
+  border: 1px solid var(--border-neon);
+  color: var(--neon-cyan);
+  transition: var(--transition-smooth);
+}
+.opt-ico .ico { width: 22px; height: 22px; }
+.intro--options > a:hover .opt-ico {
+  background: rgba(92, 119, 148, 0.28);
+  box-shadow: 0 0 18px var(--neon-glow-cyan);
+  transform: translateY(-2px);
+}
+.opt-body h3 { margin-bottom: 4px; }
+.opt-body p { margin: 0; }
+
+/* Mobile : l'astronaute refait surface en visuel compact sous le CTA —
+   c'est lui qui donne le caractère «.space» de la home */
+@media (max-width: 768px) {
+  .astronaut-bg {
+    display: block;
+    position: static;
+    width: 118px;
+    margin: 2px auto 0;
+    opacity: 0.9;
+    pointer-events: none;
+    filter: drop-shadow(0 12px 28px rgba(62, 95, 138, 0.4));
+  }
+  .cta {
+    box-shadow: 0 0 22px rgba(92, 119, 148, 0.28);
+  }
+}
+
+/* Très petit écran : icône réduite, flèche conservée */
+@media (max-width: 420px) {
+  .intro--options > a {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    column-gap: 12px;
+    padding: 13px 42px 13px 14px;
+    min-height: 60px;
+  }
+  .opt-ico { width: 40px; height: 40px; border-radius: 10px; }
+  .opt-ico .ico { width: 19px; height: 19px; }
+}
