@@ -7,6 +7,24 @@
 
   var NEWS = [
     {
+      date: '2026-11-25', tag: 'Agence', title: 'CADC pose ses valises à Bonabéri, près de l’agence Orange',
+      excerpt: 'Entre le 23 et le 25 novembre, CODE AXIS Digital Cameroon a obtenu un local à Bonabéri, à deux pas de l’agence Orange.',
+      body: [
+        ['Le local', 'Du 23 au 25 novembre, nous avons visité et finalement obtenu un local commercial à Bonabéri, dans le quartier où nous travaillons déjà depuis nos débuts. Repère simple : à côté de l’agence Orange.'],
+        ['Pourquoi Bonabéri', 'Le quartier concentre dépôts, ateliers et sociétés de transport. Un bureau sur place raccourcit les rendez-vous, les mises en service et les interventions des équipes evo chez les clients de la zone industrielle.'],
+        ['Ce qui change', 'Les visites clients se feront désormais sur place, sur rendez-vous. L’adresse exacte et les horaires d’accueil seront communiqués depuis la page contact dès l’aménagement terminé.']
+      ]
+    },
+    {
+      date: '2026-11-24', tag: 'Technique', title: 'CADC studio, notre premier skill d’édition vidéo, prend forme',
+      excerpt: 'Après la suite evo, nous peaufignons un nouvel outil maison : CADC studio, un skill d’édition vidéo pensé pour nos productions.',
+      body: [
+        ['Le principe', 'CADC studio est un skill interne d’édition vidéo : il assemble plans, sous-titres, habillage sonore et formats réseaux à partir de nos rushes, sans repasser par une chaîne de montage classique.'],
+        ['À quoi il sert', 'Présenter un produit evo en vidéo, monter un reportage terrain ou préparer les contenus des réseaux de nos clients : le skill standardise le montage pour que chaque vidéo garde la même signature visuelle CODE AXIS.'],
+        ['En cours', 'La version actuelle est peaufinée sur nos propres productions. Une fois stabilisée, elle pourra accompagner les offres de communication des entreprises accompagnées par l’agence.']
+      ]
+    },
+    {
       date: '2026-11-24', tag: 'Partenariat', title: 'Youth Partnership : les premières signatures ont eu lieu',
       excerpt: 'Deux semaines après l’ouverture des inscriptions, les premiers partenaires de l’Opération Youth Partnership signent leur contrat à Douala.',
       cta: { label: 'Candidater', href: 'youth-partnership.html' },
