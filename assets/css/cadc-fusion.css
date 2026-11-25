@@ -3801,8 +3801,9 @@ body.theme-day .btn-action {
     position: fixed;
     /* z-index:0, pas -1 : avec -1 l'image passait derrière le fond
        de section selon le navigateur (invisible sur Chrome mobile).
-       Le texte reste au-dessus via z-index:1 ci-dessous. */
-    z-index: 0;
+       Le texte reste au-dessus via z-index:1 ci-dessous.
+       !important pour forcer l'empilement sur Chrome Android. */
+    z-index: 0 !important;
     left: 50%;
     right: auto;
     top: 54%;
@@ -3815,9 +3816,9 @@ body.theme-day .btn-action {
     filter: drop-shadow(0 16px 34px rgba(62, 95, 138, 0.4));
     animation: floatAstronaut 6s ease-in-out infinite;
   }
-  /* Contenu au-dessus du filigrane astronaute */
+  /* Contenu au-dessus du filigrane astronaute — !important aussi */
   .intro--banner,
-  .intro--options { position: relative; z-index: 1; }
+  .intro--options { position: relative; z-index: 1 !important; }
 }
 
 @media (max-width: 420px) {
