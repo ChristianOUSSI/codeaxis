@@ -3256,3 +3256,56 @@ body.theme-day     .pwa-installed-toast { background: var(--neon-blue); color: #
 body.theme-day .btn-action {
   color: #ffffff;
 }
+
+/* ===================================================================
+   MOBILE — FINITIONS (ajouté en fin de cascade, n'altère pas le desktop)
+   =================================================================== */
+
+/* Hauteur dynamique : 100vh déborde sous la barre d'URL mobile Safari/Chrome,
+   100dvh suit la zone réellement visible. Le fallback vh reste pour les
+   navigateurs anciens. */
+@media (max-width: 768px) {
+  .perspective,
+  .l-viewport {
+    height: 100dvh;
+  }
+  .container {
+    min-height: 100dvh;
+  }
+}
+
+/* Menu 3D externe : sur petit écran, les libellés longs restent lisibles
+   sans déborder du bord droit. */
+@media (max-width: 768px) {
+  .outer-nav {
+    right: 5%;
+  }
+  .outer-nav > li {
+    font-size: clamp(20px, 6.2vw, 32px);
+    margin: 13px 0;
+    letter-spacing: 1px;
+    white-space: nowrap;
+  }
+  .outer-nav.is-vis > li:nth-child(6),
+  .outer-nav.is-vis > li:nth-child(7) { transition-delay: 0.38s; }
+}
+
+/* iOS Safari zoome automatiquement sur les champs < 16px : on passe les
+   champs du formulaire de contact à 16px pour une saisie fluide. */
+@media (max-width: 768px) {
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 16px;
+  }
+}
+
+/* Cible tactile explicite sur les éléments cliquables des sous-pages */
+@media (pointer: coarse) {
+  .back-button-fixed,
+  .back-btn,
+  .btn-action,
+  .btn-cta,
+  .lang-opt {
+    -webkit-tap-highlight-color: rgba(0, 210, 255, 0.18);
+  }
+}
