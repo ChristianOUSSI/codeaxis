@@ -3,11 +3,9 @@
   "outputDirectory": ".",
   "redirects": [
     { "source": "/home.html", "destination": "/", "permanent": true },
-    { "source": "/favicon.ico", "destination": "/assets/img/favicon-64.png", "permanent": true }
-  ],
-  "rewrites": [
-    { "source": "/scripts/:path*", "destination": "/api/not-found" },
-    { "source": "/tools/:path*", "destination": "/api/not-found" }
+    { "source": "/favicon.ico", "destination": "/assets/img/favicon-64.png", "permanent": true },
+    { "source": "/scripts/:path*", "destination": "/api/not-found", "permanent": false },
+    { "source": "/tools/:path*", "destination": "/api/not-found", "permanent": false }
   ],
   "headers": [
     {
