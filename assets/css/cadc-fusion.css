@@ -3654,32 +3654,57 @@ body.theme-day .btn-action {
 .opt-body h3 { margin-bottom: 4px; }
 .opt-body p { margin: 0; }
 
-/* Mobile : l'astronaute refait surface en visuel compact sous le CTA —
-   c'est lui qui donne le caractère «.space» de la home */
+/* Mobile : l'astronaute refait surface en petit accent sous le CTA.
+   Badge « Studio numérique… » et titre restent les éléments dominants. */
 @media (max-width: 768px) {
   .astronaut-bg {
     display: block;
     position: static;
-    width: 118px;
-    margin: 2px auto 0;
-    opacity: 0.9;
+    width: 84px;
+    margin: 0 auto;
+    opacity: 0.85;
     pointer-events: none;
-    filter: drop-shadow(0 12px 28px rgba(62, 95, 138, 0.4));
+    filter: drop-shadow(0 10px 22px rgba(62, 95, 138, 0.35));
   }
   .cta {
     box-shadow: 0 0 22px rgba(92, 119, 148, 0.28);
   }
+
+  /* Hiérarchie texte : badge et titre respirent, CTA compact,
+     tout tient dans le viewport sans scroll sur la plupart des téléphones */
+  .intro--badge { margin-bottom: 10px; }
+  .intro--banner h1 { margin-bottom: 16px; }
+  .cta { margin-bottom: 4px; }
+  .intro--options { margin-top: 20px; }
 }
 
 /* Très petit écran : icône réduite, flèche conservée */
 @media (max-width: 420px) {
+  .astronaut-bg { width: 72px; }
+  .intro--options {
+    margin-top: 16px;
+    gap: 10px;
+  }
   .intro--options > a {
     display: grid;
     grid-template-columns: 44px 1fr;
     column-gap: 12px;
-    padding: 13px 42px 13px 14px;
-    min-height: 60px;
+    padding: 12px 42px 12px 14px;
+    min-height: 58px;
   }
   .opt-ico { width: 40px; height: 40px; border-radius: 10px; }
   .opt-ico .ico { width: 19px; height: 19px; }
+}
+
+/* FIX hero mobile : le centrage flex rognait le haut du contenu
+   (badge « Studio numérique » et titre « Votre Aventure… » étaient
+   coupés et INACCESSIBLES au scroll). On aligne en haut : tout devient
+   scrollable proprement dans le viewport. */
+@media (max-width: 768px) {
+  .intro,
+  .hero-view-spatial,
+  .intro--banner {
+    justify-content: flex-start;
+  }
+  .intro { padding-top: 8px; }
 }
