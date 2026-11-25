@@ -30,3 +30,15 @@ Site statique (HTML/CSS/JS vanilla) déployé sur Vercel, repo GitHub `Christian
 - `node --check` sur les JS modifiés.
 - Le site étant statique, un `git push` sur `main` déclenche le déploiement Vercel automatiquement.
 - Après un déploiement, penser au service worker : les utilisateurs peuvent voir l'ancienne version jusqu'à mise à jour du cache.
+
+## Mobile — règles d'or (pattern établi)
+
+- Chaque `.l-section` mobile (`.intro`, `.work`, `.about`, `.hire`, `.hn-block`)
+  DOIT avoir `overflow-y:auto` + `justify-content:flex-start` puis
+  `safe center` en fallback : jamais `center` seul avec overflow
+  (le haut du contenu devient inaccessible — bug déjà corrigé 2×).
+- `.hn-block` : les overrides mobile vont dans `home-evo-news.css`
+  (chargé APRÈS `cadc-fusion.css` — cascade).
+- Astronaute hero : `position:fixed` + `.l-section` transformé =
+ Containing block = section plein écran, jamais rogné par `.intro`.
+- Vérifier avec Chrome headless + iframe de mesure avant/après.

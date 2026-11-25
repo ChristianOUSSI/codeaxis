@@ -390,3 +390,15 @@
   .hn-readmore .ico,
   .hn-carousel .card-image img { transition: none !important; }
 }
+
+/* ==================================================================
+   MOBILE — hero de section allégé : la hauteur du carrousel et les
+   marges laissent tout tenir dans le viewport (le bloc défile
+   désormais en interne, voir cadc-fusion.css)
+   ================================================================== */
+@media (max-width: 768px) {
+  .hn-block { padding: 14px 16px 14px; gap: 16px; }
+  .hn-head { gap: 8px; }
+  .hn-carousel .carousel-container { height: 340px; }
+  .hn-carousel .card-image { height: 138px; }
+}
