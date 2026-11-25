@@ -2965,33 +2965,6 @@ body.theme-day .wa-fab {
   border: 0;
 }
 
-.skip-link {
-  position: fixed;
-  top: 10px;
-  left: 50%;
-  z-index: 3000;
-  padding: 10px 18px;
-  border: 1px solid var(--neon-cyan);
-  border-radius: 999px;
-  background: var(--bg-card);
-  color: var(--text-main);
-  font-size: 12px;
-  letter-spacing: 0.04em;
-  text-decoration: none;
-  transform: translate(-50%, -180%);
-  transition: transform 0.2s ease;
-  /* Masqué des lecteurs d'écran visuels par défaut */
-  opacity: 0;
-  pointer-events: none;
-}
-
-.skip-link:focus-visible {
-  transform: translate(-50%, 0);
-  outline: none;
-  opacity: 1;
-  pointer-events: auto;
-}
-
 .hp-field {
   position: absolute;
   left: -9999px;
@@ -3011,10 +2984,6 @@ body.theme-day .wa-fab {
 .contact-status.is-ok { color: var(--neon-cyan); }
 .contact-status.is-error { color: #e08a7a; }
 
-@media (prefers-reduced-motion: reduce) {
-  .skip-link { transition: none; }
-}
-
 /* ===================================================================
    CORRECTIONS MOBILE STANDALONE (PWA installée)
    =================================================================== */
@@ -3026,24 +2995,6 @@ body.theme-day .wa-fab {
     bottom: max(22px, calc(16px + env(safe-area-inset-bottom, 0px)));
   }
 
-  /* Le skip-link n'a aucune utilité sur PWA standalone (pas de navigation clavier physique
-     sur mobile) — on le masque complètement */
-  .skip-link {
-    display: none;
-  }
-}
-
-/* Sur mobile browser aussi, on s'assure que le skip-link ne "flotte" jamais
-   visiblement à l'écran (il ne doit apparaître qu'au focus clavier) */
-@media (max-width: 768px) {
-  .skip-link {
-    /* Masqué par défaut, visible uniquement au focus clavier */
-    transform: translate(-50%, -200%);
-  }
-  /* Mais reste accessible au focus sur tablette avec clavier */
-  .skip-link:focus-visible {
-    transform: translate(-50%, 0);
-  }
 }
 
 /* ===================================================================
