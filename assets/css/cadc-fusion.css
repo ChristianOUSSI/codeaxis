@@ -3708,3 +3708,166 @@ body.theme-day .btn-action {
   }
   .intro { padding-top: 8px; }
 }
+
+/* ===================================================================
+   HERO MOBILE SANS SCROLL — tout tient à l'écran
+   L'astronaute passe en arrière-plan animé (filigrane vivant),
+   le contenu est centré verticalement avec repli « safe » :
+   si jamais le contenu déborde (très petit écran), il repasse
+   en alignement haut scrollable au lieu de rogner le titre.
+   =================================================================== */
+@media (max-width: 768px) {
+  .intro,
+  .hero-view-spatial,
+  .intro--banner {
+    justify-content: safe center;
+  }
+  .intro { padding-top: 0; padding-bottom: 10px; }
+
+  /* Astronaute = fond animé : hors du flux, derrière le texte,
+     flottaison conservée. Illisible ? non — opacité ~0.3, c'est
+     un filigrane qui donne du caractère sans gêner la lecture. */
+  .astronaut-bg {
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    right: -70px;
+    width: 210px;
+    margin: -95px 0 0;
+    opacity: 0.3;
+    pointer-events: none;
+    filter: drop-shadow(0 14px 30px rgba(62, 95, 138, 0.35));
+    animation: floatAstronaut 6s ease-in-out infinite;
+  }
+}
+
+@media (max-width: 420px) {
+  .astronaut-bg {
+    width: 165px;
+    right: -55px;
+    margin-top: -75px;
+    opacity: 0.26;
+  }
+}
+
+/* Compactage final : les 3 cartes + le texte doivent tenir dans
+   ~480-768px de hauteur utile sans aucun scroll */
+@media (max-width: 768px) {
+  .intro--badge { margin-bottom: 6px; }
+  .intro--banner h1 { margin-bottom: 10px; }
+  .cta { margin-bottom: 2px; padding: 11px 20px; }
+  .intro--options { margin-top: 10px; gap: 6px; }
+  .intro { padding-bottom: 4px; }
+}
+
+@media (max-width: 768px) {
+  /* Descriptions des cartes limitées à 2 lignes : tout tient à l'écran */
+  .opt-body p {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 420px) {
+  .intro--banner h1 { font-size: clamp(28px, 7.6vw, 34px); }
+  .intro--options > a {
+    padding: 9px 40px 9px 12px;
+    min-height: 54px;
+    column-gap: 10px;
+  }
+  .opt-ico { width: 38px; height: 38px; }
+  .opt-ico .ico { width: 18px; height: 18px; }
+  .opt-body h3 { font-size: 12.5px; margin-bottom: 2px; }
+  .opt-body p { font-size: 11px; line-height: 1.4; }
+}
+
+/* Astronaute plus présent : il occupe la moitié droite de l'écran,
+   de la ligne médiane jusqu'à la bordure — toujours en filigrane animé */
+@media (max-width: 768px) {
+  .astronaut-bg {
+    width: 62%;
+    max-width: 400px;
+    margin-top: -108px;
+    margin-left: -31%;
+    opacity: 0.52;
+  }
+}
+
+@media (max-width: 420px) {
+  .astronaut-bg {
+    width: 66%;
+    max-width: 300px;
+    margin-top: -92px;
+    margin-left: -33%;
+    opacity: 0.48;
+  }
+}
+
+/* ≤420px : les 3 services deviennent une rangée de tuiles (icône + titre
+   + description courte) — beaucoup plus compacte, zéro scroll */
+@media (max-width: 420px) {
+  .intro--options {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .intro--options > a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 5px;
+    padding: 8px 5px;
+    min-height: 0;
+  }
+  .intro--options > a::after { display: none; }
+  .opt-ico { width: 32px; height: 32px; border-radius: 9px; }
+  .opt-ico .ico { width: 16px; height: 16px; }
+  .opt-body h3 {
+    font-size: 10.5px;
+    line-height: 1.2;
+    margin: 0;
+    letter-spacing: 0.2px;
+  }
+  .opt-body p {
+    font-size: 10px;
+    line-height: 1.3;
+    -webkit-line-clamp: 2;
+  }
+}
+
+/* ===================================================================
+   ASTRONAUTE = FOND VIVANT PLEIN ÉCRAN (mobile)
+   position:fixed + ancestor transformé (.l-section) ⇒ il se positionne
+   par rapport à la section plein écran et n'est PLUS rogné par le
+   overflow de .intro. Grand, centré sur la moitié droite, flottant.
+   =================================================================== */
+@media (max-width: 768px) {
+  .astronaut-bg {
+    position: fixed;
+    z-index: -1;
+    left: 50%;
+    right: auto;
+    top: 54%;
+    width: 62%;
+    max-width: 400px;
+    height: auto;
+    margin: -108px 0 0 -31%;
+    opacity: 0.52;
+    pointer-events: none;
+    filter: drop-shadow(0 16px 34px rgba(62, 95, 138, 0.4));
+    animation: floatAstronaut 6s ease-in-out infinite;
+  }
+}
+
+@media (max-width: 420px) {
+  .astronaut-bg {
+    width: 66%;
+    max-width: 300px;
+    margin-top: -100px;
+    margin-left: -33%;
+    opacity: 0.48;
+  }
+}
