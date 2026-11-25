@@ -1226,6 +1226,73 @@
   // Dates et aperçu d'actualité suivent la langue
   document.documentElement.addEventListener('cadc:lang', renderNewsPeek);
 
+  /* =================================================================
+     SIGNATURE — horloge Douala, compteur de section, parallaxe hero
+     ================================================================= */
+  (function signatureExtras() {
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* Horloge Douala dans le header (desktop) */
+    var clock = document.getElementById('header-clock');
+    if (clock) {
+      var fmt = new Intl.DateTimeFormat('fr-FR', { timeZone: 'Africa/Douala', hour: '2-digit', minute: '2-digit', hour12: false });
+      var tick = function () { clock.textContent = 'Douala ' + fmt.format(new Date()); };
+      tick();
+      setInterval(tick, 30000);
+    }
+
+    /* Compteur de section « 0X / 07 » — visible mobile uniquement (CSS) */
+    var mainContent = document.getElementById('main-content');
+    if (mainContent) {
+      var counter = document.createElement('div');
+      counter.className = 'section-counter';
+      document.body.appendChild(counter);
+      var SECTIONS = mainContent.querySelectorAll('.l-section');
+      var paintCounter = function () {
+        var active = mainContent.querySelector('.l-section.section--is-active');
+        if (!active) return;
+        var idx = Array.prototype.indexOf.call(SECTIONS, active);
+        counter.textContent = (idx + 1 < 10 ? '0' : '') + (idx + 1) + ' / ' + String(SECTIONS.length).padStart(2, '0');
+      };
+      paintCounter();
+      new MutationObserver(paintCounter).observe(mainContent, { attributes: true, attributeFilter: ['class'], subtree: true });
+    }
+
+    /* Parallaxe douce du hero desktop : le titre résiste légèrement,
+       l'astronaute dérive davantage — profondeur de champ sans lib.
+       Uniquement souris fine, hors reduced-motion, section active. */
+    if (!reduced &&
+        window.matchMedia('(min-width: 769px)').matches &&
+        !window.matchMedia('(pointer: coarse)').matches) {
+      var banner = document.querySelector('.intro--banner');
+      var astro = document.querySelector('.astronaut-bg');
+      var options = document.querySelector('.intro--options');
+      var introSection = document.getElementById('section-intro');
+      if (banner && astro && introSection) {
+        var tx = 0, ty = 0, cx = 0, cy = 0, rafId = null;
+        var loop = function () {
+          cx += (tx - cx) * 0.06;
+          cy += (ty - cy) * 0.06;
+          banner.style.translate = (cx * -8) + 'px ' + (cy * -5) + 'px';
+          if (options) options.style.translate = (cx * -12) + 'px ' + (cy * -7) + 'px';
+          astro.style.translate = (cx * 22) + 'px ' + (cy * 14) + 'px';
+          if (Math.abs(tx - cx) > 0.1 || Math.abs(ty - cy) > 0.1) {
+            rafId = requestAnimationFrame(loop);
+          } else {
+            rafId = null;
+          }
+        };
+        var kick = function () { if (!rafId) rafId = requestAnimationFrame(loop); };
+        window.addEventListener('mousemove', function (e) {
+          if (!introSection.classList.contains('section--is-active')) return;
+          tx = (e.clientX / window.innerWidth - 0.5) * 2;
+          ty = (e.clientY / window.innerHeight - 0.5) * 2;
+          kick();
+        }, { passive: true });
+      }
+    }
+  })();
+
   // Global helper
   window.cadcGoTo = goToSection;
 
