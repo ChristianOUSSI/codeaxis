@@ -1,0 +1,27 @@
+<!DOCTYPE html><html><body style="margin:0">
+<iframe id="f" src="/index.html" style="width:390px;height:844px;border:0"></iframe>
+<pre id="out"></pre>
+<script>
+setTimeout(()=>{
+  try{
+    const w=document.getElementById('f').contentWindow, d=w.document, cw=w;
+    // activer la section work (index 1)
+    const secs=d.querySelectorAll('.l-section');
+    const work=d.getElementById('section-work');
+    work.classList.add('section--is-active');
+    secs.forEach(s=>{if(s!==work)s.classList.remove('section--is-active')});
+    setTimeout(()=>{
+      const mq=d.querySelector('.clients-marquee__track');
+      const cs=cw.getComputedStyle(mq);
+      const r1=mq.getBoundingClientRect();
+      setTimeout(()=>{
+        const r2=mq.getBoundingClientRect();
+        document.getElementById('out').textContent=JSON.stringify({
+          animName:cs.animationName, animPlay:cs.animationPlayState, dur:cs.animationDuration,
+          moved:Math.abs(r2.left-r1.left)>1, display:cs.display, w:Math.round(r2.width)
+        });
+      },700);
+    },400);
+  }catch(e){document.getElementById('out').textContent='ERR '+e.message}
+},5000);
+</script></body></html>

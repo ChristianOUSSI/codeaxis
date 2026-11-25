@@ -1,0 +1,22 @@
+<!DOCTYPE html><html><body style="margin:0">
+<iframe id="f" src="/index.html" style="width:390px;height:844px;border:0"></iframe>
+<pre id="out"></pre>
+<script>
+setTimeout(()=>{
+  try{
+    const w=document.getElementById('f').contentWindow, d=w.document;
+    const de=d.documentElement;
+    const res={docScroll:de.scrollWidth, win:de.clientWidth, bodyScroll:d.body.scrollWidth};
+    const wide=[];
+    d.querySelectorAll('body *').forEach(el=>{
+      const r=el.getBoundingClientRect();
+      if(r.width>391 && r.height>5){
+        const cls=(el.className&&el.className.toString)?el.className.toString().slice(0,50):el.tagName;
+        wide.push(cls+' w='+Math.round(r.width));
+      }
+    });
+    res.wide=[...new Set(wide)].slice(0,12);
+    document.getElementById('out').textContent=JSON.stringify(res);
+  }catch(e){document.getElementById('out').textContent='ERR '+e.message}
+},6000);
+</script></body></html>

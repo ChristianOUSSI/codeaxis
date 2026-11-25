@@ -2741,6 +2741,7 @@ h1 .ico, h2 .ico, h3 .ico, .ico--title { vertical-align: -0.12em; }
   .intro {
     max-height: calc(100dvh - 76px);
     overflow-y: auto;
+    overflow-x: hidden;
     overscroll-behavior: contain;
     scrollbar-width: none;
     padding-bottom: 12px;
@@ -3834,9 +3835,13 @@ body.theme-day .btn-action {
   .work,
   .about,
   .hire,
-  .hn-block {
+  .hn-block,
+  .contact {
     max-height: calc(100dvh - 78px);
     overflow-y: auto;
+    /* Sans ceci, overflow-y:auto force overflow-x à auto aussi :
+       le contenu peut alors être balayé latéralement. On verrouille. */
+    overflow-x: hidden;
     overscroll-behavior: contain;
     scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
@@ -3850,7 +3855,8 @@ body.theme-day .btn-action {
   .work::-webkit-scrollbar,
   .about::-webkit-scrollbar,
   .hire::-webkit-scrollbar,
-  .hn-block::-webkit-scrollbar { display: none; }
+  .hn-block::-webkit-scrollbar,
+  .contact::-webkit-scrollbar { display: none; }
 
   /* La bannière « À propos » n'a plus besoin de sa hauteur mini forcée */
   .about--banner { min-height: 0; padding-bottom: 8px; }
@@ -4152,3 +4158,9 @@ body.theme-day::after { opacity: 0.035; }
 /* Polish : le bandeau clients se fige au survol — on peut lire un nom */
 .clients-marquee:hover .clients-marquee__track { animation-play-state: paused; }
 .clients-marquee__track { will-change: transform; }
+
+/* Mobile : les points du carrousel Services sont masqués — le swipe
+   suffit, et ils encombraient le bas de la section « Devis ». */
+@media (max-width: 768px) {
+  #hireIndicators { display: none; }
+}
