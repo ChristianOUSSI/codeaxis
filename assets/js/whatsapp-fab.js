@@ -51,7 +51,7 @@
       var banner = document.getElementById('pwa-install-banner');
       var open = banner && banner.classList.contains('pwa-install-banner--visible');
       link.style.bottom = open
-        ? 'calc(92px + env(safe-area-inset-bottom, 0px))'
+        ? 'calc(98px + env(safe-area-inset-bottom, 0px))'
         : '';
     }
     syncBanner();

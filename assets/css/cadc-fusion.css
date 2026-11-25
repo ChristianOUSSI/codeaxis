@@ -2941,7 +2941,7 @@ body.theme-day .wa-fab {
 @media (max-width: 768px) {
   .wa-fab {
     right: 16px;
-    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    bottom: max(22px, calc(16px + env(safe-area-inset-bottom, 0px)));
     width: 48px;
     height: 48px;
   }
@@ -3023,7 +3023,7 @@ body.theme-day .wa-fab {
    par la barre de navigation système Android/iOS */
 @media (display-mode: standalone) {
   .wa-fab {
-    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    bottom: max(22px, calc(16px + env(safe-area-inset-bottom, 0px)));
   }
 
   /* Le skip-link n'a aucune utilité sur PWA standalone (pas de navigation clavier physique
@@ -3055,7 +3055,7 @@ body.theme-day .wa-fab {
   left: 0;
   right: 0;
   z-index: 9000;
-  padding: 12px 16px calc(12px + env(safe-area-inset-bottom, 0px));
+  padding: 12px 16px max(16px, calc(12px + env(safe-area-inset-bottom, 0px)));
   background: var(--bg-secondary);
   border-top: 1px solid var(--border-neon);
   -webkit-backdrop-filter: blur(20px);
@@ -3412,7 +3412,7 @@ body.theme-day .btn-action {
   /* PWA installée : la zone gestuelle du bas ne doit pas recouvrir
      les barres de contrôle des sections (hire, orbitale, etc.) */
   .l-viewport {
-    padding-bottom: env(safe-area-inset-bottom, 0px);
+    padding-bottom: calc(8px + env(safe-area-inset-bottom, 0px));
   }
 
   /* Plancher de lisibilité : les plus petits libellés passent à 10 px
