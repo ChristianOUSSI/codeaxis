@@ -69,8 +69,10 @@
         '</div>' +
       '</div>';
 
-    document.getElementById('pwa-install-btn').addEventListener('click', onInstall);
-    document.getElementById('pwa-dismiss-btn').addEventListener('click', onDismiss);
+    var btnInstall = bannerEl.querySelector('#pwa-install-btn');
+    var btnDismiss = bannerEl.querySelector('#pwa-dismiss-btn');
+    if (btnInstall) btnInstall.addEventListener('click', onInstall);
+    if (btnDismiss) btnDismiss.addEventListener('click', onDismiss);
   }
 
   function showBanner() {
