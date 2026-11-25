@@ -65,18 +65,27 @@
     margin-top: 20px;
   }
 
-  /* ── Cartes : padding resserré pour gagner de la place ── */
+  /* ── Cartes : padding resserré pour gagner de la place + ombres premium ── */
   .project-card,
   .contract-card,
   .feature-card,
   .client-card {
-    border-radius: 14px;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
   }
-  .project-body { padding: 18px 16px; }
-  .project-img-wrapper { height: 170px; }
-  .contract-card { padding: 24px 18px; }
-  .feature-card { padding: 20px 16px; }
-  .client-card { padding: 22px 18px; }
+  .project-card:hover,
+  .contract-card:hover,
+  .feature-card:hover,
+  .client-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+  .project-body { padding: 20px 18px; }
+  .project-img-wrapper { height: 180px; }
+  .contract-card { padding: 26px 20px; }
+  .feature-card { padding: 22px 18px; }
+  .client-card { padding: 24px 20px; }
 
   .project-body h3 { font-size: 18px; }
   .contract-card h3 { font-size: 19px; }
