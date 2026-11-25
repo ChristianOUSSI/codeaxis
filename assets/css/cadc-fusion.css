@@ -3475,3 +3475,28 @@ body.theme-day .btn-action {
   }
   .about--options h3 { font-size: 15px; }
 }
+
+/* ===================================================================
+   LISIBILITÉ TOUS THÈMES — sous-titres des cartes « À propos »
+   rgba(255,255,255,.72) à 10 px restait illisible sur photo, quel que
+   soit le thème : on passe à une pastille sombre translucide qui
+   garantit le contraste structurellement, image claire ou non.
+   =================================================================== */
+.about-card-sub {
+  color: #ffffff;
+  background: rgba(7, 9, 19, 0.62);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 3px 8px;
+  border-radius: 6px;
+  text-shadow: none;
+}
+.about--options > a:hover .about-card-sub {
+  background: rgba(13, 20, 34, 0.78);
+  border-color: rgba(0, 210, 255, 0.4);
+}
+
+@media (max-width: 768px) {
+  .about-card-sub { font-size: 10.5px; letter-spacing: 0.6px; }
+}
