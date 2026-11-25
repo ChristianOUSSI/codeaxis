@@ -3500,3 +3500,49 @@ body.theme-day .btn-action {
 @media (max-width: 768px) {
   .about-card-sub { font-size: 10.5px; letter-spacing: 0.6px; }
 }
+
+/* ===================================================================
+   MOBILE PRO — home & sections (aération, lisibilité, gestes)
+   =================================================================== */
+
+@media (max-width: 768px) {
+  /* Interlignes et espacements des sections plus généreux */
+  .about--options { gap: 12px; margin-top: 26px; }
+  .about--options > a { height: 96px; }
+
+  .intro--options { gap: 12px; }
+  .intro--options > a { padding: 14px 16px; }
+
+  /* Titres de section : légèrement plus d'air sous le titre */
+  .section-title-glow { margin-bottom: 24px; }
+  .section-title-glow::after { bottom: -8px; }
+
+  /* Formulaire contact : champs plus hauts pour le tactile
+     (≥ 48 px) et texte 16 px déjà géré anti-zoom iOS */
+  .contact-form input,
+  .contact-form textarea {
+    padding: 13px 14px;
+    font-size: 16px;
+  }
+  .btn-contact-action {
+    min-height: 46px;
+    font-size: 12px;
+  }
+
+  /* Liens de contact : pastilles plus lisibles */
+  .contact-link {
+    font-size: 14px;
+  }
+
+  /* Indicateurs & contrôles des carrousels : cibles ≥ 40 px */
+  .indicators button,
+  .indicators a,
+  .hire-ctrl-btn {
+    min-height: 40px;
+  }
+}
+
+@media (max-width: 420px) {
+  .section-title-glow { margin-bottom: 18px; }
+  .about--options > a { height: 92px; }
+}

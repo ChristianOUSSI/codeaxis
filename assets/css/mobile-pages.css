@@ -202,3 +202,86 @@
     animation-duration: 0.01ms !important;
   }
 }
+
+/* ===================================================================
+   MOBILE PRO — passe aérée & professionnelle (v2)
+   Objectif : la version téléphone doit respirer comme le desktop,
+   avec une densité maîtrisée sur phablettes et tablettes.
+   =================================================================== */
+
+@media (max-width: 768px) {
+
+  /* Air vertical : les sections internes gagnent de l'espace
+     au lieu d'être tassées contre les bords */
+  .subpage-container,
+  .proj-page,
+  .case-page {
+    padding-top: 92px;
+  }
+  .subpage-header {
+    padding-bottom: 40px;
+    margin-bottom: 8px;
+  }
+  .section-block { margin: 40px 0; }
+
+  /* Typographie : les paragraphes passent à une taille comfortable
+     (14px) avec interligne généreuse — fini les textes justes */
+  .project-body p,
+  .contract-card p,
+  .feature-card p,
+  .feature-item p,
+  .section-block p,
+  .stack-lede,
+  .client-card p {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+  .project-body,
+  .contract-card,
+  .feature-card,
+  .client-card {
+    padding: 22px 18px;
+  }
+
+  /* CTA : banner plus aérienne, bouton plus tactile */
+  .cta-banner,
+  .cta-final {
+    padding: 42px 24px;
+    margin-top: 56px;
+  }
+  .btn-action,
+  .btn-cta {
+    min-height: 48px;
+    padding: 14px 30px;
+  }
+
+  /* Badges techniques : taille confortable sans casser la ligne */
+  .tech-badge,
+  .tech-chip,
+  .stack-pill {
+    font-size: 12px;
+  }
+}
+
+/* Grilles : sur phablettes/tablettes (520–768px) on passe à 2 colonnes
+   quand la place le permet — rendu plus « pro », moins liste interminable */
+@media (min-width: 520px) and (max-width: 768px) {
+  .projects-grid,
+  .clients-grid,
+  .contracts-grid,
+  .features-grid,
+  .tech-stack-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 18px;
+  }
+}
+
+@media (max-width: 420px) {
+  /* Très petit écran : on garde l'aération mais on compacte l'essentiel */
+  .subpage-container,
+  .proj-page,
+  .case-page { padding-top: 84px; }
+  .section-block { margin: 32px 0; }
+  .cta-banner,
+  .cta-final { padding: 32px 18px; margin-top: 44px; }
+}
