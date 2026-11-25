@@ -1,5 +1,5 @@
 // Service Worker pour CODE AXIS Digital Cameroon PWA
-const CACHE_NAME = 'cadc-pwa-v18';
+const CACHE_NAME = 'cadc-pwa-v19';
 
 // Assets statiques (JS, CSS, images) : stale-while-revalidate
 const STATIC_ASSETS = [
