@@ -3546,3 +3546,66 @@ body.theme-day .btn-action {
   .section-title-glow { margin-bottom: 18px; }
   .about--options > a { height: 92px; }
 }
+
+/* ===================================================================
+   MOBILE HOME — version « pro & captivante » (petits écrans ≤ 420 px)
+   Remplace l'ancienne version trop compacte : descriptions visibles,
+   cartes tactiles avec liseré et flèche, hiérarchie plus forte.
+   =================================================================== */
+@media (max-width: 768px) {
+  /* Liseré d'accent toujours visible sur mobile (pas de hover) :
+     il signale immédiatement que la carte est tappable */
+  .intro--options > a::before { opacity: 1; }
+
+  /* Retour tactile net au doigt */
+  .intro--options > a:active {
+    background: var(--bg-card-hover);
+    border-color: var(--neon-cyan);
+    transform: scale(0.985);
+  }
+
+  /* Badge hero : plancher de lisibilité 10 px */
+  .intro--badge { font-size: 10px; }
+}
+
+@media (max-width: 420px) {
+  /* Titre plus affirmé */
+  .intro--banner h1 { font-size: clamp(30px, 8.4vw, 38px); }
+  .intro--badge { font-size: 10px; padding: 5px 12px; letter-spacing: 1.2px; }
+
+  /* CTA plus large et plus lisible */
+  .cta { font-size: 12px; padding: 13px 22px; letter-spacing: 1.2px; }
+
+  /* Cartes de services : retour au format vertical aéré.
+     La description n'est PLUS masquée — c'est elle qui vend la carte. */
+  .intro--options {
+    margin-top: 26px;
+    gap: 12px;
+  }
+  .intro--options > a {
+    display: block;
+    position: relative;
+    padding: 15px 46px 15px 18px;
+    min-height: 62px;
+  }
+  .intro--options > a::after {
+    content: "→";
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--neon-cyan);
+    font-size: 17px;
+    font-weight: 700;
+  }
+  .intro--options h3 {
+    font-size: 13.5px;
+    margin-bottom: 4px;
+    letter-spacing: 0.8px;
+  }
+  .intro--options p {
+    display: block;
+    font-size: 11.5px;
+    line-height: 1.5;
+  }
+}
