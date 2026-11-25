@@ -43,8 +43,8 @@
     bannerEl.setAttribute('role', 'dialog');
     bannerEl.setAttribute('aria-modal', 'false');
     bannerEl.setAttribute('aria-live', 'polite');
-    renderBanner();
     document.body.appendChild(bannerEl);
+    renderBanner();
 
     /* Réagit aux changements de langue */
     document.documentElement.addEventListener('cadc:lang', function () {
