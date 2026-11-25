@@ -3911,3 +3911,102 @@ body.theme-day .btn-action {
 
 /* (.hn-block a ses propres surcharges dans home-evo-news.css,
    chargé après — ne pas dupliquer ici) */
+
+/* ===================================================================
+   CONTACT MOBILE — version aérée & respirante
+   Avant : tout était tassé (liens inline, 3 boutons, formulaire,
+   mentions légales dans la même carte). Maintenant : rangées
+   structurées avec tuiles icônes, actions en grille, formulaire
+   espacé — chaque info respire.
+   =================================================================== */
+@media (max-width: 768px) {
+  .contact { padding-top: 70px; }
+  .contact--grid { gap: 18px; }
+  .contact--map {
+    height: 150px;
+    border-radius: 14px;
+    overflow: hidden;
+  }
+
+  .contact--info {
+    padding: 22px 18px;
+    border-radius: 16px;
+    gap: 0;
+  }
+  .contact-title {
+    font-size: 19px;
+    margin-bottom: 14px;
+  }
+
+  /* Coordonnées : rangées carte avec tuile icône — même langage
+     visuel que les tuiles du hero */
+  .contact-detail,
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 46px;
+    padding: 9px 12px;
+    margin: 6px 0;
+    background: rgba(92, 119, 148, 0.08);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    font-size: 14px;
+    transition: var(--transition-smooth);
+  }
+  .contact-detail { cursor: default; }
+  .contact-detail svg,
+  .contact-link svg {
+    flex: 0 0 24px;
+    width: 22px;
+    height: 22px;
+    color: var(--neon-cyan);
+  }
+  .contact-link:active {
+    background: rgba(92, 119, 148, 0.16);
+    border-color: var(--neon-cyan);
+  }
+
+  /* Actions : grille 2 colonnes, « Copier » passe en secondaire
+     pleine largeur en dessous — moins de concurrence visuelle */
+  .contact-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 16px 0 4px;
+  }
+  .btn-contact-action {
+    min-height: 48px;
+    padding: 12px 10px;
+    font-size: 11.5px;
+    letter-spacing: 0.4px;
+    justify-content: center;
+  }
+
+  /* Formulaire : champs plus hauts, actions empilées */
+  .contact-form {
+    margin-top: 18px;
+    display: grid;
+    gap: 10px;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    padding: 13px 14px;
+    font-size: 16px;
+  }
+  .contact-form textarea { min-height: 84px; resize: vertical; }
+  .contact-form-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .contact-legal {
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border-subtle);
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+  }
+  .contact-legal a { font-size: 11px; }
+}

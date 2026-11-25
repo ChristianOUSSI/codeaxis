@@ -44,6 +44,27 @@
 
     document.documentElement.addEventListener('cadc:lang', function () { paint(link); });
 
+    /* Bannière PWA : si elle est visible, on relève le FAB en style
+       inline. Fonctionne quelle que soit la version du CSS en cache —
+       c'est ce qui le rend invisible en prod avec un vieux SW. */
+    function syncBanner() {
+      var banner = document.getElementById('pwa-install-banner');
+      var open = banner && banner.classList.contains('pwa-install-banner--visible');
+      link.style.bottom = open
+        ? 'calc(92px + env(safe-area-inset-bottom, 0px))'
+        : '';
+    }
+    syncBanner();
+    var bannerWatcher = new MutationObserver(function () {
+      var banner = document.getElementById('pwa-install-banner');
+      if (banner) {
+        bannerWatcher.disconnect();
+        new MutationObserver(syncBanner).observe(banner, { attributes: true, attributeFilter: ['class'] });
+        syncBanner();
+      }
+    });
+    bannerWatcher.observe(document.body, { childList: true });
+
     /* Sur la home, le formulaire de contact est déjà à l'écran : le raccourci s'efface */
     var contact = document.querySelector('.contact');
     var section = contact && contact.closest('.l-section');
