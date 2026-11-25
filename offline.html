@@ -102,7 +102,7 @@
       transform: translate(-50%, 0); opacity: 1; outline: none;
     }
   </style>
-  <script>/* Theme anti-flash */(function(){var t=localStorage.getItem('cadc_theme');if(t==='day'||t==='evening'){document.body.className='theme-'+t;}})()</script>
+  <script>/* Theme anti-flash */(function(){var t=localStorage.getItem('cadc_theme');if(!t){var h=new Date().getHours();t=h>=6&&h<17?'day':h>=17&&h<21?'evening':'night';}if(t==='day'||t==='evening'||t==='night'){document.body.className='theme-'+t;}})()</script>
   <link rel="canonical" href="https://codeaxis.cm/offline.html">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CODE AXIS Digital Cameroon">

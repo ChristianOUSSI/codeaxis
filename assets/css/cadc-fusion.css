@@ -2939,7 +2939,12 @@ body.theme-day .wa-fab {
 }
 
 @media (max-width: 768px) {
-  .wa-fab { right: 16px; bottom: 16px; width: 48px; height: 48px; }
+  .wa-fab {
+    right: 16px;
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    width: 48px;
+    height: 48px;
+  }
   .wa-fab .ico { width: 24px; height: 24px; }
 }
 
@@ -3307,5 +3312,84 @@ body.theme-day .btn-action {
   .btn-cta,
   .lang-opt {
     -webkit-tap-highlight-color: rgba(0, 210, 255, 0.18);
+  }
+}
+
+/* ===================================================================
+   CORRECTIFS UI — SECTION À PROPOS & NAVIGATION (retour expert)
+   =================================================================== */
+
+/* Header : chaque onglet tient sur une seule ligne — la pilule active
+   (ex. « À PROPOS ») ne passe plus sur deux lignes et l'alignement
+   horizontal de la barre est préservé. */
+.header--nav-links a {
+  white-space: nowrap;
+}
+
+/* La nav latérale numérotée occupe ~190 px à gauche de l'écran.
+   Tant que les marges latérales du contenu ne la dégagent pas
+   (écrans 1025–1600 px), on décale légèrement toutes les sections
+   vers la droite : « 03 À Propos » ne chevauche plus le titre
+   « …des logiciels pour le terrain ». */
+@media (min-width: 1025px) and (max-width: 1600px) {
+  .l-section {
+    padding-left: 190px;
+  }
+}
+
+/* Sous-titres des trois cartes À propos : une ligne d'accroche sous
+   chaque titre pour que le visiteur sache ce qu'il va trouver. */
+.about--options > a {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 4px;
+}
+.about--options h3 { margin: 0; }
+.about-card-sub {
+  position: relative;
+  z-index: 2;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.72);
+  transition: var(--transition-smooth);
+}
+.about--options > a:hover .about-card-sub { color: var(--neon-cyan); }
+
+@media (max-width: 768px) {
+  .about-card-sub { font-size: 9px; letter-spacing: 0.4px; }
+}
+
+/* ===================================================================
+   PERF — content-visibility sur les sous-pages (skip le rendu
+   hors écran ; contain-intrinsic-size évite les sauts de hauteur)
+   =================================================================== */
+@media (min-width: 769px) {
+  .subpage-container > *,
+  .proj-page > *,
+  .case-page > * {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 480px;
+  }
+}
+
+/* ===================================================================
+   ERGONOMIE TACTILE — zones cliquables ≥ 44 px sur écrans tactiles,
+   sans modifier l'apparence des badges purement décoratifs
+   =================================================================== */
+@media (pointer: coarse) {
+  .lang-opt,
+  .mode-btn,
+  .category-tab,
+  .hire-ctrl-btn,
+  .orb-spacing button {
+    min-height: 44px;
+  }
+  .lang-opt { display: inline-flex; align-items: center; }
+  .orb-switch {
+    min-height: 30px;
   }
 }

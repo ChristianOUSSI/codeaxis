@@ -56,6 +56,7 @@ module.exports = async function handler(req, res) {
     try { body = JSON.parse(body); } catch (e) { return res.status(400).json({ error: 'invalid_json' }); }
   }
   if (!body || typeof body !== 'object') return res.status(400).json({ error: 'invalid_body' });
+  if (JSON.stringify(body).length > 20000) return res.status(413).json({ error: 'payload_too_large' });
 
   // Honeypot : champ company rempli = bot
   if (String(body.company || '').trim()) return res.status(200).json({ ok: true });

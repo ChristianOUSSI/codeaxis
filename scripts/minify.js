@@ -39,6 +39,7 @@ const CSS_FILES = [
   'assets/css/cadc-fusion.css',
   'assets/css/home-evo-news.css',
   'assets/css/evo-suite.css',
+  'assets/css/mobile-pages.css',
 ];
 
 function minifyJS(src) {

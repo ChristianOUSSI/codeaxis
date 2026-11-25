@@ -14,16 +14,34 @@
   };
   var LABELS = { night: 'nuit', day: 'jour', evening: 'soirée' };
 
-  function current() {
-    var saved = 'night';
-    try { saved = localStorage.getItem('cadc_theme') || 'night'; } catch (e) {}
-    return ORDER.indexOf(saved) >= 0 ? saved : 'night';
+  /* Thème automatique à la première visite (jour 6 h–17 h,
+     soirée 17 h–21 h, nuit sinon) — jamais persisté : seul un choix
+     manuel de l'utilisateur est mémorisé dans localStorage. */
+  function autoThemeByHour() {
+    var h = new Date().getHours();
+    return h >= 6 && h < 17 ? 'day' : h >= 17 && h < 21 ? 'evening' : 'night';
   }
 
-  function apply(name) {
+  function hasSaved() {
+    try {
+      var t = localStorage.getItem('cadc_theme');
+      return !!t && ORDER.indexOf(t) >= 0;
+    } catch (e) { return false; }
+  }
+
+  function current() {
+    if (hasSaved()) {
+      try { return localStorage.getItem('cadc_theme'); } catch (e) {}
+    }
+    return autoThemeByHour();
+  }
+
+  function apply(name, persist) {
     document.body.classList.remove('theme-night', 'theme-day', 'theme-evening');
     document.body.classList.add('theme-' + name);
-    try { localStorage.setItem('cadc_theme', name); } catch (e) {}
+    if (persist !== false) {
+      try { localStorage.setItem('cadc_theme', name); } catch (e) {}
+    }
     var meta = document.querySelector('meta[name="theme-color"]');
     if (meta) {
       meta.setAttribute('content', name === 'day' ? '#d9e1ea' : name === 'evening' ? '#1e1e28' : '#2e4257');
@@ -48,7 +66,7 @@
       apply(ORDER[(ORDER.indexOf(now) + 1) % ORDER.length]);
     });
 
-    apply(current());
+    apply(current(), hasSaved());
   }
 
   if (document.readyState === 'loading') {

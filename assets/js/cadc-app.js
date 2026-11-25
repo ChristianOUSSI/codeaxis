@@ -783,7 +783,15 @@
     en: { night: 'night', day: 'day', evening: 'evening' }
   };
 
-  function applyTheme(themeName) {
+  /* Thème automatique à la première visite : suit l'heure locale
+     (jour 6 h–17 h, soirée 17 h–21 h, nuit sinon). Ne persiste rien :
+     un choix manuel via le bouton reste prioritaire et mémorisé. */
+  function autoThemeByHour() {
+    const h = new Date().getHours();
+    return h >= 6 && h < 17 ? 'day' : h >= 17 && h < 21 ? 'evening' : 'night';
+  }
+
+  function applyTheme(themeName, persist) {
     document.body.classList.remove('theme-night', 'theme-day', 'theme-evening');
     document.body.classList.add(`theme-${themeName}`);
     if (themeToggleBtn) {
@@ -794,13 +802,16 @@
         ? `${label} theme, click to change`
         : `Thème ${label}, cliquer pour changer`;
     }
-    try {
-      localStorage.setItem('cadc_theme', themeName);
-    } catch (e) {}
+    if (persist !== false) {
+      try {
+        localStorage.setItem('cadc_theme', themeName);
+      } catch (e) {}
+    }
   }
 
-  const savedTheme = localStorage.getItem('cadc_theme') || 'night';
-  applyTheme(THEME_ORDER.includes(savedTheme) ? savedTheme : 'night');
+  const savedThemeRaw = localStorage.getItem('cadc_theme');
+  const hasSavedTheme = !!savedThemeRaw && THEME_ORDER.includes(savedThemeRaw);
+  applyTheme(hasSavedTheme ? savedThemeRaw : autoThemeByHour(), hasSavedTheme);
 
   if (themeToggleBtn) {
     themeToggleBtn.addEventListener('click', () => {
@@ -810,7 +821,7 @@
     });
     document.documentElement.addEventListener('cadc:lang', () => {
       const current = THEME_ORDER.find((t) => document.body.classList.contains(`theme-${t}`)) || 'night';
-      applyTheme(current);
+      applyTheme(current, !!localStorage.getItem('cadc_theme'));
     });
   }
 
@@ -1189,13 +1200,21 @@
     init3DHireCarousel();
     initTechnicalArsenal();
     renderNewsPeek();
-    initParticleCanvas('intro-particles', { count: 50, distance: 110 });
-    initParticleCanvas('work-particles', { count: 45, distance: 100 });
-    initParticleCanvas('about-particles', { count: 50, distance: 110 });
-    initParticleCanvas('evo-particles', { count: 40, distance: 100 });
-    initParticleCanvas('news-particles', { count: 40, distance: 100 });
-    initParticleCanvas('contact-particles', { count: 65, distance: 120 });
-    initParticleCanvas('hire-particles', { count: 45, distance: 100 });
+
+    /* Réseau contraint : saveData explicite ou connexion 2g/3g → on
+       divise les particules par deux ; en economy mode on les coupe. */
+    const net = navigator.connection || navigator.mozConnection || navigator.webkitConnection || {};
+    const constrained = !!net.saveData || ['slow-2g', '2g', '3g'].includes(net.effectiveType);
+    const narrow = window.matchMedia('(max-width: 768px)').matches;
+    const pc = (n) => (constrained ? Math.max(10, Math.round(n * 0.4)) : narrow ? Math.round(n * 0.6) : n);
+
+    initParticleCanvas('intro-particles',   { count: pc(50), distance: 110 });
+    initParticleCanvas('work-particles',    { count: pc(45), distance: 100 });
+    initParticleCanvas('about-particles',   { count: pc(50), distance: 110 });
+    initParticleCanvas('evo-particles',     { count: pc(40), distance: 100 });
+    initParticleCanvas('news-particles',    { count: pc(40), distance: 100 });
+    initParticleCanvas('contact-particles', { count: pc(65), distance: 120 });
+    initParticleCanvas('hire-particles',    { count: pc(45), distance: 100 });
   });
 
   window.addEventListener('resize', () => {

@@ -74,7 +74,7 @@
   <link rel="alternate" hreflang="fr" href="https://codeaxis.cm/">
   <link rel="alternate" hreflang="en" href="https://codeaxis.cm/index-en.html">
   <link rel="alternate" hreflang="x-default" href="https://codeaxis.cm/">
-  <script>/* Theme anti-flash */(function(){var t=localStorage.getItem('cadc_theme');if(t==='day'||t==='evening'){document.body.className='theme-'+t;}})()</script>
+  <script>/* Theme anti-flash */(function(){var t=localStorage.getItem('cadc_theme');if(!t){var h=new Date().getHours();t=h>=6&&h<17?'day':h>=17&&h<21?'evening':'night';}if(t==='day'||t==='evening'||t==='night'){document.body.className='theme-'+t;}})()</script>
 </head>
 
 <body class="theme-night">
@@ -276,7 +276,7 @@
                 <div class="about--banner">
                   <h2>Nous concevons à Douala<br>des logiciels<br>pour le terrain</h2>
                   <a href="nos-clients.html" class="btn-clients">
-                    <span>Nos clients</span>
+                    <span>Découvrir nos clients</span>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M5 12h14M12 5l7 7-7 7" />
                     </svg>
@@ -288,12 +288,15 @@
                 <ul class="about--options">
                   <a href="nos-projets.html">
                     <h3>Nos projets</h3>
+                    <span class="about-card-sub">Études de cas déployées</span>
                   </a>
                   <a href="nos-contrats.html">
                     <h3>Contrats &amp; Modèles</h3>
+                    <span class="about-card-sub">Cadres juridiques &amp; cahiers des charges</span>
                   </a>
                   <a href="nos-realisations.html">
                     <h3>Nos réalisations</h3>
+                    <span class="about-card-sub">Projets livrés &amp; témoignages</span>
                   </a>
                 </ul>
               </div>
