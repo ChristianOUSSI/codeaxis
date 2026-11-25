@@ -145,8 +145,14 @@ self.addEventListener('fetch', (event) => {
   const isNavigation = event.request.mode === 'navigate';
   const isHtml = isNavigation ||
     event.request.headers.get('accept')?.includes('text/html');
+  // JS/CSS/JSON : network-first aussi — l'utilisateur doit toujours
+  // recevoir la dernière version dès qu'il y a du réseau (plus de
+  // « vieux site » servi depuis le cache pendant 1-2 rechargements).
+  // Seules les images/gros binaires restent en stale-while-revalidate.
+  const isCode = /\.(js|css|json|webmanifest)$/i.test(url.pathname) ||
+    url.pathname.endsWith('/manifest.json');
 
-  if (isHtml) {
+  if (isHtml || isCode) {
     // ── Stratégie NETWORK-FIRST pour les pages HTML ──────────────────────────
     // On essaie toujours le réseau. Si ça échoue, on sert le cache.
     // Si le cache est vide aussi, on renvoie offline.html.
@@ -160,9 +166,13 @@ self.addEventListener('fetch', (event) => {
           return networkResponse;
         })
         .catch(() =>
-          caches.match(event.request).then(
-            (cached) => cached || caches.match('./offline.html')
-          )
+          caches.match(event.request).then((cached) => {
+            if (cached) return cached;
+            // offline.html n'a de sens que pour une page HTML ;
+            // pour un asset JS/CSS on renvoie une erreur réseau sobre
+            if (isHtml) return caches.match('./offline.html');
+            return new Response('Offline', { status: 504 });
+          })
         )
     );
   } else {
