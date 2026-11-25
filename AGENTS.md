@@ -42,3 +42,17 @@ Site statique (HTML/CSS/JS vanilla) déployé sur Vercel, repo GitHub `Christian
 - Astronaute hero : `position:fixed` + `.l-section` transformé =
  Containing block = section plein écran, jamais rogné par `.intro`.
 - Vérifier avec Chrome headless + iframe de mesure avant/après.
+
+## Actualité (journal)
+
+- Source unique : `assets/js/news-data.js` → `window.CADC_NEWS` (tableau `NEWS`, tri décroissant par date).
+- Chaque article : `{ date: 'YYYY-MM-DD', tag, title, excerpt, image?, cta? {label, href}, body: [[sous-titre, paragraphe], …] }`.
+  Tags autorisés : `Agence, Produit, Terrain, Technique, Partenariat` (filtres dans `news-page.js`).
+- Consommateurs automatiques : `actualites.html` / `actualites-en.html` (cartes + modale + ancre `#date-slug`),
+  bandeau « Dernières actualités » de la home (`cadc-app.js`, 6 premiers).
+- **Traduction EN obligatoire** : ajouter chaque chaîne FR (titre, excerpt, sous-titres, paragraphes)
+  dans `assets/js/i18n-en-pages.js` au format `FR|EN`. Le `MutationObserver` de `i18n.js`
+  traduit le contenu injecté dynamiquement ; la `Map` est indexée par clé normalisée
+  (apostrophes `’`/`'` et espaces ignorés) — ne pas dupliquer une clé existante.
+- `sw.js` est régénéré au build Vercel (`prebuild` → `sw:gen` bump `CACHE_NAME` auto) :
+  pas besoin de bump manuel, mais `npm run build` en local pour vérifier.
