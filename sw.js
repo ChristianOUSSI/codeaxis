@@ -175,8 +175,11 @@ self.addEventListener('fetch', (event) => {
           .then((networkResponse) => {
             if (networkResponse && networkResponse.status === 200 &&
                 networkResponse.type === 'basic') {
+              // clone() doit être synchrone : une fois la réponse retournée,
+              // le navigateur peut consommer le body avant caches.open().then()
+              const clone = networkResponse.clone();
               caches.open(CACHE_NAME).then((cache) => {
-                cache.put(event.request, networkResponse.clone());
+                cache.put(event.request, clone);
               });
             }
             return networkResponse;
