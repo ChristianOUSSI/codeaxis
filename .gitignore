@@ -2,3 +2,4 @@
 Thumbs.db
 *.log
 en-build-report.txt
+node_modules/
