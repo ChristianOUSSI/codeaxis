@@ -1246,6 +1246,7 @@
     if (mainContent) {
       var counter = document.createElement('div');
       counter.className = 'section-counter';
+      counter.setAttribute('aria-hidden', 'true');
       document.body.appendChild(counter);
       var SECTIONS = mainContent.querySelectorAll('.l-section');
       var paintCounter = function () {
