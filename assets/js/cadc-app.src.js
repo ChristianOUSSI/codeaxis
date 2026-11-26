@@ -33,6 +33,7 @@
     if (targetIndex < 0 || targetIndex >= totalSections) return;
     if (targetIndex === currentSection && !isNavigating) return;
 
+    const direction = targetIndex > currentSection ? 'next' : 'prev';
     isNavigating = true;
     currentSection = targetIndex;
 
@@ -44,9 +45,9 @@
     } catch (e) {}
 
     sections.forEach((sec, idx) => {
-      sec.classList.remove('section--is-active');
+      sec.classList.remove('section--is-active', 'section--dir-next', 'section--dir-prev');
       if (idx === currentSection) {
-        sec.classList.add('section--is-active');
+        sec.classList.add('section--is-active', 'section--dir-' + direction);
       }
     });
 

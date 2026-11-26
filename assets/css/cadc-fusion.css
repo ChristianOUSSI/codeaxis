@@ -602,6 +602,25 @@ transition:opacity 0.5s cubic-bezier(0.16,1,0.3,1),transform 0.5s cubic-bezier(0
 z-index:5;
 }
 
+@keyframes cadcSectionInNext{
+from{opacity:0;transform:translateX(56px) scale(0.98);}
+to{opacity:1;transform:translateX(0) scale(1);}
+}
+@keyframes cadcSectionInPrev{
+from{opacity:0;transform:translateX(-56px) scale(0.98);}
+to{opacity:1;transform:translateX(0) scale(1);}
+}
+.l-section.section--is-active.section--dir-next{
+animation:cadcSectionInNext 0.55s cubic-bezier(0.16,1,0.3,1) both;
+}
+.l-section.section--is-active.section--dir-prev{
+animation:cadcSectionInPrev 0.55s cubic-bezier(0.16,1,0.3,1) both;
+}
+@media (prefers-reduced-motion:reduce){
+.l-section.section--is-active.section--dir-next,
+.l-section.section--is-active.section--dir-prev{animation:none;}
+}
+
 .section-particles{
 position:absolute;
 top:0;
