@@ -1,464 +1,244 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Portfolio — Projets & Réalisations | CODE AXIS Digital Cameroon</title>
-  <meta name="description" content="Découvrez notre portfolio : applications web, mobiles, design UI/UX et solutions digitales pour le Cameroun.">
-  <link rel="canonical" href="https://codeaxis.cm/portfolio.html">
-  <meta property="og:title" content="Portfolio — CODE AXIS">
-  <meta property="og:description" content="Nos projets et réalisations">
-  <meta property="og:url" content="https://codeaxis.cm/portfolio.html">
-  <meta property="og:image" content="https://codeaxis.cm/assets/img/og-codeaxis-1200x630.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Portfolio — CODE AXIS">
-  <meta name="twitter:description" content="Nos projets et réalisations">
-  <meta name="twitter:image" content="https://codeaxis.cm/assets/img/og-codeaxis-1200x630.jpg">
-  <link rel="icon" href="assets/img/favicon-64.png" sizes="64x64" type="image/png">
-  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-  <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="assets/css/cadc-fusion.css">
-  <link rel="stylesheet" href="assets/css/mobile-pages.css">
-  <style>
-    .portfolio-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 120px 24px 80px;
-    }
-
-    .portfolio-header {
-      text-align: center;
-      margin-bottom: 80px;
-      position: relative;
-    }
-
-    .portfolio-header::before {
-      content: '';
-      position: absolute;
-      top: -40px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 4px;
-      background: var(--grad-primary);
-      border-radius: 2px;
-    }
-
-    .portfolio-header h1 {
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: clamp(36px, 6vw, 56px);
-      font-weight: 900;
-      margin-bottom: 20px;
-      background: var(--grad-accent);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      letter-spacing: -1px;
-    }
-
-    .portfolio-header p {
-      font-size: 18px;
-      color: var(--card-ink-soft);
-      max-width: 600px;
-      margin: 0 auto;
-      line-height: 1.7;
-    }
-
-    .portfolio-filters {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      margin-bottom: 60px;
-      flex-wrap: wrap;
-    }
-
-    .filter-btn {
-      padding: 12px 28px;
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: 24px;
-      color: var(--card-ink);
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: 14px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: var(--transition-smooth);
-    }
-
-    .filter-btn:hover {
-      border-color: var(--neon-cyan);
-      color: var(--neon-cyan);
-      transform: translateY(-2px);
-    }
-
-    .filter-btn.active {
-      background: var(--neon-cyan);
-      color: #000;
-      border-color: var(--neon-cyan);
-      box-shadow: 0 4px 20px rgba(92, 119, 148, 0.3);
-    }
-
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 32px;
-    }
-
-    .portfolio-item {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: 20px;
-      overflow: hidden;
-      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
-      cursor: pointer;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-    }
-
-    .portfolio-item:hover {
-      border-color: var(--neon-cyan);
-      transform: translateY(-6px);
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15), 0 0 20px var(--neon-glow-cyan);
-    }
-
-    .portfolio-image {
-      width: 100%;
-      height: 220px;
-      background: var(--grad-primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .portfolio-image::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(135deg, rgba(92, 119, 148, 0.3) 0%, rgba(157, 185, 214, 0.3) 100%);
-    }
-
-    .portfolio-image svg {
-      width: 56px;
-      height: 56px;
-      color: rgba(255, 255, 255, 0.8);
-      position: relative;
-      z-index: 1;
-    }
-
-    .portfolio-content {
-      padding: 28px;
-    }
-
-    .portfolio-category {
-      display: inline-block;
-      padding: 6px 14px;
-      background: rgba(92, 119, 148, 0.15);
-      border: 1px solid var(--neon-cyan);
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--neon-cyan);
-      margin-bottom: 16px;
-    }
-
-    .portfolio-title {
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: 22px;
-      font-weight: 700;
-      margin-bottom: 12px;
-      color: var(--card-ink);
-    }
-
-    .portfolio-description {
-      font-size: 15px;
-      line-height: 1.7;
-      color: var(--card-ink-soft);
-      margin-bottom: 20px;
-    }
-
-    .portfolio-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .portfolio-tag {
-      padding: 6px 12px;
-      background: rgba(92, 119, 148, 0.1);
-      border: 1px solid var(--border-subtle);
-      border-radius: 6px;
-      font-size: 12px;
-      color: var(--card-ink-dim);
-    }
-
-    .portfolio-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin-top: 20px;
-      padding: 10px 20px;
-      background: transparent;
-      border: 1px solid var(--neon-cyan);
-      border-radius: 8px;
-      color: var(--neon-cyan);
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: 13px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      text-decoration: none;
-      transition: var(--transition-smooth);
-    }
-
-    .portfolio-link:hover {
-      background: var(--neon-cyan);
-      color: #000;
-    }
-
-    .portfolio-item.hidden {
-      display: none;
-    }
-
-    @media (max-width: 768px) {
-      .portfolio-container {
-        padding: 100px 20px 60px;
-      }
-      .portfolio-filters {
-        gap: 10px;
-      }
-      .filter-btn {
-        padding: 10px 20px;
-        font-size: 13px;
-      }
-      .portfolio-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-      .portfolio-content {
-        padding: 24px;
-      }
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#040814" />
+<title>Portfolio - Nos réalisations | CODE AXIS</title>
+<meta name="description" content="Découvrez nos projets et réalisations pour des clients satisfaits à travers l'Afrique." />
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+<link rel="manifest" href="manifest.json" />
+<link rel="canonical" href="https://codeaxis.vercel.app/portfolio.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Portfolio - CODE AXIS" />
+<meta property="og:description" content="Nos réalisations et projets." />
+<meta property="og:url" content="https://codeaxis.vercel.app/portfolio.html" />
+<meta property="og:image" content="https://codeaxis.vercel.app/assets/img/og-codeaxis-1200x630.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/cadc-fusion.css" />
+<link rel="stylesheet" href="assets/css/mobile-pages.css" />
+<style>
+.portfolio-page { max-width: 1400px; margin: 0 auto; padding: 120px 24px 80px; }
+.portfolio-header { text-align: center; margin-bottom: 60px; }
+.portfolio-header h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 700; margin-bottom: 16px; background: linear-gradient(135deg, var(--text-primary), var(--neon-cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.portfolio-header p { font-size: 1.125rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto; }
+.portfolio-filters { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-bottom: 40px; }
+.portfolio-filter { padding: 10px 24px; background: var(--bg-card); border: 1px solid var(--border-neon); color: var(--text-primary); border-radius: 30px; cursor: pointer; font-weight: 600; transition: all 0.3s ease; }
+.portfolio-filter:hover { background: var(--neon-cyan); color: white; border-color: var(--neon-cyan); transform: translateY(-2px); }
+.portfolio-filter.active { background: var(--neon-cyan); color: white; border-color: var(--neon-cyan); }
+.portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 32px; }
+.portfolio-card { background: var(--bg-card); border: 1px solid var(--border-neon); border-radius: 20px; overflow: hidden; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+.portfolio-card:hover { transform: translateY(-8px); box-shadow: 0 20px 60px rgba(0, 240, 255, 0.15); border-color: var(--neon-cyan); }
+.portfolio-image { width: 100%; height: 240px; background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple)); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+.portfolio-image::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>'); opacity: 0.3; }
+.portfolio-image svg { width: 64px; height: 64px; color: white; opacity: 0.8; position: relative; z-index: 1; }
+.portfolio-content { padding: 28px; }
+.portfolio-category { display: inline-block; padding: 4px 12px; background: rgba(0, 240, 255, 0.1); color: var(--neon-cyan); border-radius: 20px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
+.portfolio-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 12px; color: var(--text-primary); }
+.portfolio-description { color: var(--text-secondary); line-height: 1.7; margin-bottom: 20px; }
+.portfolio-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.portfolio-tag { padding: 4px 12px; background: var(--bg-secondary); color: var(--text-secondary); border-radius: 12px; font-size: 0.8rem; font-weight: 500; }
+.portfolio-link { display: inline-flex; align-items: center; gap: 8px; color: var(--neon-cyan); text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: all 0.3s ease; }
+.portfolio-link:hover { transform: translateX(4px); }
+.portfolio-link svg { width: 16px; height: 16px; }
+.portfolio-back { display: inline-flex; align-items: center; gap: 8px; color: var(--neon-cyan); text-decoration: none; font-weight: 600; margin-bottom: 32px; transition: all 0.3s ease; }
+.portfolio-back:hover { transform: translateX(-4px); }
+.portfolio-back svg { width: 20px; height: 20px; }
+@media (max-width: 768px) {
+  .portfolio-page { padding: 100px 16px 60px; }
+  .portfolio-header h1 { font-size: 2rem; }
+  .portfolio-grid { grid-template-columns: 1fr; gap: 24px; }
+  .portfolio-image { height: 200px; }
+  .portfolio-content { padding: 20px; }
+  .portfolio-title { font-size: 1.25rem; }
+  .portfolio-filters { flex-direction: column; align-items: center; }
+  .portfolio-filter { width: 100%; max-width: 200px; }
+}
+</style>
 </head>
-
-<body class="theme-night">
-  <script src="assets/js/theme-anti-flash.js"></script>
-
-  <a href="#portfolio-content" class="skip-link">Aller au contenu</a>
-
-  <header class="site-header">
-    <div class="header-container">
-      <a href="index.html" class="logo">
-        <img src="assets/img/logo-mark.webp" alt="CODE AXIS" width="40" height="40">
-        <span>CODE AXIS</span>
-      </a>
-      <nav class="main-nav">
-        <a href="index.html">Accueil</a>
-        <a href="actualites.html">Actualités</a>
-        <a href="nos-projets.html">Projets</a>
-        <a href="suite-evo.html">Suite evo</a>
-        <a href="portfolio.html" class="active">Portfolio</a>
-        <a href="index.html#section-contact">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main id="portfolio-content" class="portfolio-container">
+<body>
+<a class="skip-link" href="#main-content">Aller au contenu</a>
+<header class="header" id="header">
+  <div class="header--inner">
+    <a href="index.html" class="header--brand" aria-label="CODE AXIS - Accueil">
+      <span class="brand-logo"><img src="assets/img/logo-white.svg" alt="CODE AXIS" width="93" height="52" /></span>
+    </a>
+    <nav class="header--nav" id="headerNav" aria-label="Navigation principale">
+      <ul class="header--nav-links">
+        <li><a href="index.html" class="nav-link">Accueil</a></li>
+        <li><a href="index.html#section-work" class="nav-link">Services</a></li>
+        <li><a href="index.html#section-about" class="nav-link">À propos</a></li>
+        <li><a href="index.html#section-contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="header--burger" id="burger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<main id="main-content">
+  <div class="portfolio-page">
+    <a href="index.html" class="portfolio-back">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Retour à l'accueil
+    </a>
     <div class="portfolio-header">
       <h1>Portfolio</h1>
-      <p>Découvrez nos projets et réalisations : applications web, mobiles, design UI/UX et solutions digitales.</p>
+      <p>Découvrez nos projets et réalisations pour des clients satisfaits à travers l'Afrique.</p>
     </div>
-
     <div class="portfolio-filters">
-      <button class="filter-btn active" data-filter="all">Tous</button>
-      <button class="filter-btn" data-filter="web">Web</button>
-      <button class="filter-btn" data-filter="mobile">Mobile</button>
-      <button class="filter-btn" data-filter="design">Design</button>
-      <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+      <button class="portfolio-filter active" data-filter="all">Tous</button>
+      <button class="portfolio-filter" data-filter="web">Web</button>
+      <button class="portfolio-filter" data-filter="mobile">Mobile</button>
+      <button class="portfolio-filter" data-filter="ecommerce">E-commerce</button>
+      <button class="portfolio-filter" data-filter="saas">SaaS</button>
     </div>
-
     <div class="portfolio-grid">
-      <div class="portfolio-item" data-category="web">
+      <article class="portfolio-card" data-category="web">
         <div class="portfolio-image">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-            <line x1="8" y1="21" x2="16" y2="21"/>
-            <line x1="12" y1="17" x2="12" y2="21"/>
-          </svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
         </div>
         <div class="portfolio-content">
           <span class="portfolio-category">Web</span>
-          <h3 class="portfolio-title">Plateforme E-commerce K-Market</h3>
-          <p class="portfolio-description">Plateforme e-commerce complète avec paiement Mobile Money, gestion des stocks et interface admin.</p>
+          <h2 class="portfolio-title">Site Web Corporate Afriland</h2>
+          <p class="portfolio-description">Site web corporate moderne avec design responsive et optimisation SEO pour Afriland, leader de la distribution en Afrique.</p>
           <div class="portfolio-tags">
             <span class="portfolio-tag">React</span>
-            <span class="portfolio-tag">Node.js</span>
-            <span class="portfolio-tag">MongoDB</span>
+            <span class="portfolio-tag">Next.js</span>
+            <span class="portfolio-tag">Tailwind</span>
           </div>
-          <a href="nos-projets.html" class="portfolio-link">Voir le projet</a>
+          <a href="#" class="portfolio-link">Voir le projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg></a>
         </div>
-      </div>
-
-      <div class="portfolio-item" data-category="mobile">
+      </article>
+      <article class="portfolio-card" data-category="ecommerce">
         <div class="portfolio-image">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
-            <line x1="12" y1="18" x2="12" y2="18"/>
-          </svg>
-        </div>
-        <div class="portfolio-content">
-          <span class="portfolio-category">Mobile</span>
-          <h3 class="portfolio-title">Application Mobile Clinique Saint-Luc</h3>
-          <p class="portfolio-description">Application de prise de rendez-vous médicaux avec notifications push et paiement en ligne.</p>
-          <div class="portfolio-tags">
-            <span class="portfolio-tag">React Native</span>
-            <span class="portfolio-tag">Firebase</span>
-            <span class="portfolio-tag">Stripe</span>
-          </div>
-          <a href="nos-projets.html" class="portfolio-link">Voir le projet</a>
-        </div>
-      </div>
-
-      <div class="portfolio-item" data-category="design">
-        <div class="portfolio-image">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"/>
-            <path d="M12 6v6l4 2"/>
-          </svg>
-        </div>
-        <div class="portfolio-content">
-          <span class="portfolio-category">Design</span>
-          <h3 class="portfolio-title">Refonte UI/UX Afriland Express</h3>
-          <p class="portfolio-description">Refonte complète de l'interface utilisateur pour une meilleure expérience client.</p>
-          <div class="portfolio-tags">
-            <span class="portfolio-tag">Figma</span>
-            <span class="portfolio-tag">Design System</span>
-            <span class="portfolio-tag">UX Research</span>
-          </div>
-          <a href="nos-projets.html" class="portfolio-link">Voir le projet</a>
-        </div>
-      </div>
-
-      <div class="portfolio-item" data-category="ecommerce">
-        <div class="portfolio-image">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="9" cy="21" r="1"/>
-            <circle cx="20" cy="21" r="1"/>
-            <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/>
-          </svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
         </div>
         <div class="portfolio-content">
           <span class="portfolio-category">E-commerce</span>
-          <h3 class="portfolio-title">Marketplace Prestige Immo</h3>
-          <p class="portfolio-description">Marketplace immobilière avec recherche avancée, cartographie et système de messagerie.</p>
-          <div class="portfolio-tags">
-            <span class="portfolio-tag">Next.js</span>
-            <span class="portfolio-tag">PostgreSQL</span>
-            <span class="portfolio-tag">Mapbox</span>
-          </div>
-          <a href="nos-projets.html" class="portfolio-link">Voir le projet</a>
-        </div>
-      </div>
-
-      <div class="portfolio-item" data-category="web">
-        <div class="portfolio-image">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-            <path d="M2 17l10 5 10-5"/>
-            <path d="M2 12l10 5 10-5"/>
-          </svg>
-        </div>
-        <div class="portfolio-content">
-          <span class="portfolio-category">Web</span>
-          <h3 class="portfolio-title">Dashboard Logistique Douala Port</h3>
-          <p class="portfolio-description">Tableau de bord de gestion logistique avec suivi en temps réel et analytics.</p>
+          <h2 class="portfolio-title">Plateforme K-Market</h2>
+          <p class="portfolio-description">Plateforme e-commerce complète avec paiement Mobile Money, gestion des stocks et tableau de bord analytique.</p>
           <div class="portfolio-tags">
             <span class="portfolio-tag">Vue.js</span>
-            <span class="portfolio-tag">D3.js</span>
-            <span class="portfolio-tag">Socket.io</span>
+            <span class="portfolio-tag">Node.js</span>
+            <span class="portfolio-tag">MongoDB</span>
           </div>
-          <a href="nos-projets.html" class="portfolio-link">Voir le projet</a>
+          <a href="#" class="portfolio-link">Voir le projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg></a>
         </div>
-      </div>
-
-      <div class="portfolio-item" data-category="mobile">
+      </article>
+      <article class="portfolio-card" data-category="saas">
         <div class="portfolio-image">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
-            <circle cx="9" cy="7" r="4"/>
-            <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
-          </svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div class="portfolio-content">
+          <span class="portfolio-category">SaaS</span>
+          <h2 class="portfolio-title">Système Portuaire Douala</h2>
+          <p class="portfolio-description">Système de gestion portuaire avec suivi en temps réel, facturation automatique et intégration API douanière.</p>
+          <div class="portfolio-tags">
+            <span class="portfolio-tag">React</span>
+            <span class="portfolio-tag">Python</span>
+            <span class="portfolio-tag">PostgreSQL</span>
+          </div>
+          <a href="#" class="portfolio-link">Voir le projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg></a>
+        </div>
+      </article>
+      <article class="portfolio-card" data-category="mobile">
+        <div class="portfolio-image">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
         </div>
         <div class="portfolio-content">
           <span class="portfolio-category">Mobile</span>
-          <h3 class="portfolio-title">Réseau Social EduTech</h3>
-          <p class="portfolio-description">Application de réseau social éducatif pour les étudiants camerounais.</p>
+          <h2 class="portfolio-title">App Mobile Clinique Saint-Luc</h2>
+          <p class="portfolio-description">Application mobile de prise de rendez-vous médicaux avec rappels automatiques et historique patient.</p>
           <div class="portfolio-tags">
-            <span class="portfolio-tag">Flutter</span>
+            <span class="portfolio-tag">React Native</span>
             <span class="portfolio-tag">Firebase</span>
-            <span class="portfolio-tag">GraphQL</span>
+            <span class="portfolio-tag">Node.js</span>
           </div>
-          <a href="nos-projets.html" class="portfolio-link">Voir le projet</a>
+          <a href="#" class="portfolio-link">Voir le projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg></a>
         </div>
-      </div>
+      </article>
+      <article class="portfolio-card" data-category="web">
+        <div class="portfolio-image">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div class="portfolio-content">
+          <span class="portfolio-category">Web</span>
+          <h2 class="portfolio-title">Site Immobilier Prestige Immo</h2>
+          <p class="portfolio-description">Site web immobilier avec recherche avancée, cartes interactives et système de réservation en ligne.</p>
+          <div class="portfolio-tags">
+            <span class="portfolio-tag">Next.js</span>
+            <span class="portfolio-tag">Mapbox</span>
+            <span class="portfolio-tag">Stripe</span>
+          </div>
+          <a href="#" class="portfolio-link">Voir le projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg></a>
+        </div>
+      </article>
+      <article class="portfolio-card" data-category="saas">
+        <div class="portfolio-image">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        </div>
+        <div class="portfolio-content">
+          <span class="portfolio-category">SaaS</span>
+          <h2 class="portfolio-title">Plateforme E-learning EduTech</h2>
+          <p class="portfolio-description">Plateforme d'apprentissage en ligne avec cours vidéo, quiz interactifs et suivi des progrès.</p>
+          <div class="portfolio-tags">
+            <span class="portfolio-tag">Vue.js</span>
+            <span class="portfolio-tag">Laravel</span>
+            <span class="portfolio-tag">MySQL</span>
+          </div>
+          <a href="#" class="portfolio-link">Voir le projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg></a>
+        </div>
+      </article>
     </div>
-  </main>
-
-  <footer class="site-footer">
-    <div class="footer-container">
-      <p>&copy; 2026 CODE AXIS Digital Cameroon. Tous droits réservés.</p>
-      <nav class="footer-nav">
-        <a href="index.html">Accueil</a>
-        <a href="actualites.html">Actualités</a>
-        <a href="nos-projets.html">Projets</a>
-        <a href="suite-evo.html">Suite evo</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="mentions-legales.html">Mentions légales</a>
-      </nav>
+  </div>
+</main>
+<footer class="outer-foot" aria-label="Pied de page">
+  <div class="outer-foot-inner">
+    <p class="foot-mark">CODE AXIS © 2026 — Digital Cameroon. Tous droits réservés.</p>
+    <div class="foot-links">
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="confidentialite.html">Confidentialité</a>
+      <a href="tarifs.html">Nos Services</a>
     </div>
-  </footer>
-
-  <script src="assets/js/theme.js"></script>
-  <script src="assets/js/i18n.js"></script>
-  <script src="assets/js/whatsapp-fab.js"></script>
-  <script src="assets/js/pwa-register.js"></script>
-  <script src="assets/js/pwa-install.js"></script>
-  <script src="assets/js/analytics.js"></script>
-  <script src="assets/js/scroll-animations.js"></script>
-  <script src="assets/js/micro-interactions.js"></script>
-  <script src="assets/js/accessibility.js"></script>
-  <script src="assets/js/analytics-events.js"></script>
-  <script src="assets/js/accessibility-advanced.js"></script>
-  <script src="assets/js/performance.js"></script>
-
-  <script>
-    // Portfolio filtering
-    document.querySelectorAll('.filter-btn').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var filter = btn.dataset.filter;
-
-        // Update active button
-        document.querySelectorAll('.filter-btn').forEach(function (b) {
-          b.classList.remove('active');
-        });
-        btn.classList.add('active');
-
-        // Filter items
-        document.querySelectorAll('.portfolio-item').forEach(function (item) {
-          if (filter === 'all' || item.dataset.category === filter) {
-            item.classList.remove('hidden');
-          } else {
-            item.classList.add('hidden');
-          }
-        });
-      });
+  </div>
+</footer>
+<script src="assets/js/cadc-app.js"></script>
+<script>
+// Portfolio filtering
+const filters = document.querySelectorAll('.portfolio-filter');
+const cards = document.querySelectorAll('.portfolio-card');
+filters.forEach(filter => {
+  filter.addEventListener('click', () => {
+    // Update active state
+    filters.forEach(f => f.classList.remove('active'));
+    filter.classList.add('active');
+    const filterValue = filter.dataset.filter;
+    // Filter cards
+    cards.forEach(card => {
+      if (filterValue === 'all' || card.dataset.category === filterValue) {
+        card.style.display = 'block';
+        card.style.animation = 'fadeIn 0.5s ease';
+      } else {
+        card.style.display = 'none';
+      }
     });
-  </script>
+  });
+});
+// Smooth scroll for back button
+document.querySelector('.portfolio-back').addEventListener('click', (e) => {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
+<style>
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
 </body>
 </html>

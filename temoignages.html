@@ -1,289 +1,103 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Témoignages — Avis clients | CODE AXIS Digital Cameroon</title>
-  <meta name="description" content="Découvrez ce que disent nos clients sur notre travail : satisfaction, qualité, professionnalisme.">
-  <link rel="canonical" href="https://codeaxis.cm/temoignages.html">
-  <meta property="og:title" content="Témoignages — CODE AXIS">
-  <meta property="og:description" content="Avis de nos clients satisfaits">
-  <meta property="og:url" content="https://codeaxis.cm/temoignages.html">
-  <meta property="og:image" content="https://codeaxis.cm/assets/img/og-codeaxis-1200x630.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Témoignages — CODE AXIS">
-  <meta name="twitter:description" content="Avis de nos clients satisfaits">
-  <meta name="twitter:image" content="https://codeaxis.cm/assets/img/og-codeaxis-1200x630.jpg">
-  <link rel="icon" href="assets/img/favicon-64.png" sizes="64x64" type="image/png">
-  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-  <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="assets/css/cadc-fusion.css">
-  <link rel="stylesheet" href="assets/css/mobile-pages.css">
-  <style>
-    .testimonials-container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 120px 24px 80px;
-    }
-
-    .testimonials-header {
-      text-align: center;
-      margin-bottom: 80px;
-      position: relative;
-    }
-
-    .testimonials-header::before {
-      content: '';
-      position: absolute;
-      top: -40px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 4px;
-      background: var(--grad-primary);
-      border-radius: 2px;
-    }
-
-    .testimonials-header h1 {
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: clamp(36px, 6vw, 56px);
-      font-weight: 900;
-      margin-bottom: 20px;
-      background: var(--grad-accent);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      letter-spacing: -1px;
-    }
-
-    .testimonials-header p {
-      font-size: 18px;
-      color: var(--card-ink-soft);
-      max-width: 600px;
-      margin: 0 auto;
-      line-height: 1.7;
-    }
-
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 32px;
-      margin-bottom: 60px;
-    }
-
-    .testimonial-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: 20px;
-      padding: 32px 28px;
-      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
-      position: relative;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-    }
-
-    .testimonial-card:hover {
-      border-color: var(--neon-cyan);
-      transform: translateY(-6px);
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15), 0 0 20px var(--neon-glow-cyan);
-    }
-
-    .testimonial-stars {
-      display: flex;
-      gap: 6px;
-      margin-bottom: 20px;
-    }
-
-    .testimonial-stars svg {
-      width: 20px;
-      height: 20px;
-      fill: #fbbf24;
-    }
-
-    .testimonial-text {
-      font-size: 16px;
-      line-height: 1.8;
-      color: var(--card-ink);
-      margin-bottom: 24px;
-      font-style: italic;
-    }
-
-    .testimonial-author {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      padding-top: 20px;
-      border-top: 1px solid var(--border-subtle);
-    }
-
-    .testimonial-avatar {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: var(--grad-primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: 20px;
-      font-weight: 700;
-      color: #ffffff;
-      flex-shrink: 0;
-      box-shadow: 0 4px 12px rgba(92, 119, 148, 0.3);
-    }
-
-    .testimonial-info h4 {
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--card-ink);
-      margin: 0 0 4px;
-    }
-
-    .testimonial-info p {
-      font-size: 14px;
-      color: var(--card-ink-soft);
-      margin: 0;
-    }
-
-    .testimonial-company {
-      font-size: 13px;
-      color: var(--neon-cyan);
-      font-weight: 600;
-      margin-top: 4px;
-    }
-
-    .cta-section {
-      text-align: center;
-      margin-top: 80px;
-      padding: 48px 32px;
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: 24px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cta-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: var(--grad-primary);
-    }
-
-    .cta-section h2 {
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: 32px;
-      font-weight: 900;
-      margin-bottom: 16px;
-      color: var(--card-ink);
-    }
-
-    .cta-section p {
-      font-size: 17px;
-      color: var(--card-ink-soft);
-      margin-bottom: 28px;
-      line-height: 1.7;
-      max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .cta-button {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      padding: 16px 36px;
-      background: var(--grad-primary);
-      color: #ffffff;
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: 15px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      text-decoration: none;
-      border-radius: 12px;
-      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
-      box-shadow: 0 4px 20px rgba(92, 119, 148, 0.3);
-    }
-
-    .cta-button:hover {
-      transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 8px 32px rgba(92, 119, 148, 0.4);
-    }
-
-    @media (max-width: 768px) {
-      .testimonials-container {
-        padding: 100px 20px 60px;
-      }
-      .testimonials-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-      .testimonial-card {
-        padding: 28px 24px;
-      }
-      .cta-section {
-        padding: 36px 24px;
-      }
-      .cta-section h2 {
-        font-size: 26px;
-      }
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#040814" />
+<title>Témoignages - Avis clients | CODE AXIS</title>
+<meta name="description" content="Découvrez ce que disent nos clients satisfaits de CODE AXIS Digital Cameroon." />
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+<link rel="manifest" href="manifest.json" />
+<link rel="canonical" href="https://codeaxis.vercel.app/temoignages.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Témoignages - CODE AXIS" />
+<meta property="og:description" content="Avis de nos clients satisfaits." />
+<meta property="og:url" content="https://codeaxis.vercel.app/temoignages.html" />
+<meta property="og:image" content="https://codeaxis.vercel.app/assets/img/og-codeaxis-1200x630.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/cadc-fusion.css" />
+<link rel="stylesheet" href="assets/css/mobile-pages.css" />
+<style>
+.testimonials-page { max-width: 1200px; margin: 0 auto; padding: 120px 24px 80px; }
+.testimonials-header { text-align: center; margin-bottom: 60px; }
+.testimonials-header h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 700; margin-bottom: 16px; background: linear-gradient(135deg, var(--text-primary), var(--neon-cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.testimonials-header p { font-size: 1.125rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto; }
+.testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 32px; margin-bottom: 60px; }
+.testimonial-card { background: var(--bg-card); border: 1px solid var(--border-neon); border-radius: 20px; padding: 32px; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); position: relative; overflow: hidden; }
+.testimonial-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple)); opacity: 0; transition: opacity 0.3s ease; }
+.testimonial-card:hover { transform: translateY(-8px); box-shadow: 0 20px 60px rgba(0, 240, 255, 0.15); border-color: var(--neon-cyan); }
+.testimonial-card:hover::before { opacity: 1; }
+.testimonial-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+.testimonial-avatar { width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple)); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; color: white; flex-shrink: 0; }
+.testimonial-info { flex: 1; }
+.testimonial-name { font-weight: 600; font-size: 1.125rem; color: var(--text-primary); margin-bottom: 4px; }
+.testimonial-role { font-size: 0.875rem; color: var(--text-secondary); }
+.testimonial-stars { display: flex; gap: 4px; margin-bottom: 16px; }
+.testimonial-stars svg { width: 18px; height: 18px; fill: #FFD700; }
+.testimonial-text { color: var(--text-secondary); line-height: 1.7; font-size: 1rem; }
+.testimonial-text p { margin-bottom: 12px; }
+.testimonial-text p:last-child { margin-bottom: 0; }
+.testimonial-cta { text-align: center; padding: 48px; background: linear-gradient(135deg, rgba(0, 240, 255, 0.1), rgba(138, 43, 226, 0.1)); border-radius: 20px; border: 1px solid var(--border-neon); }
+.testimonial-cta h2 { font-size: 2rem; font-weight: 700; margin-bottom: 16px; color: var(--text-primary); }
+.testimonial-cta p { color: var(--text-secondary); margin-bottom: 24px; font-size: 1.125rem; }
+.testimonial-cta .btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; background: linear-gradient(135deg, var(--neon-cyan), var(--neon-blue)); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease; }
+.testimonial-cta .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0, 240, 255, 0.3); }
+.testimonial-back { display: inline-flex; align-items: center; gap: 8px; color: var(--neon-cyan); text-decoration: none; font-weight: 600; margin-bottom: 32px; transition: all 0.3s ease; }
+.testimonial-back:hover { transform: translateX(-4px); }
+.testimonial-back svg { width: 20px; height: 20px; }
+@media (max-width: 768px) {
+  .testimonials-page { padding: 100px 16px 60px; }
+  .testimonials-header h1 { font-size: 2rem; }
+  .testimonials-grid { grid-template-columns: 1fr; gap: 24px; }
+  .testimonial-card { padding: 24px; }
+  .testimonial-header { flex-direction: column; text-align: center; }
+  .testimonial-cta { padding: 32px 24px; }
+  .testimonial-cta h2 { font-size: 1.5rem; }
+}
+</style>
 </head>
-
-<body class="theme-night">
-  <script src="assets/js/theme-anti-flash.js"></script>
-
-  <a href="#testimonials-content" class="skip-link">Aller au contenu</a>
-
-  <header class="site-header">
-    <div class="header-container">
-      <a href="index.html" class="logo">
-        <img src="assets/img/logo-mark.webp" alt="CODE AXIS" width="40" height="40">
-        <span>CODE AXIS</span>
-      </a>
-      <nav class="main-nav">
-        <a href="index.html">Accueil</a>
-        <a href="actualites.html">Actualités</a>
-        <a href="nos-projets.html">Projets</a>
-        <a href="suite-evo.html">Suite evo</a>
-        <a href="temoignages.html" class="active">Témoignages</a>
-        <a href="index.html#section-contact">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main id="testimonials-content" class="testimonials-container">
+<body>
+<a class="skip-link" href="#main-content">Aller au contenu</a>
+<header class="header" id="header">
+  <div class="header--inner">
+    <a href="index.html" class="header--brand" aria-label="CODE AXIS - Accueil">
+      <span class="brand-logo"><img src="assets/img/logo-white.svg" alt="CODE AXIS" width="93" height="52" /></span>
+    </a>
+    <nav class="header--nav" id="headerNav" aria-label="Navigation principale">
+      <ul class="header--nav-links">
+        <li><a href="index.html" class="nav-link">Accueil</a></li>
+        <li><a href="index.html#section-work" class="nav-link">Services</a></li>
+        <li><a href="index.html#section-about" class="nav-link">À propos</a></li>
+        <li><a href="index.html#section-contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="header--burger" id="burger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<main id="main-content">
+  <div class="testimonials-page">
+    <a href="index.html" class="testimonial-back">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Retour à l'accueil
+    </a>
     <div class="testimonials-header">
-      <h1>Témoignages</h1>
-      <p>Découvrez ce que disent nos clients sur notre travail : satisfaction, qualité, professionnalisme.</p>
+      <h1>Témoignages clients</h1>
+      <p>Découvrez ce que disent nos clients satisfaits de leur expérience avec CODE AXIS.</p>
     </div>
-
     <div class="testimonials-grid">
       <div class="testimonial-card">
-        <div class="testimonial-stars">
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        </div>
-        <p class="testimonial-text">"CODE AXIS a transformé notre processus de facturation. L'équipe est professionnelle, réactive et livrée avant le délai prévu. Je recommande vivement !"</p>
-        <div class="testimonial-author">
+        <div class="testimonial-header">
           <div class="testimonial-avatar">JD</div>
           <div class="testimonial-info">
-            <h4>Jean Dupont</h4>
-            <p>Directeur</p>
-            <span class="testimonial-company">Afriland Express Mobile</span>
+            <div class="testimonial-name">Jean Dupont</div>
+            <div class="testimonial-role">Directeur Général, Afriland</div>
           </div>
         </div>
-      </div>
-
-      <div class="testimonial-card">
         <div class="testimonial-stars">
           <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -291,18 +105,18 @@
           <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
         </div>
-        <p class="testimonial-text">"Le site web développé par CODE AXIS est magnifique et très performant. Nos clients adorent la nouvelle interface. Merci pour le professionnalisme !"</p>
-        <div class="testimonial-author">
+        <div class="testimonial-text">
+          <p>CODE AXIS a transformé notre présence digitale. Leur équipe est professionnelle, réactive et créative. Le site web qu'ils ont développé dépasse toutes nos attentes.</p>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-header">
           <div class="testimonial-avatar">SM</div>
           <div class="testimonial-info">
-            <h4>Sarah Martin</h4>
-            <p>Directrice Marketing</p>
-            <span class="testimonial-company">K-Market Cameroun</span>
+            <div class="testimonial-name">Sarah Martin</div>
+            <div class="testimonial-role">Responsable Marketing, K-Market</div>
           </div>
         </div>
-      </div>
-
-      <div class="testimonial-card">
         <div class="testimonial-stars">
           <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -310,18 +124,37 @@
           <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
         </div>
-        <p class="testimonial-text">"La suite evo a révolutionné notre gestion. Les modules sont intuitifs et nous font gagner un temps précieux. Un investissement rentable."</p>
-        <div class="testimonial-author">
+        <div class="testimonial-text">
+          <p>La plateforme e-commerce qu'ils ont développée pour nous a considérablement augmenté nos ventes en ligne. L'intégration des paiements Mobile Money est parfaite.</p>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="testimonial-avatar">PD</div>
+          <div class="testimonial-info">
+            <div class="testimonial-name">Pierre Diallo</div>
+            <div class="testimonial-role">Directeur Technique, Douala Port</div>
+          </div>
+        </div>
+        <div class="testimonial-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="testimonial-text">
+          <p>Le système de gestion portuaire qu'ils ont développé est robuste et intuitif. Leur support technique est disponible 24/7 et très réactif.</p>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-header">
           <div class="testimonial-avatar">ML</div>
           <div class="testimonial-info">
-            <h4>Marc Laurent</h4>
-            <p>Responsable Logistique</p>
-            <span class="testimonial-company">Douala Port Logistics</span>
+            <div class="testimonial-name">Marie Laurent</div>
+            <div class="testimonial-role">Directrice, Clinique Saint-Luc</div>
           </div>
         </div>
-      </div>
-
-      <div class="testimonial-card">
         <div class="testimonial-stars">
           <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -329,18 +162,18 @@
           <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
         </div>
-        <p class="testimonial-text">"CODE AXIS a développé notre application mobile en record time. L'équipe est à l'écoute et très professionnelle. Nos patients adorent la nouvelle interface."</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">AD</div>
-          <div class="testimonial-info">
-            <h4>Dr. Ahmed Diallo</h4>
-            <p>Directeur</p>
-            <span class="testimonial-company">Clinique Médicale Saint-Luc</span>
-          </div>
+        <div class="testimonial-text">
+          <p>Le système de gestion des rendez-vous médicaux a révolutionné notre fonctionnement. Les patients peuvent désormais prendre rendez-vous en ligne 24/7.</p>
         </div>
       </div>
-
       <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="testimonial-avatar">AK</div>
+          <div class="testimonial-info">
+            <div class="testimonial-name">Ahmed Koné</div>
+            <div class="testimonial-role">Gérant, Prestige Immo</div>
+          </div>
+        </div>
         <div class="testimonial-stars">
           <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -348,18 +181,18 @@
           <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
         </div>
-        <p class="testimonial-text">"Le design UI/UX créé par CODE AXIS est magnifique. Nos utilisateurs trouvent l'interface très intuitive. Un travail de qualité exceptionnelle."</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">CL</div>
-          <div class="testimonial-info">
-            <h4>Christian Lefebvre</h4>
-            <p>Fondateur</p>
-            <span class="testimonial-company">Prestige Immo Cameroun</span>
-          </div>
+        <div class="testimonial-text">
+          <p>Le site web immobilier qu'ils ont créé est magnifique et très fonctionnel. Nous avons vendu 3 propriétés en seulement 2 semaines après le lancement.</p>
         </div>
       </div>
-
       <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="testimonial-avatar">FP</div>
+          <div class="testimonial-info">
+            <div class="testimonial-name">Fatou Ndiaye</div>
+            <div class="testimonial-role">Directrice, EduTech Cameroon</div>
+          </div>
+        </div>
         <div class="testimonial-stars">
           <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -367,55 +200,38 @@
           <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
         </div>
-        <p class="testimonial-text">"CODE AXIS nous a accompagnés dans notre transformation digitale. Leur expertise et leur réactivité sont exemplaires. Je recommande vivement !"</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">PN</div>
-          <div class="testimonial-info">
-            <h4>Pauline Nguema</h4>
-            <p>Directrice</p>
-            <span class="testimonial-company">EduTech Douala</span>
-          </div>
+        <div class="testimonial-text">
+          <p>La plateforme d'apprentissage en ligne qu'ils ont développée est parfaite pour nos étudiants. L'interface est intuitive et les fonctionnalités sont excellentes.</p>
         </div>
       </div>
     </div>
-
-    <div class="cta-section">
+    <div class="testimonial-cta">
       <h2>Prêt à travailler avec nous ?</h2>
-      <p>Rejoignez nos clients satisfaits et découvrez comment CODE AXIS peut transformer votre projet.</p>
-      <a href="index.html#section-contact" class="cta-button">
-        <span>Nous contacter</span>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M5 12h14M12 5l7 7-7 7"/>
-        </svg>
+      <p>Rejoignez nos clients satisfaits et transformez votre présence digitale.</p>
+      <a href="index.html#section-contact" class="btn-primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+        Contactez-nous
       </a>
     </div>
-  </main>
-
-  <footer class="site-footer">
-    <div class="footer-container">
-      <p>&copy; 2026 CODE AXIS Digital Cameroon. Tous droits réservés.</p>
-      <nav class="footer-nav">
-        <a href="index.html">Accueil</a>
-        <a href="actualites.html">Actualités</a>
-        <a href="nos-projets.html">Projets</a>
-        <a href="suite-evo.html">Suite evo</a>
-        <a href="faq.html">FAQ</a>
-        <a href="mentions-legales.html">Mentions légales</a>
-      </nav>
+  </div>
+</main>
+<footer class="outer-foot" aria-label="Pied de page">
+  <div class="outer-foot-inner">
+    <p class="foot-mark">CODE AXIS © 2026 — Digital Cameroon. Tous droits réservés.</p>
+    <div class="foot-links">
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="confidentialite.html">Confidentialité</a>
+      <a href="tarifs.html">Nos Services</a>
     </div>
-  </footer>
-
-  <script src="assets/js/theme.js"></script>
-  <script src="assets/js/i18n.js"></script>
-  <script src="assets/js/whatsapp-fab.js"></script>
-  <script src="assets/js/pwa-register.js"></script>
-  <script src="assets/js/pwa-install.js"></script>
-  <script src="assets/js/analytics.js"></script>
-  <script src="assets/js/scroll-animations.js"></script>
-  <script src="assets/js/micro-interactions.js"></script>
-  <script src="assets/js/accessibility.js"></script>
-  <script src="assets/js/analytics-events.js"></script>
-  <script src="assets/js/accessibility-advanced.js"></script>
-  <script src="assets/js/performance.js"></script>
+  </div>
+</footer>
+<script src="assets/js/cadc-app.js"></script>
+<script>
+// Smooth scroll for back button
+document.querySelector('.testimonial-back').addEventListener('click', (e) => {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
 </body>
 </html>
