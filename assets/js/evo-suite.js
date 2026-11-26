@@ -92,7 +92,6 @@ document.getElementById(opts.back).addEventListener('click', close);
 modal.addEventListener('click', function (e) { if (e.target === modal) close(); });
 document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
 
-
 if (cta) {
 document.documentElement.addEventListener('cadc:lang', function () {
 if (modal.classList.contains('is-active')) {
@@ -102,7 +101,6 @@ if (p) paintCta(p);
 }
 });
 }
-
 
 if (opts.deepLink) {
 var hash = decodeURIComponent((window.location.hash || '').replace('#', ''));

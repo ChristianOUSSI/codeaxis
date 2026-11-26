@@ -6,7 +6,7 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
-const ORIGIN = 'https://codeaxis.cm/';
+const ORIGIN = 'https://codeaxis.vercel.app/';
 const PAGES = [
   'index.html', 'suite-evo.html', 'actualites.html', 'strategie.html',
   'developpement.html', 'design.html', 'youth-partnership.html',

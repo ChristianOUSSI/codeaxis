@@ -1,6 +1,6 @@
 # CODE AXIS — site officiel
 
-Site statique (HTML/CSS/JS vanilla) déployé sur Vercel, repo GitHub `ChristianOUSSI/codeaxis`, domaine `codeaxis.cm` (+ `codeaxis.vercel.app`).
+Site statique (HTML/CSS/JS vanilla) déployé sur Vercel, repo GitHub `ChristianOUSSI/codeaxis`, domaine public `codeaxis.vercel.app`. Le domaine `codeaxis.cm` n'est pas encore branché (DNS non configuré) ; l'email `contact@codeaxis.cm` reste le contact officiel.
 
 ## Stack
 

@@ -7,7 +7,7 @@
 (function () {
   'use strict';
   var host = location.hostname;
-  if (host !== 'codeaxis.vercel.app' && host !== 'codeaxis.cm' && host !== 'www.codeaxis.cm') return;
+  if (host !== 'codeaxis.vercel.app' && host !== 'www.codeaxis.vercel.app') return;
   fetch('/_vercel/insights/script.js', { method: 'HEAD', credentials: 'omit' })
     .then(function (r) {
       if (!r.ok) return;

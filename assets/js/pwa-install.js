@@ -27,7 +27,6 @@ function lang() {
 return (window.cadcLang && window.cadcLang()) === 'en' ? 'en' : 'fr';
 }
 
-
 function createBanner() {
 if (document.getElementById('pwa-install-banner')) return;
 
@@ -39,7 +38,6 @@ bannerEl.setAttribute('aria-modal', 'false');
 bannerEl.setAttribute('aria-live', 'polite');
 document.body.appendChild(bannerEl);
 renderBanner();
-
 
 document.documentElement.addEventListener('cadc:lang', function () {
 if (bannerEl) renderBanner();
@@ -91,7 +89,6 @@ try { localStorage.setItem(DISMISSED_KEY, Date.now().toString()); } catch (e) {}
 hideBanner();
 }
 
-
 function shouldShow() {
 try {
 if (localStorage.getItem(INSTALLED_KEY)) return false;
@@ -100,7 +97,6 @@ if (ts && Date.now() - ts < 7 * 24 * 3600 * 1000) return false;
 } catch (e) {}
 return true;
 }
-
 
 function waitForSplashThenShow() {
 var splash = document.getElementById('site-splash');
@@ -118,13 +114,11 @@ showBanner();
 }
 }
 
-
 window.addEventListener('beforeinstallprompt', function (e) {
 e.preventDefault();
 deferredPrompt = e;
 
 if (!shouldShow()) return;
-
 
 if (document.readyState === 'loading') {
 document.addEventListener('DOMContentLoaded', waitForSplashThenShow);
@@ -132,7 +126,6 @@ document.addEventListener('DOMContentLoaded', waitForSplashThenShow);
 waitForSplashThenShow();
 }
 });
-
 
 function showInstalledToast() {
 var TOAST_LABELS = {
@@ -146,7 +139,6 @@ toast.setAttribute('role', 'status');
 toast.setAttribute('aria-live', 'polite');
 toast.textContent = TOAST_LABELS[lang()];
 document.body.appendChild(toast);
-
 
 requestAnimationFrame(function () {
 requestAnimationFrame(function () {
@@ -162,14 +154,12 @@ if (toast.parentNode) toast.parentNode.removeChild(toast);
 }, 3000);
 }
 
-
 window.addEventListener('appinstalled', function () {
 try { localStorage.setItem(INSTALLED_KEY, '1'); } catch (e) {}
 hideBanner();
 if (showTimer) clearTimeout(showTimer);
 showInstalledToast();
 });
-
 
 function onInstall() {
 if (!deferredPrompt) return;

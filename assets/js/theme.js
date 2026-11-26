@@ -9,7 +9,6 @@ evening: '<svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.2L22 12l-7.6 2.8L12 22l-
 };
 var LABELS = { night: 'nuit', day: 'jour', evening: 'soirée' };
 
-
 function autoThemeByHour() {
 var h = new Date().getHours();
 return h >= 6 && h < 17 ? 'day' : h >= 17 && h < 21 ? 'evening' : 'night';

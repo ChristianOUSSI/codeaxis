@@ -76,10 +76,8 @@ var t = copy();
 var v = fields(form);
 status(live, t.sending, '');
 
-
 var submitBtn = form.querySelector('[type="submit"]');
 if (submitBtn) { submitBtn.disabled = true; submitBtn.setAttribute('aria-busy', 'true'); }
-
 
 var controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
 var timeoutId = controller
@@ -148,7 +146,6 @@ done(legacyCopy());
 }
 });
 }
-
 
 var direct = document.getElementById('wa-direct-link');
 var mailDirect = document.getElementById('mail-direct-link');

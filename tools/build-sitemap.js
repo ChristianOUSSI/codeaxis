@@ -4,7 +4,7 @@ const path = require('path');
 const { execFileSync } = require('child_process');
 
 const ROOT = path.resolve(__dirname, '..');
-const SITE = 'https://codeaxis.cm/';
+const SITE = 'https://codeaxis.vercel.app/';
 
 const PAGES = [
   ['index', 1.0],

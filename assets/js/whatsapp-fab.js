@@ -3,7 +3,6 @@
 
 var NUMBER = '237691223916';
 
-
 var MSG = {
 fr: {
 default: 'Bonjour CODE AXIS, je vous contacte depuis votre site.',
@@ -28,7 +27,6 @@ var LABEL = {
 fr: 'Écrire à CODE AXIS sur WhatsApp',
 en: 'Write to CODE AXIS on WhatsApp'
 };
-
 
 var SECTION_KEY = {
 'section-work': 'work',
@@ -66,7 +64,6 @@ document.body.appendChild(link);
 
 document.documentElement.addEventListener('cadc:lang', function () { paint(link); });
 
-
 var mainContent = document.getElementById('main-content');
 if (mainContent) {
 var syncMsg = function () {
@@ -77,7 +74,6 @@ paint(link);
 syncMsg();
 new MutationObserver(syncMsg).observe(mainContent, { attributes: true, attributeFilter: ['class'], subtree: true });
 }
-
 
 function syncBanner() {
 var banner = document.getElementById('pwa-install-banner');
@@ -96,7 +92,6 @@ syncBanner();
 }
 });
 bannerWatcher.observe(document.body, { childList: true });
-
 
 var contact = document.querySelector('.contact');
 var section = contact && contact.closest('.l-section');

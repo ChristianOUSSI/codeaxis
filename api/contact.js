@@ -4,9 +4,8 @@ const hits = new Map();
 
 // Origines autorisées à appeler l'API
 const ALLOWED_ORIGINS = new Set([
-  'https://codeaxis.cm',
-  'https://www.codeaxis.cm',
   'https://codeaxis.vercel.app',
+  'https://www.codeaxis.vercel.app',
 ]);
 
 function rateLimited(ip) {
