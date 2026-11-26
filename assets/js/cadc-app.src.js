@@ -51,6 +51,10 @@
       }
     });
 
+    try {
+      document.dispatchEvent(new CustomEvent('cadc:sectionchange', { detail: { index: currentSection } }));
+    } catch (e) {}
+
     sideNavItems.forEach((item) => {
       const target = sectionOf(item);
       item.classList.toggle('is-active', target !== -1 && target === currentSection);

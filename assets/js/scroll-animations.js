@@ -1,29 +1,54 @@
-/* Animations d'entrée au scroll — Intersection Observer
-   Fade-in + slide-up subtil pour les sections et cartes */
+/* Révélation échelonnée du contenu des sections — pilotée par
+   cadc-app.js via l'événement « cadc:sectionchange ».
+   Les sections .l-section sont toutes superposées en absolute : un
+   IntersectionObserver les verrait toutes visibles en permanence.
+   On anime donc les blocs internes quand leur section devient active. */
 (function () {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  var observer = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
-      }
+  var sections = document.querySelectorAll('.l-section');
+  if (!sections.length) return;
+
+  var CARD_SEL =
+    '.intro--options > a, .about--options > a, .hn-block, .hn-press, ' +
+    '.hn-carousel, .hire-carousel-container, .contact--info, ' +
+    '.contact--grid > *, .clients-marquee, .cta';
+
+  function resetAll() {
+    document.querySelectorAll('.reveal-on-scroll').forEach(function (el) {
+      el.classList.remove('is-visible');
+      el.style.transitionDelay = '';
     });
-  }, {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+  }
+
+  function reveal(scope) {
+    var cards = scope.querySelectorAll(CARD_SEL);
+    if (!cards.length) return;
+    cards.forEach(function (card, i) {
+      card.classList.add('reveal-on-scroll');
+      card.style.transitionDelay = Math.min(i * 80, 400) + 'ms';
+    });
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        cards.forEach(function (card) { card.classList.add('is-visible'); });
+      });
+    });
+    setTimeout(function () {
+      cards.forEach(function (card) { card.style.transitionDelay = ''; });
+    }, 1100);
+  }
+
+  document.addEventListener('cadc:sectionchange', function (e) {
+    resetAll();
+    var idx = e.detail && typeof e.detail.index === 'number' ? e.detail.index : -1;
+    var sec = (idx >= 0 && sections[idx]) || document.querySelector('.l-section.section--is-active');
+    if (sec) reveal(sec);
   });
 
-  // Observer les sections principales
-  document.querySelectorAll('.l-section').forEach(function (section) {
-    section.classList.add('reveal-on-scroll');
-    observer.observe(section);
-  });
-
-  // Observer les cartes de contenu
-  document.querySelectorAll('.intro--options > a, .about--options > a, .hn-press-card, .contact--info').forEach(function (card) {
-    card.classList.add('reveal-on-scroll');
-    observer.observe(card);
-  });
+  // Première section déjà active dans le HTML : on révèle son contenu
+  // après le début de la transition d'entrée.
+  var first = document.querySelector('.l-section.section--is-active');
+  if (first) {
+    setTimeout(function () { reveal(first); }, 350);
+  }
 })();
