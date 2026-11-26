@@ -110,7 +110,7 @@ date: '2026-10-31', tag: 'Agence', title: 'Le site s’ouvre directement sur le 
 excerpt: 'L’écran de lancement et son bouton « Entrer sur le site » ont disparu : le site démarre à l’adresse racine, sur le vrai contenu.',
 body: [
 ['Ce qui change', 'Le site est désormais servi sur la page racine, sans préchargeur ni écran intermédiaire. Les robots et les visiteurs arrivent sur le même contenu, au premier octet. La home reçoit aussi deux nouvelles sections, Suite evo et Actualité, avec un lien direct vers leurs pages dédiées.'],
-['Côté référencement', 'Le titre de l’onglet n’annonce plus un chargement : il dit ce que fait l’agence et où. Les images de partage, le plan du site et une page 404 à nos couleurs accompagnent ce changement. Le domaine codeaxis.vercel.app doit encore être branché sur l’hébergement pour que tout cela porte ses fruits.'],
+['Côté référencement', 'Le titre de l’onglet n’annonce plus un chargement : il dit ce que fait l’agence et où. Les images de partage, le plan du site et une page 404 à nos couleurs accompagnent ce changement. Le domaine codeaxis.cm doit encore être branché sur l’hébergement pour que tout cela porte ses fruits.'],
 ['Ce qui reste', 'L’identité du hero est conservée à l’identique : espace CADC, astronaute en lévitation et sections historiques. Depuis, le carrousel 3D a rejoint la section Suite evo de la home.']
 ]
 },

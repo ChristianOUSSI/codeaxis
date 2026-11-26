@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /archive-2026-10/
 
-Sitemap: https://codeaxis.cm/sitemap.xml
+Sitemap: https://codeaxis.vercel.app/sitemap.xml

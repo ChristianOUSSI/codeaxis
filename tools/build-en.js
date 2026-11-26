@@ -109,7 +109,7 @@ function enName(file) {
 
 function enUrl(url) {
   if (url === ORIGIN) return ORIGIN + 'index-en.html';
-  const m = url.match(/^https:\/\/codeaxis\.cm\/([^?#]+\.html)([?#].*)?$/);
+  const m = url.match(/^https:\/\/[^/]+\/([^?#]+\.html)([?#].*)?$/);
   if (!m || !PAGE_SET.has(m[1])) return url;
   return ORIGIN + enName(m[1]) + (m[2] || '');
 }
@@ -143,7 +143,7 @@ function translateJsonLd(tag) {
     if (typeof value === 'string') {
       if (key === 'inLanguage') return 'en';
       let next = value;
-      if (/^https:\/\/codeaxis\.cm\/[^?#]+\.html/.test(next)) next = enUrl(next);
+      if (/^https:\/\/[^/]+\/[^?#]+\.html/.test(next)) next = enUrl(next);
       if (!/^(?:https?:|mailto:|tel:)/.test(next) && !/^[a-z]{2}(-[A-Za-z]{2,})?$/.test(next)) {
         const tr = lookup(next);
         if (tr !== null) next = tr;
