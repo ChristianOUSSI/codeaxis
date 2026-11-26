@@ -53,8 +53,5 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Deploy to Vercel
-        if: github.ref == 'refs/heads/main'
-        run: |
-          npm i -g vercel
-          vercel --prod --token=${{ secrets.VERCEL_TOKEN }}
+      # Le déploiement production est assuré par l'intégration GitHub de Vercel
+      # (push sur main -> déploiement automatique). Pas de déploiement manuel ici.

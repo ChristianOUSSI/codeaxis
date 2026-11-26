@@ -6,6 +6,9 @@ const hits = new Map();
 const ALLOWED_ORIGINS = new Set([
   'https://codeaxis.vercel.app',
   'https://www.codeaxis.vercel.app',
+  // Domaine personnalisé (à activer le jour où il est branché sur Vercel)
+  'https://codeaxis.cm',
+  'https://www.codeaxis.cm',
 ]);
 
 function rateLimited(ip) {
