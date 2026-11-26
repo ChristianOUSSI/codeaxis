@@ -23,23 +23,7 @@
     }, 600);
   });
 
-  // Loading state sur les formulaires
-  document.addEventListener('submit', function (e) {
-    var form = e.target;
-    if (form.classList.contains('contact-form')) {
-      var submitBtn = form.querySelector('button[type="submit"]');
-      if (submitBtn) {
-        submitBtn.classList.add('is-loading');
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Envoi...';
-
-        // Reset après 3s (fallback)
-        setTimeout(function () {
-          submitBtn.classList.remove('is-loading');
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'Envoyer';
-        }, 3000);
-      }
-    }
-  });
+  /* Le state de chargement des formulaires est géré par contact-form.js
+     (fetch /api/contact) — ne pas le dupliquer ici : écraser textContent
+     casse le libellé et réactive le bouton pendant l'envoi. */
 })();

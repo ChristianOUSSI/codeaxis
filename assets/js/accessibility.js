@@ -17,6 +17,14 @@
     skipLink.href = '#main-content';
     skipLink.className = 'skip-link';
     skipLink.textContent = 'Aller au contenu';
+    skipLink.addEventListener('click', function (e) {
+      var t = document.getElementById('main-content') || document.querySelector('main');
+      if (t) {
+        e.preventDefault();
+        if (!t.hasAttribute('tabindex')) t.setAttribute('tabindex', '-1');
+        t.focus();
+      }
+    });
     document.body.insertBefore(skipLink, document.body.firstChild);
   }
 
