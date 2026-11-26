@@ -3132,6 +3132,17 @@ body.theme-day .pwa-btn--install {
   color: #ffffff;
 }
 
+/* Section Footer Link - Link to additional pages */
+.section-footer-link {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-neon);
+}
+
+.section-footer-link .hn-readmore {
+  font-size: 0.95rem;
+}
+
 @media (max-width: 420px) {
   .pwa-install-inner {
     flex-wrap: wrap;
@@ -4346,4 +4357,80 @@ body.theme-day::after { opacity: 0.035; }
 
 .outer-nav .nav-dropdown a:hover {
   color: var(--neon-cyan);
+}
+
+/* Navigation pour les nouvelles pages */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(7, 9, 19, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 16px 24px;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--card-ink);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.main-nav a {
+  color: var(--card-ink-soft);
+  text-decoration: none;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 14px;
+  font-weight: 600;
+  transition: var(--transition-smooth);
+}
+
+.main-nav a:hover {
+  color: var(--neon-cyan);
+}
+
+.main-nav a.active {
+  color: var(--neon-cyan);
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+  
+  .main-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
 }
