@@ -10,10 +10,12 @@
   if (host !== 'codeaxis.vercel.app' && host !== 'www.codeaxis.vercel.app') return;
   fetch('/_vercel/insights/script.js', { method: 'HEAD', credentials: 'omit' })
     .then(function (r) {
-      if (!r.ok) return;
+      var type = r.headers.get('content-type') || '';
+      if (!r.ok || !/javascript|ecmascript/.test(type)) return;
       var s = document.createElement('script');
       s.defer = true;
       s.src = '/_vercel/insights/script.js';
+      s.onerror = function () { s.remove(); };
       document.head.appendChild(s);
     })
     .catch(function () {});

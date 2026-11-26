@@ -2,7 +2,7 @@
 // Plus aucun CacheStorage : chaque ressource vient du réseau, donc
 // l'utilisateur voit TOUJOURS la dernière version déployée.
 // Le SW ne sert qu'à l'installabilité PWA ; il nettoie les anciens caches.
-const CACHE_NAME = 'cadc-pwa-v24';
+const CACHE_NAME = 'cadc-pwa-v25';
 
 // ─── Installation : activation immédiate ─────────────────────────────────────
 self.addEventListener('install', () => self.skipWaiting());

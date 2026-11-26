@@ -6,31 +6,9 @@
     // Georgia est déjà une police système, pas besoin de preload
   }
 
-  // Précharger les images critiques (above the fold)
-  function preloadImage(src, as = 'image') {
-    var link = document.createElement('link');
-    link.rel = 'preload';
-    link.as = as;
-    link.href = src;
-    link.crossOrigin = 'anonymous';
-    document.head.appendChild(link);
-  }
-
-  // Précharger les images du hero sur la home
-  if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
-    preloadImage('assets/img/introduction-visual.webp');
-    preloadImage('assets/img/about-visual.webp');
-    preloadImage('assets/img/about-winners.webp');
-  }
-
-  // Précharger les images des sous-pages
-  if (window.location.pathname.includes('nos-projets')) {
-    preloadImage('assets/img/projects-hero.webp');
-  }
-
-  if (window.location.pathname.includes('suite-evo')) {
-    preloadImage('assets/img/evo-hero.webp');
-  }
+  // Les images critiques sont préchargées dans le <head> des pages (link rel=preload).
+  // Ne pas les re-précharger ici : une seconde requête preload n'est jamais
+  // consommée et déclenche des warnings console.
 
   // Lazy loading pour les images non critiques
   document.addEventListener('DOMContentLoaded', function () {
