@@ -385,39 +385,3 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://codeaxis.cm/mentions-legales.html"/>
   </url>
 </urlset>
-  <url>
-    <loc>https://codeaxis.cm/faq.html</loc>
-    <lastmod>2026-11-26</lastmod>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/faq.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://codeaxis.cm/faq.html"/>
-  </url>
-  <url>
-    <loc>https://codeaxis.cm/temoignages.html</loc>
-    <lastmod>2026-11-26</lastmod>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/temoignages.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://codeaxis.cm/temoignages.html"/>
-  </url>
-  <url>
-    <loc>https://codeaxis.cm/blog.html</loc>
-    <lastmod>2026-11-26</lastmod>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/blog.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://codeaxis.cm/blog.html"/>
-  </url>
-  <url>
-    <loc>https://codeaxis.cm/portfolio.html</loc>
-    <lastmod>2026-11-26</lastmod>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/portfolio.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://codeaxis.cm/portfolio.html"/>
-  </url>
-  <url>
-    <loc>https://codeaxis.cm/tarifs.html</loc>
-    <lastmod>2026-11-26</lastmod>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/tarifs.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://codeaxis.cm/tarifs.html"/>
-  </url>
-</urlset>
