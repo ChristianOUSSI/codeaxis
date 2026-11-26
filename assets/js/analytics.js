@@ -6,6 +6,13 @@
    n'injecte rien — pas de resource error dans la console. */
 (function () {
   'use strict';
+  /* La PWA a été retirée : désenregistre l'ancien service worker
+     chez les visiteurs qui l'avaient installée. */
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.getRegistrations()
+      .then(function (regs) { regs.forEach(function (r) { r.unregister(); }); })
+      .catch(function () {});
+  }
   var host = location.hostname;
   if (host !== 'codeaxis.vercel.app' && host !== 'www.codeaxis.vercel.app') return;
   fetch('/_vercel/insights/script.js', { method: 'HEAD', credentials: 'omit' })

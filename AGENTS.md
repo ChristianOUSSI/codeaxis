@@ -6,14 +6,13 @@ Site statique (HTML/CSS/JS vanilla) déployé sur Vercel, repo GitHub `Christian
 
 - Pas de framework : fichiers `.html` à la racine, un seul endpoint `api/contact.js` (Vercel Serverless, envoi via Resend).
 - CSS principal : `assets/css/cadc-fusion.css` (+ `mobile-pages.css` pour les sous-pages, `evo-suite.css`, `home-evo-news.css`).
-- JS principal : `assets/js/cadc-app.js` (home 3D), `theme.js` (sous-pages), `whatsapp-fab.js`, `i18n*.js`, `pwa-*.js`.
-- PWA : `sw.js` généré par `scripts/generate-sw-cache.js` (network-first HTML, stale-while-revalidate assets).
+- JS principal : `assets/js/cadc-app.js` (home 3D), `theme.js` (sous-pages), `whatsapp-fab.js`, `i18n*.js`.
+- Pas de PWA : `sw.js`, `manifest.json` et `pwa-*.js` ont été retirés ; `analytics.js` désenregistre l'ancien SW chez les visiteurs.
 
 ## Commandes
 
-- `npm run build` — prébuild (`sw:gen` + `sitemap:dates`) puis minification des JS/CSS (**en place**, sources conservées en `*.src.*`).
-- `npm run minify` — minifie `assets/js` et `assets/css` sans régénérer sw.js.
-- `npm run sw:gen` — régénère les listes du service worker et bump `CACHE_NAME`.
+- `npm run build` — prébuild (`sitemap:dates`) puis minification des JS/CSS (**en place**, sources conservées en `*.src.*`).
+- `npm run minify` — minifie `assets/js` et `assets/css`.
 - `npm run sitemap:dates` — met à jour les dates du sitemap.
 - Servir en local : `python -m http.server 8642` (ou `npx serve`).
 
@@ -29,7 +28,6 @@ Site statique (HTML/CSS/JS vanilla) déployé sur Vercel, repo GitHub `Christian
 
 - `node --check` sur les JS modifiés.
 - Le site étant statique, un `git push` sur `main` déclenche le déploiement Vercel automatiquement.
-- Après un déploiement, penser au service worker : les utilisateurs peuvent voir l'ancienne version jusqu'à mise à jour du cache.
 
 ## Mobile — règles d'or (pattern établi)
 
@@ -54,5 +52,3 @@ Site statique (HTML/CSS/JS vanilla) déployé sur Vercel, repo GitHub `Christian
   dans `assets/js/i18n-en-pages.js` au format `FR|EN`. Le `MutationObserver` de `i18n.js`
   traduit le contenu injecté dynamiquement ; la `Map` est indexée par clé normalisée
   (apostrophes `’`/`'` et espaces ignorés) — ne pas dupliquer une clé existante.
-- `sw.js` est régénéré au build Vercel (`prebuild` → `sw:gen` bump `CACHE_NAME` auto) :
-  pas besoin de bump manuel, mais `npm run build` en local pour vérifier.

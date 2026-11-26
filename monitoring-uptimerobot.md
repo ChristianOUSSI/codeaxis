@@ -17,12 +17,6 @@
    - Timeout: 30 seconds
    - Expected status: 405 (Method Not Allowed for GET)
 
-3. **Service Worker**
-   - URL: https://codeaxis.vercel.app/sw.js
-   - Type: HTTP(s)
-   - Interval: 30 minutes
-   - Timeout: 30 seconds
-
 4. **Pages Clés**
    - https://codeaxis.vercel.app/index.html
    - https://codeaxis.vercel.app/actualites.html

@@ -75,24 +75,6 @@ syncMsg();
 new MutationObserver(syncMsg).observe(mainContent, { attributes: true, attributeFilter: ['class'], subtree: true });
 }
 
-function syncBanner() {
-var banner = document.getElementById('pwa-install-banner');
-var open = banner && banner.classList.contains('pwa-install-banner--visible');
-link.style.bottom = open
-? 'calc(98px + env(safe-area-inset-bottom, 0px))'
-: '';
-}
-syncBanner();
-var bannerWatcher = new MutationObserver(function () {
-var banner = document.getElementById('pwa-install-banner');
-if (banner) {
-bannerWatcher.disconnect();
-new MutationObserver(syncBanner).observe(banner, { attributes: true, attributeFilter: ['class'] });
-syncBanner();
-}
-});
-bannerWatcher.observe(document.body, { childList: true });
-
 var contact = document.querySelector('.contact');
 var section = contact && contact.closest('.l-section');
 if (section) {

@@ -22,14 +22,13 @@ const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
 
-// JS à minifier (hors pwa-register.js / analytics.js déjà courts)
+// JS à minifier (hors analytics.js déjà court)
 const JS_FILES = [
   'assets/js/cadc-app.js',
   'assets/js/whatsapp-fab.js',
   'assets/js/contact-form.js',
   'assets/js/theme.js',
   'assets/js/splash.js',
-  'assets/js/pwa-install.js',
   'assets/js/evo-suite.js',
   'assets/js/news-data.js',
   'assets/js/stack-data.js',
