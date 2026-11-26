@@ -22,24 +22,38 @@
   <link rel="stylesheet" href="assets/css/mobile-pages.css">
   <style>
     .pricing-container {
-      max-width: 1200px;
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 100px 20px 60px;
+      padding: 120px 24px 80px;
     }
 
     .pricing-header {
       text-align: center;
-      margin-bottom: 60px;
+      margin-bottom: 80px;
+      position: relative;
+    }
+
+    .pricing-header::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--grad-primary);
+      border-radius: 2px;
     }
 
     .pricing-header h1 {
       font-family: Georgia, 'Times New Roman', serif;
-      font-size: clamp(32px, 5vw, 48px);
+      font-size: clamp(36px, 6vw, 56px);
       font-weight: 900;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
       background: var(--grad-accent);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      letter-spacing: -1px;
     }
 
     .pricing-header p {
@@ -47,120 +61,82 @@
       color: var(--card-ink-soft);
       max-width: 600px;
       margin: 0 auto;
-      line-height: 1.6;
-    }
-
-    .pricing-toggle {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      margin-bottom: 40px;
-    }
-
-    .toggle-btn {
-      padding: 10px 24px;
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: 20px;
-      color: var(--card-ink);
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: 13px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: var(--transition-smooth);
-    }
-
-    .toggle-btn.active {
-      background: var(--neon-cyan);
-      color: #000;
-      border-color: var(--neon-cyan);
+      line-height: 1.7;
     }
 
     .pricing-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
       margin-bottom: 60px;
     }
 
     .pricing-card {
       background: var(--bg-card);
       border: 1px solid var(--border-subtle);
-      border-radius: 16px;
-      padding: 32px 24px;
-      transition: var(--transition-smooth);
+      border-radius: 20px;
+      padding: 36px 28px;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
       position: relative;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
     }
 
     .pricing-card:hover {
       border-color: var(--neon-cyan);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-      transform: translateY(-4px);
+      transform: translateY(-6px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15), 0 0 20px var(--neon-glow-cyan);
     }
 
     .pricing-card.featured {
       border-color: var(--neon-cyan);
-      box-shadow: 0 0 0 1px var(--neon-cyan), 0 8px 32px rgba(92, 119, 148, 0.2);
+      box-shadow: 0 0 0 2px var(--neon-cyan), 0 12px 40px rgba(92, 119, 148, 0.2);
     }
 
     .pricing-card.featured::before {
       content: 'POPULAIRE';
       position: absolute;
-      top: -12px;
+      top: -14px;
       left: 50%;
       transform: translateX(-50%);
-      padding: 4px 16px;
+      padding: 6px 20px;
       background: var(--neon-cyan);
       color: #000;
       font-family: Georgia, 'Times New Roman', serif;
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
       border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(92, 119, 148, 0.3);
     }
 
     .pricing-card h3 {
       font-family: Georgia, 'Times New Roman', serif;
-      font-size: 24px;
+      font-size: 26px;
       font-weight: 900;
-      margin-bottom: 8px;
+      margin-bottom: 12px;
       color: var(--card-ink);
     }
 
-    .pricing-card .price {
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: 36px;
-      font-weight: 900;
-      color: var(--neon-cyan);
-      margin-bottom: 8px;
-    }
-
-    .pricing-card .price span {
-      font-size: 14px;
-      font-weight: 400;
-      color: var(--card-ink-soft);
-    }
-
     .pricing-card .description {
-      font-size: 14px;
+      font-size: 16px;
       color: var(--card-ink-soft);
-      margin-bottom: 24px;
-      line-height: 1.6;
+      margin-bottom: 28px;
+      line-height: 1.7;
     }
 
     .pricing-features {
       list-style: none;
       padding: 0;
-      margin: 0 0 24px;
+      margin: 0 0 32px;
     }
 
     .pricing-features li {
       display: flex;
       align-items: flex-start;
-      gap: 10px;
-      padding: 10px 0;
-      font-size: 14px;
+      gap: 12px;
+      padding: 12px 0;
+      font-size: 15px;
       color: var(--card-ink-soft);
       border-bottom: 1px solid var(--border-subtle);
     }
@@ -170,8 +146,8 @@
     }
 
     .pricing-features svg {
-      width: 16px;
-      height: 16px;
+      width: 18px;
+      height: 18px;
       color: var(--neon-cyan);
       flex-shrink: 0;
       margin-top: 2px;
@@ -180,40 +156,40 @@
     .pricing-cta {
       display: block;
       width: 100%;
-      padding: 14px;
+      padding: 16px;
       background: var(--grad-primary);
       color: #ffffff;
       font-family: Georgia, 'Times New Roman', serif;
-      font-size: 14px;
+      font-size: 15px;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
       text-decoration: none;
       text-align: center;
-      border-radius: 8px;
-      transition: var(--transition-smooth);
+      border-radius: 12px;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
       box-shadow: 0 4px 20px rgba(92, 119, 148, 0.3);
     }
 
     .pricing-cta:hover {
-      transform: translateY(-2px);
+      transform: translateY(-3px);
       box-shadow: 0 8px 32px rgba(92, 119, 148, 0.4);
     }
 
     .pricing-note {
       text-align: center;
-      padding: 24px;
+      padding: 32px;
       background: rgba(92, 119, 148, 0.1);
       border: 1px solid var(--border-subtle);
-      border-radius: 12px;
-      margin-top: 40px;
+      border-radius: 16px;
+      margin-top: 60px;
     }
 
     .pricing-note p {
-      font-size: 14px;
+      font-size: 15px;
       color: var(--card-ink-soft);
       margin: 0;
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
     .pricing-note strong {
@@ -222,18 +198,17 @@
 
     @media (max-width: 768px) {
       .pricing-container {
-        padding: 80px 16px 40px;
+        padding: 100px 20px 60px;
       }
       .pricing-grid {
         grid-template-columns: 1fr;
-        gap: 16px;
+        gap: 20px;
       }
       .pricing-card {
-        padding: 28px 20px;
+        padding: 28px 24px;
       }
-      .pricing-toggle {
-        flex-direction: column;
-        align-items: center;
+      .pricing-note {
+        padding: 24px 20px;
       }
     }
   </style>
@@ -263,19 +238,13 @@
 
   <main id="pricing-content" class="pricing-container">
     <div class="pricing-header">
-      <h1>Tarifs</h1>
-      <p>Des tarifs transparents et adaptés à tous les budgets. Choisissez le forfait qui correspond à vos besoins.</p>
-    </div>
-
-    <div class="pricing-toggle">
-      <button class="toggle-btn active" data-period="monthly">Mensuel</button>
-      <button class="toggle-btn" data-period="yearly">Annuel (-20%)</button>
+      <h1>Nos Services</h1>
+      <p>Des solutions adaptées à tous les budgets. Contactez-nous pour un devis personnalisé.</p>
     </div>
 
     <div class="pricing-grid">
       <div class="pricing-card">
         <h3>Starter</h3>
-        <div class="price">150 000 <span>XAF/mois</span></div>
         <p class="description">Idéal pour les petites entreprises et les projets simples.</p>
         <ul class="pricing-features">
           <li>
@@ -314,7 +283,6 @@
 
       <div class="pricing-card featured">
         <h3>Business</h3>
-        <div class="price">350 000 <span>XAF/mois</span></div>
         <p class="description">Parfait pour les entreprises en croissance avec des besoins plus avancés.</p>
         <ul class="pricing-features">
           <li>
@@ -359,7 +327,6 @@
 
       <div class="pricing-card">
         <h3>Enterprise</h3>
-        <div class="price">Sur devis</div>
         <p class="description">Solutions sur mesure pour les grandes entreprises et projets complexes.</p>
         <ul class="pricing-features">
           <li>
@@ -404,7 +371,7 @@
     </div>
 
     <div class="pricing-note">
-      <p><strong>Note :</strong> Tous nos tarifs sont en XAF (Franc CFA). Pour les projets importants, nous proposons des paiements échelonnés. Contactez-nous pour un devis personnalisé.</p>
+      <p><strong>Note :</strong> Nos tarifs sont personnalisés selon vos besoins. Contactez-nous pour un devis gratuit et détaillé.</p>
     </div>
   </main>
 
@@ -435,19 +402,5 @@
   <script src="assets/js/accessibility-advanced.js"></script>
   <script src="assets/js/performance.js"></script>
 
-  <script>
-    // Pricing toggle
-    document.querySelectorAll('.toggle-btn').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        document.querySelectorAll('.toggle-btn').forEach(function (b) {
-          b.classList.remove('active');
-        });
-        btn.classList.add('active');
-
-        // TODO: Implement yearly pricing calculation
-        console.log('Period:', btn.dataset.period);
-      });
-    });
-  </script>
 </body>
 </html>
