@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>FAQ — Questions fréquentes | CODE AXIS Digital Cameroon</title>
+  <meta name="description" content="Questions fréquentes sur les services CODE AXIS : développement web/mobile, suite evo, tarifs, délais, support.">
+  <link rel="canonical" href="https://codeaxis.cm/faq.html">
+  <meta property="og:title" content="FAQ — CODE AXIS">
+  <meta property="og:description" content="Questions fréquentes sur nos services">
+  <meta property="og:url" content="https://codeaxis.cm/faq.html">
+  <meta property="og:image" content="https://codeaxis.cm/assets/img/og-codeaxis-1200x630.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FAQ — CODE AXIS">
+  <meta name="twitter:description" content="Questions fréquentes sur nos services">
+  <meta name="twitter:image" content="https://codeaxis.cm/assets/img/og-codeaxis-1200x630.jpg">
+  <link rel="icon" href="assets/img/favicon-64.png" sizes="64x64" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="assets/css/cadc-fusion.css">
+  <link rel="stylesheet" href="assets/css/mobile-pages.css">
+  <style>
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 100px 20px 60px;
+    }
+
+    .faq-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .faq-header h1 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 900;
+      margin-bottom: 16px;
+      background: var(--grad-accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .faq-header p {
+      font-size: 18px;
+      color: var(--card-ink-soft);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      margin-bottom: 16px;
+      overflow: hidden;
+      transition: var(--transition-smooth);
+    }
+
+    .faq-item:hover {
+      border-color: var(--neon-cyan);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: 20px 24px;
+      background: none;
+      border: none;
+      color: var(--card-ink);
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 16px;
+      font-weight: 700;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      transition: var(--transition-smooth);
+    }
+
+    .faq-question:hover {
+      color: var(--neon-cyan);
+    }
+
+    .faq-question::after {
+      content: '+';
+      font-size: 24px;
+      font-weight: 400;
+      color: var(--neon-cyan);
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item.is-open .faq-question::after {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+
+    .faq-item.is-open .faq-answer {
+      max-height: 500px;
+      padding: 0 24px 20px;
+    }
+
+    .faq-answer p {
+      color: var(--card-ink-soft);
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    .faq-answer a {
+      color: var(--neon-cyan);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .faq-answer a:hover {
+      text-decoration: underline;
+    }
+
+    .faq-category {
+      margin-top: 60px;
+      margin-bottom: 24px;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--neon-cyan);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 768px) {
+      .faq-container {
+        padding: 80px 16px 40px;
+      }
+      .faq-question {
+        padding: 18px 20px;
+        font-size: 15px;
+      }
+      .faq-answer {
+        padding: 0 20px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body class="theme-night">
+  <script src="assets/js/theme-anti-flash.js"></script>
+
+  <a href="#faq-content" class="skip-link">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="logo">
+        <img src="assets/img/logo-mark.webp" alt="CODE AXIS" width="40" height="40">
+        <span>CODE AXIS</span>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Accueil</a>
+        <a href="actualites.html">Actualités</a>
+        <a href="nos-projets.html">Projets</a>
+        <a href="suite-evo.html">Suite evo</a>
+        <a href="faq.html" class="active">FAQ</a>
+        <a href="index.html#section-contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="faq-content" class="faq-container">
+    <div class="faq-header">
+      <h1>Questions Fréquentes</h1>
+      <p>Tout ce que vous devez savoir sur nos services, tarifs, délais et processus de travail.</p>
+    </div>
+
+    <h2 class="faq-category">Services & Tarifs</h2>
+
+    <div class="faq-item">
+      <button class="faq-question">Quels services proposez-vous ?</button>
+      <div class="faq-answer">
+        <p>Nous proposons 4 services principaux : <strong>Développement Web & Mobile</strong> (sites, applications, e-commerce), <strong>Suite evo</strong> (produits métiers : facturation, RH, logistique, santé), <strong>Design UI/UX</strong> (interfaces modernes et intuitives) et <strong>Stratégie Digitale</strong> (conseil et accompagnement).</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Comment sont calculés vos tarifs ?</button>
+      <div class="faq-answer">
+        <p>Nos tarifs dépendent de la complexité du projet, du délai souhaité et des fonctionnalités requises. Nous proposons des forfaits fixes pour les projets standards et des devis sur mesure pour les projets complexes. Contactez-nous pour un devis gratuit.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Proposez-vous des paiements échelonnés ?</button>
+      <div class="faq-answer">
+        <p>Oui, nous acceptons les paiements échelonnés pour les projets importants. Généralement, 30% à la commande, 40% à mi-parcours et 30% à la livraison. Nous acceptons Mobile Money, virement bancaire et espèces.</p>
+      </div>
+    </div>
+
+    <h2 class="faq-category">Processus & Délais</h2>
+
+    <div class="faq-item">
+      <button class="faq-question">Combien de temps prend un projet ?</button>
+      <div class="faq-answer">
+        <p>Les délais varient selon la complexité : un site vitrine prend 2-3 semaines, une application web 4-8 semaines, une application mobile 6-12 semaines. Nous établissons un planning détaillé dès le début du projet.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Comment se déroule le processus de travail ?</button>
+      <div class="faq-answer">
+        <p>Notre processus en 5 étapes : <strong>1. Découverte</strong> (cahier des charges), <strong>2. Design</strong> (maquettes), <strong>3. Développement</strong> (codage), <strong>4. Tests</strong> (validation), <strong>5. Livraison</strong> (mise en production + formation).</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Fournissez-vous un support après livraison ?</button>
+      <div class="faq-answer">
+        <p>Oui, nous offrons 30 jours de support gratuit après livraison. Au-delà, nous proposons des contrats de maintenance annuels ou des interventions ponctuelles selon vos besoins.</p>
+      </div>
+    </div>
+
+    <h2 class="faq-category">Technique</h2>
+
+    <div class="faq-item">
+      <button class="faq-question">Quelle est votre pile technologique ?</button>
+      <div class="faq-answer">
+        <p>Nous utilisons les technologies modernes : <strong>Frontend</strong> (HTML5, CSS3, JavaScript, React), <strong>Backend</strong> (Node.js, Python, PHP), <strong>Mobile</strong> (React Native, Flutter), <strong>Bases de données</strong> (PostgreSQL, MongoDB), <strong>Cloud</strong> (AWS, Vercel, Firebase).</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Mes données sont-elles sécurisées ?</button>
+      <div class="faq-answer">
+        <p>Oui, nous suivons les meilleures pratiques de sécurité : HTTPS, chiffrement des données, sauvegardes régulières, protection contre les injections SQL et XSS. Nous sommes conformes aux normes de sécurité camerounaises.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Proposez-vous des solutions offline ?</button>
+      <div class="faq-answer">
+        <p>Oui, nos applications web et mobiles fonctionnent hors-ligne grâce aux Progressive Web Apps (PWA) et au cache local. Les données sont synchronisées automatiquement quand la connexion revient.</p>
+      </div>
+    </div>
+
+    <h2 class="faq-category">Entreprise</h2>
+
+    <div class="faq-item">
+      <button class="faq-question">Où êtes-vous situés ?</button>
+      <div class="faq-answer">
+        <p>Nous sommes situés à <strong>Bonabéri, Douala, Cameroun</strong>, près de l'agence Orange. Notre bureau est facilement accessible et nous recevons sur rendez-vous.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Travaillez-vous avec des clients internationaux ?</button>
+      <div class="faq-answer">
+        <p>Oui, nous travaillons avec des clients au Cameroun et dans toute l'Afrique de l'Ouest. Nous pouvons travailler à distance avec des clients internationaux grâce à nos outils de collaboration.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Comment vous contacter ?</button>
+      <div class="faq-answer">
+        <p>Vous pouvez nous contacter par <a href="https://wa.me/237691223916" target="_blank">WhatsApp</a>, par email à <a href="mailto:contact@codeaxis.cm">contact@codeaxis.cm</a> ou via notre <a href="index.html#section-contact">formulaire de contact</a>. Nous répondons sous 24h.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <p>&copy; 2026 CODE AXIS Digital Cameroon. Tous droits réservés.</p>
+      <nav class="footer-nav">
+        <a href="index.html">Accueil</a>
+        <a href="actualites.html">Actualités</a>
+        <a href="nos-projets.html">Projets</a>
+        <a href="suite-evo.html">Suite evo</a>
+        <a href="faq.html">FAQ</a>
+        <a href="mentions-legales.html">Mentions légales</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/whatsapp-fab.js"></script>
+  <script src="assets/js/pwa-register.js"></script>
+  <script src="assets/js/pwa-install.js"></script>
+  <script src="assets/js/analytics.js"></script>
+  <script src="assets/js/scroll-animations.js"></script>
+  <script src="assets/js/micro-interactions.js"></script>
+  <script src="assets/js/accessibility.js"></script>
+  <script src="assets/js/analytics-events.js"></script>
+  <script src="assets/js/accessibility-advanced.js"></script>
+  <script src="assets/js/performance.js"></script>
+
+  <script>
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var item = btn.closest('.faq-item');
+        var isOpen = item.classList.contains('is-open');
+
+        // Fermer tous les autres
+        document.querySelectorAll('.faq-item.is-open').forEach(function (openItem) {
+          openItem.classList.remove('is-open');
+        });
+
+        // Ouvrir celui-ci si il était fermé
+        if (!isOpen) {
+          item.classList.add('is-open');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

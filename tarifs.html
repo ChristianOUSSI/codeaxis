@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Tarifs — Services & Forfaits | CODE AXIS Digital Cameroon</title>
+  <meta name="description" content="Découvrez nos tarifs transparents pour le développement web, mobile, design UI/UX et stratégie digitale.">
+  <link rel="canonical" href="https://codeaxis.cm/tarifs.html">
+  <meta property="og:title" content="Tarifs — CODE AXIS">
+  <meta property="og:description" content="Nos tarifs transparents">
+  <meta property="og:url" content="https://codeaxis.cm/tarifs.html">
+  <meta property="og:image" content="https://codeaxis.cm/assets/img/og-codeaxis-1200x630.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tarifs — CODE AXIS">
+  <meta name="twitter:description" content="Nos tarifs transparents">
+  <meta name="twitter:image" content="https://codeaxis.cm/assets/img/og-codeaxis-1200x630.jpg">
+  <link rel="icon" href="assets/img/favicon-64.png" sizes="64x64" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="assets/css/cadc-fusion.css">
+  <link rel="stylesheet" href="assets/css/mobile-pages.css">
+  <style>
+    .pricing-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 100px 20px 60px;
+    }
+
+    .pricing-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .pricing-header h1 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 900;
+      margin-bottom: 16px;
+      background: var(--grad-accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .pricing-header p {
+      font-size: 18px;
+      color: var(--card-ink-soft);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .pricing-toggle {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+
+    .toggle-btn {
+      padding: 10px 24px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      color: var(--card-ink);
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .toggle-btn.active {
+      background: var(--neon-cyan);
+      color: #000;
+      border-color: var(--neon-cyan);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-bottom: 60px;
+    }
+
+    .pricing-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 32px 24px;
+      transition: var(--transition-smooth);
+      position: relative;
+    }
+
+    .pricing-card:hover {
+      border-color: var(--neon-cyan);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      transform: translateY(-4px);
+    }
+
+    .pricing-card.featured {
+      border-color: var(--neon-cyan);
+      box-shadow: 0 0 0 1px var(--neon-cyan), 0 8px 32px rgba(92, 119, 148, 0.2);
+    }
+
+    .pricing-card.featured::before {
+      content: 'POPULAIRE';
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 4px 16px;
+      background: var(--neon-cyan);
+      color: #000;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-radius: 20px;
+    }
+
+    .pricing-card h3 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 24px;
+      font-weight: 900;
+      margin-bottom: 8px;
+      color: var(--card-ink);
+    }
+
+    .pricing-card .price {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 36px;
+      font-weight: 900;
+      color: var(--neon-cyan);
+      margin-bottom: 8px;
+    }
+
+    .pricing-card .price span {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--card-ink-soft);
+    }
+
+    .pricing-card .description {
+      font-size: 14px;
+      color: var(--card-ink-soft);
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .pricing-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 24px;
+    }
+
+    .pricing-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 10px 0;
+      font-size: 14px;
+      color: var(--card-ink-soft);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .pricing-features li:last-child {
+      border-bottom: none;
+    }
+
+    .pricing-features svg {
+      width: 16px;
+      height: 16px;
+      color: var(--neon-cyan);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .pricing-cta {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      background: var(--grad-primary);
+      color: #ffffff;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-decoration: none;
+      text-align: center;
+      border-radius: 8px;
+      transition: var(--transition-smooth);
+      box-shadow: 0 4px 20px rgba(92, 119, 148, 0.3);
+    }
+
+    .pricing-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(92, 119, 148, 0.4);
+    }
+
+    .pricing-note {
+      text-align: center;
+      padding: 24px;
+      background: rgba(92, 119, 148, 0.1);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      margin-top: 40px;
+    }
+
+    .pricing-note p {
+      font-size: 14px;
+      color: var(--card-ink-soft);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .pricing-note strong {
+      color: var(--neon-cyan);
+    }
+
+    @media (max-width: 768px) {
+      .pricing-container {
+        padding: 80px 16px 40px;
+      }
+      .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .pricing-card {
+        padding: 28px 20px;
+      }
+      .pricing-toggle {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+
+<body class="theme-night">
+  <script src="assets/js/theme-anti-flash.js"></script>
+
+  <a href="#pricing-content" class="skip-link">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="logo">
+        <img src="assets/img/logo-mark.webp" alt="CODE AXIS" width="40" height="40">
+        <span>CODE AXIS</span>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Accueil</a>
+        <a href="actualites.html">Actualités</a>
+        <a href="nos-projets.html">Projets</a>
+        <a href="suite-evo.html">Suite evo</a>
+        <a href="tarifs.html" class="active">Tarifs</a>
+        <a href="index.html#section-contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="pricing-content" class="pricing-container">
+    <div class="pricing-header">
+      <h1>Tarifs</h1>
+      <p>Des tarifs transparents et adaptés à tous les budgets. Choisissez le forfait qui correspond à vos besoins.</p>
+    </div>
+
+    <div class="pricing-toggle">
+      <button class="toggle-btn active" data-period="monthly">Mensuel</button>
+      <button class="toggle-btn" data-period="yearly">Annuel (-20%)</button>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3>Starter</h3>
+        <div class="price">150 000 <span>XAF/mois</span></div>
+        <p class="description">Idéal pour les petites entreprises et les projets simples.</p>
+        <ul class="pricing-features">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 6L9 17l-5-5"/>
+            </svg>
+            Site vitrine (5 pages)
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 6L9 17l-5-5"/>
+            </svg>
+            Design responsive
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 6L9 17l-5-5"/>
+            </svg>
+            SEO basique
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 6L9 17l-5-5"/>
+            </svg>
+            Support email
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 6L9 17l-5-5"/>
+            </svg>
+            Hébergement 1 an
+          </li>
+        </ul>
+        <a href="index.html#section-contact" class="pricing-cta">Choisir Starter</a>
+      </div>
+
+      <div class="pricing-card featured">
+        <h3>Business</h3>
+        <div class="price">350 000 <span>XAF/mois</span></div>
+        <p class="description">Parfait pour les entreprises en croissance avec des besoins plus avancés.</p>
+        <ul class="pricing-features">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 6L9 17l-5-5"/>
+            </svg>
+            Site e-commerce
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 6L9 17l-5-5"/>
+            </svg>
+            Paiement Mobile Money
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 6L9 17l-5-5"/>
+            </svg>
+            Dashboard admin
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 6L9 17l-5-5"/>
+            </svg>
+            SEO avancé
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 6L9 17l-5-5"/>
+            </svg>
+            Support prioritaire
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 6L9 17l-5-5"/>
+            </svg>
+            Maintenance incluse
+          </li>
+        </ul>
+        <a href="index.html#section-contact" class="pricing-cta">Choisir Business</a>
+      </div>
+
+      <div class="pricing-card">
+        <h3>Enterprise</h3>
+        <div class="price">Sur devis</div>
+        <p class="description">Solutions sur mesure pour les grandes entreprises et projets complexes.</p>
+        <ul class="pricing-features">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 6L9 17l-5-5"/>
+            </svg>
+            Application sur mesure
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 6L9 17l-5-5"/>
+            </svg>
+            Intégrations API
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 6L9 17l-5-5"/>
+            </svg>
+            Architecture scalable
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 6L9 17l-5-5"/>
+            </svg>
+            Support dédié
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 6L9 17l-5-5"/>
+            </svg>
+            SLA garanti
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 6L9 17l-5-5"/>
+            </svg>
+            Formation équipe
+          </li>
+        </ul>
+        <a href="index.html#section-contact" class="pricing-cta">Demander un devis</a>
+      </div>
+    </div>
+
+    <div class="pricing-note">
+      <p><strong>Note :</strong> Tous nos tarifs sont en XAF (Franc CFA). Pour les projets importants, nous proposons des paiements échelonnés. Contactez-nous pour un devis personnalisé.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <p>&copy; 2026 CODE AXIS Digital Cameroon. Tous droits réservés.</p>
+      <nav class="footer-nav">
+        <a href="index.html">Accueil</a>
+        <a href="actualites.html">Actualités</a>
+        <a href="nos-projets.html">Projets</a>
+        <a href="suite-evo.html">Suite evo</a>
+        <a href="tarifs.html">Tarifs</a>
+        <a href="mentions-legales.html">Mentions légales</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/whatsapp-fab.js"></script>
+  <script src="assets/js/pwa-register.js"></script>
+  <script src="assets/js/pwa-install.js"></script>
+  <script src="assets/js/analytics.js"></script>
+  <script src="assets/js/scroll-animations.js"></script>
+  <script src="assets/js/micro-interactions.js"></script>
+  <script src="assets/js/accessibility.js"></script>
+  <script src="assets/js/analytics-events.js"></script>
+  <script src="assets/js/accessibility-advanced.js"></script>
+  <script src="assets/js/performance.js"></script>
+
+  <script>
+    // Pricing toggle
+    document.querySelectorAll('.toggle-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('.toggle-btn').forEach(function (b) {
+          b.classList.remove('active');
+        });
+        btn.classList.add('active');
+
+        // TODO: Implement yearly pricing calculation
+        console.log('Period:', btn.dataset.period);
+      });
+    });
+  </script>
+</body>
+</html>

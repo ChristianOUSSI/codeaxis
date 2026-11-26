@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://codeaxis.cm/</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://codeaxis.cm/index-en.html"/>
@@ -10,7 +10,7 @@
   </url>
   <url>
     <loc>https://codeaxis.cm/index-en.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://codeaxis.cm/index-en.html"/>
@@ -18,7 +18,7 @@
   </url>
   <url>
     <loc>https://codeaxis.cm/suite-evo.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/suite-evo.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://codeaxis.cm/suite-evo-en.html"/>
@@ -26,7 +26,7 @@
   </url>
   <url>
     <loc>https://codeaxis.cm/suite-evo-en.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/suite-evo.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://codeaxis.cm/suite-evo-en.html"/>
@@ -34,7 +34,7 @@
   </url>
   <url>
     <loc>https://codeaxis.cm/actualites.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/actualites.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://codeaxis.cm/actualites-en.html"/>
@@ -42,7 +42,7 @@
   </url>
   <url>
     <loc>https://codeaxis.cm/actualites-en.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/actualites.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://codeaxis.cm/actualites-en.html"/>
@@ -50,7 +50,7 @@
   </url>
   <url>
     <loc>https://codeaxis.cm/strategie.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/strategie.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://codeaxis.cm/strategie-en.html"/>
@@ -58,7 +58,7 @@
   </url>
   <url>
     <loc>https://codeaxis.cm/strategie-en.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/strategie.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://codeaxis.cm/strategie-en.html"/>
@@ -66,7 +66,7 @@
   </url>
   <url>
     <loc>https://codeaxis.cm/developpement.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/developpement.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://codeaxis.cm/developpement-en.html"/>
@@ -74,7 +74,7 @@
   </url>
   <url>
     <loc>https://codeaxis.cm/developpement-en.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/developpement.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://codeaxis.cm/developpement-en.html"/>
@@ -82,7 +82,7 @@
   </url>
   <url>
     <loc>https://codeaxis.cm/design.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/design.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://codeaxis.cm/design-en.html"/>
@@ -90,7 +90,7 @@
   </url>
   <url>
     <loc>https://codeaxis.cm/design-en.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/design.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://codeaxis.cm/design-en.html"/>
@@ -98,7 +98,7 @@
   </url>
   <url>
     <loc>https://codeaxis.cm/youth-partnership.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/youth-partnership.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://codeaxis.cm/youth-partnership-en.html"/>
@@ -106,7 +106,7 @@
   </url>
   <url>
     <loc>https://codeaxis.cm/youth-partnership-en.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/youth-partnership.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://codeaxis.cm/youth-partnership-en.html"/>
@@ -114,7 +114,7 @@
   </url>
   <url>
     <loc>https://codeaxis.cm/confidentialite.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/confidentialite.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://codeaxis.cm/confidentialite-en.html"/>
@@ -122,7 +122,7 @@
   </url>
   <url>
     <loc>https://codeaxis.cm/confidentialite-en.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/confidentialite.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://codeaxis.cm/confidentialite-en.html"/>
@@ -130,7 +130,7 @@
   </url>
   <url>
     <loc>https://codeaxis.cm/nos-clients.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/nos-clients.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://codeaxis.cm/nos-clients-en.html"/>
@@ -138,7 +138,7 @@
   </url>
   <url>
     <loc>https://codeaxis.cm/nos-clients-en.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/nos-clients.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://codeaxis.cm/nos-clients-en.html"/>
@@ -146,7 +146,7 @@
   </url>
   <url>
     <loc>https://codeaxis.cm/nos-projets.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/nos-projets.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://codeaxis.cm/nos-projets-en.html"/>
@@ -154,7 +154,7 @@
   </url>
   <url>
     <loc>https://codeaxis.cm/nos-projets-en.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/nos-projets.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://codeaxis.cm/nos-projets-en.html"/>
@@ -162,7 +162,7 @@
   </url>
   <url>
     <loc>https://codeaxis.cm/nos-contrats.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/nos-contrats.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://codeaxis.cm/nos-contrats-en.html"/>
@@ -170,7 +170,7 @@
   </url>
   <url>
     <loc>https://codeaxis.cm/nos-contrats-en.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/nos-contrats.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://codeaxis.cm/nos-contrats-en.html"/>
@@ -178,7 +178,7 @@
   </url>
   <url>
     <loc>https://codeaxis.cm/nos-realisations.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/nos-realisations.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://codeaxis.cm/nos-realisations-en.html"/>
@@ -186,7 +186,7 @@
   </url>
   <url>
     <loc>https://codeaxis.cm/nos-realisations-en.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/nos-realisations.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://codeaxis.cm/nos-realisations-en.html"/>
@@ -194,7 +194,7 @@
   </url>
   <url>
     <loc>https://codeaxis.cm/projet-agrismart.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/projet-agrismart.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://codeaxis.cm/projet-agrismart-en.html"/>
@@ -202,7 +202,7 @@
   </url>
   <url>
     <loc>https://codeaxis.cm/projet-agrismart-en.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/projet-agrismart.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://codeaxis.cm/projet-agrismart-en.html"/>
@@ -210,7 +210,7 @@
   </url>
   <url>
     <loc>https://codeaxis.cm/projet-finsecure.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/projet-finsecure.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://codeaxis.cm/projet-finsecure-en.html"/>
@@ -218,7 +218,7 @@
   </url>
   <url>
     <loc>https://codeaxis.cm/projet-finsecure-en.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/projet-finsecure.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://codeaxis.cm/projet-finsecure-en.html"/>
@@ -226,7 +226,7 @@
   </url>
   <url>
     <loc>https://codeaxis.cm/projet-healthportal.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/projet-healthportal.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://codeaxis.cm/projet-healthportal-en.html"/>
@@ -234,7 +234,7 @@
   </url>
   <url>
     <loc>https://codeaxis.cm/projet-healthportal-en.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/projet-healthportal.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://codeaxis.cm/projet-healthportal-en.html"/>
@@ -242,7 +242,7 @@
   </url>
   <url>
     <loc>https://codeaxis.cm/projet-smartlogistics.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/projet-smartlogistics.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://codeaxis.cm/projet-smartlogistics-en.html"/>
@@ -250,7 +250,7 @@
   </url>
   <url>
     <loc>https://codeaxis.cm/projet-smartlogistics-en.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/projet-smartlogistics.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://codeaxis.cm/projet-smartlogistics-en.html"/>
@@ -258,7 +258,7 @@
   </url>
   <url>
     <loc>https://codeaxis.cm/realisation-fintech.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/realisation-fintech.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://codeaxis.cm/realisation-fintech-en.html"/>
@@ -266,7 +266,7 @@
   </url>
   <url>
     <loc>https://codeaxis.cm/realisation-fintech-en.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/realisation-fintech.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://codeaxis.cm/realisation-fintech-en.html"/>
@@ -274,7 +274,7 @@
   </url>
   <url>
     <loc>https://codeaxis.cm/realisation-logistique.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/realisation-logistique.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://codeaxis.cm/realisation-logistique-en.html"/>
@@ -282,7 +282,7 @@
   </url>
   <url>
     <loc>https://codeaxis.cm/realisation-logistique-en.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/realisation-logistique.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://codeaxis.cm/realisation-logistique-en.html"/>
@@ -290,7 +290,7 @@
   </url>
   <url>
     <loc>https://codeaxis.cm/realisation-marketplace.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/realisation-marketplace.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://codeaxis.cm/realisation-marketplace-en.html"/>
@@ -298,7 +298,7 @@
   </url>
   <url>
     <loc>https://codeaxis.cm/realisation-marketplace-en.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/realisation-marketplace.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://codeaxis.cm/realisation-marketplace-en.html"/>
@@ -306,7 +306,7 @@
   </url>
   <url>
     <loc>https://codeaxis.cm/christian-oussi.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/christian-oussi.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://codeaxis.cm/christian-oussi-en.html"/>
@@ -314,7 +314,7 @@
   </url>
   <url>
     <loc>https://codeaxis.cm/christian-oussi-en.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/christian-oussi.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://codeaxis.cm/christian-oussi-en.html"/>
@@ -322,7 +322,7 @@
   </url>
   <url>
     <loc>https://codeaxis.cm/marc-laurent.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/marc-laurent.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://codeaxis.cm/marc-laurent-en.html"/>
@@ -330,7 +330,7 @@
   </url>
   <url>
     <loc>https://codeaxis.cm/marc-laurent-en.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/marc-laurent.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://codeaxis.cm/marc-laurent-en.html"/>
@@ -338,7 +338,7 @@
   </url>
   <url>
     <loc>https://codeaxis.cm/sarah-martin.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/sarah-martin.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://codeaxis.cm/sarah-martin-en.html"/>
@@ -346,7 +346,7 @@
   </url>
   <url>
     <loc>https://codeaxis.cm/sarah-martin-en.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/sarah-martin.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://codeaxis.cm/sarah-martin-en.html"/>
@@ -354,7 +354,7 @@
   </url>
   <url>
     <loc>https://codeaxis.cm/axel-dupont.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/axel-dupont.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://codeaxis.cm/axel-dupont-en.html"/>
@@ -362,7 +362,7 @@
   </url>
   <url>
     <loc>https://codeaxis.cm/axel-dupont-en.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/axel-dupont.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://codeaxis.cm/axel-dupont-en.html"/>
@@ -370,7 +370,7 @@
   </url>
   <url>
     <loc>https://codeaxis.cm/mentions-legales.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/mentions-legales.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://codeaxis.cm/mentions-legales-en.html"/>
@@ -378,10 +378,46 @@
   </url>
   <url>
     <loc>https://codeaxis.cm/mentions-legales-en.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/mentions-legales.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://codeaxis.cm/mentions-legales-en.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://codeaxis.cm/mentions-legales.html"/>
+  </url>
+</urlset>
+  <url>
+    <loc>https://codeaxis.cm/faq.html</loc>
+    <lastmod>2026-11-26</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://codeaxis.cm/faq.html"/>
+  </url>
+  <url>
+    <loc>https://codeaxis.cm/temoignages.html</loc>
+    <lastmod>2026-11-26</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/temoignages.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://codeaxis.cm/temoignages.html"/>
+  </url>
+  <url>
+    <loc>https://codeaxis.cm/blog.html</loc>
+    <lastmod>2026-11-26</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://codeaxis.cm/blog.html"/>
+  </url>
+  <url>
+    <loc>https://codeaxis.cm/portfolio.html</loc>
+    <lastmod>2026-11-26</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/portfolio.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://codeaxis.cm/portfolio.html"/>
+  </url>
+  <url>
+    <loc>https://codeaxis.cm/tarifs.html</loc>
+    <lastmod>2026-11-26</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://codeaxis.cm/tarifs.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://codeaxis.cm/tarifs.html"/>
   </url>
 </urlset>
