@@ -23,7 +23,7 @@ const today = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
 
 // Pour chaque <loc>…</loc> dans le sitemap, on calcule la date de modif du fichier
 xml = xml.replace(
-  /(<loc>https:\/\/codeaxis\.cm\/([^<]*)<\/loc>\s*\n\s*<lastmod>)[^<]*/g,
+  /(<loc>https:\/\/[^/]+\/([^<]*)<\/loc>\s*\n\s*<lastmod>)[^<]*/g,
   (match, prefix, urlPath) => {
     // Convertir l'URL en chemin de fichier local
     let filePath = urlPath === '' || urlPath === '/'
